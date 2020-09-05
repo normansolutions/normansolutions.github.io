@@ -1,3 +1,4 @@
 baseURL = "https://outoforderband.co.uk"
 languageCode = "en-uk"
 title = "Out Of Order Band"
+publishDir = "docs"
