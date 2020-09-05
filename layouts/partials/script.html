@@ -1,0 +1,5 @@
+{{$main := resources.Get "main.js" }}hugo
+{{ $js := slice $main | resources.Concat "js/bundle.js" | resources.Minify }}
+{{ $secureJS := $js | resources.Fingerprint "sha512" }}
+
+<script src="{{ $secureJS.RelPermalink }}" integrity="{{$secureJS.Data.Integrity}}" defer></script>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tracking devices in UniFi WiFi</title>
+    <meta
+      name="Keywords"
+      content="Out Of Order, Indie Rock, Live Music, UK, South Of England, Rock, Funk, Acoustic"
+    />
+    <meta
+      name="Description"
+      content="Four piece Indie Rock band, based on the south coast of England"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="Author" content="normansolutions.co.uk" />
+    <meta name="language" content="EN" />
+    <meta name="Classification" content="" />
+    <meta
+      name="copyright"
+      content="Copyright (c) 2019 'normansolutions.co.uk' All rights reserved."
+    />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="document-classification" content="Music" />
+    <meta name="document-type" content="Public" />
+    <meta name="document-rating" content="Safe for Kids" />
+    <meta name="document-distribution" content="Global" />
+    <link rel="me" type="text/html" href="https://twitter.com/OutOfOrderUK" />
+    <link
+      type="application/rsd+xml"
+      rel="edituri"
+      title="RSD"
+      href="robots.txt"
+    />
+    <link rel="canonical" href="https://OutOfOrderBand.co.uk" />
+    <meta name="application-name" content="Out Of Order" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta property="og:title" content="Out Of Order" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://OutOfOrderBand.co.uk" />
+    <meta
+      property="og:image"
+      content="https://outoforderband.co.uk/img/v-636723494323584343/OutOfOrderLogo568.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Four piece Indie Rock band, based on the south coast of England"
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://twitter.com/OutOfOrderUK" />
+    <meta name="twitter:title" content="Out Of Order" />
+    <meta
+      name="twitter:description"
+      content="Four piece Indie Rock band, based on the south coast of England"
+    />
+    <meta
+      name="twitter:image"
+      content="https://outoforderband.co.uk/img/v-636723494323584343/OutOfOrderLogo568.jpg"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c98861224204fdb6cce2e1622a251eb2116e9c3d2321272ac3f9296edffdb0832de85a38d00d188e9e48af69c386ac2b204a2c68e399050515c41d88890b2b5d.css" integrity="sha512-yYhhIkIE/bbM4uFiKiUeshFunD0jIScqw/kpbt/9sIMt6Fo40A0Yjp5Ir2nDhqwrIEosaOOZBQUVxB2IiQsrXQ==">
+
+    
+  </head>
+  <body>
+         
+     
+     <div style="margin:25px;">
+          <h1>Tracking devices in UniFi WiFi</h1>
+          <div style="color:grey; font-size:16px;">Tuesday, Dec 15, 2015</div>
+          <div style="color:grey; font-size:16px;"></div>
+          <div style="font-size:18px;"><p>Several years ago, we migrated from a <a href="http://www.cisco.com/cisco/web/UK/index.html#x6CjTZEDlwuM6WO1.97">Cisco</a> Wi-Fi infrastructure to a <a href="http://www.ubnt.com/enterprise/">UniFi</a> setup.</p>
+<p>UniFi <em>(from Ubiquiti Networks)</em> offer a pretty remarkable WiFi solution, especially when it comes down to cost. I shan’t go into the in’s and out’s of UniFi, as apart from anything else, I can’t claim to be an expert in the technology. In many ways, it just works!</p>
+<blockquote>
+<p><em>What’s interesting, is the database supporting the UniFi controller is <em><a href="http://www.mongodb.org/"><em>MongoDB</em></a></em> (a <a href="http://en.wikipedia.org/wiki/NoSQL">NoSQL</a> database, that can be queried using JavaScript).</em></p>
+</blockquote>
+<p>Again, whilst I wouldn’t claim to be a MongoDB expert, I do like the idea of being able to use JavaScript to query data.</p>
+<hr>
+<h2 id="lost-ipad">Lost iPad</h2>
+<p>Recently, we had a situation where an iPad had gone missing. Although it is possible to establish an approximate location of a given device, using UniFi’s controller system, clearly this is only effective whilst the device is connected; the next best option is a singular ‘<strong>last seen</strong>’ log entry.</p>
+<p>So in this particular instance, there wasn’t any <em>real</em> ‘tracking’ data available to work with. However, UniFi <em>was</em> logging connection information, so I concluded that there must be a way of <em>extracting</em> this information from the backend.</p>
+<p>The first thing I did was download and install a <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> based MongoDB management tool called <a href="http://robomongo.org/">RoboMongo</a><em>(ok I could have consoled my way to success, but the GUI just felt a little easier).</em></p>
+<p>Installing and configuring RoboMogo is really very easy. In our instance, it was just install and connect to ‘localhost’ using port 27117.</p>
+<p>![RoboImg](<a href="https://normansolutions.co.uk/posts/files/5ad78a35-ec47-45d0-b103-2b895beaa52b.jpg">https://normansolutions.co.uk/posts/files/5ad78a35-ec47-45d0-b103-2b895beaa52b.jpg</a> =244x168 &ldquo;RoboImg&rdquo;)</p>
+<p><img src="https://normansolutions.co.uk/posts/files/5ad78a35-ec47-45d0-b103-2b895beaa52b.jpg" alt="RoboImg"></p>
+<h2 id="tracking-script">Tracking Script</h2>
+<blockquote>
+<p><em>Once RoboMongo was installed, it was then a matter of scripting out an appropriate query.</em></p>
+</blockquote>
+<p>Using the <em>‘<a href="https://normansolutions.co.uk/post/plotting-earthquakes-on-a-firefly-vle-page">beg, borrow and manipulate</a>’</em> principle – I ended up with an effective script.</p>
+<p>The script takes two parameters – a <strong>device ID</strong>*(which is a wildcard by default)* and the total number of **hours **that you wish to search back.</p>
+<p>It produces a list of results, detailing the device <em>(or devices</em>), along with every AP the device(s) has connected to, complete with the time at this location; all going back for as long you declared in hours <em>(or have enough data to search).</em></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Click for code snippet<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<hr>
+<h2 id="result">Result</h2>
+<p>In our particular instance, the results were astonishing; we could trace a complete history of the device’s journey <em>(even though it was no longer turned on).</em></p>
+<p>I am also very happy to report that the device in question, was found safe and well.</p>
+</div>
+     </div>
+
+ 
+    <footer>
+      <div style="height: 35px"></div>
+      <div
+        style="
+          position: fixed;
+          color: white;
+          height: 35px;
+          background-color: #757575;
+          bottom: 0px;
+          text-align: center;
+          width: 99%;
+        "
+      >
+        <p style="margin: 10px">
+          <a
+            style="color: white"
+            target="_blank"
+            href="http://www.giraffeacademy.com/"
+            >Giraffe Academy</a
+          >
+          - Hugo Theme
+        </p>
+      </div>
+    </footer>
+    
+
+    hugo
+
+
+
+<script src="/js/bundle.min.d645bc555572d272e000f383b0714a14689fe855d586eacaa1cedf58523a4946dc22b088b4dd14f4769de38f5c17d7cf0531274e554c12b09692444e8913260e.js" integrity="sha512-1kW8VVVy0nLgAPODsHFKFGif6FXVhurKoc7fWFI6SUbcIrCItN0U9Had449cF9fPBTEnTlVMErCWkkROiRMmDg==" defer></script>
+  </body>
+</html>
