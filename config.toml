@@ -1,4 +1,4 @@
-baseURL = "https://normansolutions.github.io/NSWebsite"
+baseURL = "https://normansolutions.github.io"
 languageCode = "en-uk"
 title = "Out Of Order Band"
 publishDir = "docs"
