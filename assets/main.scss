@@ -47,6 +47,8 @@
   border-radius: 50%;      
     a{
       font-size: 1.1em;
+      letter-spacing: .03em;
+      text-shadow: 2px 2px #ff0000;
       font-weight: 800;
       color: #fff;
     }
@@ -66,25 +68,25 @@
   clip-path: polygon(200px 200px, 450px 0, 450px 344px);
 }
 .videos {
-  left: 210px;
+  left: 209px;
   position: absolute;
   top: 320px;
   width: 46px;
-  transform: rotate(79deg);
+  transform: rotate(78deg);
 }
 .gigging {
-  left: 273px;
+  left: 272px;
   position: absolute;
-  top: 280px;
+  top: 279px;
   width: 46px;
-  transform: rotate(48deg);
+  transform: rotate(46deg);
 }
 .contact {
-  left: 308px;
+  left: 304px;
   position: absolute;
-  top: 215px;
+  top: 220px;
   width: 46px;
-  transform: rotate(12deg);
+  transform: rotate(16deg);
 }
 .menu {
   -webkit-tap-highlight-color: transparent;
