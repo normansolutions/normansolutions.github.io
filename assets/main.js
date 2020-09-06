@@ -1,4 +1,4 @@
-var person = prompt("Please enter your name", "Harry Potter");
+var person = "Please";
 
 if (person == null || person == "") {
     txt = "User cancelled the prompt.";
