@@ -78,6 +78,7 @@
     {{ partial "rss.html" . }}
   </head>
   <body>
+    {{ partial "menu.html" . }}
     {{ block "main" . }} {{ end }} {{ block "footer" . }}
     
     <footer>

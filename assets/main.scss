@@ -2,19 +2,13 @@
     text-decoration: line-through;
     color: #f22322;
 }
-<<<<<<< HEAD
-
-
-
-/* NavBar */
-
-@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
-body {
-  background: #28305a;
-  height: 100vh;
-  margin: 0 20px;
+.ns-h1 {
+    color: #888323;
+    font-size: 6em;
 }
+
+/* Start Menu */
+
 .pie {
   -webkit-tap-highlight-color: transparent;
   background: #000;
@@ -50,8 +44,15 @@ body {
 .pie-color {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-}
+  border-radius: 50%;      
+    a{
+      font-size: 1.1em;
+      font-weight: 800;
+      color: #fff;
+    }
+}     
+
+
 .pie-color1 {
   background: linear-gradient(135deg, #f12711, #f5af19);
   clip-path: polygon(200px 200px, 344px 450px, 0 450px);
@@ -64,23 +65,26 @@ body {
   background: linear-gradient(135deg, #444, #b7e13f);
   clip-path: polygon(200px 200px, 450px 0, 450px 344px);
 }
-.card {
-  left: 216px;
+.videos {
+  left: 210px;
   position: absolute;
-  top: 300px;
+  top: 320px;
   width: 46px;
+  transform: rotate(79deg);
 }
-.discount {
-  left: 288px;
+.gigging {
+  left: 273px;
   position: absolute;
-  top: 258px;
+  top: 280px;
   width: 46px;
+  transform: rotate(48deg);
 }
-.cart {
-  left: 324px;
+.contact {
+  left: 308px;
   position: absolute;
-  top: 188px;
+  top: 215px;
   width: 46px;
+  transform: rotate(12deg);
 }
 .menu {
   -webkit-tap-highlight-color: transparent;
@@ -101,24 +105,6 @@ body {
   position: relative;
   top: 58%;
   width: 46px;
-}
-.title {
-  color: white;
-  font-family: "Crimson Text", serif;
-  font-size: 80px;
-  line-height: 84px;
-  margin-top: 60px;
-  text-align: center;
-}
-.body {
-  color: white;
-  font-family: "Work Sans", sans-serif;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 28px;
-  margin: 30px auto;
-  max-width: 600px;
-  text-align: center;
 }
 .hamburger path {
   transition: transform 300ms;
@@ -157,9 +143,4 @@ body {
   transform: rotate(-45deg);
 }
 
-=======
-.ns-h1 {
-    color: #888323;
-    font-size: 6em;
-}
->>>>>>> cf5c2ce446ce41567edc63d6c13351aa88efc13a
+/* End Menu */
