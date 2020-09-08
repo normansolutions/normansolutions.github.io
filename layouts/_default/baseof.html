@@ -79,7 +79,13 @@
   </head>
   <body>
     {{ partial "menu.html" . }}
-    {{ block "main" . }} {{ end }} {{ block "footer" . }}
+    {{ partial "header.html" . }}
+
+    {{ block "main" . }} 
+    
+    {{ end }} 
+    
+    {{ block "footer" . }}
     
     <footer>
       <div style="height: 35px"></div>
