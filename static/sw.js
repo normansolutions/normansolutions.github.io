@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns31";
+const version = "ns32";
 
 workbox.core.setCacheNameDetails({
   suffix: version
@@ -61,7 +61,7 @@ self.addEventListener("activate", function (event) {
 
 //offline fallback
 const FALLBACK_URL = "/offline.html";
-const urlHandler = workbox.strategies.cacheFirst();
+const urlHandler = CacheFirst;
 registerRoute(
   new RegExp("/.*"), ({ event }) => {
     return urlHandler.handle({ event }).catch(() => caches.match(FALLBACK_URL));
