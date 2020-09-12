@@ -24,15 +24,15 @@ workbox.core.setCacheNameDetails({
 
 self.__precacheManifest = [
   {
-    url: "/FrontEnd/build/img/main/offline.png",
+    url: "/img/offline.png",
     revision: "336689360776536478"
   },
   {
-    url: "/Methods/offline",
+    url: "/offline.html",
     revision: "336689360776536478"
   },
   {
-    url: "/manifest.webmanifest",
+    url: "/manifest.json",
     revision: "336689360776536478"
   }
 ].concat(self.__precacheManifest || []);
@@ -62,14 +62,14 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /\.(?:css)$/,
+  /\*.(?:css)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: "ns-static-css" + version
   })
 );
 
 workbox.routing.registerRoute(
-  /\.(?:js)$/,
+  /\*.(?:js)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: "ns-static-js" + version
   })
