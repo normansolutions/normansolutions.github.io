@@ -15,6 +15,15 @@ self.addEventListener("activate", function (event) {
   );
 });
 
+
+import { registerRoute } from 'workbox-routing';
+import { NetworkFirst } from 'workbox-strategies';
+
+registerRoute(
+  ({ request }) => request.destination === 'script',
+  new NetworkFirst()
+);
+
 workbox.core.setCacheNameDetails({
   prefix: "ns-ooo",
   suffix: version,
