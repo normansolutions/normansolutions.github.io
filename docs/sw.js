@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns31072020V9";
+const version = "ns1";
 
 //clear invalid caches
 self.addEventListener("activate", function (event) {
@@ -15,7 +15,7 @@ self.addEventListener("activate", function (event) {
     caches
       .keys()
       .then((keys) => keys.filter((key) => !key.endsWith(version)))
-      .then((keys) => console.log(key))
+      .then((keys) => keys.filter((key) => console.log(key)))
       .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
   );
 });
