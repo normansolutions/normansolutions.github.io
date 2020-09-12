@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns20";
+const version = "ns21";
 const versionTest = "Test";
 
 precacheAndRoute([
@@ -60,7 +60,7 @@ self.addEventListener("activate", function (event) {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => keys.filter((key) => !key.has(versionTest)))
+      .then((keys) => keys.filter((key) => !key.endsWith(versionTest)))
       .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
   );
 });
