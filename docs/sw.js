@@ -7,8 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns21";
-const versionTest = "Test";
+const version = "ns22";
 
 precacheAndRoute([
   { url: '/index.html', revision: version },
@@ -21,7 +20,7 @@ registerRoute(
   // Use cache but update in the background.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'css-cache-' + versionTest,
+    cacheName: 'css-cache-' + version,
   })
 );
 
@@ -42,7 +41,7 @@ registerRoute(
   // Use the cache if it's available.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'image-cache-' + versionTest,
+    cacheName: 'image-cache-' + version,
     plugins: [
       new ExpirationPlugin({
         // Cache only 20 images.
@@ -55,12 +54,11 @@ registerRoute(
 );
 
 //clear invalid caches
-//clear invalid caches
 self.addEventListener("activate", function (event) {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => keys.filter((key) => !key.endsWith(versionTest)))
+      .then((keys) => keys.filter((key) => !key.endsWith(version)))
       .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
   );
 });
