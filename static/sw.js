@@ -5,7 +5,7 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
-const version = "ns31072020V1";
+const version = "ns31072020V2";
 
 //clear invalid caches
 self.addEventListener("activate", function (event) {
@@ -18,8 +18,8 @@ self.addEventListener("activate", function (event) {
 });
 
 precacheAndRoute([
-  { url: '/index.html', revision: version },
-  { url: '/img/offline.png', revision: version }
+  { url: './index.html', revision: version },
+  { url: './img/offline.png', revision: version }
 ]);
 
 registerRoute(
