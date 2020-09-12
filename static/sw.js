@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns22";
+const version = "ns23";
 
 precacheAndRoute([
   { url: '/index.html', revision: version },
