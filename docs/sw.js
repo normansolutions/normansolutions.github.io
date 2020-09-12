@@ -5,10 +5,21 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
+const version = "ns31072020V1";
+
+//clear invalid caches
+self.addEventListener("activate", function (event) {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) => keys.filter((key) => !key.endsWith(version)))
+      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+  );
+});
 
 precacheAndRoute([
-  { url: '/index.html', revision: '383676' },
-  { url: '/offline.png', revision: '383676' 
+  { url: '/index.html', revision: version },
+  { url: '/img/offline.png', revision: version 
 ]);
 
 registerRoute(
@@ -17,7 +28,7 @@ registerRoute(
   // Use cache but update in the background.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'css-cache',
+    cacheName: 'css-cache' + version,
   })
 );
 
@@ -27,7 +38,7 @@ registerRoute(
   // Use cache but update in the background.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'js-cache',
+    cacheName: 'js-cache' + version,
   })
 );
 
@@ -38,7 +49,7 @@ registerRoute(
   // Use the cache if it's available.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'image-cache',
+    cacheName: 'image-cache' + version,
     plugins: [
       new ExpirationPlugin({
         // Cache only 20 images.
