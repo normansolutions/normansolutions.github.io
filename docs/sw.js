@@ -12,7 +12,7 @@ self.addEventListener("activate", function (event) {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => keys.filter((key) => !key.endsWith(version)))
+      .then((keys) => keys.filter((key) => !key.indexOf(version)))
       .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
   );
 });
