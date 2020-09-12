@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns4";
+const version = "ns5";
 
 precacheAndRoute([
   { url: '/index.html', revision: version },
@@ -56,18 +56,22 @@ registerRoute(
 //clear invalid caches
 self.addEventListener("activate", function (event) {
   event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      let validCacheSet = new Set(Object.values(workbox.core.cacheNames));
-      return Promise.all(
-        cacheNames
-          .filter(function (cacheName) {
-            return !validCacheSet.has(cacheName);
-          })
-          .map(function (cacheName) {
-            console.log("deleting cache", cacheName);
-            return caches.delete(cacheName);
-          })
-      );
-    })
+    setTimeout(function () {
+
+      caches.keys().then(function (cacheNames) {
+        let validCacheSet = new Set(Object.values(workbox.core.cacheNames));
+        return Promise.all(
+          cacheNames
+            .filter(function (cacheName) {
+              return !validCacheSet.has(cacheName);
+            })
+            .map(function (cacheName) {
+              console.log("deleting cache", cacheName);
+              return caches.delete(cacheName);
+            })
+        );
+      })
+    }, 2000)
   );
+
 });
