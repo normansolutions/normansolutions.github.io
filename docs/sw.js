@@ -3,6 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
+const { ExpirationPlugin } = workbox.expiration;
 
 registerRoute(
   // Cache style resources, i.e. CSS files.
