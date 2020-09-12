@@ -2,7 +2,7 @@
   'use strict';
 
   // Update 'version' if you need to refresh the cache
-  var version = 'NS19022020v9::CacheFirstSafe';
+  var version = 'NS19022020v10::CacheFirstSafe';
   var offlineUrl = "/offline.html";
 
   // Store core files in a cache (including a page to display when offline)
@@ -118,17 +118,6 @@
             });
         })
     );
-
-    //clear invalid caches
-    self.addEventListener("activate", function (event) {
-      event.waitUntil(
-        caches
-          .keys()
-          .then((keys) => keys.filter((key) => !key.endsWith(version)))
-          .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
-      );
-    });
-
   });
 
 })();
