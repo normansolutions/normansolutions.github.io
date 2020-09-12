@@ -40,11 +40,13 @@
       href="robots.txt"
     />
     <link rel="canonical" href="https://OutOfOrderBand.co.uk" />
+    <base href="https://normansolutions.github.io">
     <meta name="application-name" content="Out Of Order" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta property="og:title" content="Out Of Order" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://OutOfOrderBand.co.uk" />
+    <link rel="icon" href="/favicon.ico">
     <meta
       property="og:image"
       content="https://outoforderband.co.uk/img/v-636723494323584343/OutOfOrderLogo568.jpg"
@@ -71,6 +73,8 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
     />
 
+    <link rel="manifest" href="/manifest.json">    
+
     
 
 
@@ -85,7 +89,9 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.c4e6653bc713fa324b53e74233b7ecf2e492488205bf9b720dbd09722fd880685f45ce9c58a5f67dbfc9879f13382608b45004972e87520a34132ae6bcf9ccf5.css" integrity="sha512-xOZlO8cT&#43;jJLU&#43;dCM7fs8uSSSIIFv5tyDb0Jci/YgGhfRc6cWKX2fb/Jh58TOCYItFAEly6HUgo0EyrmvPnM9Q==">
+
+<link rel="preload" href="/css/main.min.c4e6653bc713fa324b53e74233b7ecf2e492488205bf9b720dbd09722fd880685f45ce9c58a5f67dbfc9879f13382608b45004972e87520a34132ae6bcf9ccf5.css" integrity="sha512-xOZlO8cT&#43;jJLU&#43;dCM7fs8uSSSIIFv5tyDb0Jci/YgGhfRc6cWKX2fb/Jh58TOCYItFAEly6HUgo0EyrmvPnM9Q==" as="style">
+<link rel="stylesheet" href="/css/main.min.c4e6653bc713fa324b53e74233b7ecf2e492488205bf9b720dbd09722fd880685f45ce9c58a5f67dbfc9879f13382608b45004972e87520a34132ae6bcf9ccf5.css" integrity="sha512-xOZlO8cT&#43;jJLU&#43;dCM7fs8uSSSIIFv5tyDb0Jci/YgGhfRc6cWKX2fb/Jh58TOCYItFAEly6HUgo0EyrmvPnM9Q==" media="print" onload="this.media='all'">
 
     
     
@@ -148,6 +154,8 @@
         </g>
       </svg>
 </div>
+    <h1>This is the Header</h1>
+
     
 <div style="margin:25px;">
 <h1 class="ns-h1">Gigs for 2019/20</h1>
@@ -295,12 +303,29 @@
 </ul>
 </div>
  
+    
+    
     <div style="height:35px;"></div>
     <div style=" position:fixed; color: white; height:35px; background-color:#757575; bottom:0px; text-align:center; width:99%">
         <p style="margin:10px; "><a style="color: black; " target="_blank" href="http://www.giraffeacademy.com/">Giraffe Academy</a> - Hugo Theme</p>
     </div> 
 
 
+    <script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js', { scope: '/' })
+            .then(function(registration) {
+                
+            });
+  
+        navigator.serviceWorker
+            .ready
+            .then(function(registration) {
+                
+            });
+    }
+  </script>
     hugo
 
 
