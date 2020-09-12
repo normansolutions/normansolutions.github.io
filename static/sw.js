@@ -27,13 +27,13 @@ workbox.routing.registerRoute(
 
 // Serve all css files with StaleWhileRevalidate strategy
 workbox.routing.registerRoute(
-  /\.js$/,
+  /\js\*.js$/,
   new workbox.strategies.StaleWhileRevalidate()
 )
 
 // Serve all css files with StaleWhileRevalidate strategy
 workbox.routing.registerRoute(
-  /\.css$/,
+  /\css\*.css$/,
   new workbox.strategies.StaleWhileRevalidate()
 )
 
