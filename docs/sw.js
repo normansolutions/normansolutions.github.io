@@ -1,13 +1,14 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 const { registerRoute, NavigationRoute } = workbox.routing;
+const { navigationPreload } = workbox.navigation.preload;
 const { CacheFirst, StaleWhileRevalidate, NetworkOnly } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns33";
+const version = "ns34";
 
 workbox.core.setCacheNameDetails({
   suffix: version
