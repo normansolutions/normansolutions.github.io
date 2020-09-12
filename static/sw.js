@@ -1,12 +1,9 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-import { skipWaiting, clientsClaim } from 'workbox-core';
-
 const version = "ns28042020V4";
 const precacheCacheName = workbox.core.cacheNames.precache;
 const runtimeCacheName = workbox.core.cacheNames.runtime;
 
-workbox.skipWaiting();
 workbox.clientsClaim();
 
 //clear invalid caches
