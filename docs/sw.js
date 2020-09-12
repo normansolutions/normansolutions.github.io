@@ -7,16 +7,24 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns1";
+const version = "ns2";
 
 //clear invalid caches
 self.addEventListener("activate", function (event) {
   event.waitUntil(
-    caches
-      .keys()
-      .then((keys) => keys.filter((key) => !key.endsWith(version)))
-      .then((keys) => keys.filter((key) => console.log(key)))
-      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+    caches.keys().then(function (cacheNames) {
+      let validCacheSet = new Set(Object.values(workbox.core.cacheNames));
+      return Promise.all(
+        cacheNames
+          .filter(function (cacheName) {
+            return !validCacheSet.has(cacheName);
+          })
+          .map(function (cacheName) {
+            console.log("deleting cache", cacheName);
+            return caches.delete(cacheName);
+          })
+      );
+    })
   );
 });
 
