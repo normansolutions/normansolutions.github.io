@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns17";
+const version = "ns18";
 const versionTest = "Test";
 
 precacheAndRoute([
@@ -42,7 +42,7 @@ registerRoute(
   // Use the cache if it's available.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'image-cache-' + version,
+    cacheName: 'image-cache-' + versionTest,
     plugins: [
       new ExpirationPlugin({
         // Cache only 20 images.
