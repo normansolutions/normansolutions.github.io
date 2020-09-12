@@ -16,6 +16,17 @@ registerRoute(
 );
 
 registerRoute(
+  // Cache style resources, i.e. CSS files.
+  ({ request }) => request.destination === 'script',
+  // Use cache but update in the background.
+  new CacheFirst({
+    // Use a custom cache name.
+    cacheName: 'js-cache',
+  })
+);
+
+
+registerRoute(
   // Cache image files.
   ({ request }) => request.destination === 'image',
   // Use the cache if it's available.
