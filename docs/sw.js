@@ -36,7 +36,6 @@ self.__precacheManifest = [
     revision: "336689360776536478"
   }
 ].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 //cache fonts
