@@ -18,8 +18,8 @@ self.addEventListener("activate", function (event) {
 });
 
 precacheAndRoute([
-  { url: 'index.html', revision: version },
-  { url: 'img/offline.png', revision: version }
+  { url: '/index.html', revision: version },
+  { url: '/img/offline.png', revision: version }
 ]);
 
 registerRoute(
