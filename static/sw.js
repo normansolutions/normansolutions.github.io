@@ -1,7 +1,6 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-
-registerRoute(
+workbox.registerRoute(
   // Cache style resources, i.e. CSS files.
   ({ request }) => request.destination === 'style',
   // Use cache but update in the background.
@@ -11,7 +10,7 @@ registerRoute(
   })
 );
 
-registerRoute(
+workbox.registerRoute(
   // Cache image files.
   ({ request }) => request.destination === 'image',
   // Use the cache if it's available.
