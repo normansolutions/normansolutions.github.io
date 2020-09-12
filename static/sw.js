@@ -4,6 +4,12 @@ const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
+const { precacheAndRoute } = workbox.precaching;
+
+precacheAndRoute([
+  { url: '/index.html', revision: '383676' },
+  { url: '/offline.png', revision: '383676' 
+]);
 
 registerRoute(
   // Cache style resources, i.e. CSS files.
