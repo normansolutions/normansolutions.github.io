@@ -46,14 +46,6 @@ registerRoute(
   new CacheFirst({
     // Use a custom cache name.
     cacheName: 'image-cache-' + version,
-    plugins: [
-      new ExpirationPlugin({
-        // Cache only 20 images.
-        maxEntries: 20,
-        // Cache for a maximum of a week.
-        maxAgeSeconds: 7 * 24 * 60 * 60,
-      })
-    ],
   })
 );
 
