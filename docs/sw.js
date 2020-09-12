@@ -61,14 +61,14 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /\*.(?:css)$/,
+  /\**\*.(?:css)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: "ns-static-css" + version
   })
 );
 
 workbox.routing.registerRoute(
-  /\*.(?:js)$/,
+  /\**\*.(?:js)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: "ns-static-js" + version
   })
