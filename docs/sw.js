@@ -7,7 +7,8 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns15";
+const version = "ns16";
+const versionTest = "Test";
 
 precacheAndRoute([
   { url: '/index.html', revision: version },
@@ -20,7 +21,7 @@ registerRoute(
   // Use cache but update in the background.
   new CacheFirst({
     // Use a custom cache name.
-    cacheName: 'css-cache-' + version,
+    cacheName: 'css-cache-' + versionTest,
   })
 );
 
@@ -61,7 +62,7 @@ self.addEventListener("activate", function (event) {
       return Promise.all(
         cacheNames
           .filter(function (cacheName) {
-            return !validCacheSet.has(version);
+            return !validCacheSet.has(versionTest);
           })
           .map(function (cacheName) {
             console.log("deleting cache", cacheName);
