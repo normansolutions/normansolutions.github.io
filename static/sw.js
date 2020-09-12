@@ -29,7 +29,7 @@ registerRoute(
 );
 
 registerRoute(
-  // Cache style resources, i.e. CSS files.
+  // Cache style resources, i.e. CSS files
   ({ request }) => request.destination === 'script',
   // Use cache but update in the background.
   new CacheFirst({
