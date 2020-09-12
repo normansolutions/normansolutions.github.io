@@ -9,7 +9,7 @@ registerRoute(
   // Cache style resources, i.e. CSS files.
   ({ request }) => request.destination === 'style',
   // Use cache but update in the background.
-  new CacheFirst.StaleWhileRevalidate({
+  workbox.strategies.staleWhileRevalidate({
     // Use a custom cache name.
     cacheName: 'css-cache',
   })
