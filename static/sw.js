@@ -5,13 +5,16 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
-const version = "ns31072020V4";
+const version = "ns31072020V5";
 
 //clear invalid caches
-caches.keys().then(cacheNames => {
-  cacheNames.forEach(cacheName => {
-    caches.delete(cacheName);
-  });
+self.addEventListener("activate", function (event) {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) => keys.filter((key) => !key.contains(version)))
+      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+  );
 });
 
 precacheAndRoute([
