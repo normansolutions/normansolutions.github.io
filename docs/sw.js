@@ -8,13 +8,10 @@ const { precacheAndRoute } = workbox.precaching;
 const version = "ns31072020V4";
 
 //clear invalid caches
-self.addEventListener("activate", function (event) {
-  event.waitUntil(
-    caches
-      .keys()
-      .then((keys) => keys.filter((key) => !key.indexOf(version)))
-      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
-  );
+caches.keys().then(cacheNames => {
+  cacheNames.forEach(cacheName => {
+    caches.delete(cacheName);
+  });
 });
 
 precacheAndRoute([
