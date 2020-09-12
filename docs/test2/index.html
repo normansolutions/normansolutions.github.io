@@ -62,7 +62,7 @@
       name="twitter:image"
       content="https://outoforderband.co.uk/img/v-636723494323584343/OutOfOrderLogo568.jpg"
     />
-
+    <link rel="manifest" href="/manifest.json">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
@@ -213,7 +213,21 @@
       </div>
     </footer>
     
-
+    <script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js', { scope: '/' })
+            .then(function(registration) {
+                
+            });
+  
+        navigator.serviceWorker
+            .ready
+            .then(function(registration) {
+                
+            });
+    }
+  </script>
     hugo
 
 
