@@ -5,7 +5,7 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
-const version = "ns31072020V3";
+const version = "ns31072020V4";
 
 //clear invalid caches
 self.addEventListener("activate", function (event) {
