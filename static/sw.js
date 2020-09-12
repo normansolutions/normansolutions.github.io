@@ -7,7 +7,7 @@ const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 const { setCacheNameDetails } = workbox.core;
 
-const version = "ns34";
+const version = "ns35";
 
 workbox.core.setCacheNameDetails({
   suffix: version
@@ -60,7 +60,7 @@ self.addEventListener("activate", function (event) {
 });
 
 //offline fallback
-const CACHE_NAME = 'offline-html';
+const CACHE_NAME = 'offline-html' + version;
 // This assumes /offline.html is a URL for your self-contained
 // (no external images or styles) offline page.
 const FALLBACK_HTML_URL = '/offline.html';
