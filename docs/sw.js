@@ -1,7 +1,6 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 const { registerRoute, NavigationRoute } = workbox.routing;
-const { navigationPreload } = workbox.navigation.preload;
 const { CacheFirst, StaleWhileRevalidate, NetworkOnly } = workbox.strategies;
 const { CacheableResponse } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
@@ -74,7 +73,6 @@ self.addEventListener('install', async (event) => {
   );
 });
 
-navigationPreload.enable();
 
 const networkOnly = new NetworkOnly();
 const navigationHandler = async (params) => {
