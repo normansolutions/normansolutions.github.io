@@ -13,5 +13,5 @@
 {{ $style = $style | postCSS | minify | fingerprint "sha512" }}
 
 
-<link rel="preload" href="{{ $style.RelPermalink }}?v=ns-fingerprint" integrity="{{$style.Data.Integrity}}" as="style" crossorigin="anonymous">>
-<link rel="stylesheet" href="{{ $style.RelPermalink }}?v=ns-fingerprint" integrity="{{$style.Data.Integrity}}" media="print" onload="this.media='all'" crossorigin="anonymous">>
+<link rel="preload" href="{{ $style.RelPermalink }}?v=ns-fingerprint" integrity="{{$style.Data.Integrity}}" as="style" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}?v=ns-fingerprint" integrity="{{$style.Data.Integrity}}" media="print" onload="this.media='all'" crossorigin="anonymous">
