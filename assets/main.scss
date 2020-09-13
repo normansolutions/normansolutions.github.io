@@ -184,6 +184,10 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+
+      @media (min-width: 100px) {
+       min-width:70%;
+  }
 }
 
 
