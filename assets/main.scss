@@ -49,22 +49,22 @@
  .pie-color-hyperlink{
       font-size: 1.1em;
       letter-spacing: .03em;
-      text-shadow: 2px 2px #ff0000;
+      text-shadow: 2px 2px #000000;
       font-weight: 800;
       color: #fff;
  }
 
 
 .pie-color1 {
-  background: linear-gradient(135deg, #f12711, #C62129);
+  background: linear-gradient(135deg, #C62129, #C62129);
   clip-path: polygon(200px 200px, 344px 450px, 0 450px);
 }
 .pie-color2 {
-  background: linear-gradient(135deg, #444, #ffffff);
+  background: linear-gradient(135deg, #ffffff, #ffffff);
   clip-path: polygon(200px 200px, 344px 450px, 450px 344px);
 }
 .pie-color3 {
-  background: linear-gradient(135deg, #444, #C62129);
+  background: linear-gradient(135deg, #C62129, #C62129);
   clip-path: polygon(200px 200px, 450px 0, 450px 344px);
 }
 .videos {
