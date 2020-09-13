@@ -7,6 +7,10 @@ body, html {
     height: 100%;
 }
 
+a{
+  color: #d7242d;
+}
+
 /* End Basics */
 
 /* Start Menu */
@@ -213,17 +217,17 @@ body, html {
   position: relative;
   text-align: center;
 
+
   ul {
     list-style-type: none;
+    font-size: 1.1em;
   }
 
   li:first-child::before {
     content: "🎸";
-    font-size: 1.2em;
   }
 
     li:first-child{
-    font-size: 1.2em;
     animation: glow 1s ease-in-out infinite alternate;
   }
 }
@@ -249,7 +253,6 @@ body, html {
 
 .ns-strikethrough {
     text-decoration: line-through;
-    color: #f22322;
 }
 .ns-h1 {
     font-size: 2em;
