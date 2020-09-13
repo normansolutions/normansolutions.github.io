@@ -1,4 +1,4 @@
-{{$main := resources.Get "main.js" }}hugo
+{{$main := resources.Get "main.js" }}
 {{ $js := slice $main | resources.Concat "js/bundle.js" | resources.Minify }}
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
 
