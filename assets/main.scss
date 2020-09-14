@@ -1,14 +1,20 @@
 @import "_include-media.scss";
 
+$ooob-red: #C62129;
+$ooob-white: #fff;
+$ooob-black: #000;
+
 
 /* Basics */
 
 body, html {
     height: 100%;
+    background-color: $ooob-red;
+    color: $ooob-white;
 }
 
 a{
-  color: #d7242d;
+  color: darken($ooob-white , 10%);
 }
 
 /* End Basics */
@@ -17,7 +23,7 @@ a{
 
 .pie {
   -webkit-tap-highlight-color: transparent;
-  background: #000;
+  background: $ooob-black;
   border-radius: 50%;
   box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -28,6 +34,7 @@ a{
   width: 400px;
   transform: translateX(-200px) translateY(-200px);
   transition: transform 300ms;
+  z-index: 1;
 }
 .pie-color:hover {
   opacity: 0.85;
@@ -55,22 +62,22 @@ a{
  .pie-color-hyperlink{
       font-size: 1.1em;
       letter-spacing: .03em;
-      text-shadow: 1px 1px #000000;
+      text-shadow: 1px 1px $ooob-black;
       font-weight: 700;
-      color: #fff;
+      color: $ooob-white
  }
 
 
 .pie-color1 {
-  background: linear-gradient(135deg, #C62129, #C62129);
+  background: linear-gradient(135deg, $ooob-red, $ooob-red);
   clip-path: polygon(200px 200px, 344px 450px, 0 450px);
 }
 .pie-color2 {
-  background: linear-gradient(135deg, #ffffff, #ffffff);
+  background: linear-gradient(135deg, $ooob-white, $ooob-white);
   clip-path: polygon(200px 200px, 344px 450px, 450px 344px);
 }
 .pie-color3 {
-  background: linear-gradient(135deg, #C62129, #C62129);
+  background: linear-gradient(135deg, $ooob-red, $ooob-red);
   clip-path: polygon(200px 200px, 450px 0, 450px 344px);
 }
 .videos {
@@ -86,7 +93,7 @@ a{
   top: 279px;
   width: 46px;
   transform: rotate(46deg);
-  color: #C62129;
+  color: $ooob-red;
 }
 .contact {
   left: 304px;
@@ -97,7 +104,7 @@ a{
 }
 .menu {
   -webkit-tap-highlight-color: transparent;
-  background: #fff;
+  background: $ooob-white;
   border-radius: 50%;
   box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -106,6 +113,8 @@ a{
   position: absolute;
   top: -100px;
   width: 200px;
+  z-index: 1;
+
 }
 .hamburger {
   cursor: pointer;
@@ -161,7 +170,7 @@ a{
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.jpg?v=fingerprint");
-  z-index: -1;
+
 
   /* Set a specific height */
   height: 50%;
@@ -198,20 +207,35 @@ a{
   }
 }
 
+.ns-tagline {
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin:auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  letter-spacing: .1em;
+  font-family: 'Sedgwick Ave Display',cursive;
+  font-size: 2.1em;
+}
+
 .ns-social {
-  padding-top: 20px;
+  padding-top:8px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin:auto;
   max-width: 800px;
   position: relative;
   text-align: center; 
-  font-family: 'Sedgwick Ave Display',cursive;
-  font-size: 2.3em;
+
 }
 
 /* End Header */
 
 /* Gigs */
 .ns-gigs {
+  padding:15px;
   margin:auto;
   max-width: 100%;
   position: relative;
@@ -228,27 +252,17 @@ a{
   }
 
     li:first-child{
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 5px $ooob-white, 0 0 10px $ooob-white, 0 0 20px $ooob-red;
   }
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #C62129;
-  }
-  to {
-    text-shadow: 0 0 10px #fff, 0 0 20px #C62129, 0 0 30px #C62129;
-  }
-}
   hr {
     max-width: 80%;
     margin: 13px auto;
     padding: 0;
     text-align: center;
-    color: #000;
     border-radius: 5px;
-    -webkit-box-shadow: 0 0 5px #d7242d;
-    box-shadow: 0 0 5px #d7242d;
+    box-shadow: 0 0 13px $ooob-white;
   }
 
 .ns-strikethrough {
@@ -260,3 +274,21 @@ a{
 
 /* End Gigs */
 
+
+/* Footer */
+
+footer {
+  position:fixed; 
+  color: $ooob-white;
+  height:45px;
+  background-color:$ooob-black;
+  bottom:0px;
+  text-align:center;
+  width:100%;
+
+  p {
+    padding-top:8px;
+  }
+}
+
+/* End Footer */
