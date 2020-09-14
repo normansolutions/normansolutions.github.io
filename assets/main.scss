@@ -217,6 +217,7 @@ a:hover{
 }
 
 
+
 /* Place text in the middle of the image */
 .hero-text {
   text-align: center;
@@ -282,14 +283,21 @@ a:hover{
     font-size: 1.1em;
   }
 
-  li:first-child::before {
+}
+
+  .ns-nextgig::before {
     content: "🎸";
   }
 
-    li:first-child{
+  .ns-nextgig {
     text-shadow: 0 0 5px $ooob-white, 0 0 10px $ooob-white, 0 0 20px $ooob-red;
+    font-size:1.3em;
   }
-}
+
+  .ns-nextgig::after {
+    content: " (next gig)";
+    font-size:.9em;
+  }
 
   hr {
     max-width: 80%;

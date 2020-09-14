@@ -1,7 +1,3 @@
-var person = "Please";
-
-if (person == null || person == "") {
-    txt = "User cancelled the prompt.";
-} else {
-    txt = "Hello " + person + "! How are you today?";
-}
+var listofgigstocome = document.querySelectorAll("ul>li.ns-notpassed");
+var nextgig = listofgigstocome[listofgigstocome.length - 1];
+nextgig.classList.add("ns-nextgig");
