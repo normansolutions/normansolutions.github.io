@@ -8,11 +8,13 @@
 <ul>
     {{ range sort $.Site.Data.gigs "Date" "desc" }}
     {{ $dateformat := now.Format "2006-01-02" }}
+    {{ if gt .Date "2019-01-01" }}
         {{ if gt .Date $dateformat }}
             <li class="ns-notpassed">{{ dateFormat "Monday, Jan 2, 2006" .Date }} <a href="{{ .URL }}" target="_blank">{{ .Location}}</a></li>
         {{ else }}
             <li class="ns-strikethrough">{{ dateFormat "Monday, Jan 2, 2006" .Date }} <a href="{{ .URL }}" target="_blank">{{ .Location}}</a></li>
         {{ end }}
+    {{ end }}    
     {{ end }}
 </ul>
 </div>
