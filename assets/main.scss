@@ -14,7 +14,11 @@ body, html {
 }
 
 a{
-  color: darken($ooob-white , 10%);
+  color: darken($ooob-white , 15%);
+}
+
+a:hover{
+  color: lighten($ooob-white , 15%);
 }
 
 /* End Basics */
@@ -171,6 +175,20 @@ a{
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.jpg?v=fingerprint");
 
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+  .webp .hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.webp?v=fingerprint");
 
   /* Set a specific height */
   height: 50%;
@@ -180,7 +198,24 @@ a{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 }
+
+.avif .hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.avif?v=fingerprint");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
 
 /* Place text in the middle of the image */
 .hero-text {
@@ -267,6 +302,15 @@ a{
 
 .ns-strikethrough {
     text-decoration: line-through;
+    color: darken($ooob-white , 30%);
+
+    a{
+       color: darken($ooob-white , 30%);
+    }
+
+    a:hover{
+      color: lighten($ooob-white , 15%);
+    }    
 }
 .ns-h1 {
     font-size: 2em;
