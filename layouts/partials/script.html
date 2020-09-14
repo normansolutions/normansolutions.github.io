@@ -1,5 +1,8 @@
+{{$simplelightbox := resources.Get "glightbox.min.js" }}
 {{$main := resources.Get "main.js" }}
-{{ $js := slice $main | resources.Concat "js/bundle.js" | resources.Minify }}
+
+
+{{ $js := slice $main $simplelightbox | resources.Concat "js/bundle.js" | resources.Minify }}
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
 
-<script src="{{ $secureJS.RelPermalink }}?v=ns-fingerprint" integrity="{{$secureJS.Data.Integrity}}" defer crossorigin="anonymous">></script>
+<script src="{{ $secureJS.RelPermalink }}?v=ns-fingerprint" integrity="{{$secureJS.Data.Integrity}}" crossorigin="anonymous">></script>

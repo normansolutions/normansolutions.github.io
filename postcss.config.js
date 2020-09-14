@@ -3,7 +3,7 @@ module.exports = {
         '@fullhuman/postcss-purgecss': {
             content: [
                 './layouts/**/*.html',
-                './assets/*.js'
+                './assets/*.js',
             ],
             whitelist: [
                 'highlight',
@@ -15,8 +15,13 @@ module.exports = {
                 'h3',
                 'h4',
                 'ul',
-                'li'
-            ]
+                'li',
+                'iframe',
+                'img'
+            ],
+            whitelistPatterns: [
+            ],
+
         },
         autoprefixer: {},
         cssnano: { preset: 'default' }

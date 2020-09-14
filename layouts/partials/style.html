@@ -6,7 +6,7 @@
 
 {{ $css_options = merge $css_options (dict "outputStyle" "compressed") }}
 
-{{ $sass_template := slice $normalize $milligram $main | resources.Concat "main_concat.scss"}}
+{{ $sass_template := slice $normalize $milligram  $main | resources.Concat "main_concat.scss"}}
 
 {{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $css_options }}
 
