@@ -2,9 +2,7 @@
 {{$jQuery := resources.Get "jQuery.js" }}
 {{$fancyapp := resources.Get "jquery.fancybox.min.js" }}
 {{$main := resources.Get "main.js" }}
-
-
-{{ $js := slice $jQuery $fancyapp $main| resources.Concat "js/bundle.js" | resources.Minify }}
+{{ $js := slice $jQuery $fancyapp $main| resources.Concat "js/bundle.js" |resources.Minify }}
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
 <!-- prettier-ignore-end -->
 
@@ -13,6 +11,4 @@
   integrity="{{$secureJS.Data.Integrity}}"
   defer
   crossorigin="anonymous"
->
-  >
-</script>
+></script>

@@ -1,24 +1,24 @@
 @import "_include-media.scss";
 
-$ooob-red: #C62129;
+$ooob-red: #c62129;
 $ooob-white: #fff;
 $ooob-black: #000;
 
-
 /* Basics */
 
-body, html {
-    height: 100%;
-    background-color: $ooob-red;
-    color: $ooob-white;
+body,
+html {
+  height: 100%;
+  background-color: $ooob-red;
+  color: $ooob-white;
 }
 
-a{
-  color: darken($ooob-white , 15%);
+a {
+  color: darken($ooob-white, 15%);
 }
 
-a:hover{
-  color: lighten($ooob-white , 15%);
+a:hover {
+  color: lighten($ooob-white, 15%);
 }
 
 /* End Basics */
@@ -62,15 +62,14 @@ a:hover{
   width: 100%;
   height: 100%;
   border-radius: 50%;
- }
- .pie-color-hyperlink{
-      font-size: 1.1em;
-      letter-spacing: .03em;
-      text-shadow: 1px 1px $ooob-black;
-      font-weight: 700;
-      color: $ooob-white
- }
-
+}
+.pie-color-hyperlink {
+  font-size: 1.1em;
+  letter-spacing: 0.03em;
+  text-shadow: 1px 1px $ooob-black;
+  font-weight: 700;
+  color: $ooob-white;
+}
 
 .pie-color1 {
   background: linear-gradient(135deg, $ooob-red, $ooob-red);
@@ -118,7 +117,6 @@ a:hover{
   top: -100px;
   width: 200px;
   z-index: 1;
-
 }
 .hamburger {
   cursor: pointer;
@@ -167,13 +165,13 @@ a:hover{
 
 /* End Menu */
 
-
 /* Header*/
 
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.jpg?v=fingerprint");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/BandHeader.jpg?v=fingerprint");
 
   /* Set a specific height */
   height: 50%;
@@ -183,12 +181,12 @@ a:hover{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
 
-  .webp .hero-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.webp?v=fingerprint");
+.webp .hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/BandHeader.webp?v=fingerprint");
 
   /* Set a specific height */
   height: 50%;
@@ -198,12 +196,12 @@ a:hover{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
 
 .avif .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/BandHeader.avif?v=fingerprint");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/BandHeader.avif?v=fingerprint");
 
   /* Set a specific height */
   height: 50%;
@@ -213,10 +211,7 @@ a:hover{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
-
-
 
 /* Place text in the middle of the image */
 .hero-text {
@@ -226,20 +221,20 @@ a:hover{
   left: 50%;
   transform: translate(-50%, -50%);
 
-      @include media('>1366px') { 
-       width:40%;
+  @include media(">1366px") {
+    width: 40%;
   }
-      @include media('>=desktop', '<=1366px', 'portrait') { 
-       width:80%;
+  @include media(">=desktop", "<=1366px", "portrait") {
+    width: 80%;
   }
-      @include media('>=desktop', '<=1366px', 'landscape') { 
-       width:40%;
+  @include media(">=desktop", "<=1366px", "landscape") {
+    width: 40%;
   }
-      @include media('<desktop', 'portrait')  { 
-       width:80%;
+  @include media("<desktop", "portrait") {
+    width: 80%;
   }
-      @include media('<desktop', 'landscape')  { 
-       width:50%;
+  @include media("<desktop", "landscape") {
+    width: 50%;
   }
 }
 
@@ -247,104 +242,99 @@ a:hover{
   padding-top: 25px;
   padding-left: 15px;
   padding-right: 15px;
-  margin:auto;
+  margin: auto;
   max-width: 800px;
   position: relative;
   text-align: center;
-  letter-spacing: .1em;
-  font-family: 'Sedgwick Ave Display',cursive;
+  letter-spacing: 0.1em;
+  font-family: "Sedgwick Ave Display", cursive;
   font-size: 2.1em;
 }
 
 .ns-social {
-  padding-top:8px;
+  padding-top: 8px;
   padding-left: 15px;
   padding-right: 15px;
-  margin:auto;
+  margin: auto;
   max-width: 800px;
   position: relative;
-  text-align: center; 
-
+  text-align: center;
 }
 
 /* End Header */
 
 /* Gigs */
 .ns-gigs {
-  padding:15px;
-  margin:auto;
+  padding: 15px;
+  margin: auto;
   max-width: 100%;
   position: relative;
-  text-align: center;  
-
+  text-align: center;
 
   ul {
     list-style-type: none;
     font-size: 1.1em;
   }
-
 }
 
-  .ns-nextgig::before {
-    content: "🎸";
-  }
+.ns-nextgig::before {
+  content: "🎸";
+}
 
-  .ns-nextgig {
-    text-shadow: 0 0 5px $ooob-white, 0 0 10px $ooob-white, 0 0 20px $ooob-red;
-    font-size:1.3em;
-  }
+.ns-nextgig {
+  text-shadow: 0 0 5px $ooob-white, 0 0 10px $ooob-white, 0 0 20px $ooob-red;
+  font-size: 1.3em;
+}
 
-  .ns-nextgig::after {
-    content: " (next gig)";
-    font-size:.9em;
-  }
+.ns-nextgig::after {
+  content: " (next gig)";
+  font-size: 0.9em;
+}
 
-  hr {
-    max-width: 80%;
-    margin: 13px auto;
-    padding: 0;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 13px $ooob-white;
-  }
+hr {
+  max-width: 80%;
+  margin: 13px auto;
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 13px $ooob-white;
+}
 
 .ns-strikethrough {
-    text-decoration: line-through;
-    color: darken($ooob-white , 30%);
+  text-decoration: line-through;
+  color: darken($ooob-white, 30%);
 
-    a{
-       color: darken($ooob-white , 30%);
-    }
+  a {
+    color: darken($ooob-white, 30%);
+  }
 
-    a:hover{
-      color: lighten($ooob-white , 15%);
-    }    
+  a:hover {
+    color: lighten($ooob-white, 15%);
+  }
 }
 .ns-h1 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 /* End Gigs */
 
 /* Gallery */
 
-
-
 /* End Gallery */
 
 /* Footer */
 
 footer {
-  position:fixed; 
+  position: fixed;
   color: $ooob-white;
-  height:45px;
-  background-color:$ooob-black;
-  bottom:0px;
-  text-align:center;
-  width:100%;
+  height: 45px;
+  background-color: $ooob-black;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
 
   p {
-    padding-top:8px;
+    padding-top: 8px;
   }
 }
 
