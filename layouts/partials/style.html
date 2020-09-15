@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 {{$normalize := resources.Get "normalize.scss" }}
 {{$milligram := resources.Get "milligram.min.scss" }}
 {{$fancybox := resources.Get "jquery.fancybox.css" }}
@@ -14,7 +15,20 @@
 {{ $style :=  slice $style $fancybox | resources.Concat "main_scss_and_css" | toCSS $css_options  }}
 
 {{ $style = $style | postCSS | minify | fingerprint "sha512" }}
+<!-- prettier-ignore-end-->
 
-
-<link rel="preload" href="{{ $style.RelPermalink }}?v=ns-fingerprint" integrity="{{$style.Data.Integrity}}" as="style" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ $style.RelPermalink }}?v=ns-fingerprint" integrity="{{$style.Data.Integrity}}" media="print" onload="this.media='all'" crossorigin="anonymous">
+<link
+  rel="preload"
+  href="{{ $style.RelPermalink }}?v=ns-fingerprint"
+  integrity="{{$style.Data.Integrity}}"
+  as="style"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="{{ $style.RelPermalink }}?v=ns-fingerprint"
+  integrity="{{$style.Data.Integrity}}"
+  media="print"
+  onload="this.media='all'"
+  crossorigin="anonymous"
+/>
