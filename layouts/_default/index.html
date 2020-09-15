@@ -1,19 +1,23 @@
 {{ define "title" }} Out Of Order Band {{end}} {{ define "main" }}
 
 <div class="ns-gigs">
-  <a data-fancybox="" data-ratio="2" href="https://youtu.be/_R1O5ASm72M">
-    <img
-      class="card-img-top img-fluid"
-      src="https://img.youtube.com/vi/Tb7MtoenHZk/0.jpg"
-    />
-  </a>
-
-  <a data-fancybox="" data-ratio="2" href="https://youtu.be/_R1O5ASm72M">
-    <img
-      class="card-img-top img-fluid"
-      src="https://img.youtube.com/vi/Tb7MtoenHZk/0.jpg"
-    />
-  </a>
+  <div class="gallery">
+    <a data-fancybox="" data-ratio="2" href="https://youtu.be/_R1O5ASm72M">
+      <span class="video-thumbnail">
+        <img src="https://img.youtube.com/vi/Tb7MtoenHZk/0.jpg" />
+      </span>
+    </a>
+    <a data-fancybox="" data-ratio="2" href="https://youtu.be/_R1O5ASm72M">
+      <span class="video-thumbnail">
+        <img src="https://img.youtube.com/vi/_R1O5ASm72M/0.jpg" />
+      </span>
+    </a>
+    <a data-fancybox="" data-ratio="2" href="https://youtu.be/WvTcMcugGRE">
+      <span class="video-thumbnail">
+        <img src="https://img.youtube.com/vi/WvTcMcugGRE/0.jpg" />
+      </span>
+    </a>
+  </div>
 
   <h1 class="ns-h1">
     {{ (now.AddDate -1 0 0).Year }}/{{ substr (now.Year) 2 2 }}&nbsp;Gigs
