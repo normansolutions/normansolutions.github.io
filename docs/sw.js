@@ -2,7 +2,7 @@
   'use strict';
 
   // Update 'version' if you need to refresh the cache
-  var version = 'NS022::CacheFirstSafe';
+  var version = 'NS019::CacheFirstSafe';
   var offlineUrl = "/offline.html";
 
   // Store core files in a cache (including a page to display when offline)
@@ -20,6 +20,7 @@
     if (!response.ok && response.type !== 'opaque')
       return;
 
+    var copy = response.clone();
     caches.open(version)
       .then(function (cache) {
         cache.put(request, copy);

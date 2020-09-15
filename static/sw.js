@@ -2,7 +2,11 @@
   "use strict";
 
   // Update 'version' if you need to refresh the cache
+<<<<<<< HEAD
   var version = "NS023::CacheFirstSafe";
+=======
+  var version = 'NS019::CacheFirstSafe';
+>>>>>>> parent of aab7f71... Added fancybox and resolved local bundling
   var offlineUrl = "/offline.html";
 
   // Store core files in a cache (including a page to display when offline)
@@ -15,9 +19,17 @@
   function addToCache(request, response) {
     if (!response.ok && response.type !== "opaque") return;
 
+<<<<<<< HEAD
     caches.open(version).then(function (cache) {
       cache.put(request, copy);
     });
+=======
+    var copy = response.clone();
+    caches.open(version)
+      .then(function (cache) {
+        cache.put(request, copy);
+      });
+>>>>>>> parent of aab7f71... Added fancybox and resolved local bundling
   }
 
   self.addEventListener("install", function (event) {
