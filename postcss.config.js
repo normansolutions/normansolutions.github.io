@@ -19,8 +19,7 @@ module.exports = {
                 'iframe',
                 'img'
             ],
-            whitelistPatterns: [
-            ],
+            whitelistPatterns: [/fancybox/],
 
         },
         autoprefixer: {},
