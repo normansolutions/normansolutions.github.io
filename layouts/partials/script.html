@@ -3,7 +3,7 @@
 {{$quicklinks := resources.Get "quicklinks.js" }}
 {{$fancyapp := resources.Get "jquery.fancybox.min.js" }}
 {{$main := resources.Get "main.js" }}
-{{ $js := slice $jQuery $quicklinks $fancyapp $main| resources.Concat "js/bundle.js" |resources.Minify }}
+{{ $js := slice $jQuery $quicklinks $fancyapp $main | resources.Concat "js/bundle.js" |resources.Minify }}
 {{ $secureJS := $js | resources.Fingerprint "sha512" }}
 <!-- prettier-ignore-end -->
 

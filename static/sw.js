@@ -15,6 +15,7 @@
   function addToCache(request, response) {
     if (!response.ok && response.type !== "opaque") return;
 
+    var copy = response.clone();
     caches.open(version).then(function (cache) {
       cache.put(request, copy);
     });
