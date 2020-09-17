@@ -1,6 +1,6 @@
 var listofgigstocome = document.querySelectorAll("ul>li.ns-notpassed");
-if (listofgigstocome) {
-  var nextgig = listofgigstocome[listofgigstocome.length - 1];
+var nextgig = listofgigstocome[listofgigstocome.length - 1];
+if (nextgig) {
   nextgig.classList.add("ns-nextgig");
 }
 
