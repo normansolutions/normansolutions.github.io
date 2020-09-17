@@ -8,3 +8,7 @@ window.addEventListener("load", () => {
     priority: !0
   });
 });
+
+if ($.browser.mozilla) {
+  $("pie-color-hyperlink").css("fontSize", ".5em");
+}

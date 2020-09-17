@@ -71,12 +71,6 @@ a:hover {
   color: $ooob-white;
 }
 
-@-moz-document url-prefix() {
-  .pie-color-hyperlink {
-    font-size: 0.6rem;
-  }
-}
-
 .pie-color1 {
   background: linear-gradient(135deg, $ooob-red, $ooob-red);
   clip-path: polygon(200px 200px, 344px 450px, 0 450px);
