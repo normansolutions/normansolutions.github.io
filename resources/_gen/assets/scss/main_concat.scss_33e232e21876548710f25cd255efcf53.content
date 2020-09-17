@@ -757,12 +757,11 @@ a:hover {
   border-radius: 50%; }
 
 .pie-color-hyperlink {
-  font-size: 1.1em;
+  font-size: 15px;
   letter-spacing: 0.03em;
   text-shadow: 1px 1px #000;
   font-weight: 700;
-  color: #fff;
-  font-size: 1em; }
+  color: #fff; }
 
 .pie-color1 {
   background: linear-gradient(135deg, #c62129, #c62129);
