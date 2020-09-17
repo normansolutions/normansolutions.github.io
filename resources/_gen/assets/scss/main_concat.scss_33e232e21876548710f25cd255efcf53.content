@@ -763,6 +763,10 @@ a:hover {
   font-weight: 700;
   color: #fff; }
 
+@-moz-document url-prefix() {
+  .pie-color-hyperlink {
+    font-size: 0.6rem; } }
+
 .pie-color1 {
   background: linear-gradient(135deg, #c62129, #c62129);
   clip-path: polygon(200px 200px, 344px 450px, 0 450px); }
