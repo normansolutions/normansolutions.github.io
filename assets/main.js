@@ -10,5 +10,5 @@ window.addEventListener("load", () => {
 });
 
 if ($.browser.mozilla) {
-  $("pie-color-hyperlink").css("fontSize", ".5em");
+  $(".pie-color-hyperlink").css("fontSize", ".5em");
 }
