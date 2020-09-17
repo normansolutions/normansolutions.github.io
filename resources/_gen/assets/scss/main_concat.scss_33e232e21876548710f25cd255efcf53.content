@@ -762,7 +762,7 @@ a:hover {
   text-shadow: 1px 1px #000;
   font-weight: 700;
   color: #fff;
-  font-size: 0.3em; }
+  font-size: 1em; }
 
 .pie-color1 {
   background: linear-gradient(135deg, #c62129, #c62129);
