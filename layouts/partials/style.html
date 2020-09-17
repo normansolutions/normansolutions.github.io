@@ -14,7 +14,7 @@
 
 {{ $style :=  slice $style $fancybox | resources.Concat "main_scss_and_css" | toCSS $css_options  }}
 
-{{ $style = $style | postCSS | minify | fingerprint "sha512" }}
+{{ $style = $style |  fingerprint "sha512" }}
 <!-- prettier-ignore-end -->
 
 <link
