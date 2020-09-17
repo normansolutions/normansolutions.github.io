@@ -13,6 +13,15 @@ html {
   color: $ooob-white;
 }
 
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: $ooob-black;
+  border: 0.1rem solid $ooob-white;
+}
+
 a {
   color: darken($ooob-white, 15%);
 }

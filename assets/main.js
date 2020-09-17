@@ -10,3 +10,12 @@ window.addEventListener("load", () => {
     priority: !0
   });
 });
+
+$(".fancybox").fancybox({
+  helpers: {
+    title: {
+      type: "inside",
+      position: "bottom"
+    }
+  }
+});
