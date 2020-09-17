@@ -30,6 +30,10 @@ a:hover {
   color: lighten($ooob-white, 15%);
 }
 
+a:visited {
+  color: darken($ooob-white, 15%);
+}
+
 /* End Basics */
 
 /* Start Menu */
@@ -272,8 +276,9 @@ a:hover {
 
 /* End Header */
 
-/* Gigs */
-.ns-gigs {
+/* Gigs/Contact */
+.ns-gigs,
+.ns-contact {
   padding: 15px;
   margin: auto;
   max-width: 100%;
@@ -336,6 +341,30 @@ hr {
 }
 
 .video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 30px 30px 5px 30px;
+  max-width: 250px;
+
+  img {
+    box-shadow: 10px 10px 42px -4px rgba(0, 0, 0, 0.75);
+  }
+
+  &:before {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    content: url("/img/play.svg");
+    font-size: 50px;
+    opacity: 0.8;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.video-thumbnailhomepage {
   position: relative;
   display: inline-block;
   cursor: pointer;
