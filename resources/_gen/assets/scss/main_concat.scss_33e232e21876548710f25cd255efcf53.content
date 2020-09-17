@@ -761,8 +761,7 @@ a:hover {
   letter-spacing: 0.03em;
   text-shadow: 1px 1px #000;
   font-weight: 700;
-  color: #fff;
-  text-size-adjust: 80%; }
+  color: #fff; }
 
 .pie-color1 {
   background: linear-gradient(135deg, #c62129, #c62129);
