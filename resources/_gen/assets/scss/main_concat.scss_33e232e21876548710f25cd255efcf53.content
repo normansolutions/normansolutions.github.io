@@ -956,14 +956,18 @@ a:visited {
 
 /* End Header */
 /* Contact */
+.ns-contact-shell {
+  margin: auto;
+  max-width: 700px;
+  padding: 15px; }
+
 .ns-contact {
   padding: 15px;
   background-color: #fff;
-  margin: auto;
-  max-width: 700px;
   position: relative;
   text-align: center;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 52px -12px rgba(0, 0, 0, 0.75); }
   .ns-contact ul {
     list-style: none;
     padding-left: 0; }
@@ -1029,6 +1033,9 @@ hr {
   .ns-strikethrough a:hover {
     color: white; }
 
+.ns-setlist-popup {
+  color: #000; }
+
 /* End Gigs */
 /* Gallery */
 .gallery {
@@ -1055,25 +1062,6 @@ hr {
     opacity: 0.8;
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5); }
 
-.video-thumbnailhomepage {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  margin: 0px 30px;
-  max-width: 250px; }
-  .video-thumbnailhomepage img {
-    box-shadow: 10px 10px 42px -4px rgba(0, 0, 0, 0.75); }
-  .video-thumbnailhomepage:before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    content: url("/img/play.svg");
-    font-size: 50px;
-    opacity: 0.8;
-    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5); }
-
 /* End Gallery */
 /* Contact Bubble */
 .speech-bubble {
@@ -1082,7 +1070,8 @@ hr {
   margin: auto;
   max-width: 250px;
   background: #000;
-  border-radius: 0.4em; }
+  border-radius: 0.4em;
+  z-index: 10; }
   .speech-bubble :hover {
     color: #fff; }
 
