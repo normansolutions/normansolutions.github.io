@@ -1074,6 +1074,8 @@ hr {
   z-index: 10; }
   .speech-bubble :hover {
     color: #fff; }
+  .speech-bubble :visited {
+    color: #fff; }
 
 .speech-bubble:after {
   content: "";

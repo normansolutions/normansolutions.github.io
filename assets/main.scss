@@ -442,6 +442,10 @@ hr {
   :hover {
     color: $ooob-white;
   }
+
+  :visited {
+    color: $ooob-white;
+  }
 }
 
 .speech-bubble:after {
