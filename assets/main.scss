@@ -390,6 +390,38 @@ hr {
 
 /* End Gallery */
 
+/* Contact Bubble */
+
+.speech-bubble {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  max-width: 250px;
+  background: $ooob-black;
+  border-radius: 0.4em;
+
+  :hover {
+    color: $ooob-white;
+  }
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  border-top-color: $ooob-black;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -0.5em;
+  margin-bottom: -1em;
+}
+
+/* End Contact Bubble */
+
 /* Footer */
 
 footer {
