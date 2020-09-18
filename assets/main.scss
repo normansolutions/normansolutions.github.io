@@ -13,6 +13,14 @@ html {
   color: $ooob-white;
 }
 
+.ns-h1 {
+  font-size: 2em;
+}
+
+.ns-h4 {
+  color: $ooob-black;
+}
+
 .button,
 button,
 input[type="button"],
@@ -276,9 +284,57 @@ a:visited {
 
 /* End Header */
 
-/* Gigs/Contact */
-.ns-gigs,
+/* Contact */
 .ns-contact {
+  padding: 15px;
+  background-color: $ooob-white;
+  margin: auto;
+  max-width: 700px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  [class^="icon"] {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.ns-contact-details {
+  font-size: 1.4em;
+  color: $ooob-black;
+  text-shadow: 1px 4px 7px rgba(198, 33, 41, 0.38);
+}
+
+.ns-contact a {
+  color: $ooob-red;
+}
+
+.ns-contact a:visited {
+  color: $ooob-red;
+}
+
+.ns-contact a:hover {
+  color: lighten($ooob-black, 15%);
+}
+
+.ns-h1-contact {
+  color: $ooob-red;
+}
+
+/* End Contact */
+
+/* Gigs */
+.ns-gigs {
   padding: 15px;
   margin: auto;
   max-width: 100%;
@@ -326,9 +382,6 @@ hr {
     color: lighten($ooob-white, 15%);
   }
 }
-.ns-h1 {
-  font-size: 2em;
-}
 
 /* End Gigs */
 
@@ -344,7 +397,7 @@ hr {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: 30px 30px 5px 30px;
+  margin: 0px 30px 5px 30px;
   max-width: 250px;
 
   img {
@@ -368,7 +421,7 @@ hr {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: 30px;
+  margin: 0px 30px;
   max-width: 250px;
 
   img {

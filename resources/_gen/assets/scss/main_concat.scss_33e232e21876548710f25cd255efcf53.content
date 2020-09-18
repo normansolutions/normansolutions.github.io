@@ -710,6 +710,12 @@ html {
   background-color: #c62129;
   color: #fff; }
 
+.ns-h1 {
+  font-size: 2em; }
+
+.ns-h4 {
+  color: #000; }
+
 .button,
 button,
 input[type="button"],
@@ -949,16 +955,50 @@ a:visited {
   text-align: center; }
 
 /* End Header */
-/* Gigs/Contact */
-.ns-gigs,
+/* Contact */
 .ns-contact {
+  padding: 15px;
+  background-color: #fff;
+  margin: auto;
+  max-width: 700px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px; }
+  .ns-contact ul {
+    list-style: none;
+    padding-left: 0; }
+  .ns-contact li {
+    margin-bottom: 10px; }
+  .ns-contact [class^="icon"] {
+    width: 15px;
+    height: 15px; }
+
+.ns-contact-details {
+  font-size: 1.4em;
+  color: #000;
+  text-shadow: 1px 4px 7px rgba(198, 33, 41, 0.38); }
+
+.ns-contact a {
+  color: #c62129; }
+
+.ns-contact a:visited {
+  color: #c62129; }
+
+.ns-contact a:hover {
+  color: #262626; }
+
+.ns-h1-contact {
+  color: #c62129; }
+
+/* End Contact */
+/* Gigs */
+.ns-gigs {
   padding: 15px;
   margin: auto;
   max-width: 100%;
   position: relative;
   text-align: center; }
-  .ns-gigs ul,
-  .ns-contact ul {
+  .ns-gigs ul {
     list-style-type: none;
     font-size: 1.1em; }
 
@@ -989,9 +1029,6 @@ hr {
   .ns-strikethrough a:hover {
     color: white; }
 
-.ns-h1 {
-  font-size: 2em; }
-
 /* End Gigs */
 /* Gallery */
 .gallery {
@@ -1003,7 +1040,7 @@ hr {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: 30px 30px 5px 30px;
+  margin: 0px 30px 5px 30px;
   max-width: 250px; }
   .video-thumbnail img {
     box-shadow: 10px 10px 42px -4px rgba(0, 0, 0, 0.75); }
@@ -1022,7 +1059,7 @@ hr {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: 30px;
+  margin: 0px 30px;
   max-width: 250px; }
   .video-thumbnailhomepage img {
     box-shadow: 10px 10px 42px -4px rgba(0, 0, 0, 0.75); }
