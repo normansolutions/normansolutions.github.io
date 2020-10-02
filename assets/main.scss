@@ -45,6 +45,27 @@ a:visited {
 
 /* End Basics */
 
+/* Image Animation */
+
+.notloaded {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.loaded {
+  background: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 400ms ease-in;
+  // Don't animate when the reduced motion accessibility option
+  // has been enabled in the browser or OS. Safari is supporting this
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+/* End Image Animation */
+
 /* Start Menu */
 
 .pie {
@@ -190,6 +211,7 @@ a:visited {
 /* Header*/
 
 /* The hero image */
+
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -286,13 +308,15 @@ a:visited {
 /* End Header */
 
 /* Contact & Setlist */
-.ns-contact-shell, .ns-setlist-shell{
+.ns-contact-shell,
+.ns-setlist-shell {
   margin: auto;
   max-width: 700px;
   padding: 15px;
 }
 
-.ns-contact, .ns-setlist {
+.ns-contact,
+.ns-setlist {
   padding: 15px;
   background-color: $ooob-white;
   position: relative;
@@ -315,7 +339,8 @@ a:visited {
   }
 }
 
-.ns-contact-details, .ns-setlist-details  {
+.ns-contact-details,
+.ns-setlist-details {
   font-size: 1.4em;
   color: $ooob-black;
   text-shadow: 1px 4px 7px rgba(198, 33, 41, 0.38);
@@ -333,7 +358,8 @@ a:visited {
   color: lighten($ooob-black, 15%);
 }
 
-.ns-h1-contact, .ns-h1-setlist {
+.ns-h1-contact,
+.ns-h1-setlist {
   color: $ooob-red;
 }
 
@@ -424,6 +450,7 @@ hr {
     font-size: 50px;
     opacity: 0.8;
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 
@@ -480,6 +507,7 @@ footer {
   bottom: 0px;
   text-align: center;
   width: 100%;
+  z-index: 9999;
 
   p {
     padding-top: 8px;

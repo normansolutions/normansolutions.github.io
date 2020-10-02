@@ -1,88 +1,58 @@
 ---
 layout: post
-title: "Test Titles"
+title: "Tracking devices in UniFi WiFi"
 date: 2015-12-15 00:00:01
 description: "An insightful description for this page that Google will like"
 ---
 
-Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.
+Several years ago, we migrated from a [Cisco](http://www.cisco.com/cisco/web/UK/index.html#x6CjTZEDlwuM6WO1.97) Wi-Fi infrastructure to a [UniFi](http://www.ubnt.com/enterprise/) setup.
 
- Recently, I introduced a frictionless *(logon free) *way of providing *secure(ish)* access to some very basic web services.
+UniFi _(from Ubiquiti Networks)_ offer a pretty remarkable WiFi solution, especially when it comes down to cost. I shan’t go into the in’s and out’s of UniFi, as apart from anything else, I can’t claim to be an expert in the technology. In many ways, it just works!
 
-*….I can hear all those security experts screaming already!*
+> _What’s interesting, is the database supporting the UniFi controller is _[_MongoDB_](http://www.mongodb.org/)_ (a [NoSQL](http://en.wikipedia.org/wiki/NoSQL) database, that can be queried using JavaScript)._
 
-> *Before I proceed any further, please note that this solution **must never be seen as a proper security authentication replacement!***
-
-What this can be viewed as, is an ideal solution for those ‘*edge’* cases, where you may have a website, that **isn’t** specifically data sensitive, yet requires private access.
-
-An ideal candidate could be an administration page for entering dates or events onto a basic website.
+Again, whilst I wouldn’t claim to be a MongoDB expert, I do like the idea of being able to use JavaScript to query data.
 
 ---
 
-## Security by Obscurity
+## Lost iPad
 
-In many ways, this solution does follow the [Security by Obscurity](<https://en.wikipedia.org/wiki/Security_through_obscurity>) model, **but** with the crucial addition of an extra layer!
+Recently, we had a situation where an iPad had gone missing. Although it is possible to establish an approximate location of a given device, using UniFi’s controller system, clearly this is only effective whilst the device is connected; the next best option is a singular ‘**last seen**’ log entry.
 
-A lot of web services nowadays are using the ‘complex url’ pattern of keeping a resource public, yet almost impossible to guess *(for instance, some ways of sharing documents on Microsoft *[*Oncedrive*](<https://onedrive.live.com/about/en-gb/>)*etc).*
+So in this particular instance, there wasn’t any _real_ ‘tracking’ data available to work with. However, UniFi _was_ logging connection information, so I concluded that there must be a way of _extracting_ this information from the backend.
 
-To clarify, this is where the web address contains random characters (often appended to the end of the url), which mean absolutely nothing to the end user, but are actually a unique resource code.
+The first thing I did was download and install a [GUI](http://en.wikipedia.org/wiki/Graphical_user_interface) based MongoDB management tool called [RoboMongo](http://robomongo.org/)_(ok I could have consoled my way to success, but the GUI just felt a little easier)._
 
-**Complex URL forms the first part of this implementation.**
+Installing and configuring RoboMogo is really very easy. In our instance, it was just install and connect to ‘localhost’ using port 27117.
 
-- Create a ‘key’ which is appended to a [query string](<https://en.wikipedia.org/wiki/Query_string>). 
-- Check the query string being sent to the server, on page request, to establish whether or not to display the resource.
+![RoboImg](https://normansolutions.co.uk/posts/files/5ad78a35-ec47-45d0-b103-2b895beaa52b.jpg =244x168 "RoboImg")
 
-<!-- -->
+![RoboImg](https://normansolutions.co.uk/posts/files/5ad78a35-ec47-45d0-b103-2b895beaa52b.jpg)
 
-Very basic, yet surprisingly secure(ish).
+{{< rawhtml >}}
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+            data-src="https://normansolutions.co.uk/posts/files/5ad78a35-ec47-45d0-b103-2b895beaa52b.jpg"
+{{< /rawhtml >}}
 
-Of course, the main concern with this solution, is that whilst the web address may not be guessable, it is certainly shareable!
+## Tracking Script
 
-## Enter Secure Cookies
+> _Once RoboMongo was installed, it was then a matter of scripting out an appropriate query._
 
-The crucial secondary level to this solution, is to ensure a secure cookie is present on each device you are allowing to access this web resource.
+Using the _‘[beg, borrow and manipulate](https://normansolutions.co.uk/post/plotting-earthquakes-on-a-firefly-vle-page)’_ principle – I ended up with an effective script.
 
-> No cookie – No access
+The script takes two parameters – a **device ID\***(which is a wildcard by default)\* and the total number of **hours **that you wish to search back.
 
-Again, a simple principle, but surprisingly secure – indeed, let us not forget, that secure http cookies are pretty much what governs conventional web authentication processes anyway!
+It produces a list of results, detailing the device _(or devices_), along with every AP the device(s) has connected to, complete with the time at this location; all going back for as long you declared in hours _(or have enough data to search)._
 
-Of course throw it all onto port 443 (https) and you extend the security even further.
+<script src="https://gist.github.com/normansolutions/31d23709dfe158c8d000.js"></script>
 
----
-
-## The Code!
-
-Below is an example of how this very basic process can be implemented in asp.net (c#).
-
-**Adding cookie to the device *(also providing the ability to remove)***
-
-<script src="https://gist.github.com/normansolutions/d7d28220fc03f03ce345.js"></script>
-
-<noscript><a href="https://gist.github.com/d7d28220fc03f03ce345">Click for code snippet</a></noscript>
-
-**Storing the complex query string in a web.config for easy maintenance**
-
-<script src="https://gist.github.com/normansolutions/3740c5c29c3d637a51c0.js"></script>
-
-<noscript><a href="https://gist.github.com/3740c5c29c3d637a51c0">Click for code snippet</a></noscript>
-
-**Server side checking that cookie is present and query string matches**
-
-<script src="https://gist.github.com/normansolutions/6c84c627ea9502e753eb.js"></script>
-
-<noscript><a href="https://gist.github.com/6c84c627ea9502e753eb">Click for code snippet</a></noscript>
+<noscript><a href="https://gist.github.com/31d23709dfe158c8d000">Click for code snippet</a></noscript>
 
 ---
 
+## Result
 
+In our particular instance, the results were astonishing; we could trace a complete history of the device’s journey _(even though it was no longer turned on)._
 
-## Summary
-
-I have used this approach on several basic web solutions, that *don’t* require armour plating security, but equally shouldn't ideally be exposed to all and sundry.
-
-My recommendation, would be to use this on internal sites *(behind the firewall)* or small public sites. It makes life remarkably simple for updating basic content, without having to implement a full authentication system.
-
-Indeed, one *could* argue that this is **even more secure** than some conventional username and password systems – *especially* when you often see the ridiculously hackable passwords that some end users use!
-
-Of course, it doesn't particularly scale well, and will cause slight annoyance if you clear down your cookies; but then again, it is only intended for quick solution, niche requirements.
-
+I am also very happy to report that the device in question, was found safe and well.
