@@ -1,17 +1,33 @@
-<!-- prettier-ignore -->
-{{ define "main" }}     
-     {{ range .Pages }}
-          <div style="border: 1px solid black; margin:10px; padding:10px; ">
-               <div style="font-size:20px;">
-                    <a href="{{.URL}}">{{.Title}}</a>
-               </div>
-               <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-               <div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
-               <div style="color:grey; font-size:16px;">{{ if .Params.categories }}<strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
-               <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+    <!-- prettier-ignore-->
+    {{ partial "htmlhead.html" . }}
+    {{ partial "menu.html" . }}
+    {{ partial "header.html" . }}
 
-               <p style="font-size:18px;">{{.Summary}}</p>
-          </div>
-     {{ end }}
- {{end}}
-<!-- prettier-ignore-end -->
+    <!-- List Posts-->
+    {{ partial "pagination.html" . }}
+  
+       {{ $paginator := .Paginate (where .Site.Pages "Type" "post") 4 }}
+       {{ range .Paginator.Pages }}
+       <!-- prettier-ignore-end-->
+  
+         <div style="border: 1px solid black; margin:10px; padding:10px; ">
+            <div style="font-size:20px;"><a href="{{.URL}}">{{.Title}}</a></div>
+            <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+            <div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+            <div style="color:grey; font-size:16px;">{{ if .Params.categories }}<strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+            <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+  
+            <p style="font-size:18px;">{{.Summary}}</p>
+       </div>
+       {{ end }} 
+    <!-- End List Posts--> 
+
+    <!-- prettier-ignore-->
+    {{ partial "footer" . }}  
+    {{ partial "pwa.html" . }}
+    {{ partial "script.html" . }}
+    {{ partial "htmlbase.html" . }}
+    <!-- prettier-ignore-end-->
+  </body>
+</html>
+

@@ -11,45 +11,45 @@
     
     
     <item>
-      <title>Out Of Order Band Contact</title>
-      <link>https://outoforderband.co.uk/contact/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:01 +0000</pubDate>
-      
-      <guid>https://outoforderband.co.uk/contact/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Out Of Order Band Gigs</title>
-      <link>https://outoforderband.co.uk/gigs/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:01 +0000</pubDate>
-      
-      <guid>https://outoforderband.co.uk/gigs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Out Of Order Band Set list</title>
-      <link>https://outoforderband.co.uk/setlist/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:01 +0000</pubDate>
-      
-      <guid>https://outoforderband.co.uk/setlist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Out Of Order Band Videos</title>
+      <title>Video</title>
       <link>https://outoforderband.co.uk/videos/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:01 +0000</pubDate>
+      <pubDate>Sat, 05 Sep 2020 00:00:01 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/videos/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Out Of Order Band Set list</title>
+      <link>https://outoforderband.co.uk/setlist/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:01 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/setlist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gigs</title>
+      <link>https://outoforderband.co.uk/gigs/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:01 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/gigs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://outoforderband.co.uk/contact/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:01 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tracking devices in UniFi WiFi</title>
       <link>https://outoforderband.co.uk/test/</link>
-      <pubDate>Tue, 15 Dec 2015 00:00:01 +0000</pubDate>
+      <pubDate>Fri, 04 Sep 2015 00:00:01 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/test/</guid>
       <description>Several years ago, we migrated from a Cisco Wi-Fi infrastructure to a UniFi setup.
