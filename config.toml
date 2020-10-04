@@ -3,4 +3,4 @@ languageCode = "en-uk"
 title = "Out Of Order Band"
 publishDir = "docs"
 staticDir = ["static"]
-paginate = 4 
+paginate = 2 

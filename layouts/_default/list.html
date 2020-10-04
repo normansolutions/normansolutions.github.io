@@ -4,22 +4,39 @@
     {{ partial "header.html" . }}
 
     <!-- List Posts-->
-    {{ partial "pagination.html" . }}
-  
-       {{ $paginator := .Paginate (where .Site.Pages "Type" "post") 4 }}
+    <div class="ns-main">  
        {{ range .Paginator.Pages }}
        <!-- prettier-ignore-end-->
-  
-         <div style="border: 1px solid black; margin:10px; padding:10px; ">
-            <div style="font-size:20px;"><a href="{{.URL}}">{{.Title}}</a></div>
-            <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-            <div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
-            <div style="color:grey; font-size:16px;">{{ if .Params.categories }}<strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
-            <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
-  
-            <p style="font-size:18px;">{{.Summary}}</p>
-       </div>
-       {{ end }} 
+        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
+          <header>
+             <h1 itemprop="name headline"><a href="{{.URL}}" rel="canonical" itemprop="url">{{.Title}}</a></h1>
+
+            <time datetime={{.Date }} itemprop="datePublished">Published {{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
+
+            {{ if .Params.tags }}<div><strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</div>{{end}}
+
+
+            {{ if .Params.categories }}<div><strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</div>{{end}}
+
+            {{ if .Params.moods }}<div><strong>Moods:</strong> {{range .Params.moods}}<a href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</div>{{end}}
+
+          </header>
+
+          <div itemprop="articleBody">
+            <p class="ns-post-summary">{{.Summary}}
+              {{ if .Truncated }}
+              <span class="ns-readmore">
+                <a href="{{ .RelPermalink }}">&nbsp;read more</a>
+              </span></p>
+              {{ end }}
+          </div>
+        </div>
+        <hr/>
+        {{ end }} 
+        {{ $paginator := .Paginate (where .Site.Pages "Type" "post") 2 }}
+        {{ partial "pagination.html" . }}            
+      </div> 
+
     <!-- End List Posts--> 
 
     <!-- prettier-ignore-->
