@@ -13,7 +13,7 @@
 
             <time datetime={{.Date }} itemprop="datePublished">Published {{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
 
-            {{ if .Params.tags }}<div><strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</div>{{end}}
+            {{ if .Params.tags }}<span class="ns-tags">| Tags: {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</span>{{end}}
 
 
             {{ if .Params.categories }}<div><strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</div>{{end}}

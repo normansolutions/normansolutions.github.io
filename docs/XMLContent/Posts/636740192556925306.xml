@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>Encourage those Windows to restart!</title>
+  <slug>encourage-those-windows-to-restart</slug>
+  <pubDate>2018-10-01 19:47:29</pubDate>
+  <lastModified>2018-10-01 20:37:00</lastModified>
+  <excerpt>A common issue with supporting a primarily Windows based user body, is that thanks to the "always on" expectation emboldened by smartphones and tablets, it can be a constant battle to try and encourage end users to restart their computers with some degree of regularity - yes IT friends, you know exactly what I mean!</excerpt>
+  <content>&lt;p&gt;A common issue with supporting a primarily Windows based user body, is that thanks to the "always on" expectation emboldened by smartphones and tablets, it can be a constant battle to try and encourage end users to restart their computers with some degree of regularity - yes IT friends, you know exactly what I mean!&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;There are legitimate reasons as to why restarting your PC frequently will reap benefits, although that is beyond the scope of this article - but suffice to say it's not always to do with the quality of Windows; indeed more often than not it's third party software solutions that are the culprit.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Forcing an early hours restart on machines can prove to be a beneficial solution.&amp;nbsp; Clearly this must only be performed in appropriate circumstances and I wouldn't recommend forcing a restart on key workstations or servers!&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;There are several options for automatically restarting computers &lt;em&gt;(lets face it, people have been using batch files for years)&lt;/em&gt; but I have found that by far the best solution is to automatically "feed-in" all machines within a specific Active Directory OU.&amp;nbsp; This negates the need to manually maintain a text file of machine names.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;The below PowerShell script will take all computers within a given OU and force a restart.&amp;nbsp; All that is needed is for this script to be scheduled with Task Scheduler at an appropriate time (e.g. 3am every day).&amp;nbsp;&lt;/p&gt;
+&lt;script gitsrc="https://gist.github.com/normansolutions/3609052ae35a51aa95cb5c5056f4e55f.js"&gt;&lt;/script&gt;
+&lt;p&gt;It goes without saying that you should always test this script before implementation and also be extremely mindful of how your end users will react if their computers are automatically restarted every day - communication as always is key!&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Since implementing this process, we have registered a noticeable decline in helpdesk support calls pertaining to those "odd issues" surrounding end user PC's so for us, it has clearly proven beneficial.&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>powershell</category>
+    <category>sysadmin</category>
+    <category>quicktip</category>
+  </categories>
+  <comments></comments>
+</post>

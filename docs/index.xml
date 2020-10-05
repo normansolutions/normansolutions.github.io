@@ -6,6 +6,7 @@
     <description>Recent content on Out Of Order Band</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
+    <lastBuildDate>Sun, 22 Oct 2017 15:59:57 +0000</lastBuildDate>
     
 	<atom:link href="https://outoforderband.co.uk/index.xml" rel="self" type="application/rss+xml" />
     
@@ -45,6 +46,28 @@ Recently, we had a situation where an iPad had gone missing. Although it is poss
       
       <guid>https://outoforderband.co.uk/contact/</guid>
       <description>Recently, we had a situation where an iPad had gone missing. Although it is possible to establish an approximate location of a given device, using UniFi’s controller system, clearly this is only effective whilst the device is connected; the next best option is a singular ‘last seen’ log entry.</description>
+    </item>
+    
+    <item>
+      <title>How to get the latest student photo from iSAMS</title>
+      <link>https://outoforderband.co.uk/how-to-get-the-latest-student-photo-from-isams/</link>
+      <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/how-to-get-the-latest-student-photo-from-isams/</guid>
+      <description>It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack (that wasn’t nice!) and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!
+In my new role, I haven’t had a lot of time or indeed need, to write many database queries.</description>
+    </item>
+    
+    <item>
+      <title>Secure a webpage without a logon?</title>
+      <link>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</link>
+      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</guid>
+      <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.
+Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.
+….I can hear all those security experts screaming already!
+ Before I proceed any further, please note that this solution must never be seen as a proper security authentication replacement!</description>
     </item>
     
     <item>

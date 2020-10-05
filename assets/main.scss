@@ -122,12 +122,22 @@ article {
   font-style: italic;
 }
 
-time {
+time,
+.ns-tags {
   color: #626262;
   font-size: 0.85em;
 }
 
 /* End PostList */
+
+/* Style CodeStyle */
+
+code,
+pre {
+  background-color: #272822;
+}
+
+/* End CodeStyle */
 
 /* Image Animation */
 

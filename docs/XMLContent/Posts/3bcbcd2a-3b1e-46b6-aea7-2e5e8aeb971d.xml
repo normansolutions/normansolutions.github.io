@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>How to get the latest student photo from iSAMS</title>
+  <slug>how-to-get-the-latest-student-photo-from-isams</slug>
+  <author></author>
+  <pubDate>2017-10-22 15:59:57</pubDate>
+  <lastModified>2017-10-22 15:59:57</lastModified>
+  <content>&lt;p&gt;It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack &lt;em&gt;(that wasn’t nice!) &lt;/em&gt;and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!&lt;/p&gt;&lt;p&gt;In my new role, I haven’t had a lot of time or indeed need, to write many database queries.&lt;/p&gt;&lt;p&gt;However, recently I was asked if I could assist in the production of a simple SSRS report that displayed amongst other things, photos of students.&lt;/p&gt;&lt;p&gt;Having created a first draft, it soon became apparent that the photo I was pulling into the report, was the &lt;u&gt;first&lt;/u&gt; photograph ever taken of the student on the system – this could have indeed been the correct one, or it may have been a photograph taken several years ago; as you can no doubt imagine, a pupil’s appearance can change a lot over several years!&lt;/p&gt;&lt;p&gt;The difficulty is that in iSAMS, you can’t simply write a query to get the latest photo; there isn’t a flag that states “this is the current photograph” (well, not that I am aware of anyway).&lt;/p&gt;&lt;p&gt;After some &lt;a href="https://stackoverflow.com/" target="_blank"&gt;stackoverflow&lt;/a&gt; searching, I established that what was required was a “&lt;strong&gt;greatest-n-per-group&lt;/strong&gt;” query.&amp;nbsp; Simply put, you want to link a table to another table, but ONLY display the &lt;strong&gt;latest&lt;/strong&gt; record in the reference table, irrespective of how many rows there are per individual (e.g. you just want the latest photo of each student).&lt;/p&gt;&lt;p&gt;This is the full query that I used on iSAMS as the basis for the SSRS report.&amp;nbsp; The section that specifically deals with obtaining the latest photograph of the student, is highlighted.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/e945396c44f487453ab8ba04ba522e7d.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/e945396c44f487453ab8ba04ba522e7d"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>SSRS</category>
+    <category>iSAMS</category>
+    <category>QuickTip</category>
+    <category>SQL</category>
+  </categories>
+  <comments></comments>
+</post>

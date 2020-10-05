@@ -6,9 +6,82 @@
     <description>Recent content in Tags on Out Of Order Band</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
+    <lastBuildDate>Sun, 22 Oct 2017 15:59:57 +0000</lastBuildDate>
     
 	<atom:link href="https://outoforderband.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iSAMS</title>
+      <link>https://outoforderband.co.uk/tags/isams/</link>
+      <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/isams/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QuickTip</title>
+      <link>https://outoforderband.co.uk/tags/quicktip/</link>
+      <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/quicktip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://outoforderband.co.uk/tags/sql/</link>
+      <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSRS</title>
+      <link>https://outoforderband.co.uk/tags/ssrs/</link>
+      <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/ssrs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://outoforderband.co.uk/tags/c#/</link>
+      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Razor</title>
+      <link>https://outoforderband.co.uk/tags/razor/</link>
+      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/razor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://outoforderband.co.uk/tags/security/</link>
+      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Website</title>
+      <link>https://outoforderband.co.uk/tags/website/</link>
+      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/tags/website/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

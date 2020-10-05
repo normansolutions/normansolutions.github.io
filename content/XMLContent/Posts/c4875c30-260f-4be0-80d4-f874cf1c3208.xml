@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>PowerShell to disable Clutter in Office 365</title>
+  <slug>powershell-to-disable-clutter-in-office-365</slug>
+  <author></author>
+  <pubDate>2016-03-08 18:19:57</pubDate>
+  <lastModified>2016-03-08 18:19:57</lastModified>
+  <content>&lt;p&gt;Most users of Office 365 will no doubt be aware of the &lt;a href="https://support.office.com/en-us/article/Use-Clutter-to-sort-low-priority-messages-in-Outlook-2016-for-Windows-7b50c5db-7704-4e55-8a1b-dfc7bf1eafa0" target="_blank"&gt;Clutter&lt;/a&gt; folder; for the most part this Clutter folder works pretty well.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;I’m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;Despite this being a rather impressive addition to email functionality, it can unfortunately present problems for some users.&amp;nbsp; These issues can be anything from &lt;a href="http://whatis.techtarget.com/definition/false-positive" target="_blank"&gt;False - Positives&lt;/a&gt; to end users not fully understanding the process, and the requirement to check two folders&lt;em&gt; (in order of priority).&lt;/em&gt;&lt;/p&gt; &lt;p&gt;Alas, it must also be said that in my experience, this latest addition to Outlook, has on occasion been used to &lt;em&gt;conveniently &lt;/em&gt;claim non-receipt of email; the modern day version of &lt;em&gt;&lt;strong&gt;“the dog ate my homework”.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt; &lt;p&gt;Despite all end users having complete control of their Clutter functionality &lt;em&gt;(to enable or disable),&lt;/em&gt; we have recognised a need to manage this centrally.&lt;/p&gt; &lt;p&gt;As such, after some Googling and script manipulating, we created three variants, allowing for centralised configuration of Clutter folders, via PowerShell.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Disable for all users.  &lt;li&gt;Disable for individual user.  &lt;li&gt;Disable for specific groups.&lt;/li&gt;&lt;/ul&gt; &lt;h2&gt;Show me the code!&lt;/h2&gt; &lt;p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/72c13bf66ac4c5699eb8.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/72c13bf66ac4c5699eb8"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>PowerShell</category>
+    <category>QuickTip</category>
+    <category>SysAdmin</category>
+    <category>Office 365</category>
+  </categories>
+  <comments></comments>
+</post>

@@ -14,7 +14,8 @@ module.exports = {
         "ul",
         "li",
         "iframe",
-        "img"
+        "img",
+        "blockquote"
       ],
       whitelistPatterns: [/fancybox/]
     },

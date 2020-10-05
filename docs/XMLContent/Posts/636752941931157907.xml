@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>How to delete an email from all Exchange mailboxes</title>
+  <slug>how-to-delete-an-email-from-all-exchange-mailboxes</slug>
+  <pubDate>2018-10-16 15:45:26</pubDate>
+  <lastModified>2018-10-18 06:27:59</lastModified>
+  <excerpt>It's not uncommon to receive unwanted emails which have managed to work their way through the array of filtering systems in production.  Recently our organisation received such an email - a classic phishing email sent to multiple end user accounts.</excerpt>
+  <content>&lt;p&gt;It's not uncommon to receive unwanted emails which have managed to work their way through the array of filtering systems in production.&amp;nbsp; Recently our organisation received such an email - a classic phishing email sent to multiple end user accounts.&lt;/p&gt;
+&lt;p&gt;Once aware, we were obviously able to block any further inbound instances of this email using our Office 365 Exchange Admin Centre Mail Flow Rules.&amp;nbsp; However this wouldn't of course remove any emails that had already landed &lt;em&gt;(so to speak)&lt;/em&gt; and were waiting dormant in a user's inbox ready to "pounce" metaphorically speaking, on the unsuspecting individual!&lt;/p&gt;
+&lt;p&gt;Ideally, we required the ability to traverse all email boxes automatically and delete the aforementioned email.&lt;/p&gt;
+&lt;p&gt;This was achieved using the below PowerShell scripts.&amp;nbsp; The first case gave a good overview of who had the email present in their inbox, whereas the second allowed us to remove it completely from all users.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;very useful script&lt;/strong&gt; - not only for the removal of unwanted email, but also for when an email &lt;em&gt;may&lt;/em&gt; have been sent inadvertently to multiple users and needs to be removed with some urgency - now who would do that!?&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Open the Exchange Management PowerShell &lt;em&gt;(this usually needs to be done on the Exchange Server).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;You may also need to enable the appropriate Snapin by entering: &lt;strong&gt;Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;&lt;strong&gt;Case 1&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;To purely search for the presence&amp;nbsp;of an email &lt;em&gt;(as against deleting all instances of an email)&lt;/em&gt;, you need to copy the results to an existing mailbox - you could use your own account or a spare one.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery 'Subject:"*Error Set*"' -TargetMailBox "SpareUser" -TargetFolder "SPAMFILES"&lt;/code&gt;&lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;Explanation&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SearchQuery&lt;/strong&gt; is the parameter used to search for a given email - in this instance it will search in the "Subject" for anything containing the words "Error Set" &lt;em&gt;(you can use wildcards).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TargetMailBox&lt;/strong&gt; is the parameter used for the user account which you wish to copy the result to.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TargetFolder&lt;/strong&gt; is the parameter used for the name of the folder that you wish to deposit the emails into, within the user account mailbox &lt;em&gt;(it will self create if it doesn't exist).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In summary, the above example will create a folder in the "SpareUser" email account titled "SPAMFILES" and deposit a copy of all email instances where the subject line contains the words "Error Set".&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Case 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To &lt;strong&gt;delete&lt;/strong&gt; all instances of emails that match a given search query, you would run the following.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery 'Subject:"*Error Set*"' -DeleteContent&lt;/code&gt;&lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;Explanation&lt;/strong&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SearchQuery&lt;/strong&gt; is the parameter used to search for a given email - in this instance it will search in the "Subject" for anything containing the words "Error Set"&amp;nbsp;&lt;em&gt;(you can use wildcards).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;All emails matching the above query will be &lt;strong&gt;deleted&lt;/strong&gt;.&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>sysadmin</category>
+    <category>exchange</category>
+    <category>powershell</category>
+    <category>quicktip</category>
+  </categories>
+  <comments></comments>
+</post>

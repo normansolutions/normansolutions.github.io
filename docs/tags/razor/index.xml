@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Razor on Out Of Order Band</title>
+    <link>https://outoforderband.co.uk/tags/razor/</link>
+    <description>Recent content in Razor on Out Of Order Band</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 19 Sep 2015 12:58:34 +0000</lastBuildDate>
+    
+	<atom:link href="https://outoforderband.co.uk/tags/razor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Secure a webpage without a logon?</title>
+      <link>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</link>
+      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</guid>
+      <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.
+Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.
+….I can hear all those security experts screaming already!
+ Before I proceed any further, please note that this solution must never be seen as a proper security authentication replacement!</description>
+    </item>
+    
+  </channel>
+</rss>

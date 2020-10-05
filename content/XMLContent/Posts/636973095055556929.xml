@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>How to populate an O365 DG from a Security Group</title>
+  <slug>how-to-populate-an-o365-dg-from-a-security-group</slug>
+  <pubDate>2019-06-28 09:41:46</pubDate>
+  <lastModified>2019-10-16 13:09:31</lastModified>
+  <excerpt>Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.</excerpt>
+  <content>&lt;p&gt;Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.&lt;/p&gt;
+&lt;p&gt;One of the more surprising elements was the realisation that our local mail-enabled Security Groups would need to be broken up into two elements; a conventional &lt;strong&gt;Security Group&lt;/strong&gt; &lt;em&gt;(maintaining local permission management)&lt;/em&gt; and an &lt;strong&gt;Exchange Online Distribution Group&lt;/strong&gt; for email purposes etc.&lt;/p&gt;
+&lt;p&gt;Having built a process for splitting these groups and successfully creating the online companion groups &lt;em&gt;(namely Office 365 Distribution Groups)&lt;/em&gt;, we ideally needed to ensure they were equally populated.&lt;/p&gt;
+&lt;p&gt;Having written the below PowerShell script, this enabled us to take members of an existing (and still synchronised) on premise Security Group and populate the new Office 365 Distribution Group with identical membership.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;This needs to be run from the Exchange Online PowerShell console (&lt;a title="Exchange Online PowerShell " href="https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps#what-do-you-need-to-know-before-you-begin" target="_blank" rel="noopener"&gt;details here&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#Connect to MSOL&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Connect-MsolService&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#Assign details of the required group (e.g. staff) to a variable called $groupGUID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$groupGUID = Get-MsolGroup -SearchString "Staff"&amp;nbsp;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#Assign members of that group to a variable called $groupUser targeting the group ID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$groupUser = Get-MsolGroupMember -GroupObjectId $groupGUID.ObjectId&amp;nbsp;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#Enumerate over each user in the group adding them as members to new Office 365 Distribution group&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$groupUser | foreach { Add-DistributionGroupMember -Identity "Staff Email" -Member $_.EmailAddress }&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Suffice to say this made life a lot easier resulting in a &lt;strong&gt;successful&lt;/strong&gt; migration of our on premise Mail Enabled Security Groups.&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>sysadmin</category>
+    <category>exchange</category>
+    <category>powershell</category>
+    <category>quicktip</category>
+  </categories>
+  <comments></comments>
+</post>

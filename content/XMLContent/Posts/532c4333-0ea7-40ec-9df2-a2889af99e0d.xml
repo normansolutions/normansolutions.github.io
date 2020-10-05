@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>Plotting earthquakes on a Firefly VLE page</title>
+  <slug>plotting-earthquakes-on-a-firefly-vle-page</slug>
+  <author></author>
+  <pubDate>2014-01-10 11:49:19</pubDate>
+  <lastModified>2015-07-23 07:35:35</lastModified>
+  <content>&lt;p&gt;Like many technically minded people, I subscribe to a variety of IT focussed information sources &lt;em&gt;(&lt;a href="http://en.wikipedia.org/wiki/RSS" target="_blank"&gt;RSS Feeds&lt;/a&gt;, Newsletters etc); o&lt;/em&gt;ne such newsletter being “&lt;strong&gt;Powertip of the day&lt;/strong&gt;” from &lt;a href="http://powershell.com/" target="_blank"&gt;Powershell.com&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;A recent “&lt;a href="http://powershell.com/cs/blogs/tips/archive/2013/12/31/getting-most-recent-earthquakes.aspx" target="_blank"&gt;Powertip of the day&lt;/a&gt;” demonstrated how it was possible to query an online earthquake activity data resource, using &lt;a href="http://en.wikipedia.org/wiki/Windows_PowerShell" target="_blank"&gt;PowerShell&lt;/a&gt;.&amp;nbsp; In truth, I didn’t have too much success with this particular example &lt;em&gt;(the data wasn’t up-to-date), &lt;/em&gt;but &lt;u&gt;crucially&lt;/u&gt;, it set me thinking that this could be an excellent resource for a Geography department, especially when using &lt;a href="http://fireflysolutions.co.uk/" target="_blank"&gt;Firefly&lt;/a&gt;.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;&lt;em&gt;I love the way the modern web enables, and encourages integration of information from &lt;strong&gt;various&lt;/strong&gt; web services and resources – in my opinion, this is one of the more exciting areas of web technology.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;I eventually found a more reliable service for supplying earthquake data, namely &lt;a href="http://earthquake.usgs.gov/" target="_blank"&gt;earthquake.usgs.gov&lt;/a&gt; – better still, they have an &lt;a href="http://en.wikipedia.org/wiki/Application_programming_interface" target="_blank"&gt;api&lt;/a&gt;!&amp;nbsp; There is also no shortage of examples on how to query the USGS data, so it wasn’t too difficult to beg, borrow and manipulate code, to fit the purpose. &lt;/p&gt; &lt;hr&gt;  &lt;h2&gt;&lt;font style="font-weight: normal"&gt;This is what I created&lt;/font&gt;&lt;/h2&gt; &lt;p&gt;&lt;a href="https://normansolutions.co.uk/posts/files/c4f87a96-48c9-4fc6-9dea-3227b99e5a8f.jpg"&gt;&lt;img title="Map" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="Map" src="https://normansolutions.co.uk/posts/files/1931dee8-5a47-4571-8900-97dc5247ee1b.jpg" width="505" height="499"&gt;&lt;/a&gt;&lt;/p&gt; &lt;hr&gt;  &lt;h2&gt;&lt;font style="font-weight: normal"&gt;And this is how I did it&lt;/font&gt;&lt;/h2&gt; &lt;p&gt;It will come as no surprise, that Google Maps is involved &lt;img class="wlEmoticon wlEmoticon-smile" style="border-top-style: none; border-bottom-style: none; border-right-style: none; border-left-style: none" alt="Smile" src="https://normansolutions.co.uk/posts/files/a68a16c5-3f0e-448a-95d9-1c130b99d155.png"&gt;&lt;/p&gt; &lt;p&gt;So firstly, we need to import/link to the Maps API – this is as simple as adding the below script tag.&lt;/p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/8299231.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299231" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;  &lt;p&gt;We then have a small JavaScript function designed to initialize the map and setup some configuration options &lt;em&gt;(map style, zoom level etc).&lt;/em&gt;&amp;nbsp; This is also where we connect to the USGS data, by injecting an appropriate script tag into the head.&lt;/p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/8299254.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299254" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;  &lt;p&gt;Arguably, the bulk of the work is then carried out here.&amp;nbsp; In short, it enumerates through the data, plotting as required onto the Google Map.&amp;nbsp; There is also a “most recent” list which sits just below the map – this list, is set to only display the most recent 10 events, whilst the map will plot &lt;strong&gt;ALL&lt;/strong&gt; events &lt;em&gt;(in the past 24 hours).&lt;/em&gt;&lt;/p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/8299293.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299293" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;  &lt;p&gt;We then add a couple of further functions, primarily designed to “paint” the pretty circles and provide a neater “time” display –&amp;nbsp; all polished off with a window load event &lt;em&gt;(which basically fires the “initialize” function above, on page load).&lt;/em&gt;&lt;/p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/8299313.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299313" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;  &lt;p&gt;Add some styling to the map &lt;em&gt;(nice drop shadow and rounded corners etc).&lt;/em&gt;&lt;/p&gt;&lt;script src="http://gist.github.com/normansolutions/8299325.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299325" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;  &lt;p&gt;…and of course the actual html!&lt;/p&gt;&lt;script gitsrc="https://gist.github.com/normansolutions/8299457.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299457" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;  &lt;p&gt;&lt;strong&gt;There you go – earthquakes on a Firefly VLE page – a New Year’s gift for any Geography department &lt;img class="wlEmoticon wlEmoticon-openmouthedsmile" style="border-top-style: none; border-bottom-style: none; border-right-style: none; border-left-style: none" alt="Open-mouthed smile" src="https://normansolutions.co.uk/posts/files/8b56f113-2787-4089-90ae-b838584f710d.png"&gt;&lt;/strong&gt;&lt;/p&gt; &lt;hr&gt;  &lt;h2&gt;Complete code to paste into a Firefly component&lt;/h2&gt;&lt;script src="http://gist.github.com/normansolutions/8299209.js"&gt;&lt;/script&gt;&lt;noscript&gt;&lt;a href="https://gist.github.com/normansolutions/8299209" target="_blank"&gt;Click for code snippet&lt;/a&gt;&lt;/noscript&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>VLE</category>
+    <category>JavaScript</category>
+    <category>Firefly</category>
+  </categories>
+  <comments>
+    <comment isAdmin="false" isApproved="true" id="ea1ffb61-a773-40ae-a602-fae3f20a8d66">
+      <author>Paul Huxley</author>
+      <email>pjh@tonbridge-school.org</email>
+      <website>http://tonbridgedc.com/</website>
+      <ip>86.179.208.185</ip>
+      <userAgent>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0</userAgent>
+      <date>2014-01-19 21:32:38</date>
+      <content>Hi Clive,&lt;br /&gt;Thank you so much for posting up the details of this. We&amp;#39;ve recently purchased and installed Firefly so having this neat little feature is a great way to engage the Geography department.&lt;br /&gt;I pasted in the code (above) as text into the code editor on a test page. It has the title and the frame but nothing within it. Would you have any idea what I might have done wrong?&lt;br /&gt;&lt;br /&gt;Kind regards,&lt;br /&gt;&lt;br /&gt;Paul</content>
+    </comment>
+    <comment isAdmin="false" isApproved="true" id="0360f9ba-9834-4119-a256-703d5b30d36c">
+      <author>Simon Hay</author>
+      <email>simon@fireflysolutions.co.uk</email>
+      <website>http://fireflysolutions.co.uk/</website>
+      <ip>94.12.83.40</ip>
+      <userAgent>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36</userAgent>
+      <date>2014-01-20 23:53:08</date>
+      <content>Hi Paul,&lt;br /&gt;&lt;br /&gt;If you get in touch with our support team and point us at your test page, we should be able to help you out!&lt;br /&gt;&lt;br /&gt;Thanks,&lt;br /&gt;&lt;br /&gt;Simon</content>
+    </comment>
+    <comment isAdmin="false" isApproved="true" id="87230cbf-30cf-4056-8eb9-bcccf9d6a3aa">
+      <author>Jan</author>
+      <email>j.pakula@stedwards.co.uk</email>
+      <website>http://www.stedwards.co.uk/</website>
+      <ip>94.173.230.82</ip>
+      <userAgent>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36</userAgent>
+      <date>2014-03-09 18:46:56</date>
+      <content>Clive works very nice on html.&lt;br /&gt;Slight problem with https&lt;br /&gt;Changing first script link from http to  https  sorts the blank page loading problem. But there is no https feed coming from  earthquake.usgs.gov so we&lt;br /&gt;we would have to load unsafe scripts (on https).&lt;br /&gt;Unless there is a https feed?&lt;br /&gt;&lt;br /&gt;Regards,&lt;br /&gt;Jan</content>
+    </comment>
+    <comment isAdmin="false" isApproved="true" id="e133d082-fd00-4d74-b420-ff6bfef43a34">
+      <author>Clive</author>
+      <email>hi@normansolutions.co.uk</email>
+      <website>https://normansolutions.co.uk/</website>
+      <ip>178.239.99.59</ip>
+      <userAgent>Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36</userAgent>
+      <date>2014-05-01 16:3:37</date>
+      <content>Hi Jan&lt;br /&gt;&lt;br /&gt;Firstly, I must sincerely apologise for such a delay in coming back - in truth, I have only just spotted the comments on the page; notification system failed me :(&lt;br /&gt;&lt;br /&gt;I completely agree with your concern over mixed content on the page, and personally, I wouldn&amp;#39;t accept this as a viable option, primarily because it could lead to a potential insecure leak in your https connection.&lt;br /&gt;&lt;br /&gt;I suppose until earthquake.usgs.gov start serving the data up over https, you are a bit stuck with regards to a client side solution.  The only option as I see it, would be to proxy the request on the server, and then serve it up locally.&lt;br /&gt;&lt;br /&gt;All good fun!&lt;br /&gt;&lt;br /&gt;Many thanks&lt;br /&gt;&lt;br /&gt;Clive</content>
+    </comment>
+    <comment isAdmin="false" isApproved="true" id="5ca97c1a-d8c8-400a-97e4-a3a274251f22">
+      <author>Clive</author>
+      <email>hi@normansolutions.co.uk</email>
+      <website>https://normansolutions.co.uk/</website>
+      <ip>178.239.99.59</ip>
+      <userAgent>Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36</userAgent>
+      <date>2014-05-01 16:5:41</date>
+      <content>Hi Paul&lt;br /&gt;&lt;br /&gt;As with Jan, I must apologise for not coming back any sooner!&lt;br /&gt;&lt;br /&gt;I hope the chaps and chapesses at Firefly were able to help you out?&lt;br /&gt;&lt;br /&gt;All the best.&lt;br /&gt;&lt;br /&gt;Clive</content>
+    </comment>
+  </comments>
+</post>

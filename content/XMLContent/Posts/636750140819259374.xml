@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>YouTube downloading using WSL</title>
+  <slug>youtube-downloading-using-wsl</slug>
+  <pubDate>2018-10-13 08:01:59</pubDate>
+  <lastModified>2018-10-13 08:45:24</lastModified>
+  <excerpt>To be honest, as I'm sure any right-minded individual would agree, downloading videos from YouTube for personal gain is wrong.  However, there are occasions when it is arguably reasonable and possibly even legitimate to do such a thing.</excerpt>
+  <content>&lt;p&gt;To be honest, as I'm sure any right-minded individual would agree, downloading videos from YouTube for personal gain is &lt;strong&gt;wrong&lt;/strong&gt;.&amp;nbsp; However, there are occasions when it is arguably reasonable and possibly even legitimate to do such a thing.&lt;/p&gt;
+&lt;p&gt;It could be that you wish to use a video in a presentation and can&amp;rsquo;t rely on internet connectivity or just feel "safer" presenting the video offline for fear of an embarrassing spinning buffer wheel of doom!&lt;/p&gt;
+&lt;p&gt;Over the years, a market opened up for online YouTube downloading services&amp;nbsp;&lt;em&gt;(often accompanied with their complimentary malware and/or questionable adverts).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Many of these "services" have since become unusable.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;There is however, a quite wonderful solution &amp;ndash; albeit requiring Linux.&lt;/p&gt;
+&lt;p&gt;No fear, with the WSL (Windows Subsystem for Linux) on Windows 10, you are just a few steps away from seamless (at the time of writing) YouTube downloading &amp;ndash; of course for reasonable and legitimate purposes!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;You will need Windows 10 WSL enabled (this &lt;a title="link" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener"&gt;link&lt;/a&gt; will walk you through that process).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open a command prompt and enter &lt;strong&gt;wsl&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter &lt;strong&gt;sudo apt-get update&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter &lt;strong&gt;sudo apt-get upgrade&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter &lt;strong&gt;sudo apt-get install python-pip&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter &lt;strong&gt;sudo pip install youtube-dl&lt;/strong&gt;&amp;nbsp;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Aside from the occasional checking for update, you shouldn't need to perform the above prerequisites again.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;To download a video&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter &lt;strong&gt;sudo youtube-dl https://www.youtube.com/watch?v=HKnxmkOAj88&amp;nbsp;&lt;/strong&gt;&lt;em&gt;(change the url as appropriate to the video required)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;The video should download and save to a location accessible from Windows - this can vary, but a good place to start is your "user" folder within Windows.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you experience issues, you can clear the cache by typing&amp;nbsp;&lt;strong&gt;sudo youtube-dl -rm chache-dir&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;As noted as the top of this post, you should only use this process for reasonable and legitimate purposes.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>wsl</category>
+    <category>quicktip</category>
+    <category>linux</category>
+  </categories>
+  <comments></comments>
+</post>
