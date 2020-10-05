@@ -35,7 +35,7 @@ _One piece of advice, that caught me out initially, is you must remember to crea
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/d0387578-87d8-424c-95e1-0ae4089bddf1-min.png"
+data-src="/img/postimg/d0387578-87d8-424c-95e1-0ae4089bddf1-min.png" />
 {{< /rawhtml >}}
 
 - Ensure you select the DNS/HTTP option _(the default)._
@@ -44,12 +44,16 @@ data-src="/img/postimg/d0387578-87d8-424c-95e1-0ae4089bddf1-min.png"
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/624a8eaa-5e08-41dc-9dd9-d656a0453e02-min.png"
+data-src="/img/postimg/624a8eaa-5e08-41dc-9dd9-d656a0453e02-min.png"/>
 {{< /rawhtml >}}
 
 - Click on the MS Word option and select “click here” to download the Word file.
 
-[![Canary4](/img/postimg/84b6021c-da7a-48b2-8e4a-49ab4a604bfa-min.png "Canary4")](/img/postimg/f48a4c68-c7f4-43c6-b99a-d25a6bc8a978.png)
+{{< rawhtml >}}
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/f48a4c68-c7f4-43c6-b99a-d25a6bc8a978-min.png" />
+{{< /rawhtml >}}
 
 - When you have downloaded the Word document, just rename it to something tempting (e.g. **Passwords**).
 - Now save this document anywhere you like – my suggestion would be into the root of your cloud service (OneDrive, Dropbox etc).
@@ -62,7 +66,7 @@ Another extremely useful option is **Windows Directory Browsing** – this works
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/d7d66650-e04e-4e87-95e9-167e5e420d9a-min.png"
+data-src="/img/postimg/d7d66650-e04e-4e87-95e9-167e5e420d9a-min.png" />
 {{< /rawhtml >}}
 
 _You can even upload an executable, have it signed by the company, and then re-download.  This could be useful if you have a bespoke program, where you wish to receive an alert whenever someone runs it?  Of course you do have to trust their signing process!_

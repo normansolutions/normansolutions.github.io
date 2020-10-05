@@ -17,9 +17,7 @@
       <pubDate>Mon, 06 Jun 2016 18:47:51 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/honeypots-to-catch-prying-eyes/</guid>
-      <description>As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!
-On a recent episode, the company thinkst, were discussing a project they have been working on, to do with Honeypots.
- Not only are these Honeypots an extremely funky security layer, they are also free (at the time of posting).</description>
+      <description>As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@ On a recent episode, the company thinkst, were discussing a project they have be
       
       <guid>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</guid>
       <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.
-Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.
-….I can hear all those security experts screaming already!
- Before I proceed any further, please note that this solution must never be seen as a proper security authentication replacement!</description>
+Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.</description>
     </item>
     
   </channel>

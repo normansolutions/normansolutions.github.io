@@ -18,9 +18,7 @@
       
       <guid>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</guid>
       <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.
-Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.
-….I can hear all those security experts screaming already!
- Before I proceed any further, please note that this solution must never be seen as a proper security authentication replacement!</description>
+Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.</description>
     </item>
     
   </channel>

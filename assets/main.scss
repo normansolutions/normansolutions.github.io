@@ -37,6 +37,17 @@ img {
   page-break-inside: avoid;
 }
 
+ul > li {
+  display: table-row;
+}
+
+ul > li::before {
+  content: "⦿";
+  display: table-cell;
+  padding-right: 10px;
+  text-align: right;
+}
+
 hr.style-ns {
   margin-top: 1.3em;
   border: 0;
@@ -46,6 +57,12 @@ hr.style-ns {
 
 hr.style-ns:after {
   content: " ";
+}
+
+hr {
+  border: 0;
+  border-top: 0.1rem solid $ooob-red;
+  margin: 3rem 0;
 }
 
 a {
@@ -126,6 +143,12 @@ time,
 .ns-tags {
   color: #626262;
   font-size: 0.85em;
+}
+
+.ns-main img {
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5em;
 }
 
 /* End PostList */

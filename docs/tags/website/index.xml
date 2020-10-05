@@ -18,9 +18,16 @@
       
       <guid>https://outoforderband.co.uk/secure-a-webpage-without-a-logon/</guid>
       <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.
-Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.
-….I can hear all those security experts screaming already!
- Before I proceed any further, please note that this solution must never be seen as a proper security authentication replacement!</description>
+Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.</description>
+    </item>
+    
+    <item>
+      <title>Dip your toe into a little SASS!</title>
+      <link>https://outoforderband.co.uk/dip-your-toe-into-a-little-sass/</link>
+      <pubDate>Thu, 22 May 2014 21:26:43 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/dip-your-toe-into-a-little-sass/</guid>
+      <description>Ok…I get the whole CSS pre-processor movement; I don’t need convincing of why it is so good. However, what I do need, is a justification to invest time into learning yet another technology!</description>
     </item>
     
   </channel>

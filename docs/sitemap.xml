@@ -3,23 +3,93 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-        <loc>https://outoforderband.co.uk/videos/</loc>
-        <lastmod>2020-09-05T00:00:01+00:00</lastmod>
+        <loc>https://outoforderband.co.uk/tags/database/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
     </url>
   
     <url>
-        <loc>https://outoforderband.co.uk/setlist/</loc>
-        <lastmod>2020-09-03T00:00:01+00:00</lastmod>
+        <loc>https://outoforderband.co.uk/tags/isams/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
     </url>
   
     <url>
-        <loc>https://outoforderband.co.uk/gigs/</loc>
-        <lastmod>2020-09-02T00:00:01+00:00</lastmod>
+        <loc>https://outoforderband.co.uk/tags/mis/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
     </url>
   
     <url>
-        <loc>https://outoforderband.co.uk/contact/</loc>
-        <lastmod>2020-09-01T00:00:01+00:00</lastmod>
+        <loc>https://outoforderband.co.uk/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/power-bi-and-isams-api/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/powerbi/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/sql/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/</loc>
+        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/exchange/</loc>
+        <lastmod>2019-06-28T09:41:46+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</loc>
+        <lastmod>2019-06-28T09:41:46+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/powershell/</loc>
+        <lastmod>2019-06-28T09:41:46+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/quicktip/</loc>
+        <lastmod>2019-06-28T09:41:46+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/sysadmin/</loc>
+        <lastmod>2019-06-28T09:41:46+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/how-to-delete-an-email-from-all-exchange-mailboxes/</loc>
+        <lastmod>2018-10-16T15:45:26+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/linux/</loc>
+        <lastmod>2018-10-13T08:01:59+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/wsl/</loc>
+        <lastmod>2018-10-13T08:01:59+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/youtube-downloading-using-wsl/</loc>
+        <lastmod>2018-10-13T08:01:59+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/encourage-those-windows-to-restart/</loc>
+        <lastmod>2018-10-01T19:47:29+00:00</lastmod>
     </url>
   
     <url>
@@ -28,32 +98,7 @@
     </url>
   
     <url>
-        <loc>https://outoforderband.co.uk/tags/isams/</loc>
-        <lastmod>2017-10-22T15:59:57+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://outoforderband.co.uk/</loc>
-        <lastmod>2017-10-22T15:59:57+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://outoforderband.co.uk/tags/quicktip/</loc>
-        <lastmod>2017-10-22T15:59:57+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://outoforderband.co.uk/tags/sql/</loc>
-        <lastmod>2017-10-22T15:59:57+00:00</lastmod>
-    </url>
-  
-    <url>
         <loc>https://outoforderband.co.uk/tags/ssrs/</loc>
-        <lastmod>2017-10-22T15:59:57+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://outoforderband.co.uk/tags/</loc>
         <lastmod>2017-10-22T15:59:57+00:00</lastmod>
     </url>
   
@@ -64,11 +109,6 @@
   
     <url>
         <loc>https://outoforderband.co.uk/tags/security/</loc>
-        <lastmod>2016-06-06T18:47:51+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://outoforderband.co.uk/tags/sysadmin/</loc>
         <lastmod>2016-06-06T18:47:51+00:00</lastmod>
     </url>
   
@@ -93,8 +133,18 @@
     </url>
   
     <url>
-        <loc>https://outoforderband.co.uk/test/</loc>
-        <lastmod>2015-09-04T00:00:01+00:00</lastmod>
+        <loc>https://outoforderband.co.uk/tags/cms/</loc>
+        <lastmod>2014-05-22T21:26:43+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/dip-your-toe-into-a-little-sass/</loc>
+        <lastmod>2014-05-22T21:26:43+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://outoforderband.co.uk/tags/sass/</loc>
+        <lastmod>2014-05-22T21:26:43+00:00</lastmod>
     </url>
   
     <url>
