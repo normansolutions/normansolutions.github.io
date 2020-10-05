@@ -79,10 +79,6 @@ a:focus {
   text-decoration: none;
 }
 
-.pagination a[rel="next"] {
-  float: right;
-}
-
 .pagination a:hover,
 .pagination a:focus {
   background: #dfdfdf;
@@ -300,7 +296,7 @@ time {
     url("/img/BandHeader.jpg?v=fingerprint");
 
   /* Set a specific height */
-  min-height: 210px;
+  min-height: 280px;
   height: 50%;
   box-shadow: -5px 24px 65px -31px rgba(0, 0, 0, 0.75);
 
@@ -317,7 +313,7 @@ time {
     url("/img/BandHeader.webp?v=fingerprint");
 
   /* Set a specific height */
-  min-height: 210px;
+  min-height: 280px;
   height: 50%;
   box-shadow: -5px 24px 65px -31px rgba(0, 0, 0, 0.75);
 
@@ -334,7 +330,7 @@ time {
     url("/img/BandHeader.avif?v=fingerprint");
 
   /* Set a specific height */
-  min-height: 210px;
+  min-height: 280px;
   height: 50%;
   box-shadow: -5px 24px 65px -31px rgba(0, 0, 0, 0.75);
 
@@ -352,6 +348,11 @@ time {
   position: absolute;
   top: 50%;
   left: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   transform: translate(-50%, -50%);
 
   @include media(">1366px") {
