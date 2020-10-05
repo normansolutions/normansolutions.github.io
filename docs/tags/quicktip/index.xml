@@ -65,5 +65,14 @@
       <description>As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!</description>
     </item>
     
+    <item>
+      <title>Office 365, Outlook &amp; attachments</title>
+      <link>https://outoforderband.co.uk/office-365-outlook-and-attachments/</link>
+      <pubDate>Sun, 17 Jan 2016 13:22:59 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/office-365-outlook-and-attachments/</guid>
+      <description>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often days after they had been sent. This behavior was not consistent across the user base.</description>
+    </item>
+    
   </channel>
 </rss>

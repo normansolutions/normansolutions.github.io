@@ -10,7 +10,7 @@
 </style>
 
 
-    <title>SysAdmin</title>
+    <title>Office 365, Outlook &amp; attachments</title>
     <meta
       name="Keywords"
       content="Out Of Order, Indie Rock, Live Music, UK, South Of England, Rock, Funk, Acoustic"
@@ -289,133 +289,55 @@
   </a>
 </div>
 
-
     
-    <div class="ns-main">  
-       
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/how-to-populate-an-o365-dg-from-a-security-group/" rel="canonical" itemprop="url">How to populate an O365 DG from a Security Group</a></h1>
-
-            <time datetime=2019-06-28&#32;09:41:46&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Jun 28, 2019</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/exchange">Exchange</a> <a href="/tags/powershell">PowerShell</a> <a href="/tags/quicktip">QuickTip</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.
-              
-              <span class="ns-readmore">
-                <a href="/how-to-populate-an-o365-dg-from-a-security-group/">&nbsp;read more</a>
-              </span></p>
-              
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/how-to-delete-an-email-from-all-exchange-mailboxes/" rel="canonical" itemprop="url">How to delete an email from all Exchange mailboxes</a></h1>
-
-            <time datetime=2018-10-16&#32;15:45:26&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Oct 16, 2018</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/powershell">Powershell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">Quicktip</a> <a href="/tags/exchange">Exchange</a> </span>
+    
+<div class="ns-main">
+  <h1>Office 365, Outlook &amp; attachments</h1>
+  <p>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often <em><strong>days</strong></em> after they had been sent.  This behavior was not consistent across the user base.</p>
+<blockquote>
+<p><em>Great – inconsistent errors; don’t you just love them?!</em></p>
+</blockquote>
+<p>Without dissecting the ins and outs of exchange message tracking in this post, suffice to say, it became clear that there <em>wasn’t</em> anything technically wrong with the message flow mechanism; it had the hallmarks that emails were <em>not</em> being sent from the client at the time the user thought.</p>
+<p>Due to time constraints and slightly inconsistent information, this was unfortunately allowed to fester for far too long, without a satisfactory conclusion.</p>
+<h2 id="replicating-the-process">Replicating the Process</h2>
+<p>Eventually, as expected, the issue raised its head again <em>(albeit in a slightly different context).</em>  This time, both I and the user sending the emails, were in a better position to analyse behavior.</p>
+<blockquote>
+<p><em>When I saw the process being used, it jumped out at me instantly, what problem was.</em></p>
+</blockquote>
+<hr>
+<h2 id="some-workflow-facts">Some Workflow Facts</h2>
+<ul>
+<li>
+<p>This user primarily <em>(although not all the time)</em> uses the web based, Office 365 Mail as their preferred method of sending emails – perfectly acceptable; indeed encouraged in some environments.</p>
+</li>
+<li>
+<p>This user, when sending attachments from Word, uses the ‘Share’ options from within Word to ‘Send as Attachment’ <em>(not the process I use, but again, perfectly acceptable).</em></p>
+</li>
+</ul>
 
 
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">It&rsquo;s not uncommon to receive unwanted emails which have managed to work their way through the array of filtering systems in production. Recently our organisation received such an email - a classic phishing email sent to multiple end user accounts.
-              
-              <span class="ns-readmore">
-                <a href="/how-to-delete-an-email-from-all-exchange-mailboxes/">&nbsp;read more</a>
-              </span></p>
-              
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/encourage-those-windows-to-restart/" rel="canonical" itemprop="url">Encourage those Windows to restart!</a></h1>
-
-            <time datetime=2018-10-01&#32;19:47:29&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Monday, Oct 1, 2018</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/powershell">Powershell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">Quicktip</a> </span>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/948dded5-4f41-4421-848f-133b9735fc32-min.png"/>
 
 
-            
+<h2 id="the-problem">The Problem</h2>
+<p>It appears that when using this option to send attachments, if you <em>don’t</em> have the native client version of Outlook running, no email is sent.</p>
+<p>As soon as the user opened up Outlook <em>(the client)</em> – the email went!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Let’s be clear, this end user wasn’t doing <em>anything</em> wrong, they were correctly using in-built functionality to perform a task.  They are not expected to know that Outlook needs to be running.  Alas, there is also no appropriate dialog box feedback from Word, explaining this.</p>
+<p>Of course, I subsequently demonstrated that the web version of Office 365, was indeed just a webpage _(agreed, a phenomenal webpage, but nevertheless, a webpage) - Word doesn’t know about this webpage and is expecting to use the inbuilt Outlook program.</p>
+<hr>
+<h2 id="lessons-learnt">Lessons learnt:</h2>
+<ul>
+<li>Ensure that you <em>always</em> see the entire process from the end user’s perspective.</li>
+<li>Never assume that everyone performs daily tasks, in the same way that you do!</li>
+</ul>
+<p>Of course having been in this industry for well over 15 years – this is nothing new; but clearly some lessons need to have time put aside, and re-learnt!</p>
 
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">A common issue with supporting a primarily Windows based user body, is that thanks to the &ldquo;always on&rdquo; expectation emboldened by smartphones and tablets, it can be a constant battle to try and encourage end users to restart their computers with some degree of regularity - yes IT friends, you know exactly what I mean!
-              
-              <span class="ns-readmore">
-                <a href="/encourage-those-windows-to-restart/">&nbsp;read more</a>
-              </span></p>
-              
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/honeypots-to-catch-prying-eyes/" rel="canonical" itemprop="url">Honeypots to catch prying eyes!</a></h1>
-
-            <time datetime=2016-06-06&#32;18:47:51&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Monday, Jun 6, 2016</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/security">Security</a> <a href="/tags/quicktip">QuickTip</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!
-              
-              <span class="ns-readmore">
-                <a href="/honeypots-to-catch-prying-eyes/">&nbsp;read more</a>
-              </span></p>
-              
-          </div>
-        </div>
-        <hr/>
-         
-        
-        <nav class="pagination container" aria-label="Pagination">
-      
-
-  <a href="/tags/sysadmin/page/2/" rel="prev" class="page-link">&laquo; Older</a>
-
+</div>
+ 
    
-  <br /><br />
-</nav>
-            
-      </div> 
-
-     
-
-    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -468,6 +390,3 @@
 </script>
 
     
-  </body>
-</html>
-
