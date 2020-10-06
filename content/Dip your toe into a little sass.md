@@ -11,7 +11,7 @@ tags:
 
 Ok…I get the whole [CSS pre-processor](http://www.urbaninsight.com/2012/04/12/ten-reasons-you-should-be-using-css-preprocessor) movement; I don’t need convincing of _why_ it is so good.  However, what I do need, is a justification to invest time into learning _yet another_ technology!
 
-There is certainly no lack of resources available, for these little beauty's ([Less](http://lesscss.org/) & [Sass](http://sass-lang.com/)): but then there’s a problem for a start – **_which one_**?  Try [Googling that](https://www.google.co.uk/search?q=less+or+sass), and you will soon discover, many opinions ![Smile](https://normansolutions.co.uk/posts/files/9c01fbb5-8fe8-4141-b7a6-7bc2cf24663f.png)
+There is certainly no lack of resources available, for these little beauty's ([Less](http://lesscss.org/) & [Sass](http://sass-lang.com/)): but then there’s a problem for a start – **_which one_**?  Try [Googling that](https://www.google.co.uk/search?q=less+or+sass), and you will soon discover, many opinions !
 
 In the past, I have ‘tinkered’ with **Less** _(primarily because this was being supported by the excellent_ [_Web Essentials_](http://vswebessentials.com/)_),_ and for the most part, I found it extremely useful.
 
@@ -29,7 +29,7 @@ Whenever I start any project, I always like to go and get the latest versions of
 
 > _I also like to build into my templates, appropriate CDN fall-backs; be it jQuery or Bootsrap etc, ensuring the best of both worlds (speed and robustness)._
 
-Part of this setting up process, is also to establish a nice CSS base _(\_\_[normalise](http://necolas.github.io/normalize.css/)_ _etc)._
+Part of this setting up process, is also to establish a nice CSS base _([normalise](http://necolas.github.io/normalize.css/)_ _etc)._
 
 ## So this is me dipping my toe!
 
