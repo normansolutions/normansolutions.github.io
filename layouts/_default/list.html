@@ -4,9 +4,7 @@
     {{ partial "header.html" . }}
 
     <!-- List Posts-->
-    <div class="ns-main">
-        There are {{ len .Site.RegularPages }} pages currently on this site.
-    {{ len (where .Site.RegularPages "Section" "=" "posts") }} <a href="/?post=allposts">List all article titles</a>  
+    <div class="ns-main">  
        {{ range .Paginator.Pages }}
        <!-- prettier-ignore-end-->
         <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
