@@ -122,6 +122,10 @@ article {
   page-break-after: always;
 }
 
+.ns-list-articles:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+}
+
 .ns-main {
   max-width: 750px;
   margin: 0 auto;
