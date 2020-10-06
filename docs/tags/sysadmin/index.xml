@@ -56,5 +56,14 @@
       <description>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often days after they had been sent. This behavior was not consistent across the user base.</description>
     </item>
     
+    <item>
+      <title>Locked out user email notification</title>
+      <link>https://outoforderband.co.uk/locked-out-user-email-notification/</link>
+      <pubDate>Sat, 20 Jun 2015 15:11:29 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/locked-out-user-email-notification/</guid>
+      <description>It recently occurred to me, that whilst my current full-time position is an IT Systems Manager, the majority of my blog posts thus far, have been more web centric – which is great, as I love the web and web technologies!</description>
+    </item>
+    
   </channel>
 </rss>

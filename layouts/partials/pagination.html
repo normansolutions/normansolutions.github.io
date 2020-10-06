@@ -2,7 +2,6 @@
   {{ $pag := $.Paginator }} {{ if gt $pag.TotalPages 1 }} {{ if $pag.HasPrev }}
 
   <a href="{{ $pag.Prev.URL }}" rel="next" class="page-link">Newer &raquo;</a>
-
   {{ end }} {{/* {{ range $pag.Pagers }} {{ if eq . $pag }} {#
   <li class="page-item active">
     <a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a>
@@ -16,5 +15,6 @@
   <a href="{{ $pag.Next.URL }}" rel="prev" class="page-link">&laquo; Older</a>
 
   {{ end }} {{ end }}
+
   <br /><br />
 </nav>

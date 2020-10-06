@@ -112,10 +112,10 @@ a:focus {
   color: #222;
   text-decoration: none;
   border-bottom: 0;
+}
 
-  :hover {
-    border-bottom: 0;
-  }
+.post header h1 a:hover {
+  text-shadow: 0 0 1px #bbb, 0 0 5px #bbb;
 }
 
 article {
@@ -152,6 +152,12 @@ time,
   border-style: solid;
   border-width: 1px;
   padding: 0.5em;
+}
+
+.ns-totalpages {
+  text-align: center;
+  color: #626262;
+  font-size: 0.85em;
 }
 
 /* End PostList */

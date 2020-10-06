@@ -35,6 +35,8 @@
         <hr/>
         {{ end }} 
         {{ $paginator := .Paginate (where .Site.Pages "Type" "post") 2 }}
+        <div class="ns-totalpages">{{$paginator.PageNumber }} of {{ $paginator.TotalPages }}</div>
+
         {{ partial "pagination.html" . }}            
       </div> 
 

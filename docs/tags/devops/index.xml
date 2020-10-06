@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on Out Of Order Band</title>
+    <link>https://outoforderband.co.uk/tags/devops/</link>
+    <description>Recent content in DevOps on Out Of Order Band</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 20 Jun 2015 15:11:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://outoforderband.co.uk/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Locked out user email notification</title>
+      <link>https://outoforderband.co.uk/locked-out-user-email-notification/</link>
+      <pubDate>Sat, 20 Jun 2015 15:11:29 +0000</pubDate>
+      
+      <guid>https://outoforderband.co.uk/locked-out-user-email-notification/</guid>
+      <description>It recently occurred to me, that whilst my current full-time position is an IT Systems Manager, the majority of my blog posts thus far, have been more web centric – which is great, as I love the web and web technologies!</description>
+    </item>
+    
+  </channel>
+</rss>
