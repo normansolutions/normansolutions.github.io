@@ -23,12 +23,13 @@
           </header>
 
           <div itemprop="articleBody">
-            <p class="ns-post-summary">{{.Summary}}
-              {{ if .Truncated }}
+            <p class="ns-post-summary">{{.Summary}}            
+              {{ if .Truncated }}          
               <span class="ns-readmore">
                 <a href="{{ .RelPermalink }}"><br/>...read more</a>
-              </span></p>
+              </span>             
               {{ end }}
+              </p>
           </div>
         </div>
         <hr/>
