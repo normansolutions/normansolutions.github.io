@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SysAdmin on Out Of Order Band</title>
-    <link>https://outoforderband.co.uk/tags/sysadmin/</link>
-    <description>Recent content in SysAdmin on Out Of Order Band</description>
+    <title>SysAdmin on NS News and Views</title>
+    <link>https://normansolutions.co.uk/tags/sysadmin/</link>
+    <description>Recent content in SysAdmin on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 28 Jun 2019 09:41:46 +0000</lastBuildDate>
     
-	<atom:link href="https://outoforderband.co.uk/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://normansolutions.co.uk/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to populate an O365 DG from a Security Group</title>
-      <link>https://outoforderband.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</link>
+      <link>https://normansolutions.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</link>
       <pubDate>Fri, 28 Jun 2019 09:41:46 +0000</pubDate>
       
-      <guid>https://outoforderband.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</guid>
+      <guid>https://normansolutions.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</guid>
       <description>Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.
 One of the more surprising elements was the realisation that our local mail-enabled Security Groups would need to be broken up into two elements; a conventional Security Group (maintaining local permission management) and an Exchange Online Distribution Group for email purposes etc.</description>
     </item>
     
     <item>
       <title>How to delete an email from all Exchange mailboxes</title>
-      <link>https://outoforderband.co.uk/how-to-delete-an-email-from-all-exchange-mailboxes/</link>
+      <link>https://normansolutions.co.uk/how-to-delete-an-email-from-all-exchange-mailboxes/</link>
       <pubDate>Tue, 16 Oct 2018 15:45:26 +0000</pubDate>
       
-      <guid>https://outoforderband.co.uk/how-to-delete-an-email-from-all-exchange-mailboxes/</guid>
+      <guid>https://normansolutions.co.uk/how-to-delete-an-email-from-all-exchange-mailboxes/</guid>
       <description>It&amp;rsquo;s not uncommon to receive unwanted emails which have managed to work their way through the array of filtering systems in production. Recently our organisation received such an email - a classic phishing email sent to multiple end user accounts.</description>
     </item>
     
     <item>
       <title>Encourage those Windows to restart!</title>
-      <link>https://outoforderband.co.uk/encourage-those-windows-to-restart/</link>
+      <link>https://normansolutions.co.uk/encourage-those-windows-to-restart/</link>
       <pubDate>Mon, 01 Oct 2018 19:47:29 +0000</pubDate>
       
-      <guid>https://outoforderband.co.uk/encourage-those-windows-to-restart/</guid>
+      <guid>https://normansolutions.co.uk/encourage-those-windows-to-restart/</guid>
       <description>A common issue with supporting a primarily Windows based user body, is that thanks to the &amp;ldquo;always on&amp;rdquo; expectation emboldened by smartphones and tablets, it can be a constant battle to try and encourage end users to restart their computers with some degree of regularity - yes IT friends, you know exactly what I mean!</description>
     </item>
     
     <item>
       <title>Honeypots to catch prying eyes!</title>
-      <link>https://outoforderband.co.uk/honeypots-to-catch-prying-eyes/</link>
+      <link>https://normansolutions.co.uk/honeypots-to-catch-prying-eyes/</link>
       <pubDate>Mon, 06 Jun 2016 18:47:51 +0000</pubDate>
       
-      <guid>https://outoforderband.co.uk/honeypots-to-catch-prying-eyes/</guid>
+      <guid>https://normansolutions.co.uk/honeypots-to-catch-prying-eyes/</guid>
       <description>As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!
 On a recent episode, the company thinkst, were discussing a project they have been working on, to do with Honeypots.</description>
     </item>
     
     <item>
       <title>Office 365, Outlook &amp; attachments</title>
-      <link>https://outoforderband.co.uk/office-365-outlook-and-attachments/</link>
+      <link>https://normansolutions.co.uk/office-365-outlook-and-attachments/</link>
       <pubDate>Sun, 17 Jan 2016 13:22:59 +0000</pubDate>
       
-      <guid>https://outoforderband.co.uk/office-365-outlook-and-attachments/</guid>
+      <guid>https://normansolutions.co.uk/office-365-outlook-and-attachments/</guid>
       <description>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often days after they had been sent. This behavior was not consistent across the user base.
  Great – inconsistent errors; don’t you just love them?</description>
     </item>
     
     <item>
       <title>Locked out user email notification</title>
-      <link>https://outoforderband.co.uk/locked-out-user-email-notification/</link>
+      <link>https://normansolutions.co.uk/locked-out-user-email-notification/</link>
       <pubDate>Sat, 20 Jun 2015 15:11:29 +0000</pubDate>
       
-      <guid>https://outoforderband.co.uk/locked-out-user-email-notification/</guid>
+      <guid>https://normansolutions.co.uk/locked-out-user-email-notification/</guid>
       <description>It recently occurred to me, that whilst my current full-time position is an IT Systems Manager, the majority of my blog posts thus far, have been more web centric – which is great, as I love the web and web technologies!</description>
     </item>
     

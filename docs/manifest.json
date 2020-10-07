@@ -1,13 +1,13 @@
 {
   "dir": "ltr",
   "lang": "en-uk",
-  "name": "Out Of Order",
+  "name": "NS News and Views",
   "display": "standalone",
-  "short_name": "Out Of Order",
-  "theme_color": "#C62129",
-  "description": "Four piece Indie Rock band, based on the south coast of England",
+  "short_name": "NS News and Views",
+  "theme_color": "#FFFFFF",
+  "description": "Head of Information Services, Web Technologist &amp;amp; Musician, based on the Wiltshire, Dorset &amp; Somerset border in the UK.  Offering honest independent advice on all things web, security and general IT; with a splash of added music for the soul.",
   "orientation": "portrait",
-  "background_color": "#C62129",
+  "background_color": "#FFFFFF",
   "related_applications": [],
   "prefer_related_applications": false,
   "start_url": "/",
@@ -40,4 +40,3 @@
     }
   ]
 }
-

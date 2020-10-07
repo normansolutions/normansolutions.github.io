@@ -102,3 +102,14 @@ window.addEventListener("load", () => {
     }
   }
 });
+
+if (navigator.share) {
+  const shareButton = document.querySelector(".ns-share-btn");
+  shareButton.style.visibility = "visible";
+  shareButton.addEventListener("click", (event) => {
+    navigator.share({
+      title: document.title,
+      url: document.location.href
+    });
+  });
+}

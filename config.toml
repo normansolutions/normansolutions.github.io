@@ -1,6 +1,6 @@
-baseURL = "https://outoforderband.co.uk"
+baseURL = "https://normansolutions.co.uk"
 languageCode = "en-uk"
-title = "Out Of Order Band"
+title = "NS News and Views"
 publishDir = "docs"
 staticDir = ["static"]
 paginate = 4
