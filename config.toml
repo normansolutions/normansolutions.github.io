@@ -4,4 +4,4 @@ title = "Out Of Order Band"
 publishDir = "docs"
 staticDir = ["static"]
 paginate = 4
-summaryLength = 30
+summaryLength = 40

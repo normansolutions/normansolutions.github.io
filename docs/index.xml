@@ -17,7 +17,7 @@
       <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/power-bi-and-isams-api/</guid>
-      <description>Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API.</description>
+      <description>Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API. So recently I thought why not combine these two systems and see what can be achieved?</description>
     </item>
     
     <item>
@@ -26,7 +26,8 @@
       <pubDate>Fri, 28 Jun 2019 09:41:46 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</guid>
-      <description>Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.</description>
+      <description>Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.
+One of the more surprising elements was the realisation that our local mail-enabled Security Groups would need to be broken up into two elements; a conventional Security Group (maintaining local permission management) and an Exchange Online Distribution Group for email purposes etc.</description>
     </item>
     
     <item>
@@ -44,7 +45,8 @@
       <pubDate>Sat, 13 Oct 2018 08:01:59 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/youtube-downloading-using-wsl/</guid>
-      <description>To be honest, as I&amp;rsquo;m sure any right-minded individual would agree, downloading videos from YouTube for personal gain is wrong. However, there are occasions when it is arguably reasonable and possibly even legitimate to do such a thing.</description>
+      <description>To be honest, as I&amp;rsquo;m sure any right-minded individual would agree, downloading videos from YouTube for personal gain is wrong. However, there are occasions when it is arguably reasonable and possibly even legitimate to do such a thing.
+It could be that you wish to use a video in a presentation and can’t rely on internet connectivity or just feel &amp;ldquo;safer&amp;rdquo; presenting the video offline for fear of an embarrassing spinning buffer wheel of doom!</description>
     </item>
     
     <item>
@@ -80,7 +82,8 @@
       <pubDate>Mon, 06 Jun 2016 18:47:51 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/honeypots-to-catch-prying-eyes/</guid>
-      <description>As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!</description>
+      <description>As I have mentioned in previous blog posts, I regularly listen to numerous technical podcasts. A relatively new edition to my listening collection is the information security podcast Risky Business – it’s great!
+On a recent episode, the company thinkst, were discussing a project they have been working on, to do with Honeypots.</description>
     </item>
     
     <item>
@@ -89,7 +92,8 @@
       <pubDate>Sun, 17 Jan 2016 13:22:59 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/office-365-outlook-and-attachments/</guid>
-      <description>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often days after they had been sent. This behavior was not consistent across the user base.</description>
+      <description>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often days after they had been sent. This behavior was not consistent across the user base.
+ Great – inconsistent errors; don’t you just love them?</description>
     </item>
     
     <item>
@@ -117,7 +121,8 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
       <pubDate>Thu, 22 May 2014 21:26:43 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/dip-your-toe-into-a-little-sass/</guid>
-      <description>Ok…I get the whole CSS pre-processor movement; I don’t need convincing of why it is so good. However, what I do need, is a justification to invest time into learning yet another technology!</description>
+      <description>Ok…I get the whole CSS pre-processor movement; I don’t need convincing of why it is so good. However, what I do need, is a justification to invest time into learning yet another technology!
+There is certainly no lack of resources available, for these little beauty&amp;rsquo;s (Less &amp;amp; Sass): but then there’s a problem for a start – which one?</description>
     </item>
     
   </channel>

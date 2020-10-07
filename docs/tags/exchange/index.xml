@@ -17,7 +17,8 @@
       <pubDate>Fri, 28 Jun 2019 09:41:46 +0000</pubDate>
       
       <guid>https://outoforderband.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</guid>
-      <description>Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.</description>
+      <description>Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.
+One of the more surprising elements was the realisation that our local mail-enabled Security Groups would need to be broken up into two elements; a conventional Security Group (maintaining local permission management) and an Exchange Online Distribution Group for email purposes etc.</description>
     </item>
     
     <item>

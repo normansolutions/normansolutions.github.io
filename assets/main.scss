@@ -108,6 +108,13 @@ a:focus {
 /* End Pagination */
 
 /* Start PostList */
+
+header,
+.ns-main > h1,
+.ns-postdate {
+  text-align: center;
+  margin-bottom: 15px;
+}
 .post header h1 a {
   color: #222;
   text-decoration: none;
@@ -120,6 +127,15 @@ a:focus {
 
 article {
   page-break-after: always;
+}
+
+.post p:first-child:first-letter {
+  float: left;
+  font-family: Georgia;
+  font-size: 71px;
+  line-height: 50px;
+  padding-top: 5px;
+  padding-right: 8px;
 }
 
 .ns-list-articles:hover {
