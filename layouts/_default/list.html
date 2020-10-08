@@ -4,7 +4,7 @@
     {{ partial "header.html" . }}
 
     <!-- List Posts-->
-    <div class="ns-main">  
+    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
        {{ range .Paginator.Pages }}
        <!-- prettier-ignore-end-->
         <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
