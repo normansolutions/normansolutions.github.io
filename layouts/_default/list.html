@@ -7,7 +7,7 @@
     <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
        {{ range .Paginator.Pages }}
        <!-- prettier-ignore-end-->
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
+        <main class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
           <header>
              <h1 itemprop="name headline"><a href="{{.URL}}" rel="canonical" itemprop="url">{{.Title}}</a></h1>
 
@@ -31,14 +31,14 @@
               {{ end }}
               </p>
           </div>
-        </div>
+        </main>
         <hr/>
         {{ end }} 
         {{ $paginator := .Paginate (where .Site.Pages "Type" "post") 2 }}
         <div class="ns-totalpages">{{$paginator.PageNumber }} of {{ $paginator.TotalPages }}</div>
 
         {{ partial "pagination.html" . }}            
-      </main> 
+      </div> 
 
     <!-- End List Posts--> 
 
