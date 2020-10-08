@@ -4,4 +4,4 @@ title = "NS News and Views"
 publishDir = "docs"
 staticDir = ["static"]
 paginate = 4
-summaryLength = 40
+summaryLength = 30
