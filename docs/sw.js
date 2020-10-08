@@ -2,7 +2,7 @@
   "use strict";
 
   // Update 'version' if you need to refresh the cache
-  var version = "NS308::CacheFirstSafe";
+  var version = "NS309::CacheFirstSafe";
   var offlineUrl = "/offline.html";
 
   // Store core files in a cache (including a page to display when offline)
