@@ -26,6 +26,13 @@ body {
   background-color: $ooob-white;
 }
 
+@-moz-document url-prefix() {
+  body {
+    font: 14px/1.6 "Open Sans", Ubuntu, "Nimbus Sans L", Avenir, AvenirNext,
+      "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -134,7 +141,6 @@ header,
 .ns-postdate {
   text-align: center;
   margin-bottom: 15px;
-  font-size: 1em;
 }
 .post header h1 a {
   color: #222;
@@ -493,7 +499,6 @@ footer {
 
   p {
     padding-top: 8px;
-    font-size: 1em;
   }
 }
 

@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
   });
 });
 
+
 // Lazy load images
 window.addEventListener("load", function () {
   var timer, images, viewHeight;
