@@ -116,6 +116,10 @@ a:focus {
 
 /* Start PostList */
 
+.ns-main {
+  animation: fade-in 1s ease;
+}
+
 header,
 .ns-main > h1,
 .ns-postdate {
