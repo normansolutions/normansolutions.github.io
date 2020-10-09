@@ -123,6 +123,21 @@
     </url>
   
     <url>
+        <loc>https://normansolutions.co.uk/tags/devops/</loc>
+        <lastmod>2016-11-29T16:32:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/rambling/</loc>
+        <lastmod>2016-11-29T16:32:17+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/security-should-be-a-first-class-citizen/</loc>
+        <lastmod>2016-11-29T16:32:17+00:00</lastmod>
+    </url>
+  
+    <url>
         <loc>https://normansolutions.co.uk/honeypots-to-catch-prying-eyes/</loc>
         <lastmod>2016-06-06T18:47:51+00:00</lastmod>
     </url>
@@ -163,11 +178,6 @@
     </url>
   
     <url>
-        <loc>https://normansolutions.co.uk/tags/devops/</loc>
-        <lastmod>2015-06-20T15:11:29+00:00</lastmod>
-    </url>
-  
-    <url>
         <loc>https://normansolutions.co.uk/locked-out-user-email-notification/</loc>
         <lastmod>2015-06-20T15:11:29+00:00</lastmod>
     </url>
@@ -194,11 +204,6 @@
   
     <url>
         <loc>https://normansolutions.co.uk/tags/blog/</loc>
-        <lastmod>2015-02-25T20:39:25+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/tags/rambling/</loc>
         <lastmod>2015-02-25T20:39:25+00:00</lastmod>
     </url>
   

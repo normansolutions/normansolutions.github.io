@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>SASS</title>
+    <title>Security should be a first class citizen</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -292,52 +292,71 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   </a>
 </div>
 
-
     
-    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-       
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/dip-your-toe-into-a-little-sass/" rel="canonical" itemprop="url">Dip your toe into a little SASS!</a></h1>
+    
+<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+  <h1>Security should be a first class citizen</h1>
+  <div class="ns-postdate">  
+      <time datetime=2016-11-29&#32;16:32:17&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Nov 29, 2016</time>
+      <span class="ns-tags">| Tags: <a href="/tags/security">Security</a> <a href="/tags/devops">DevOps</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/rambling">Rambling</a> </span>   
+      <hr/>
+    </div>
+    <div id="ns-target">
+      <p>Let’s face it, information security is <strong>important</strong>.  With more and more data being stored and accessed via the internet, we are becoming increasingly reliant on “third parties” to secure our personal data responsibly.  So how is it that we are seeing so many data breaches and poor practices?</p>
+<p>Be under no illusion, this is a difficult topic to cover in a brief blog post, as the subject extends across many surfaces of both technical and behavioral patterns.</p>
+<blockquote>
+<p>This post is <strong>not</strong> designed to lambast end user behavior; it’s primarily concerned with some IT suppliers attitude to security.</p>
+</blockquote>
+<p>Information security is a very generic term.  It can cover anything from encryption of data <em>(both at rest and in transit)</em> through to unintended exposure to browser bugs.</p>
+<h2 id="the-list-is-long">The list is long</h2>
+<p>With so many potential attack vectors available, it’s not exactly surprising that the IT industry sometimes get’s it wrong.  However, “getting it wrong” isn’t <em>always</em> the issue.  Indeed in many walks of life, people get things wrong, but with considered, responsible and honest action, damage can be significantly mitigated.</p>
+<p>As I see it, more often than not, the problem can be the attitude <em>(or even just plain naivety),</em> of some software vendors when it comes to dealing with security.  Working primarily in the education sector, I am astonished at just how many websites <em>(evangelized as being for education)</em> have data capture processes and even logon screens that are not hosted on secure webpages <em>(not HTTPS).</em>  I have in the past three months alone felt impelled to advise three companies about this very fact.  To be fair, all but one of them, were exceptionally thankful for the information and promised to rectify the issue.</p>
+<p>I was pleased to read that from January 2017, the <a href="https://medium.servertastic.com/chrome-plans-to-start-highlighting-not-secure-websites-2babf35b46e6#.4eplxevw0">Google Chrome browser plans to start highlighting Not Secure websites</a> – people shall soon be greeted with the below warning when visiting such sites.</p>
 
-            <time datetime=2014-05-22&#32;21:26:43&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Thursday, May 22, 2014</time>
 
-            <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/cms">CMS</a> <a href="/tags/sass">SASS</a> </span>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/3d488715-8503-44db-9883-2dc416a037cd-min.jpg"/>
 
 
-            
+<p>Nowadays, with free certificates available from organizations such as <a href="https://letsencrypt.org/">Let’s Encrypt</a>, there really isn’t any reason not to secure webpages transmitting personal data.</p>
+<h2 id="even-more-alarming">Even more alarming!</h2>
+<p>Another very recent incident, which was <strong>extremely</strong> alarming, pertained to the use of a secure <a href="https://en.wikipedia.org/wiki/Virtual_private_network">VPN</a> to a very large medical institution <em>(I shan’t divulge the specific institution, but suffice to say, they’re big in health in the UK!).</em></p>
+<p>We noticed that a certificate on the site which was used as part of the the initial VPN connection process, had expired!  If this wasn’t worrying enough, when we raised the query, the response from the 1st Line Support desk was to “ignore” the certificate warning and just click continue.  <strong>Suffice to say, we didn’t</strong>.</p>
+<p>In my opinion, this exposed a clear lack of understanding in the importance of using valid certificates.  To be fair once contact was made with 3rd Line Support, the issue was rectified and they were equally appalled at the recommendation to just click “continue”.</p>
+<p>However, the point remains that this is a major institution, dealing with potentially sensitive personal data, frequently making claims about the need for good security, and yet the recommendation from 1st Line Support was to click continue on an invalid certificate warning.  Need I say more.</p>
+<h2 id="anyone-can-do-it">Anyone can do it</h2>
+<p>One of the primary issues as I see it, is that anybody can set themselves up as a software vendor.  A quick tutorial on the internet and away you go; <a href="https://en.wikipedia.org/wiki/SQL_injection">SQL Injection</a> exposure included for free!</p>
+<p>To be honest, I’m not entirely sure what the best solution is.  I don’t think that academic qualification is necessarily the answer; in truth, most IT qualifications quickly become outdated anyway.  It’s also worth noting that I don’t have a dedicated academic qualification in internet security, yet through sheer passion, avid podcast listening, blogpost reading and attendance of seminars, I would claim to have a solid knowledge and understanding in this arena.</p>
+<p>Whatever the future holds, I for one, firmly believe that security needs to be taken seriously.  Products <em>(both old and new)</em> need investment, so they’re not subject to common attack vectors <em>(ahem…TalkTalk).</em></p>
+<p>In addition, IT practices need to be better focused, in order that they don’t unnecessarily expose backdoors <em>(be it</em> <a href="https://www.troyhunt.com/the-capgemini-leak-of-michael-page-data-via-publicly-facing-database-backup/"><em>database backups held on web facing servers</em></a> <em>or just poor password management).</em></p>
+<hr>
+<h2 id="useful-links">Useful links</h2>
+<ul>
+<li><a href="https://www.troyhunt.com/">Troy Hunt Blog</a></li>
+<li><a href="http://risky.biz/">Risky Business Podcast</a></li>
+<li><a href="https://www.youtube.com/watch?v=9inczw6qtpY">Excellent Video Explaining CRSF</a></li>
+<li><a href="https://haveibeenpwned.com/">Have I Been Pwned Website</a></li>
+<li><a href="http://keepass.info/">KeePass Password Safe</a></li>
+<li><a href="https://www.owasp.org/index.php/Top_10_2013-Top_10">OWASP Top Ten</a></li>
+</ul>
+ 
+    </div>
+<button class="ns-share-btn" type="button" title="Share this article">
+  <svg class="ns-share-icon">
+    <use href="#share-icon"></use>
+  </svg>
+  <span>Share Article</span>
+</button>
 
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Ok…I get the whole CSS pre-processor movement; I don’t need convincing of why it is so good. However, what I do need, is a justification to invest time into learning yet another technology!            
-                        
-              <span class="ns-readmore">
-                <a href="/dip-your-toe-into-a-little-sass/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-         
-        
-        <div class="ns-totalpages">1 of 1</div>
-
-        <nav class="pagination container" aria-label="Pagination">
+<svg class="ns-hidden">
+  <defs>
+    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
+   </defs>
+</svg>
+ </main>
+ 
    
-
-  <br /><br />
-</nav>
-            
-      </main> 
-
-     
-
-    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -388,6 +407,3 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </script>
 
     
-  </body>
-</html>
-
