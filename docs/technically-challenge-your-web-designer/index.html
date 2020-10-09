@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>Office 365, Outlook &amp; attachments</title>
+    <title>Technically challenge your web designer!</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -295,54 +295,132 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     
     
 <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-  <h1>Office 365, Outlook &amp; attachments</h1>
+  <h1>Technically challenge your web designer!</h1>
   <div class="ns-postdate">  
-      <time datetime=2016-01-17&#32;13:22:59&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Sunday, Jan 17, 2016</time>
-      <span class="ns-tags">| Tags: <a href="/tags/office-365">Office 365</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">QuickTip</a> </span>   
+      <time datetime=2014-04-29&#32;20:46:26&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Apr 29, 2014</time>
+      <span class="ns-tags">| Tags: <a href="/tags/blog">Blog</a> <a href="/tags/website">Website</a> <a href="/tags/javascript">JavaScript</a> <a href="/tags/cms">CMS</a> </span>   
       <hr/>
     </div>
     <div id="ns-target">
-      <p>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often <em><strong>days</strong></em> after they had been sent.  This behavior was not consistent across the user base.</p>
+      <p>I must confess to have slightly struggled with the title of this blog post, as I didn’t wish to be responsible for encouraging unnecessary complaints and animosity between clients and web designers!</p>
+<p>However, I have all to often witnessed situations where a web design company <em>(or web designer)</em> will not be implementing recognised ‘best practice’ <em>(either through a lack of skills, or out of sheer laziness)</em>, and will conveniently ‘hide’ behind the belief that a client is highly unlikely to spot poor architectural design!</p>
 <blockquote>
-<p><em>Great – inconsistent errors; don’t you just love them?!</em></p>
+<p><em>Well, here’s the truth – you <strong>don’t</strong> need to be a technical web expert to spot some basic poor development practices.</em></p>
 </blockquote>
-<p>Without dissecting the ins and outs of exchange message tracking in this post, suffice to say, it became clear that there <em>wasn’t</em> anything technically wrong with the message flow mechanism; it had the hallmarks that emails were <em>not</em> being sent from the client at the time the user thought.</p>
-<p>Due to time constraints and slightly inconsistent information, this was unfortunately allowed to fester for far too long, without a satisfactory conclusion.</p>
-<h2 id="replicating-the-process">Replicating the Process</h2>
-<p>Eventually, as expected, the issue raised its head again <em>(albeit in a slightly different context).</em>  This time, both I and the user sending the emails, were in a better position to analyse behavior.</p>
-<blockquote>
-<p><em>When I saw the process being used, it jumped out at me instantly, what problem was.</em></p>
-</blockquote>
+<p>Indeed, if you can use a browser, and have a basic understanding of how a webpage works, then you can easily learn a few tips, that will help you challenge your designer / developer.</p>
 <hr>
-<h2 id="some-workflow-facts">Some Workflow Facts</h2>
+<h2 id="what-this-post-will-_not_-cover">What this post will <em>not</em> cover</h2>
+<p>Just to clarify; this is not intended to be a deep-dive technical article on the inner workings of speed, performance and optimisation in modern web design <em>(for that, there are plenty of other resources and</em> <a href="http://stevesouders.com/"><em>gurus</em></a> <em>to be found on the internet, with far greater expertise than me).</em></p>
+<p>I shan’t be covering <a href="http://css-tricks.com/css-sprites/">Image Sprites</a>, <a href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN’s <em>(Content Deliver Networks)</em></a>, <a href="http://en.wikipedia.org/wiki/Responsive_web_design">Mobile Design</a>, <a href="http://css-tricks.com/judging-css-spotting-bad-code/">Poor Coding</a> or <a href="http://clearleft.com/">Modern UX Design Patterns</a> etc.</p>
+<h2 id="this-post-will-primarily-focus-on">This post will primarily focus on:</h2>
 <ul>
-<li>
-<p>This user primarily <em>(although not all the time)</em> uses the web based, Office 365 Mail as their preferred method of sending emails – perfectly acceptable; indeed encouraged in some environments.</p>
-</li>
-<li>
-<p>This user, when sending attachments from Word, uses the ‘Share’ options from within Word to ‘Send as Attachment’ <em>(not the process I use, but again, perfectly acceptable).</em></p>
-</li>
+<li>Page size and loading speed.</li>
+<li>Optimisation / placement of components and scripts on a webpage.</li>
 </ul>
+<hr>
+<h2 id="why-only-these">Why only these?</h2>
+<p>Aside from not wishing to provide <em>bedtime</em> reading material for potential visitors, <a href="http://en.wiktionary.org/wiki/IMHO">IMHO</a>, I believe these basic factors are a good tell-tale benchmark as to whether a developer has good or poor understanding of modern web design architecture; it could also have a <strong>significant</strong> bearing on how Google will rank your website in search results <em><a href="http://googlewebmastercentral.blogspot.co.uk/2010/04/using-site-speed-in-web-search-ranking.html">(Google now use site speed in web search ranking).</a></em></p>
+<h2 id="one-final-point-before-we-start--dont-be-too-critical">One final point before we start – don’t be too critical!</h2>
+<p>Most organisations nowadays, require the ability to update website content themselves – enter the <a href="http://en.wikipedia.org/wiki/Content_management_system">CMS <em>(Content Management System)</em></a><em>.</em>  The CMS is excellent on so many levels, but it does have the problem of needing to be ‘<strong>all things to all people</strong>’ – as such, even with the best software engineers and designers in the world, you will almost certainly end up with a system that carries an element of ‘bloat’.</p>
+<p>Unfortunately, it’s a bit of a trade off; flexibility verses efficiency.  <em>However</em>, it still shouldn’t be used as an excuse for poor design architecture.  The goal, is to aim for perfection with the understanding that this is not always going to be achievable – be questioning, but also realistic.</p>
+<p><em>(There is an assumption that very basic web design protocols are already in place (correct use of</em> <a href="http://blog.woorank.com/2013/04/how-to-use-heading-tags-for-seo/"><em>Headers</em></a><em>,</em> <a href="http://www.googlekeywordtool.com/"><em>Keywords</em></a> <em>and</em> <a href="http://en.wikipedia.org/wiki/Meta_element"><em>Meta Tags</em></a> _etc) – if your web designer isn’t implementing these, then you may as well give up now!</p>
+<hr>
+<h2 id="ok-lets-get-to-the-meat">Ok, let’s get to the meat!</h2>
+<p>Google <a href="http://www.google.com/intl/en_uk/chrome/browser/">Chrome</a> is your friend here <em>(or more specifically the web</em> <a href="https://developers.google.com/chrome-developer-tools/"><em>developer tools</em></a> <em>that come with Chrome).</em></p>
+<ul>
+<li>If you haven’t done so already; go download, and install Google Chrome from <a href="http://www.google.com/intl/en_uk/chrome/browser/">here</a>.</li>
+<li>Once installed, go and grab the Chrome version of YSlow from <a href="https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh">here</a>.</li>
+</ul>
+<blockquote>
+<p><em>It’s worth noting that there are alternative options to these developer tools for other browsers (e.g. Internet Explorer and Firefox etc) – but at the time of posting, I think it is fair to state, that the Chrome Dev Tools are currently recognised as the better choice.</em></p>
+</blockquote>
+<p>You should pretty much now have all you need to analyse your website in detail.</p>
+<hr>
+<h2 id="page-size-and-loading-speed">Page size and loading speed</h2>
+<p>It stands to reason that if your page size if too large <em>(in file size),</em> then it is going to take a lot longer to download and display, clearly having a negative impact on your customers <em>(as well as your search ranking).</em></p>
+<p>Ok – open up Chrome, visit your website and then click on the ‘YSlow’ icon which you should see located at the top right hand side of your Chrome browser window.</p>
 
 
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/948dded5-4f41-4421-848f-133b9735fc32-min.png"/>
+data-src="/img/postimg/69a0adc5-5c7d-4850-ac39-5dc4438a3240-min.png" />
 
 
-<h2 id="the-problem">The Problem</h2>
-<p>It appears that when using this option to send attachments, if you <em>don’t</em> have the native client version of Outlook running, no email is sent.</p>
-<p>As soon as the user opened up Outlook <em>(the client)</em> – the email went!</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Let’s be clear, this end user wasn’t doing <em>anything</em> wrong, they were correctly using in-built functionality to perform a task.  They are not expected to know that Outlook needs to be running.  Alas, there is also no appropriate dialog box feedback from Word, explaining this.</p>
-<p>Of course, I subsequently demonstrated that the web version of Office 365, was indeed just a webpage _(agreed, a phenomenal webpage, but nevertheless, a webpage) - Word doesn’t know about this webpage and is expecting to use the inbuilt Outlook program.</p>
+<p>You will then be presented with the ‘YSlow’ dashboard – similar to the below screen shot.</p>
+
+
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/267637b4-937b-49d8-bb11-06b38fc7c17b-min.jpg" />
+
+
+<p>Click the yellow <strong>‘Run Test’</strong> button.</p>
+<p>After a brief delay <em>(status indicated by a progress bar),</em> you will be presented will an array of information on the YSlow <strong>Grade</strong> tab <em>(this tab also includes a general overall webpage grading score; you are ideally aiming for an ‘A’ grade here)</em>.</p>
+<p>However, leaving the Grade tab alone, if you click on the <strong>Statistics</strong> tab – you will be presented with two pie charts, visually detailing the size of your web page.</p>
+<p>One of these pie charts will be the <em>initial</em> page size, whereas the other will be the <em>cached</em> page size – which basically means the page size <em>after</em> someone re-visits your website <em>(this should be significantly less than the initial page size – if it isn’t, then your web developer needs to investigate the ‘caching’ options of the website).</em></p>
 <hr>
-<h2 id="lessons-learnt">Lessons learnt:</h2>
-<ul>
-<li>Ensure that you <em>always</em> see the entire process from the end user’s perspective.</li>
-<li>Never assume that everyone performs daily tasks, in the same way that you do!</li>
-</ul>
-<p>Of course having been in this industry for well over 15 years – this is nothing new; but clearly some lessons need to have time put aside, and re-learnt!</p>
+<p><strong>Real world example:</strong></p>
+<p>The below screen shot was taken from a website that initially had huge performance loading issues.  You will note that the page size <em>(total weight)</em> is <em>nearly 2MB,</em> and the cached page is much smaller at 600K - (<em>I should mention that this had previously been significantly worse, weighing in with a 5MB initial page load; alas, I no longer have a screen shot of the initial check).</em></p>
+<p>This test was enough to present a justified concern to the company.  It’s still quite large, but arguably acceptable for a CMS – or not?</p>
+
+
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/935ae518-4f7b-4db2-b7bf-1f5a5a70841c-min.jpg" />
+
+
+<p>The below screen shot was taken from my own website – which I’m not claiming to be a masterpiece by <em>any</em> means, but purely as a reference point, you can see the initial page load is only 412K and the cached page size <em>(remember, that’s the one that gets loaded again after an initial visit)</em> is actually <strong>0.0K!</strong></p>
+<p>Incidentally, it also scored a <strong>Grade A,</strong> which I was quite chuffed about!</p>
+
+
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/684a3232-724c-4037-83ac-f9f60e04c5e8-min.jpg" />
+
+
+<p>Before we leave <strong>Page Size</strong> – it’s worth noting that HTTP Requests are also <em>very</em> important.  If you view an HTTP Request as a ‘trip’ to the server, then the more ‘trips’ you have to make, the more work the browser has to do, the more power it consumes <em>(this can even drain batteries on mobile devices),</em> the slower the page loads – well, you get the idea!</p>
+<p>So you need to keep your HTTP Requests to as <strong>few as possible</strong>.  Again, look at the charts above for HTTP Requests –  I think you will agree, there is quite a difference!</p>
+<p><em>(Disclaimer: please be advised that the above website stats are not a scientific ‘like with like’ comparison, but do serve a purpose for blog demonstration)</em></p>
+<hr>
+<h2 id="optimisation-and-placement-of-scripts">Optimisation and placement of scripts</h2>
+<p>This secondary test is arguably slightly more involved than the page size inspection, but can still be <em>very</em> <em>easily</em> performed, using the magic of Chrome developer tools.</p>
+<p>It primarily focuses on ensuring your CSS and JavaScript files <em>(two key elements to a modern website)</em> are not only placed in the most efficient part of your web page, but also reduced to as few files as possible.</p>
+<p>Remember we mentioned about keeping the HTTP Requests down?  Well every CSS and JavaScript file, is an <strong>individual</strong> HTTP Request – if you have 15 CSS files and 15 JavaScript files, then you have 30 HTTP Requests before you even start downloading any pictures and content!</p>
+<p>Ok – open up Chrome, press the <strong>‘F12’</strong> key on your keyboard and visit <em>(or refresh)</em> your website - you should then be presented with the Chrome Developer Tools, similar to the below screen shot.</p>
+
+
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/15f2e8b7-1651-4889-8707-b89ff0a9d9ce-min.jpg" />
+
+
+<p>Be under no illusion – options for the <a href="https://developers.google.com/chrome-developer-tools/">Chrome Dev Tools are vast</a>, and I would encourage you to investigate them further – however, for now, we are just looking at individual elements being loaded onto the page.</p>
+<p>This initial view shows you <strong>individual items</strong> being loaded by your website; indeed you may recognised some of the pictures.  It also provides you will a useful ‘Timeline’ indicator, detailing how long each element is taking to load!</p>
+<p>You can sort and filter to only show ‘JavaScript’ or ‘CSS’ files <em>(by clicking on the ‘Type’ heading or the filter icon etc).</em> What you are looking for, is the presence of too many scripts, or duplicated files.</p>
+<p>JavaScript files will end in <strong>‘.js’</strong> and will display the type <strong>‘text/javascript’</strong> (or possibly <em>‘application/javascript’</em>), whereas CSS files will end in <strong>‘.css’</strong> and display the type <strong>‘text/css’</strong>.</p>
+<p><em>In another <strong>real world example,</strong> here I spotted a</em> <a href="http://jquery.com/"><em>jQuery</em></a> <em>script being loaded onto the webpage twice (for no logical reason) – a small, but nevertheless poor mistake - again, this was enough to present a justified concern to the company, who surprise, surprise, removed the duplicate!</em></p>
+
+
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/4777a4d1-6a3d-4986-9989-de66d979fab1-min.jpg" />
+
+
+<p>There is a process which <strong>all</strong> web developers should now be using called ‘<a href="http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification">combination and minification</a>’ – this is where the web developer, attempts to combine all files of the same type <em>(be it JavaScript or CSS)</em> into one single file, and then ‘squishes’ that file to make it’s overall size a lot smaller.</p>
+<blockquote>
+<p><em>This obviously makes the download page size smaller, but also reduces those all important HTTP Requests!</em></p>
+</blockquote>
+<p>In an ideal world you would have just one CSS file and one JavaScript file on your webpage.  For different, legitimate reasons, this is almost always impossible; <strong>but</strong> there is no reason why a significant percentage of these files cannot be combined together and ‘squished’.</p>
+<p>So, the takeaway from this test, is to <strong>count the number of JavaScript and CSS files</strong>, and ask if there are too many and /or whether they are too big?</p>
+<hr>
+<h2 id="quick-note-on-page-blocking">Quick note on page blocking</h2>
+<p>A final, but important point to mention, is the <strong>placement of scripts.</strong></p>
+<p>Ideal rule of thumb is: <strong>CSS to be placed in the head of the page</strong> (e.g. at the top) whereas <strong>JavaScript should ideally be placed as far down the page as possible</strong> (e.g. at the bottom).  Failure to do this, can give the perception of a slow loading webpage.</p>
+<p>As before, there has to be flexibility and understanding with this rule, but in short, if you ‘right click’ on your webpage and then select <strong>‘View Page Source’</strong> <em>(you don’t need the Chrome Dev Tools to do this),</em> and then see a vast quantity of JavaScript files sat at the top of the page, then <strong>contact your web developer</strong> and ask if there is a reason for this.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>I understand that this blog post could have gone into <em>much</em> greater depth about poor web design practices, and I am completely aware that this has only touched the surface in a couple of areas - <em>for instance, don’t get me going on unnecessary in-line styling, hacky JavaScript and poor security implementation for starters!</em></p>
+<p>However, my goal wasn’t to write an exhaustive article about poor web design in it’s entirety, but simply to encourage the layperson, to look at their website with a more ‘technical’ eye and have the confidence to question legitimate poor practice; and where relevant, <strong><em>challenge their web designer!</em></strong></p>
  
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">
