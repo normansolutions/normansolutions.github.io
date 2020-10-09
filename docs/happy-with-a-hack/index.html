@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>DevOps</title>
+    <title>Happy with a hack?</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -292,137 +292,103 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   </a>
 </div>
 
-
     
-    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-       
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/locked-out-user-email-notification/" rel="canonical" itemprop="url">Locked out user email notification</a></h1>
+    
+<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+  <h1>Happy with a hack?</h1>
+  <div class="ns-postdate">  
+      <time datetime=2014-10-03&#32;21:37:41&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Oct 3, 2014</time>
+      <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/script">Script</a> <a href="/tags/cms">CMS</a> <a href="/tags/javascript">JavaScript</a> </span>   
+      <hr/>
+    </div>
+    <div id="ns-target">
+      <p>Most software developers at some point, will almost certainly encounter the need to <a href="http://en.wikipedia.org/wiki/Kludge#In_computer_science">hack</a> together a solution.</p>
+<p>To quote Wikipedia, the term <strong>hack</strong>, for the purposes of this blog post is:</p>
+<blockquote>
+<p><em>‘&lsquo;a solution to a problem, doing a task, or fixing a system that is inefficient, inelegant, or even unfathomable, but which nevertheless (more or less) works.&quot;</em></p>
+</blockquote>
+<p>Let me register now - <strong>I don&rsquo;t like &lsquo;hacking&rsquo; solutions together.</strong> Some people are perfectly fine with it <em>(I personally know many who are);</em> but whether it is an OCD tendency, a touch of perfectionism or just professional satisfaction, I always feel <em>very</em> uncomfortable when I have to hack together the resolution to a problem.</p>
+<p><em><strong>However, sometimes you genuinely have no choice!</strong></em></p>
+<hr>
+<h2 id="recently-was-one-such-time">Recently, was one such time</h2>
+<p>St Mary&rsquo;s Shaftesbury commissioned the creation of three marketing videos from <a href="http://www.morethanmedia.tv/">More Than Media</a> - personally, I think these videos are pretty darn excellent - I hope you agree:</p>
+<p>Here&rsquo;s an example of the main one:</p>
+<hr>
+<p>Once the videos were ready for public consumption, it was an obvious requirement for them to be placed onto the school website.  Without digressing into the mechanics of the school website <a href="http://en.wikipedia.org/wiki/Content_management_system">CMS</a>, suffice to say, that beyond the usual editing and blogging options, there is no easy way of changing the main site structure, in-house.</p>
+<p>To my knowledge, this requires a change request being made to the company responsible for the CMS, no doubt levying a financial charge, alongside the obvious development delay.</p>
+<p>Not an ideal solution for a <em><strong>‘can it be done by the end of the day’</strong></em> type of request!</p>
+<h2 id="enter-the-hack">Enter the hack</h2>
+<p>It was agreed that the top banner of the site, which at the time, was hard coded with a slide show, would be the best location for the videos - especially using <a href="http://vimeo.com/tools/widget">Vimeo&rsquo;s Hubnut</a> solution, which is designed to neatly display multiple videos in one slot <em>(more on Hubnut in a moment).</em></p>
+<p>In short, the solution I came up with, was to <em>dynamically</em>, on page load, replace the html content in this banner, with a &lsquo;responsive coded iframe&rsquo; - horrid I know, but hey, little choice!</p>
+<p>Frankly, it worked <em>(it&rsquo;s worth noting that I used a great site called <a href="http://embedresponsively.com/">embedresponsively</a></em> <em>to get nice responsive embed code for Vimeo - I highly recommend you check it out, if you’re ever embedding videos).</em></p>
+<hr>
+<h2 id="so-all-done-_not-quite_">So, all done? <em>Not quite!</em></h2>
+<p>It transpires that the aforementioned Vimeo Hubnut, is a <a href="http://get.adobe.com/flashplayer/">Flash</a> only solution <em>(at the time of writing).</em></p>
+<p>So, when viewing the website on an iPad - <strong>yep, you&rsquo;ve got it</strong> - a nice blank space at the top of the page, instead of a video!</p>
+<p>So, progressing further down the rabbit hole of this hack, I now had little option but to <a href="https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent">sniff the user agent string</a>, and then conditionally display the video(s) as appropriate to the device (e_.g. if it&rsquo;s an <a href="http://en.wikipedia.org/wiki/IOS">IOS</a> device, don&rsquo;t use the Vimeo Hubnut)._</p>
+<p>So, resurrecting some old JavaScript code from a previous life - I applied this <em>hack to the hack!</em></p>
+<hr>
+<h2 id="all-done-now-_not-quite_">All done now? <em>Not quite!</em></h2>
+<p>Feeling reasonably comfortable with the process, I went home for the weekend, only to establish that on my <a href="http://www.microsoft.com/surface/en-gb">Microsoft Surface</a>, I <em>also</em> couldn&rsquo;t see the videos – <strong>Oh dear, I politely said to myself.</strong></p>
+<p>Agent string sniffing here, was <strong>not</strong> going to provide me with the answer.</p>
+<p>So after referencing the techies handbook <em>(aka Google)</em> – I discovered a method of being able to establish whether a device has Flash installed (both as an ActiveX or as a plug-in).</p>
+<blockquote>
+<p><em>Once this hack on hack on hack was applied - all was well – oh my!</em></p>
+</blockquote>
+<hr>
+<p>Below is the final code that was used on the site:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mobile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#home_template&#39;</span>).<span style="color:#a6e22e">hasClass</span>(<span style="color:#e6db74">&#39;mobile&#39;</span>);
 
-            <time datetime=2015-06-20&#32;15:11:29&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Jun 20, 2015</time>
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">mobile</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">iPadAgent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/iPad/i</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">iPodAgent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/iPhone/i</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">AndroidAgent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/Android/i</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">webOSAgent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/webOS/i</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hasFlash</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 
-            <span class="ns-tags">| Tags: <a href="/tags/devops">DevOps</a> <a href="/tags/powershell">PowerShell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">QuickTip</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">It recently occurred to me, that whilst my current full-time position is an IT Systems Manager, the majority of my blog posts thus far, have been more web centric – which is great, as I love the web and web technologies!            
-                        
-              <span class="ns-readmore">
-                <a href="/locked-out-user-email-notification/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">iPadAgent</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">iPodAgent</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">AndroidAgent</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">webOSAgent</span>) {
+        <span style="color:#66d9ef">try</span> {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#e6db74">&#39;ShockwaveFlash.ShockwaveFlash&#39;</span>);
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fo</span>) {
+                <span style="color:#a6e22e">hasFlash</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+            }
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">mimeTypes</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">mimeTypes</span>[<span style="color:#e6db74">&#39;application/x-shockwave-flash&#39;</span>] <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">mimeTypes</span>[<span style="color:#e6db74">&#39;application/x-shockwave-flash&#39;</span>].<span style="color:#a6e22e">enabledPlugin</span>) {
+                <span style="color:#a6e22e">hasFlash</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+            }
+        }
         
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/a-blend-of-style-and-performance/" rel="canonical" itemprop="url">A blend of style and performance</a></h1>
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hasFlash</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#home_banner_feature&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#34;&lt;style&gt;.embed-container { position: static; padding-bottom: 46.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;&lt;div class=&#39;embed-container&#39;&gt;&lt;iframe src=&#39;http://player.vimeo.com/hubnut/album/3005503?color=44bbff&amp;background=ffffff&amp;slideshow=1&amp;video_title=0&amp;video_byline=0&#39; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#34;</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#home_banner_feature&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#34;&lt;style&gt;.embed-container { position: static; padding-bottom: 46.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;&lt;div class=&#39;embed-container&#39;&gt;&lt;iframe src=&#39;//player.vimeo.com/video/103632940&#39; frameborder=&#39;0&#39; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#34;</span>);
+        }
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#home_banner_feature&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#34;&lt;style&gt;.embed-container { position: static; padding-bottom: 46.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;&lt;div class=&#39;embed-container&#39;&gt;&lt;iframe src=&#39;//player.vimeo.com/video/103632940&#39; frameborder=&#39;0&#39; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#34;</span>);
+    }
+}
+</code></pre></div><hr>
+<h2 id="so-to-answer-the-title-of-this-blog-post">So, to answer the title of this blog post</h2>
+<p><strong>Am I happy with a hack</strong>? <strong>NO</strong></p>
+<p><strong>Does it work, and is everybody else happy?</strong> <strong>YES</strong></p>
+<p><strong>Feel free to draw your own conclusion!</strong></p>
+ 
+    </div>
+<button class="ns-share-btn" type="button" title="Share this article">
+  <svg class="ns-share-icon">
+    <use href="#share-icon"></use>
+  </svg>
+  <span>Share Article</span>
+</button>
 
-            <time datetime=2015-04-06&#32;11:56:06&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Monday, Apr 6, 2015</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/devops">DevOps</a> <a href="/tags/caching">Caching</a> <a href="/tags/css">CSS</a> <a href="/tags/javascript">JavaScript</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Recently, I had the privilege of designing and building the Wylye Valley Art Trail website. The 2015 trail consists of 75 venues, and in-excess of 300 artists – I’m sure you’ll agree, that’s a reasonable size!            
-                        
-              <span class="ns-readmore">
-                <a href="/a-blend-of-style-and-performance/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/welcome-to-podcast-university/" rel="canonical" itemprop="url">Welcome to Podcast University!</a></h1>
-
-            <time datetime=2015-02-25&#32;20:39:25&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Wednesday, Feb 25, 2015</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/blog">Blog</a> <a href="/tags/website">Website</a> <a href="/tags/rambling">Rambling</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/devops">DevOps</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Recently, a very good friend of mine (@richieclarkie) decided to return to the IT industry after a 15 year absence.
- Clearly a 15 year hiatus, is significant in any industry, but especially pertaining to IT, it is arguably exceptional.            
-                        
-              <span class="ns-readmore">
-                <a href="/welcome-to-podcast-university/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/using-powershell-to-check-all-pages-in-a-website/" rel="canonical" itemprop="url">Using PowerShell to check all pages in a website</a></h1>
-
-            <time datetime=2013-12-17&#32;08:49:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Dec 17, 2013</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/powershell">PowerShell</a> <a href="/tags/website">Website</a> <a href="/tags/script">Script</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/devops">DevOps</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Recently St Mary’s Shaftesbury had a new website built (I would like to register, that whilst I was actively involved in the project management, I did not design this website).            
-                        
-              <span class="ns-readmore">
-                <a href="/using-powershell-to-check-all-pages-in-a-website/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-         
-        
-        <div class="ns-totalpages">1 of 1</div>
-
-        <nav class="pagination container" aria-label="Pagination">
+<svg class="ns-hidden">
+  <defs>
+    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
+   </defs>
+</svg>
+ </main>
+ 
    
-
-  <br /><br />
-</nav>
-            
-      </main> 
-
-     
-
-    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -473,6 +439,3 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </script>
 
     
-  </body>
-</html>
-

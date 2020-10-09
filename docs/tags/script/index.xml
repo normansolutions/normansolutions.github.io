@@ -6,10 +6,20 @@
     <description>Recent content in Script on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 17 Dec 2013 08:49:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Oct 2014 21:37:41 +0000</lastBuildDate>
     
 	<atom:link href="https://normansolutions.co.uk/tags/script/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Happy with a hack?</title>
+      <link>https://normansolutions.co.uk/happy-with-a-hack/</link>
+      <pubDate>Fri, 03 Oct 2014 21:37:41 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/happy-with-a-hack/</guid>
+      <description>Most software developers at some point, will almost certainly encounter the need to hack together a solution.
+To quote Wikipedia, the term hack, for the purposes of this blog post is:</description>
+    </item>
     
     <item>
       <title>Using PowerShell to check all pages in a website</title>

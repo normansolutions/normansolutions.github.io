@@ -41,6 +41,16 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
     </item>
     
     <item>
+      <title>Happy with a hack?</title>
+      <link>https://normansolutions.co.uk/happy-with-a-hack/</link>
+      <pubDate>Fri, 03 Oct 2014 21:37:41 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/happy-with-a-hack/</guid>
+      <description>Most software developers at some point, will almost certainly encounter the need to hack together a solution.
+To quote Wikipedia, the term hack, for the purposes of this blog post is:</description>
+    </item>
+    
+    <item>
       <title>Cache-busting in C# without querystrings</title>
       <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
       <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
