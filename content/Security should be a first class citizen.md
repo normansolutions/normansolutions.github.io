@@ -29,7 +29,7 @@ I was pleased to read that from January 2017, the [Google Chrome browser plans t
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/3d488715-8503-44db-9883-2dc416a037cd-min.jpg"/>
+data-src="/img/postimg/3d488715-8503-44db-9883-2dc416a037cd-min.png"/>
 {{< /rawhtml >}}
 
 Nowadays, with free certificates available from organizations such as [Let’s Encrypt](https://letsencrypt.org/), there really isn’t any reason not to secure webpages transmitting personal data.
