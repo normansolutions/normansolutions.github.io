@@ -6,6 +6,13 @@ window.addEventListener("load", () => {
 });
 
 
+window.onload = function(){
+  var anchors = document.getElementById('ns-target').getElementsByTagName('a');
+  for (var i=0; i<anchors.length; i++){
+    anchors[i].setAttribute('target', '_blank');
+  }
+}
+
 // Lazy load images
 window.addEventListener("load", function () {
   var timer, images, viewHeight;

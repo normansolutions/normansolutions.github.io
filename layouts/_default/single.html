@@ -6,7 +6,9 @@
       {{ if .Params.tags }}<span class="ns-tags">| Tags: {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}</span>{{end}}   
       <hr/>
     </div>
-  {{ .Content }} 
+    <div id="ns-target">
+      {{ .Content }} 
+    </div>
 <button class="ns-share-btn" type="button" title="Share this article">
   <svg class="ns-share-icon">
     <use href="#share-icon"></use>
