@@ -84,6 +84,16 @@
     </item>
     
     <item>
+      <title>PowerShell to disable Clutter in Office 365</title>
+      <link>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</link>
+      <pubDate>Tue, 08 Mar 2016 18:19:57 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</guid>
+      <description>Most users of Office 365 will no doubt be aware of the Clutter folder; for the most part this Clutter folder works pretty well.
+ I’m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!</description>
+    </item>
+    
+    <item>
       <title>Office 365, Outlook &amp; attachments</title>
       <link>https://normansolutions.co.uk/office-365-outlook-and-attachments/</link>
       <pubDate>Sun, 17 Jan 2016 13:22:59 +0000</pubDate>
@@ -121,12 +131,58 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
     </item>
     
     <item>
+      <title>Cache-busting in C# without querystrings</title>
+      <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
+      <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
+      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
+    </item>
+    
+    <item>
       <title>Dip your toe into a little SASS!</title>
       <link>https://normansolutions.co.uk/dip-your-toe-into-a-little-sass/</link>
       <pubDate>Thu, 22 May 2014 21:26:43 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/dip-your-toe-into-a-little-sass/</guid>
       <description>Ok…I get the whole CSS pre-processor movement; I don’t need convincing of why it is so good. However, what I do need, is a justification to invest time into learning yet another technology!</description>
+    </item>
+    
+    <item>
+      <title>Presentation, Nerves and Videotape</title>
+      <link>https://normansolutions.co.uk/presentation-nerves-and-videotape/</link>
+      <pubDate>Fri, 28 Mar 2014 20:11:25 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/presentation-nerves-and-videotape/</guid>
+      <description>Recently, I had the privileged of being asked to give a ‘show and tell’ style presentation, at the Firefly Developer’s Day, held at Radley College.
+In truth, I received this invitation with a mixture of pride and anxiety – visions springing to mind of the Michael Bay ‘meltdown’ during his presentation at CES 2014!</description>
+    </item>
+    
+    <item>
+      <title>Good enough? Don’t answer that!</title>
+      <link>https://normansolutions.co.uk/good-enough-dont-answer-that/</link>
+      <pubDate>Fri, 27 Dec 2013 17:34:12 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/good-enough-dont-answer-that/</guid>
+      <description>One of my favourite blog posts is “I&amp;rsquo;m a phony. Are you?” by Scott Hanselman. I was on holiday in France when I read this post, and it gave me a wonderful sense of relief - I highly encourage you to read it.</description>
+    </item>
+    
+    <item>
+      <title>Using PowerShell to check all pages in a website</title>
+      <link>https://normansolutions.co.uk/using-powershell-to-check-all-pages-in-a-website/</link>
+      <pubDate>Tue, 17 Dec 2013 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/using-powershell-to-check-all-pages-in-a-website/</guid>
+      <description>Recently St Mary’s Shaftesbury had a new website built (I would like to register, that whilst I was actively involved in the project management, I did not design this website).</description>
+    </item>
+    
+    <item>
+      <title>Bin the portfolio and blog instead!</title>
+      <link>https://normansolutions.co.uk/bin-the-portfolio-and-blog-instead/</link>
+      <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/bin-the-portfolio-and-blog-instead/</guid>
+      <description>Frankly, I love IT, and web development in particular. I also happen to be exceptionally fortunate to work as an ICT Systems Manager, for a wonderful employer (St Mary&amp;rsquo;s Shaftesbury) with a great boss (@pearcejim) alongside excellent, appreciative colleagues – the surrounding environment, is also quite heavenly – trust me, it beats working on an industrial estate, just take a look!</description>
     </item>
     
   </channel>

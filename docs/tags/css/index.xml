@@ -20,5 +20,14 @@
       <description>Recently, I had the privilege of designing and building the Wylye Valley Art Trail website. The 2015 trail consists of 75 venues, and in-excess of 300 artists – I’m sure you’ll agree, that’s a reasonable size!</description>
     </item>
     
+    <item>
+      <title>Cache-busting in C# without querystrings</title>
+      <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
+      <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
+      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
+    </item>
+    
   </channel>
 </rss>

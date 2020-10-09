@@ -31,12 +31,48 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
     </item>
     
     <item>
+      <title>Cache-busting in C# without querystrings</title>
+      <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
+      <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
+      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
+    </item>
+    
+    <item>
       <title>Dip your toe into a little SASS!</title>
       <link>https://normansolutions.co.uk/dip-your-toe-into-a-little-sass/</link>
       <pubDate>Thu, 22 May 2014 21:26:43 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/dip-your-toe-into-a-little-sass/</guid>
       <description>Ok…I get the whole CSS pre-processor movement; I don’t need convincing of why it is so good. However, what I do need, is a justification to invest time into learning yet another technology!</description>
+    </item>
+    
+    <item>
+      <title>Good enough? Don’t answer that!</title>
+      <link>https://normansolutions.co.uk/good-enough-dont-answer-that/</link>
+      <pubDate>Fri, 27 Dec 2013 17:34:12 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/good-enough-dont-answer-that/</guid>
+      <description>One of my favourite blog posts is “I&amp;rsquo;m a phony. Are you?” by Scott Hanselman. I was on holiday in France when I read this post, and it gave me a wonderful sense of relief - I highly encourage you to read it.</description>
+    </item>
+    
+    <item>
+      <title>Using PowerShell to check all pages in a website</title>
+      <link>https://normansolutions.co.uk/using-powershell-to-check-all-pages-in-a-website/</link>
+      <pubDate>Tue, 17 Dec 2013 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/using-powershell-to-check-all-pages-in-a-website/</guid>
+      <description>Recently St Mary’s Shaftesbury had a new website built (I would like to register, that whilst I was actively involved in the project management, I did not design this website).</description>
+    </item>
+    
+    <item>
+      <title>Bin the portfolio and blog instead!</title>
+      <link>https://normansolutions.co.uk/bin-the-portfolio-and-blog-instead/</link>
+      <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/bin-the-portfolio-and-blog-instead/</guid>
+      <description>Frankly, I love IT, and web development in particular. I also happen to be exceptionally fortunate to work as an ICT Systems Manager, for a wonderful employer (St Mary&amp;rsquo;s Shaftesbury) with a great boss (@pearcejim) alongside excellent, appreciative colleagues – the surrounding environment, is also quite heavenly – trust me, it beats working on an industrial estate, just take a look!</description>
     </item>
     
   </channel>

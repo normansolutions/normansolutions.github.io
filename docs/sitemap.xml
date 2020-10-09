@@ -129,7 +129,12 @@
   
     <url>
         <loc>https://normansolutions.co.uk/tags/office-365/</loc>
-        <lastmod>2016-01-17T13:22:59+00:00</lastmod>
+        <lastmod>2016-03-08T18:19:57+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</loc>
+        <lastmod>2016-03-08T18:19:57+00:00</lastmod>
     </url>
   
     <url>
@@ -188,6 +193,11 @@
     </url>
   
     <url>
+        <loc>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</loc>
+        <lastmod>2014-07-14T21:38:20+00:00</lastmod>
+    </url>
+  
+    <url>
         <loc>https://normansolutions.co.uk/tags/cms/</loc>
         <lastmod>2014-05-22T21:26:43+00:00</lastmod>
     </url>
@@ -200,6 +210,51 @@
     <url>
         <loc>https://normansolutions.co.uk/tags/sass/</loc>
         <lastmod>2014-05-22T21:26:43+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/firefly/</loc>
+        <lastmod>2014-03-28T20:11:25+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/presentation-nerves-and-videotape/</loc>
+        <lastmod>2014-03-28T20:11:25+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/rambling/</loc>
+        <lastmod>2014-03-28T20:11:25+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/vle/</loc>
+        <lastmod>2014-03-28T20:11:25+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/blog/</loc>
+        <lastmod>2013-12-27T17:34:12+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/good-enough-dont-answer-that/</loc>
+        <lastmod>2013-12-27T17:34:12+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/script/</loc>
+        <lastmod>2013-12-17T08:49:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/using-powershell-to-check-all-pages-in-a-website/</loc>
+        <lastmod>2013-12-17T08:49:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/bin-the-portfolio-and-blog-instead/</loc>
+        <lastmod>2013-12-16T00:00:00+00:00</lastmod>
     </url>
   
     <url>
