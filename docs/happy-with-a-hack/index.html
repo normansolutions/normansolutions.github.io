@@ -305,7 +305,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
       <p>Most software developers at some point, will almost certainly encounter the need to <a href="http://en.wikipedia.org/wiki/Kludge#In_computer_science">hack</a> together a solution.</p>
 <p>To quote Wikipedia, the term <strong>hack</strong>, for the purposes of this blog post is:</p>
 <blockquote>
-<p><em>‘&lsquo;a solution to a problem, doing a task, or fixing a system that is inefficient, inelegant, or even unfathomable, but which nevertheless (more or less) works.&quot;</em></p>
+<p><em>&ldquo;a solution to a problem, doing a task, or fixing a system that is inefficient, inelegant, or even unfathomable, but which nevertheless (more or less) works.&quot;</em></p>
 </blockquote>
 <p>Let me register now - <strong>I don&rsquo;t like &lsquo;hacking&rsquo; solutions together.</strong> Some people are perfectly fine with it <em>(I personally know many who are);</em> but whether it is an OCD tendency, a touch of perfectionism or just professional satisfaction, I always feel <em>very</em> uncomfortable when I have to hack together the resolution to a problem.</p>
 <p><em><strong>However, sometimes you genuinely have no choice!</strong></em></p>
@@ -325,7 +325,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <h2 id="so-all-done-_not-quite_">So, all done? <em>Not quite!</em></h2>
 <p>It transpires that the aforementioned Vimeo Hubnut, is a <a href="http://get.adobe.com/flashplayer/">Flash</a> only solution <em>(at the time of writing).</em></p>
 <p>So, when viewing the website on an iPad - <strong>yep, you&rsquo;ve got it</strong> - a nice blank space at the top of the page, instead of a video!</p>
-<p>So, progressing further down the rabbit hole of this hack, I now had little option but to <a href="https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent">sniff the user agent string</a>, and then conditionally display the video(s) as appropriate to the device (e_.g. if it&rsquo;s an <a href="http://en.wikipedia.org/wiki/IOS">IOS</a> device, don&rsquo;t use the Vimeo Hubnut)._</p>
+<p>So, progressing further down the rabbit hole of this hack, I now had little option but to <a href="https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent">sniff the user agent string</a>, and then conditionally display the video(s) as appropriate to the device (e*.g. if it&rsquo;s an <a href="http://en.wikipedia.org/wiki/IOS">IOS</a> device, don&rsquo;t use the Vimeo Hubnut).*</p>
 <p>So, resurrecting some old JavaScript code from a previous life - I applied this <em>hack to the hack!</em></p>
 <hr>
 <h2 id="all-done-now-_not-quite_">All done now? <em>Not quite!</em></h2>
@@ -357,7 +357,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
                 <span style="color:#a6e22e">hasFlash</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
             }
         }
-        
+
         <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">hasFlash</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
             <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#home_banner_feature&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#34;&lt;style&gt;.embed-container { position: static; padding-bottom: 46.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;&lt;div class=&#39;embed-container&#39;&gt;&lt;iframe src=&#39;http://player.vimeo.com/hubnut/album/3005503?color=44bbff&amp;background=ffffff&amp;slideshow=1&amp;video_title=0&amp;video_byline=0&#39; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#34;</span>);
         } <span style="color:#66d9ef">else</span> {
