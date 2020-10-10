@@ -150,6 +150,16 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
     </item>
     
     <item>
+      <title>Tracking devices in UniFi WiFi</title>
+      <link>https://normansolutions.co.uk/tracking-devices-in-unifi-wifi/</link>
+      <pubDate>Fri, 02 Jan 2015 12:15:14 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tracking-devices-in-unifi-wifi/</guid>
+      <description>Several years ago, we migrated from a Cisco Wi-Fi infrastructure to a UniFi setup.
+UniFi (from Ubiquiti Networks) offer a pretty remarkable WiFi solution, especially when it comes down to cost.</description>
+    </item>
+    
+    <item>
       <title>Happy with a hack?</title>
       <link>https://normansolutions.co.uk/happy-with-a-hack/</link>
       <pubDate>Fri, 03 Oct 2014 21:37:41 +0000</pubDate>
