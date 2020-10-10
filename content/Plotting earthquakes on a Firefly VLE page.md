@@ -9,7 +9,7 @@ tags:
   - Firefly
 ---
 
-Like many technically minded people, I subscribe to a variety of IT focussed information sources \_([RSS Feeds](http://en.wikipedia.org/wiki/RSS), Newsletters etc); o_ne such newsletter being “**Powertip of the day**” from [Powershell.com](http://powershell.com/).
+Like many technically minded people, I subscribe to a variety of IT focussed information sources ([RSS Feeds](http://en.wikipedia.org/wiki/RSS), Newsletters etc); one such newsletter being "**Powertip of the day**" from [Powershell.com](http://powershell.com/).
 
 A recent “[Powertip of the day](http://powershell.com/cs/blogs/tips/archive/2013/12/31/getting-most-recent-earthquakes.aspx)” demonstrated how it was possible to query an online earthquake activity data resource, using [PowerShell](http://en.wikipedia.org/wiki/Windows_PowerShell).  In truth, I didn’t have too much success with this particular example _(the data wasn’t up-to-date),_ but crucially, it set me thinking that this could be an excellent resource for a Geography department, especially when using [Firefly](http://fireflysolutions.co.uk/).
 
