@@ -30,7 +30,8 @@ Time was not on my side when approaching this, so I took advantage of the fact t
 
 A little looping and incrementation proved to be the answer.  Below is the final script used.
 
-```VisualBasic
+```JavaScript
+
 Private Sub NewData_Click()
 'Select sheet by name
 	Sheets("OriginalData").Select

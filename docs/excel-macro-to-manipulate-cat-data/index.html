@@ -316,68 +316,69 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <h2 id="the-solution">The Solution</h2>
 <p>Time was not on my side when approaching this, so I took advantage of the fact the there were many ‘known’ set values that wouldn’t change <em>(column titles &amp; column counts etc).</em>  As such I ‘hard-coded’ these into the solution.</p>
 <p>A little looping and incrementation proved to be the answer.  Below is the final script used.</p>
-<pre><code class="language-VisualBasic" data-lang="VisualBasic">Private Sub NewData_Click()
-'Select sheet by name
-	Sheets(&quot;OriginalData&quot;).Select
-'Get total rows in column 'a'
-	RowCount = Cells(Cells.Rows.Count, &quot;a&quot;).End(xlUp).Row
-'Select range from K2 to O and clear contents
-	Range(&quot;K2:O&quot; &amp; RowCount).Select
-	Selection.ClearContents
-'Variable to determin a new row
-	NewRow = 0
-'Loop from second row until end
-	For i = 2 To RowCount
-'Grab required values and assigned to variables
-		Range(&quot;A&quot; &amp; i).Select
-		ClassName = Range(&quot;A&quot; &amp; (ActiveCell.Row)).Value
-'If content is empty then finish loop
-		If ClassName = &quot;&quot; Then Exit Sub
-		YearGroup = Range(&quot;B&quot; &amp; (ActiveCell.Row)).Value
-		StudentName = Range(&quot;C&quot; &amp; (ActiveCell.Row)).Value
-		Ver = Range(&quot;D&quot; &amp; (ActiveCell.Row)).Value
-		Quan = Range(&quot;E&quot; &amp; (ActiveCell.Row)).Value
-		NVR = Range(&quot;F&quot; &amp; (ActiveCell.Row)).Value
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">
+<span style="color:#a6e22e">Private</span> <span style="color:#a6e22e">Sub</span> <span style="color:#a6e22e">NewData_Click</span>()
+<span style="color:#e6db74">&#39;Select sheet by name
+</span><span style="color:#e6db74">	Sheets(&#34;OriginalData&#34;).Select
+</span><span style="color:#e6db74">&#39;</span><span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">total</span> <span style="color:#a6e22e">rows</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">column</span> <span style="color:#e6db74">&#39;a&#39;</span>
+	<span style="color:#a6e22e">RowCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Cells</span>(<span style="color:#a6e22e">Cells</span>.<span style="color:#a6e22e">Rows</span>.<span style="color:#a6e22e">Count</span>, <span style="color:#e6db74">&#34;a&#34;</span>).<span style="color:#a6e22e">End</span>(<span style="color:#a6e22e">xlUp</span>).<span style="color:#a6e22e">Row</span>
+<span style="color:#e6db74">&#39;Select range from K2 to O and clear contents
+</span><span style="color:#e6db74">	Range(&#34;K2:O&#34; &amp; RowCount).Select
+</span><span style="color:#e6db74">	Selection.ClearContents
+</span><span style="color:#e6db74">&#39;</span><span style="color:#a6e22e">Variable</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">determin</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">row</span>
+	<span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#e6db74">&#39;Loop from second row until end
+</span><span style="color:#e6db74">	For i = 2 To RowCount
+</span><span style="color:#e6db74">&#39;</span><span style="color:#a6e22e">Grab</span> <span style="color:#a6e22e">required</span> <span style="color:#a6e22e">values</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">assigned</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">variables</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">ClassName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span>)).<span style="color:#a6e22e">Value</span>
+<span style="color:#e6db74">&#39;If content is empty then finish loop
+</span><span style="color:#e6db74">		If ClassName = &#34;&#34; Then Exit Sub
+</span><span style="color:#e6db74">		YearGroup = Range(&#34;B&#34; &amp; (ActiveCell.Row)).Value
+</span><span style="color:#e6db74">		StudentName = Range(&#34;C&#34; &amp; (ActiveCell.Row)).Value
+</span><span style="color:#e6db74">		Ver = Range(&#34;D&#34; &amp; (ActiveCell.Row)).Value
+</span><span style="color:#e6db74">		Quan = Range(&#34;E&#34; &amp; (ActiveCell.Row)).Value
+</span><span style="color:#e6db74">		NVR = Range(&#34;F&#34; &amp; (ActiveCell.Row)).Value
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#39;</span><span style="color:#a6e22e">Apply</span> <span style="color:#a6e22e">values</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">first</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">requirement</span> <span style="color:#e6db74">&#39;Ver&#39;</span> <span style="color:#a6e22e">to</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">cells</span> <span style="color:#a6e22e">but</span> <span style="color:#a6e22e">increasing</span> <span style="color:#a6e22e">row</span> <span style="color:#a6e22e">count</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClassName</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">YearGroup</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">StudentName</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Ver</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ver&#34;</span>
 
-'Apply values for first column requirement 'Ver' to new cells but increasing row count
-		Range(&quot;K&quot; &amp; i).Select
-		Range(&quot;K&quot; &amp; (ActiveCell.Row + NewRow)).Value = ClassName
-		Range(&quot;L&quot; &amp; i).Select
-		Range(&quot;L&quot; &amp; (ActiveCell.Row + NewRow)).Value = YearGroup
-		Range(&quot;M&quot; &amp; i).Select
-		Range(&quot;M&quot; &amp; (ActiveCell.Row + NewRow)).Value = StudentName
-		Range(&quot;N&quot; &amp; i).Select
-		Range(&quot;N&quot; &amp; (ActiveCell.Row + NewRow)).Value = Ver
-		Range(&quot;O&quot; &amp; i).Select
-		Range(&quot;O&quot; &amp; (ActiveCell.Row + NewRow)).Value = &quot;Ver&quot;
+<span style="color:#e6db74">&#39;Apply values for second column requirement &#39;</span><span style="color:#a6e22e">Quan</span><span style="color:#e6db74">&#39; to new cells but increasing row count
+</span><span style="color:#e6db74">		Range(&#34;K&#34; &amp; i).Select
+</span><span style="color:#e6db74">		Range(&#34;K&#34; &amp; (ActiveCell.Row + NewRow + 1)).Value = ClassName
+</span><span style="color:#e6db74">		Range(&#34;L&#34; &amp; i).Select
+</span><span style="color:#e6db74">		Range(&#34;L&#34; &amp; (ActiveCell.Row + NewRow + 1)).Value = YearGroup
+</span><span style="color:#e6db74">		Range(&#34;M&#34; &amp; i).Select
+</span><span style="color:#e6db74">		Range(&#34;M&#34; &amp; (ActiveCell.Row + NewRow + 1)).Value = StudentName
+</span><span style="color:#e6db74">		Range(&#34;N&#34; &amp; i).Select
+</span><span style="color:#e6db74">		Range(&#34;N&#34; &amp; (ActiveCell.Row + NewRow + 1)).Value = Quan
+</span><span style="color:#e6db74">		Range(&#34;O&#34; &amp; (ActiveCell.Row + NewRow + 1)).Value = &#34;Quan&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#39;</span><span style="color:#a6e22e">Apply</span> <span style="color:#a6e22e">values</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">first</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">requirement</span> <span style="color:#e6db74">&#39;NVR&#39;</span> <span style="color:#a6e22e">to</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">cells</span> <span style="color:#a6e22e">but</span> <span style="color:#a6e22e">increasing</span> <span style="color:#a6e22e">row</span> <span style="color:#a6e22e">count</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClassName</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">YearGroup</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">StudentName</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Select</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">NVR</span>
+		<span style="color:#a6e22e">Range</span>(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> (<span style="color:#a6e22e">ActiveCell</span>.<span style="color:#a6e22e">Row</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)).<span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NVR&#34;</span>
 
-'Apply values for second column requirement 'Quan' to new cells but increasing row count
-		Range(&quot;K&quot; &amp; i).Select
-		Range(&quot;K&quot; &amp; (ActiveCell.Row + NewRow + 1)).Value = ClassName
-		Range(&quot;L&quot; &amp; i).Select
-		Range(&quot;L&quot; &amp; (ActiveCell.Row + NewRow + 1)).Value = YearGroup
-		Range(&quot;M&quot; &amp; i).Select
-		Range(&quot;M&quot; &amp; (ActiveCell.Row + NewRow + 1)).Value = StudentName
-		Range(&quot;N&quot; &amp; i).Select
-		Range(&quot;N&quot; &amp; (ActiveCell.Row + NewRow + 1)).Value = Quan
-		Range(&quot;O&quot; &amp; (ActiveCell.Row + NewRow + 1)).Value = &quot;Quan&quot;
-
-'Apply values for first column requirement 'NVR' to new cells but increasing row count
-		Range(&quot;K&quot; &amp; i).Select
-		Range(&quot;K&quot; &amp; (ActiveCell.Row + NewRow + 2)).Value = ClassName
-		Range(&quot;L&quot; &amp; i).Select
-		Range(&quot;L&quot; &amp; (ActiveCell.Row + NewRow + 2)).Value = YearGroup
-		Range(&quot;M&quot; &amp; i).Select
-		Range(&quot;M&quot; &amp; (ActiveCell.Row + NewRow + 2)).Value = StudentName
-		Range(&quot;N&quot; &amp; i).Select
-		Range(&quot;N&quot; &amp; (ActiveCell.Row + NewRow + 2)).Value = NVR
-		Range(&quot;O&quot; &amp; (ActiveCell.Row + NewRow + 2)).Value = &quot;NVR&quot;
-
-'Ensure that row count increases correctly so that all columns are converted to new rows
-		NewRow = NewRow + 2
-	Next
-End Sub
-</code></pre><hr>
+<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Ensure</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">row</span> <span style="color:#a6e22e">count</span> <span style="color:#a6e22e">increases</span> <span style="color:#a6e22e">correctly</span> <span style="color:#a6e22e">so</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">columns</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">converted</span> <span style="color:#a6e22e">to</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">rows</span>
+		<span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">NewRow</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+	<span style="color:#a6e22e">Next</span>
+<span style="color:#a6e22e">End</span> <span style="color:#a6e22e">Sub</span>
+</code></pre></div><hr>
 <p><strong>SAMPLE SCREEN SHOT BEFORE</strong></p>
 
 
