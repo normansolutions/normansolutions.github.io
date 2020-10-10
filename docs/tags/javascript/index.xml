@@ -58,5 +58,15 @@ To quote Wikipedia, the term hack, for the purposes of this blog post is:</descr
       <description>I must confess to have slightly struggled with the title of this blog post, as I didn’t wish to be responsible for encouraging unnecessary complaints and animosity between clients and web designers!</description>
     </item>
     
+    <item>
+      <title>Plotting earthquakes on a Firefly VLE page</title>
+      <link>https://normansolutions.co.uk/plotting-earthquakes-on-a-firefly-vle-page/</link>
+      <pubDate>Fri, 10 Jan 2014 11:49:19 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/plotting-earthquakes-on-a-firefly-vle-page/</guid>
+      <description>Like many technically minded people, I subscribe to a variety of IT focussed information sources _(RSS Feeds, Newsletters etc); o_ne such newsletter being “Powertip of the day” from Powershell.com.
+A recent “Powertip of the day” demonstrated how it was possible to query an online earthquake activity data resource, using PowerShell.</description>
+    </item>
+    
   </channel>
 </rss>
