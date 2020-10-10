@@ -29,5 +29,15 @@
       <description>Recently, I was asked whether I could provide some assistance with manipulating data, that had been exported from a CAT results test. The problem, had slowly been driving a colleague of mine, very slightly crazy!</description>
     </item>
     
+    <item>
+      <title>Stamp an iSAMS report with the current username</title>
+      <link>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</link>
+      <pubDate>Sun, 30 Nov 2014 08:28:45 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</guid>
+      <description>During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS (Management Information System) from Schoolbase to iSAMS.
+ Please note, that the reasons for instigating this major system change, and the processes involved (political &amp;amp; technical), are not covered in this blog post.</description>
+    </item>
+    
   </channel>
 </rss>
