@@ -11,7 +11,7 @@ tags:
 
 At St Mary’s Shaftesbury, one of the _many_ additional functions we have built, to work alongside our [Schoolbase](http://www.furlongsolutions.com/products/schoolbase) [MIS](http://en.wikipedia.org/wiki/Management_information_system) *(Management Information System)*, is the automation of a weekly ‘Rewards and Sanctions’ report.
 
-Despite this being one of the more simpler technical features we have implemented, it remains one of the most popular; indeed, if this weekly report fails to _magically_ appear in appropriate email in-boxes on time, we are informed by concerned parties, quicker than you can say \_‘where’s my rewards and sanctions report!’!
+Despite this being one of the more simpler technical features we have implemented, it remains one of the most popular; indeed, if this weekly report fails to _magically_ appear in appropriate email in-boxes on time, we are informed by concerned parties, quicker than you can say ‘where’s my rewards and sanctions report!
 
 ## how the magic works!
 
