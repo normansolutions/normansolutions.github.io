@@ -30,5 +30,14 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
       <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
     </item>
     
+    <item>
+      <title>Schoolbase to create and populate AD groups</title>
+      <link>https://normansolutions.co.uk/schoolbase-to-create-and-populate-ad-groups/</link>
+      <pubDate>Wed, 22 Jan 2014 11:52:12 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/schoolbase-to-create-and-populate-ad-groups/</guid>
+      <description>At St Mary’s we use Schoolbase from Furlong Solutions, for our MIS - we have done so for several years (indeed my understanding is that we were the second or third official school to have the system in production).</description>
+    </item>
+    
   </channel>
 </rss>
