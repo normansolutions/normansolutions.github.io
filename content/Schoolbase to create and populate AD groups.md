@@ -26,7 +26,7 @@ To manually create these groups in AD, when they _already_ exist in Schoolbase, 
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/b9cc4743-d4d1-489e-b2d4-df224189ffa0-min.PNG"/>
+data-src="/img/postimg/b9cc4743-d4d1-489e-b2d4-df224189ffa0-min.jpg"/>
 {{< /rawhtml >}}
 
 ###### _(picture credit:_ [_http://deviq.com/most-popular-principles/don-t-repeat-yourself_](http://deviq.com/most-popular-principles/don-t-repeat-yourself "http://deviq.com/most-popular-principles/don-t-repeat-yourself")_)_
@@ -261,7 +261,7 @@ It would create new AD Groups within an _existing_ OU called “SBGroups” on a
 
 > _Trust me – it’s a lot easier than it reads!_
 
-```BAT
+```BASH
 C:\SCHEDULE\SBGroups\CreateADGroups.exe  "DC=St-Stephens, DC=Local" "OU=SBGroups" "OU=Students, OU=St Stephens Users" "Art|Photo" "UCAS"
 ```
 
