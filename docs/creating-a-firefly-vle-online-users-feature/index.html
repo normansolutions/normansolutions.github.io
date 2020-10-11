@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>SysAdmin</title>
+    <title>Creating a Firefly VLE online users feature</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -292,140 +292,124 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   </a>
 </div>
 
-
     
-    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-       
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/how-to-populate-an-o365-dg-from-a-security-group/" rel="canonical" itemprop="url">How to populate an O365 DG from a Security Group</a></h1>
-
-            <time datetime=2019-06-28&#32;09:41:46&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Jun 28, 2019</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/exchange">Exchange</a> <a href="/tags/powershell">PowerShell</a> <a href="/tags/quicktip">QuickTip</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Having fully migrated our on-prem Exchange to Exchange Online, there were a few little gotchas along the way that we had to contend with - which was to be expected.            
-                        
-              <span class="ns-readmore">
-                <a href="/how-to-populate-an-o365-dg-from-a-security-group/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/how-to-delete-an-email-from-all-exchange-mailboxes/" rel="canonical" itemprop="url">How to delete an email from all Exchange mailboxes</a></h1>
-
-            <time datetime=2018-10-16&#32;15:45:26&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Oct 16, 2018</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/powershell">Powershell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">Quicktip</a> <a href="/tags/exchange">Exchange</a> </span>
+    
+<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+  <h1>Creating a Firefly VLE online users feature</h1>
+  <div class="ns-postdate">  
+      <time datetime=2013-12-18&#32;23:44:05&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Wednesday, Dec 18, 2013</time>
+      <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/firefly">Firefly</a> <a href="/tags/vle">VLE</a> <a href="/tags/javascript">JavaScript</a> <a href="/tags/c">C#</a> </span>   
+      <hr/>
+    </div>
+    <div id="ns-target">
+      <p>At St Mary&rsquo;s Shaftesbury we use <a href="http://fireflysolutions.co.uk/">Firefly</a> for our <a href="http://en.wikipedia.org/wiki/Virtual_learning_environment">VLE</a>.  I won’t give you a sales pitch on Firefly, but suffice to say, that after a bit of a journey from <a href="https://moodle.org/">Moodle</a> through <a href="http://en.wikipedia.org/wiki/Microsoft_SharePoint">SharePoint</a> we have rested at Firefly – quite simply, at this point in time <em>(history has taught me that things can change!),</em> this product, the company and their approach to IT, is nothing short of excellent.  I like Firefly; I like the chaps and chapesses at Firefly!</p>
+<p>Apart from having an extremely intelligent approach to the design of their product, they also invite you to “dig” into the system, and do magic things yourself, if you are so inclined – my type of IT product.</p>
+<p>Over recent months, we have indeed done a fair bit of customisation, some reasonably advanced and some not so – a lot of this customisation has involved implementing improved integration with our <a href="http://en.wikipedia.org/wiki/Management_information_system">MIS</a> system <em>(</em><a href="http://www.furlongsolutions.com/products/schoolbase"><em>Schoolbase</em></a><em>) –</em> more on that in future blog posts!</p>
+<p>One feature that we did have in our previous SharePoint system, which was surprisingly popular, and in many ways greatly missed – was an “<strong>online users</strong>” section.  So this is how I set about building this into Firefly.</p>
+<hr>
+<h2 id="creating-the-online-users-module">Creating the online users module</h2>
+<p>The main intention was to make this feature as portable as possible, without the need to change any core structural feature of Firefly – as such the only area that did require a slight alteration, was to create a <a href="http://technet.microsoft.com/en-us/library/ms190457.aspx">nonclustered</a> index on the <strong>Hits</strong> table, based on a descending date field – this was run past the Firefly team, who agreed that it shouldn’t have any negative impact.</p>
+<p>The main reason for this requirement, is that the Hits table is massive <em>(literally millions of rows in our instance)</em> – and without this index, the performance of the appropriate SQL query would be unacceptable.</p>
+<p><em>Index creation screenshot:</em></p>
 
 
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">It&rsquo;s not uncommon to receive unwanted emails which have managed to work their way through the array of filtering systems in production. Recently our organisation received such an email - a classic phishing email sent to multiple end user accounts.            
-                        
-              <span class="ns-readmore">
-                <a href="/how-to-delete-an-email-from-all-exchange-mailboxes/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/encourage-those-windows-to-restart/" rel="canonical" itemprop="url">Encourage those Windows to restart!</a></h1>
-
-            <time datetime=2018-10-01&#32;19:47:29&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Monday, Oct 1, 2018</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/powershell">Powershell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">Quicktip</a> </span>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/fe4b9026-0650-41be-9671-d2b11347d11d-min.jpg"/>
 
 
-            
+<p><strong>Server Side</strong></p>
+<p>Once the Hits table was indexed efficiently, the next stage was to create a server side process, which would query the Hits table <em>(and perform any necessary filters to limit the users being displayed – for example not to show any parents who may also be online etc).</em> This was achieved by creating an aspx page located in a sub folder of the plugins folder on the server <em>(e.g. “Plugins \ ClientASPXFiles \ STMWhoOnline.aspx”).</em></p>
+<p><strong>This aspx page utilises the Firefly security model, so that you cannot browse to it as an unauthorised user etc.</strong></p>
+<p>The process reduces the count to show only the latest ten users, ordered by date descending, based on the most recent top 500 rows in the Hits table – because technically it is not known as to how many hit’s an individual user is going to create, and it is impractical to query the entire Hits table, an arbitrary figure of the last 500 hits, gives a good chance of getting at least the last 10 unique users http hits, without causing unnecessary strain on querying the entire table.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> TOP <span style="color:#ae81ff">500</span> <span style="color:#66d9ef">UPPER</span>(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(user_identity, <span style="color:#e6db74">&#39;@STMARYS.EU&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#e6db74">&#39;ST-MARYS\\&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)) <span style="color:#66d9ef">as</span> Online, guid, date <span style="color:#66d9ef">FROM</span> hits h <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tokens t <span style="color:#66d9ef">ON</span> (h.user_guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT <span style="color:#f92672">=</span> t.guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT) <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_1&#39;</span>)<span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_2&#39;</span>) <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> [date] <span style="color:#66d9ef">DESC</span>
+</code></pre></div><p>The page then uses some basic array and looping procedures to ensure that it is only displaying a single latest instance per user.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">if</span> (myReader.Read())
+  {
+    <span style="color:#66d9ef">while</span> (myReader.Read())
+      {
+        DateTime loggedDate = Convert.ToDateTime(myReader[<span style="color:#e6db74">&#34;date&#34;</span>].ToString());
+        <span style="color:#66d9ef">if</span> (loggedDate.AddMinutes(<span style="color:#ae81ff">5</span>) &gt;= DateTime.Now)
+          {
+            <span style="color:#66d9ef">if</span> (!checkForDup.Contains(myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString()))
+              {
+                <span style="color:#66d9ef">if</span> (count &lt; <span style="color:#ae81ff">10</span>)
+                  {
+                    sb.Append(<span style="color:#e6db74">&#34;{\&#34;user\&#34;:\&#34;&#34;</span> + myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString() + <span style="color:#e6db74">&#34;\&#34;,\&#34;guid\&#34;:\&#34;&#34;</span> + myReader[<span style="color:#e6db74">&#34;guid&#34;</span>].ToString() + <span style="color:#e6db74">&#34;\&#34;,\&#34;logged\&#34;:\&#34;&#34;</span> + loggedDate.TimeOfDay.ToString() + <span style="color:#e6db74">&#34;\&#34;},&#34;</span>);
+                    checkForDup.Add(myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString());
+                    count++;
+                  }
+              }
+          }
+      }
+  }
+<span style="color:#66d9ef">else</span>
+  {
+    sb.Append(<span style="color:#e6db74">&#34;&#34;</span>);
+  }
+</code></pre></div><p>The final top ten results are then returned in a <a href="http://en.wikipedia.org/wiki/JSON">json</a> format, which can easily be read by a client side script making an ajax call.</p>
+<p>Finally, to make the server side query as efficient as possible, the page is actually set to cache all results every 10 seconds, so that if multiple users are online, the server is not querying unnecessarily <em>(tens of times per second etc)</em> causing drain on server resources.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">&lt;%<span style="color:#960050;background-color:#1e0010">@</span> outputcache duration=<span style="color:#e6db74">&#34;10&#34;</span> location=<span style="color:#e6db74">&#34;Server&#34;</span> varybyparam=<span style="color:#e6db74">&#34;None&#34;</span> %&gt;
+</code></pre></div><hr>
+<p><strong>Client Side</strong></p>
+<p>All that is required on the client side, it a small snippet of JavaScript to create an ajax call every 10 seconds, polling the server file <em>(created above)</em> and then presenting the json returned from this file in a standard html <!-- raw HTML omitted --> element, with an <!-- raw HTML omitted --> hyperlink to the users profile, and a hover tooltip displaying the actual date/time of the most recent “hit”.</p>
+<p>This JavaScript is placed by literally adding a Firefly formatted text component, and then using the code editor – copying in the JavaScript.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">br</span>/&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;Most recent visitors&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;
+(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doPoll</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://YOUR_DOMAIN_NAME/plugins/clientaspxfiles/stmwhoonline.aspx&#34;</span>,
+        <span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
+        <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">json</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a href=\profile?guid=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">guid</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">logged</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">user</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+                <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+            }
+            <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
+                <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#online&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>).<span style="color:#a6e22e">hide</span>().<span style="color:#a6e22e">fadeIn</span>();
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#online&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
+            }
+        }
+    });
+    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">doPoll</span>, <span style="color:#ae81ff">10000</span>);
+})();
 
-            
 
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">A common issue with supporting a primarily Windows based user body, is that thanks to the &ldquo;always on&rdquo; expectation emboldened by smartphones and tablets, it can be a constant battle to try and encourage end users to restart their computers with some degree of regularity - yes IT friends, you know exactly what I mean!            
-                        
-              <span class="ns-readmore">
-                <a href="/encourage-those-windows-to-restart/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-        
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/security-should-be-a-first-class-citizen/" rel="canonical" itemprop="url">Security should be a first class citizen</a></h1>
-
-            <time datetime=2016-11-29&#32;16:32:17&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Nov 29, 2016</time>
-
-            <span class="ns-tags">| Tags: <a href="/tags/security">Security</a> <a href="/tags/devops">DevOps</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/rambling">Rambling</a> </span>
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>This process works remarkably well, and when using an SQL profiler, with the query reduced to only take the top 500 hits and the utilising of caching, the SQL load is exceptionally efficient.</p>
+<p>Technically, there is a theory that by only querying the last 500 hits, you cannot be scientifically absolute in stating that you are getting all the last top ten individual users <em>(e.g. one user may clock up 300 hits by themselves etc),</em> but in our tests, this proved to be more than adequate and indeed does always appears to show the most recent top ten.</p>
 
 
-            
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/b26a9c4-6c9d-47b1-af6d-34a4725c0b99-min.jpg"/>
 
-            
 
-          </header>
+<p>As an addition, I have also adjusted our query accordingly to create other “<em>more secure</em>” pages, for administrative purposes only, to establish currently logged on parents etc – this was in many ways more enlightening from an IT perspective, than the knowledge of the school users – indeed we were quite astonished to establish, that there were parents logged onto the portal almost constantly!</p>
+ 
+    </div>
+<button class="ns-share-btn" type="button" title="Share this article">
+  <svg class="ns-share-icon">
+    <use href="#share-icon"></use>
+  </svg>
+  <span>Share Article</span>
+</button>
 
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Let’s face it, information security is important. With more and more data being stored and accessed via the internet, we are becoming increasingly reliant on “third parties” to secure our personal data responsibly.            
-                        
-              <span class="ns-readmore">
-                <a href="/security-should-be-a-first-class-citizen/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-         
-        
-        <div class="ns-totalpages">1 of 4</div>
-
-        <nav class="pagination container" aria-label="Pagination">
-      
-
-  <a href="/tags/sysadmin/page/2/" rel="prev" class="page-link">&laquo; Older</a>
-
+<svg class="ns-hidden">
+  <defs>
+    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
+   </defs>
+</svg>
+ </main>
+ 
    
-
-  <br /><br />
-</nav>
-            
-      </main> 
-
-     
-
-    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -476,6 +460,3 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </script>
 
     
-  </body>
-</html>
-
