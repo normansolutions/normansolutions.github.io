@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>Secure a webpage without a logon?</title>
+    <title>To CMS or not to CMS?</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -295,106 +295,58 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     
     
 <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-  <h1>Secure a webpage without a logon?</h1>
+  <h1>To CMS or not to CMS?</h1>
   <div class="ns-postdate">  
-      <time datetime=2015-09-19&#32;12:58:34&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Sep 19, 2015</time>
-      <span class="ns-tags">| Tags: <a href="/tags/c">C#</a> <a href="/tags/razor">Razor</a> <a href="/tags/website">Website</a> <a href="/tags/security">Security</a> </span>   
+      <time datetime=2013-12-13&#32;22:44:12&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Dec 13, 2013</time>
+      <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/blog">Blog</a> <a href="/tags/cms">CMS</a> <a href="/tags/razor">Razor</a> <a href="/tags/c">C#</a> </span>   
       <hr/>
     </div>
     <div id="ns-target">
-      <p>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.</p>
-<p>Recently, I introduced a frictionless <em>(logon free)</em> way of providing <em>secure(ish)</em> access to some very basic web services.</p>
-<p><em>….I can hear all those security experts screaming already!</em></p>
-<blockquote>
-<p><em>Before I proceed any further, please note that this solution <strong>must never be seen as a proper security authentication replacement!</strong></em></p>
-</blockquote>
-<p>What this can be viewed as, is an ideal solution for those ‘<em>edge’</em> cases, where you may have a website, that <strong>isn’t</strong> specifically data sensitive, yet requires private access.</p>
-<p>An ideal candidate could be an administration page for entering dates or events onto a basic website.</p>
-<hr>
-<h2 id="security-by-obscurity">Security by Obscurity</h2>
-<p>In many ways, this solution does follow the <a href="https://en.wikipedia.org/wiki/Security_through_obscurity">Security by Obscurity</a> model, <strong>but</strong> with the crucial addition of an extra layer!</p>
-<p>A lot of web services nowadays are using the ‘complex url’ pattern of keeping a resource public, yet almost impossible to guess <em>(for instance, some ways of sharing documents on Microsoft</em> <a href="https://onedrive.live.com/about/en-gb/"><em>Oncedrive</em></a> <em>etc).</em></p>
-<p>To clarify, this is where the web address contains random characters (often appended to the end of the url), which mean absolutely nothing to the end user, but are actually a unique resource code.</p>
-<p><strong>Complex URL forms the first part of this implementation.</strong></p>
+      <p>OK, the time has come for a website refresh – it’s something that I like to try and do annually <em>(well, I say annually, what I really mean is that I did it last year).</em> The question, is do I roll my own, as I have always done, or jump into the CMS world?</p>
+<p>There are many CMS systems out there, and I have had a used several of them (varying levels of experience); to summarise:</p>
 <ul>
-<li>Create a ‘key’ which is appended to a <a href="https://en.wikipedia.org/wiki/Query_string">query string</a>.</li>
-<li>Check the query string being sent to the server, on page request, to establish whether or not to display the resource.</li>
+<li><a href="http://wordpress.com/">Wordpress</a> <em>(I have built a few sites, but never really felt totally “at home” with php)</em></li>
+<li><a href="http://umbraco.com/">Umbraco</a> <em>(I love it, but it is a pretty huge system)</em></li>
+<li><a href="http://www.orchardproject.net/">Orchard</a> <em>(again, I love it, but it is pretty heavyweight)</em></li>
+<li><a href="https://ghost.org/">Ghost</a> <em>(new kid on the block – tempting, it would be a nice introduction to some <a href="http://nodejs.org/">nodejs</a>, which I really want to learn more about)</em></li>
+<li><a href="https://github.com/madskristensen/miniblog">Miniblog</a> <em>(another new kid on the block, from the genius that is</em> <a href="http://madskristensen.net/"><em>Mads Kristensen</em></a><em>; a minimalistic blogging platform)</em></li>
 </ul>
-<p>Very basic, yet surprisingly secure(ish).</p>
-<p>Of course, the main concern with this solution, is that whilst the web address may not be guessable, it is certainly shareable!</p>
-<h2 id="enter-secure-cookies">Enter Secure Cookies</h2>
-<p>The crucial secondary level to this solution, is to ensure a secure cookie is present on each device you are allowing to access this web resource.</p>
-<blockquote>
-<p>No cookie – No access</p>
-</blockquote>
-<p>Again, a simple principle, but surprisingly secure – indeed, let us not forget, that secure http cookies are pretty much what governs conventional web authentication processes anyway!</p>
-<p>Of course throw it all onto port 443 (https) and you extend the security even further.</p>
-<hr>
-<h2 id="the-code">The Code!</h2>
-<p>Below is an example of how this very basic process can be implemented in asp.net (c#).</p>
-<p><strong>Adding cookie to the device <em>(also providing the ability to remove)</em></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#960050;background-color:#1e0010">@</span>{
-    String cookieQueryString = Request.QueryString[<span style="color:#e6db74">&#34;cookieSetter&#34;</span>];
-
-    <span style="color:#66d9ef">switch</span> (cookieQueryString)
-    {
-        <span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;remove&#34;</span> - This deletes the cookie <span style="color:#66d9ef">from</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
-	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;remove&#34;</span>:
-            Response.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires = DateTime.Now.AddYears(-<span style="color:#ae81ff">30</span>);
-        <span style="color:#66d9ef">break</span>;
-
-	<span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;add&#34;</span> - This creates the cookie <span style="color:#66d9ef">on</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;add&#34;</span>:
-            HttpCookie aCookie = <span style="color:#66d9ef">new</span> HttpCookie(<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>);
-            aCookie.HttpOnly = <span style="color:#66d9ef">true</span>;
-            aCookie.Value = <span style="color:#e6db74">&#34;Authorised&#34;</span>;
-            aCookie.Expires = DateTime.Now.AddYears(<span style="color:#ae81ff">30</span>);
-            Response.Cookies.Add(aCookie);
-            <span style="color:#66d9ef">break</span>;
-
-    }
+<p>To be honest, the list could go on; but the question really was, do I use a CMS or not?</p>
+<p>I heard about <a href="https://github.com/madskristensen/miniblog">Miniblog</a> after listening to an excellent <a href="http://www.dotnetrocks.com/default.aspx?ShowNum=927">Dot Net Rocks show with Mads</a>, and it caught my interest.  Let’s be straight, I am not a coding genius, however, I do have what I believe to me an excellent understanding of modern patterns and practices, and can spot a well written <em>(or not, as the case may be)</em> system.  I am impressed with Miniblog.</p>
+<p>It took me a few hours looking through the code and following the work flows to fully understand how it all hangs together – but what I saw was a really neat piece of work that utilised modern HTML practices and decent caching <em>(and cache-busting!</em>) – it sits on top of <a href="http://getbootstrap.com/">Bootstrap 3</a>, so has all the wonderful responsive design juice and goodness provided with that framework; to be honest the list is impressive and is better checked out from the <a href="https://github.com/madskristensen/MiniBlog/blob/master/README.md">readme</a> file.</p>
+<p>I did find I had to tweak a few bits and bobs, some out of necessity and some out of preference.  One main necessity issue was with the paging, for some strange reason the paging, which allows you to go back and forth between posts, stopped too early, thus not allowing you to go back to the last few posts.  For good or ill, I managed to resolve this by changing the below in the  _Layout.cshtml:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">@if (Blog.GetPosts(Blog.PostsPerPage * <span style="color:#ae81ff">2</span>).Count() &gt; Blog.PostsPerPage)
+</code></pre></div><p>to</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">@if (Blog.GetPosts(Blog.PostsPerPage).Count() &gt; Blog.PostsPerPage)
+</code></pre></div><p>Other issues were more out of preference; for example, I am a stickler for cdn fall-backs, and whilst it is great that Miniblog utilises the <a href="http://www.bootstrapcdn.com/">Bootstrap cdn</a> (and <a href="https://developers.google.com/speed/libraries/devguide">jQuery</a>), I just had to implement a fall-back.  This was achieved with a small amount of JavaScript (and HTML) as below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">//cdn fallback for Bootstrap css
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrapCssTest&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hide&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#e6db74">/div&gt; /</span><span style="color:#f92672">/</span> (<span style="color:#a6e22e">HTML</span> <span style="color:#66d9ef">in</span>  <span style="color:#a6e22e">_Layout</span>.<span style="color:#a6e22e">cshtml</span>)
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#bootstrapCssTest&#39;</span>).<span style="color:#a6e22e">is</span>(<span style="color:#e6db74">&#39;:visible&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;&lt;link href=&#34;\css/bootstrap.min.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34; /&gt;&#39;</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#e6db74">&#39;head&#39;</span>);
 }
 
-<span style="color:#960050;background-color:#1e0010">@</span>* Visual feedback <span style="color:#66d9ef">for</span> cookie *<span style="color:#960050;background-color:#1e0010">@</span>
-@if (Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] != <span style="color:#66d9ef">null</span>)
-{
-    Response.Write(<span style="color:#e6db74">&#34;Cookie Found&#34;</span>);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Value);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-
+<span style="color:#75715e">//cdn fallback for Bootstrap js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> (<span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">modal</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) {
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;&lt;script src=&#34;\scripts/bootstrap.min.js&#34;&gt;\x3C/script&gt;&#39;</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#e6db74">&#39;head&#39;</span>);
 }
-</code></pre></div><p><strong>Storing the complex query string in a web.config for easy maintenance</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">  <span style="color:#f92672">&lt;appSettings&gt;</span>
-    <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;hhqsdc332323vxzcjsdffbfsh12sdfdfgdfgdfgwerktyykfdhgdhjsdfsdfasdffdfww&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/appSettings&gt;</span>
-</code></pre></div><p><strong>Server side checking that cookie is present and query string matches</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">@using System.Configuration;
 
-<span style="color:#960050;background-color:#1e0010">@</span>{
-
-    <span style="color:#66d9ef">string</span> ComplexURLFromWebConfig = ConfigurationManager.AppSettings[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>].ToString().Trim();
-
-    <span style="color:#960050;background-color:#1e0010">@</span>* QueryString sent <span style="color:#66d9ef">from</span> url *<span style="color:#960050;background-color:#1e0010">@</span>
-    <span style="color:#66d9ef">string</span> QueryStringComplexURL = (Request.QueryString[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>] ?? <span style="color:#e6db74">&#34;&#34;</span>).ToString().Trim();
-
-
-    <span style="color:#66d9ef">if</span> (ComplexURLFromWebConfig != QueryStringComplexURL || Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] == <span style="color:#66d9ef">null</span>)
-    {
-        <span style="color:#66d9ef">var</span> data = <span style="color:#e6db74">&#34;Unathorised&#34;</span>;
-        Response.Write(data);
-        Response.End();
-    }
-
-}
-</code></pre></div><hr>
-<h2 id="summary">Summary</h2>
-<p>I have used this approach on several basic web solutions, that <em>don’t</em> require armour plating security, but equally shouldn&rsquo;t ideally be exposed to all and sundry.</p>
-<p>My recommendation, would be to use this on internal sites <em>(behind the firewall)</em> or small public sites.  It makes life remarkably simple for updating basic content, without having to implement a full authentication system.</p>
-<p>Indeed, one <em>could</em> argue that this is <strong>even more secure</strong> than some conventional username and password systems – <em>especially</em> when you often see the ridiculously hackable passwords that some end users use!</p>
-<p>Of course, it doesn&rsquo;t particularly scale well, and will cause slight annoyance if you clear down your cookies; but then again, it is only intended for quick solution, niche requirements.</p>
+<span style="color:#75715e">//cdn fallback for jQuery
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>window.<span style="color:#a6e22e">jQuery</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;script src=&#34;\scripts/jQuery.min.js&#34;&gt;\x3C/script&gt;&#39;</span>)<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><p>Other preferences were alteration of styling <em>(overriding some Bootstrap classes, adding tweet buttons to the bottom of posts etc)</em> and the implementation of a “recent” articles option, on the navigation bar, this was achieved using the below code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav&#34;</span>&gt;
+    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span>&gt;
+        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-toggle&#34;</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span>&gt;Recent Articles &lt;<span style="color:#f92672">b</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caret&#34;</span>&gt;&lt;/<span style="color:#f92672">b</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+        &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-menu&#34;</span>&gt;
+            @foreach (var postTitle in Storage.GetAllPosts().Where(pub =&gt; pub.IsPublished == true).Where(pubDate =&gt; pubDate.PubDate <span style="color:#960050;background-color:#1e0010">&lt;</span>= DateTime.Now).Take(10))
+            {
+                &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@postTitle.AbsoluteUrl&#34;</span>&gt;@postTitle.Title&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+            }
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div><p>Add some <a href="http://lesscss.org/">Less CSS</a> support and use the bundling options of <a href="http://vswebessentials.com/">Web Essentials</a> <em>(again from Mads Kristensen)</em> and away you go!</p>
+<p>So far, I am really impressed with Miniblog – it has been a bit of a journey over the past few days, getting to grips with it all, but I am look forward to blogging more in the future!</p>
+<p>…….and the best part, is that I can use <a href="http://en.wikipedia.org/wiki/Windows_Live_Writer">Windows Live Writer</a> to create blogs – it fully integrates….no hacking away in a webpage….lovely!</p>
  
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">

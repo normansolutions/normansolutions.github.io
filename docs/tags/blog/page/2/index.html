@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>Secure a webpage without a logon?</title>
+    <title>Blog</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -292,126 +292,55 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   </a>
 </div>
 
+
     
+    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+       
+       
+        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
+          <header>
+             <h1 itemprop="name headline"><a href="/to-cms-or-not-to-cms/" rel="canonical" itemprop="url">To CMS or not to CMS?</a></h1>
+
+            <time datetime=2013-12-13&#32;22:44:12&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Dec 13, 2013</time>
+
+            <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/blog">Blog</a> <a href="/tags/cms">CMS</a> <a href="/tags/razor">Razor</a> <a href="/tags/c">C#</a> </span>
+
+
+            
+
+            
+
+          </header>
+
+          <div itemprop="articleBody">
+            <p class="ns-post-summary">OK, the time has come for a website refresh – it’s something that I like to try and do annually (well, I say annually, what I really mean is that I did it last year).            
+                        
+              <span class="ns-readmore">
+                <a href="/to-cms-or-not-to-cms/">➡️</a>
+              </span>             
+              
+              </p>
+          </div>
+        </div>
+        <hr/>
+         
+        
+        <div class="ns-totalpages">2 of 2</div>
+
+        <nav class="pagination container" aria-label="Pagination">
     
-<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-  <h1>Secure a webpage without a logon?</h1>
-  <div class="ns-postdate">  
-      <time datetime=2015-09-19&#32;12:58:34&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Sep 19, 2015</time>
-      <span class="ns-tags">| Tags: <a href="/tags/c">C#</a> <a href="/tags/razor">Razor</a> <a href="/tags/website">Website</a> <a href="/tags/security">Security</a> </span>   
-      <hr/>
-    </div>
-    <div id="ns-target">
-      <p>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.</p>
-<p>Recently, I introduced a frictionless <em>(logon free)</em> way of providing <em>secure(ish)</em> access to some very basic web services.</p>
-<p><em>….I can hear all those security experts screaming already!</em></p>
-<blockquote>
-<p><em>Before I proceed any further, please note that this solution <strong>must never be seen as a proper security authentication replacement!</strong></em></p>
-</blockquote>
-<p>What this can be viewed as, is an ideal solution for those ‘<em>edge’</em> cases, where you may have a website, that <strong>isn’t</strong> specifically data sensitive, yet requires private access.</p>
-<p>An ideal candidate could be an administration page for entering dates or events onto a basic website.</p>
-<hr>
-<h2 id="security-by-obscurity">Security by Obscurity</h2>
-<p>In many ways, this solution does follow the <a href="https://en.wikipedia.org/wiki/Security_through_obscurity">Security by Obscurity</a> model, <strong>but</strong> with the crucial addition of an extra layer!</p>
-<p>A lot of web services nowadays are using the ‘complex url’ pattern of keeping a resource public, yet almost impossible to guess <em>(for instance, some ways of sharing documents on Microsoft</em> <a href="https://onedrive.live.com/about/en-gb/"><em>Oncedrive</em></a> <em>etc).</em></p>
-<p>To clarify, this is where the web address contains random characters (often appended to the end of the url), which mean absolutely nothing to the end user, but are actually a unique resource code.</p>
-<p><strong>Complex URL forms the first part of this implementation.</strong></p>
-<ul>
-<li>Create a ‘key’ which is appended to a <a href="https://en.wikipedia.org/wiki/Query_string">query string</a>.</li>
-<li>Check the query string being sent to the server, on page request, to establish whether or not to display the resource.</li>
-</ul>
-<p>Very basic, yet surprisingly secure(ish).</p>
-<p>Of course, the main concern with this solution, is that whilst the web address may not be guessable, it is certainly shareable!</p>
-<h2 id="enter-secure-cookies">Enter Secure Cookies</h2>
-<p>The crucial secondary level to this solution, is to ensure a secure cookie is present on each device you are allowing to access this web resource.</p>
-<blockquote>
-<p>No cookie – No access</p>
-</blockquote>
-<p>Again, a simple principle, but surprisingly secure – indeed, let us not forget, that secure http cookies are pretty much what governs conventional web authentication processes anyway!</p>
-<p>Of course throw it all onto port 443 (https) and you extend the security even further.</p>
-<hr>
-<h2 id="the-code">The Code!</h2>
-<p>Below is an example of how this very basic process can be implemented in asp.net (c#).</p>
-<p><strong>Adding cookie to the device <em>(also providing the ability to remove)</em></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#960050;background-color:#1e0010">@</span>{
-    String cookieQueryString = Request.QueryString[<span style="color:#e6db74">&#34;cookieSetter&#34;</span>];
 
-    <span style="color:#66d9ef">switch</span> (cookieQueryString)
-    {
-        <span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;remove&#34;</span> - This deletes the cookie <span style="color:#66d9ef">from</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
-	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;remove&#34;</span>:
-            Response.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires = DateTime.Now.AddYears(-<span style="color:#ae81ff">30</span>);
-        <span style="color:#66d9ef">break</span>;
+  <a href="/tags/blog/" rel="next" class="page-link">Newer &raquo;</a>
+     
 
-	<span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;add&#34;</span> - This creates the cookie <span style="color:#66d9ef">on</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;add&#34;</span>:
-            HttpCookie aCookie = <span style="color:#66d9ef">new</span> HttpCookie(<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>);
-            aCookie.HttpOnly = <span style="color:#66d9ef">true</span>;
-            aCookie.Value = <span style="color:#e6db74">&#34;Authorised&#34;</span>;
-            aCookie.Expires = DateTime.Now.AddYears(<span style="color:#ae81ff">30</span>);
-            Response.Cookies.Add(aCookie);
-            <span style="color:#66d9ef">break</span>;
+  <br /><br />
+</nav>
+            
+      </main> 
 
-    }
-}
+     
 
-<span style="color:#960050;background-color:#1e0010">@</span>* Visual feedback <span style="color:#66d9ef">for</span> cookie *<span style="color:#960050;background-color:#1e0010">@</span>
-@if (Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] != <span style="color:#66d9ef">null</span>)
-{
-    Response.Write(<span style="color:#e6db74">&#34;Cookie Found&#34;</span>);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Value);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-
-}
-</code></pre></div><p><strong>Storing the complex query string in a web.config for easy maintenance</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">  <span style="color:#f92672">&lt;appSettings&gt;</span>
-    <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;hhqsdc332323vxzcjsdffbfsh12sdfdfgdfgdfgwerktyykfdhgdhjsdfsdfasdffdfww&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/appSettings&gt;</span>
-</code></pre></div><p><strong>Server side checking that cookie is present and query string matches</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">@using System.Configuration;
-
-<span style="color:#960050;background-color:#1e0010">@</span>{
-
-    <span style="color:#66d9ef">string</span> ComplexURLFromWebConfig = ConfigurationManager.AppSettings[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>].ToString().Trim();
-
-    <span style="color:#960050;background-color:#1e0010">@</span>* QueryString sent <span style="color:#66d9ef">from</span> url *<span style="color:#960050;background-color:#1e0010">@</span>
-    <span style="color:#66d9ef">string</span> QueryStringComplexURL = (Request.QueryString[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>] ?? <span style="color:#e6db74">&#34;&#34;</span>).ToString().Trim();
-
-
-    <span style="color:#66d9ef">if</span> (ComplexURLFromWebConfig != QueryStringComplexURL || Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] == <span style="color:#66d9ef">null</span>)
-    {
-        <span style="color:#66d9ef">var</span> data = <span style="color:#e6db74">&#34;Unathorised&#34;</span>;
-        Response.Write(data);
-        Response.End();
-    }
-
-}
-</code></pre></div><hr>
-<h2 id="summary">Summary</h2>
-<p>I have used this approach on several basic web solutions, that <em>don’t</em> require armour plating security, but equally shouldn&rsquo;t ideally be exposed to all and sundry.</p>
-<p>My recommendation, would be to use this on internal sites <em>(behind the firewall)</em> or small public sites.  It makes life remarkably simple for updating basic content, without having to implement a full authentication system.</p>
-<p>Indeed, one <em>could</em> argue that this is <strong>even more secure</strong> than some conventional username and password systems – <em>especially</em> when you often see the ridiculously hackable passwords that some end users use!</p>
-<p>Of course, it doesn&rsquo;t particularly scale well, and will cause slight annoyance if you clear down your cookies; but then again, it is only intended for quick solution, niche requirements.</p>
- 
-    </div>
-<button class="ns-share-btn" type="button" title="Share this article">
-  <svg class="ns-share-icon">
-    <use href="#share-icon"></use>
-  </svg>
-  <span>Share Article</span>
-</button>
-
-<svg class="ns-hidden">
-  <defs>
-    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
-   </defs>
-</svg>
- </main>
- 
-   
+    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -462,3 +391,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </script>
 
     
+  </body>
+</html>
+

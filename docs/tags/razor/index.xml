@@ -30,5 +30,14 @@ Recently, I introduced a frictionless (logon free) way of providing secure(ish) 
       <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
     </item>
     
+    <item>
+      <title>To CMS or not to CMS?</title>
+      <link>https://normansolutions.co.uk/to-cms-or-not-to-cms/</link>
+      <pubDate>Fri, 13 Dec 2013 22:44:12 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/to-cms-or-not-to-cms/</guid>
+      <description>OK, the time has come for a website refresh – it’s something that I like to try and do annually (well, I say annually, what I really mean is that I did it last year).</description>
+    </item>
+    
   </channel>
 </rss>

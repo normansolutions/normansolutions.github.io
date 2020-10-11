@@ -261,7 +261,7 @@ It would create new AD Groups within an _existing_ OU called “SBGroups” on a
 
 > _Trust me – it’s a lot easier than it reads!_
 
-```BASH
+```PowerShell
 C:\SCHEDULE\SBGroups\CreateADGroups.exe  "DC=St-Stephens, DC=Local" "OU=SBGroups" "OU=Students, OU=St Stephens Users" "Art|Photo" "UCAS"
 ```
 
