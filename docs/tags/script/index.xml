@@ -31,6 +31,15 @@ To quote Wikipedia, the term hack, for the purposes of this blog post is:</descr
     </item>
     
     <item>
+      <title>PowerShell to secure AD users RDP access</title>
+      <link>https://normansolutions.co.uk/powershell-to-secure-ad-users-rdp-access/</link>
+      <pubDate>Thu, 13 Feb 2014 20:42:36 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/powershell-to-secure-ad-users-rdp-access/</guid>
+      <description>It’s a sad fact that security can all too often be the poor relative in software and systems design (please note that this blog post is not intended to address system security per se; the OWASP website and / or security expert Troy Hunt’s blog, are good references for that topic).</description>
+    </item>
+    
+    <item>
       <title>Using PowerShell to check all pages in a website</title>
       <link>https://normansolutions.co.uk/using-powershell-to-check-all-pages-in-a-website/</link>
       <pubDate>Tue, 17 Dec 2013 08:49:20 +0000</pubDate>
