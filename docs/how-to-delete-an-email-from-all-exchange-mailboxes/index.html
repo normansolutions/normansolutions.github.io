@@ -298,7 +298,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   <h1>How to delete an email from all Exchange mailboxes</h1>
   <div class="ns-postdate">  
       <time datetime=2018-10-16&#32;15:45:26&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Oct 16, 2018</time>
-      <span class="ns-tags">| Tags: <a href="/tags/powershell">Powershell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">Quicktip</a> <a href="/tags/exchange">Exchange</a> </span>   
+      <span class="ns-tags">| Tags: <a href="/tags/powershell">Powershell</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/quicktip">QuickTip</a> <a href="/tags/exchange">Exchange</a> </span>   
       <hr/>
     </div>
     <div id="ns-target">
@@ -310,8 +310,9 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <hr>
 <p><strong>Prerequisites</strong></p>
 <p>Open the Exchange Management PowerShell <em>(this usually needs to be done on the Exchange Server).</em></p>
-<p>You may also need to enable the appropriate Snapin by entering: <strong>Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin</strong></p>
-<hr>
+<p>You may also need to enable the appropriate Snapin by entering:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
+</code></pre></div><hr>
 <h4 id="case-1"><strong>Case 1</strong></h4>
 <p>To purely search for the presence of an email <em>(as against deleting all instances of an email)</em>, you need to copy the results to an existing mailbox - you could use your own account or a spare one.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -TargetMailBox <span style="color:#e6db74">&#34;SpareUser&#34;</span> -TargetFolder <span style="color:#e6db74">&#34;SPAMFILES&#34;</span>`

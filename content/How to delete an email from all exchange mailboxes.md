@@ -6,7 +6,7 @@ type: post
 tags:
   - Powershell
   - SysAdmin
-  - Quicktip
+  - QuickTip
   - Exchange
 ---
 
@@ -26,7 +26,11 @@ A **very useful script** - not only for the removal of unwanted email, but also 
 
 Open the Exchange Management PowerShell _(this usually needs to be done on the Exchange Server)._
 
-You may also need to enable the appropriate Snapin by entering: **Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
+You may also need to enable the appropriate Snapin by entering:
+
+```PowerShell
+Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
+```
 
 ---
 
