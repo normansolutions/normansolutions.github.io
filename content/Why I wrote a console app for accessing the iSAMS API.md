@@ -13,8 +13,6 @@ tags:
 
 Firstly, let me register that I **_much_** prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I've said it!
 
-> The iSAMS token process required **before** you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.
-
 _However_, I do entirely appreciate the necessity for an official API (e.g. security, consistency, potential database schema changes, futureproofing etc). As such, the need to embrace the iSAMS API is I feel, something of a requirement.
 
 ## The Project - iSAMS Data Extraction Tool

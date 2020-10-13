@@ -303,9 +303,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     </div>
     <div id="ns-target">
       <p>Firstly, let me register that I <strong><em>much</em></strong> prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I&rsquo;ve said it!</p>
-<blockquote>
-<p>The iSAMS token process required <strong>before</strong> you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.</p>
-</blockquote>
 <p><em>However</em>, I do entirely appreciate the necessity for an official API (e.g. security, consistency, potential database schema changes, futureproofing etc). As such, the need to embrace the iSAMS API is I feel, something of a requirement.</p>
 <h2 id="the-project---isams-data-extraction-tool">The Project - iSAMS Data Extraction Tool</h2>
 <p>I felt it should be feasible to write a small C# Console Application that you could pass in arguments (be it via the CLI or using Task Scheduler etc) in order to return data. These arguments would be everything from the private keys through to the actual REST API Endpoint needed to extract information - <strong>in short, the tool would do all the token negotiation and heavy lifting, so to speak.</strong></p>
