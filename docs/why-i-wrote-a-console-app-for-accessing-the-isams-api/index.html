@@ -325,21 +325,12 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>You need to pass in 6 parameters (listed below). These parameters are separated by a space (see below example).</p>
 <p><strong>Required Parameters</strong></p>
 <ol>
-<li>
-<p>Token URL</p>
-</li>
-<li>
-<p>Client ID</p>
-</li>
-<li>
-<p>Client Secret</p>
-</li>
-<li>
-<p>JSON Element</p>
-</li>
-<li>
-<p>Data Save Location (e.g. c:\temp\data.json)</p>
-</li>
+<li>Token URL</li>
+<li>Client ID</li>
+<li>Client Secret</li>
+<li>API Endpoint URL <em>(iSAMS API endpoint documentation can be found on <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index"> Swagger here</a>)</em></li>
+<li>JSON Element</li>
+<li>Data Save Location (e.g. c:\temp\data.json)</li>
 </ol>
 <p><strong>CLI Example</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">isamsdata</span>.<span style="color:#a6e22e">exe</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">auth</span><span style="color:#f92672">/</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">/</span><span style="color:#a6e22e">token</span> <span style="color:#a6e22e">YOURKEY</span> <span style="color:#a6e22e">YOURSECRET</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">humanresources</span><span style="color:#f92672">/</span><span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">C</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">temp</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">json</span>
