@@ -47,7 +47,7 @@ You need to pass in 6 parameters (listed below). These parameters are separated 
 1. Token URL
 2. Client ID
 3. Client Secret
-4. API Endpoint URL _(iSAMS API endpoint documentation can be found on [ Swagger here](https://developerdemo.isams.cloud/Main/swagger/ui/index))_
+
 5. JSON Element
 6. Data Save Location (e.g. c:\temp\data.json)
 
