@@ -6,10 +6,20 @@
     <description>Recent content in MIS on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 19 Feb 2020 17:31:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://normansolutions.co.uk/tags/mis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why I wrote a console app for accessing the iSAMS API</title>
+      <link>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
+      <description>Firstly, let me register that I much prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!
+In fairness this probably aligns with my IT experience, in that I tend to embrace the &amp;ldquo;Swiss Army Knife&amp;rdquo; approach of skills and experiences.</description>
+    </item>
     
     <item>
       <title>Power BI &#43; iSAMS API</title>
