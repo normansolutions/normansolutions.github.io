@@ -303,9 +303,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     </div>
     <div id="ns-target">
       <p>Firstly, let me register that I <strong><em>much</em></strong> prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I&rsquo;ve said it!</p>
-<p>In fairness this probably aligns with my IT experience, in that I tend to embrace the &ldquo;Swiss Army Knife&rdquo; approach of skills and experiences.</p>
 <blockquote>
-<p>For a start, the required iSAMS token exchange process <strong>before</strong> you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.</p>
+<p>The iSAMS token process required <strong>before</strong> you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.</p>
 </blockquote>
 <p><em>However</em>, I do entirely appreciate the necessity for an official API (e.g. security, consistency, potential database schema changes, futureproofing etc). As such, the need to embrace the iSAMS API is I feel, something of a requirement.</p>
 <h2 id="the-project---isams-data-extraction-tool">The Project - iSAMS Data Extraction Tool</h2>
@@ -329,18 +328,16 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>You need to pass in 6 parameters (listed below). These parameters are separated by a space (see below example).</p>
 <p><strong>Required Parameters</strong></p>
 <ul>
-<li>Token URL (e.g. YOURSCHOOL.isams.cloud/auth/connect/token)</li>
-<li>Client ID (e.g. Your iSAMS key)</li>
-<li>Client Secret (e.g. Your iSAMS secret)</li>
-<li>API Endpoint URL (e.g. YOURSCHOOL.isams.cloud/api/humanresources/employees) - you can find more about the iSAMS API endpoints on <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index"> Swagger here.</a></li>
-<li>JSON Element (e.g. employees)</li>
-<li>Data Save Location (e.g. c:\temp\results.json)</li>
+<li>Token URL</li>
+<li>Client ID</li>
+<li>Client Secret</li>
+<li>API Endpoint URL - iSAMS API endpoint documentation can be found on <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index"> Swagger here.</a></li>
+<li>JSON Element</li>
+<li>Data Save Location (e.g. c:\temp\data.json)</li>
 </ul>
 <p><strong>CLI Example</strong></p>
-<blockquote>
-<p>isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json</p>
-</blockquote>
-<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">isamsdata</span>.<span style="color:#a6e22e">exe</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">auth</span><span style="color:#f92672">/</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">/</span><span style="color:#a6e22e">token</span> <span style="color:#a6e22e">YOURKEY</span> <span style="color:#a6e22e">YOURSECRET</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">humanresources</span><span style="color:#f92672">/</span><span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">C</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">temp</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">json</span>
+</code></pre></div><hr>
 <p>Results are a JSON format text file, which can be used for Power Automate, Excel, Power BI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)</p>
 <p><strong>Sample JSON Screen Shot <em>(albeit blurred out!)</em></strong></p>
 

@@ -13,9 +13,7 @@ tags:
 
 Firstly, let me register that I **_much_** prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I've said it!
 
-In fairness this probably aligns with my IT experience, in that I tend to embrace the "Swiss Army Knife" approach of skills and experiences.
-
-> For a start, the required iSAMS token exchange process **before** you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.
+> The iSAMS token process required **before** you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.
 
 _However_, I do entirely appreciate the necessity for an official API (e.g. security, consistency, potential database schema changes, futureproofing etc). As such, the need to embrace the iSAMS API is I feel, something of a requirement.
 
@@ -48,16 +46,18 @@ You need to pass in 6 parameters (listed below). These parameters are separated 
 
 **Required Parameters**
 
-- Token URL (e.g. YOURSCHOOL.isams.cloud/auth/connect/token)
-- Client ID (e.g. Your iSAMS key)
-- Client Secret (e.g. Your iSAMS secret)
-- API Endpoint URL (e.g. YOURSCHOOL.isams.cloud/api/humanresources/employees) - you can find more about the iSAMS API endpoints on [ Swagger here.](https://developerdemo.isams.cloud/Main/swagger/ui/index)
-- JSON Element (e.g. employees)
-- Data Save Location (e.g. c:\temp\results.json)
+- Token URL
+- Client ID
+- Client Secret
+- API Endpoint URL - iSAMS API endpoint documentation can be found on [ Swagger here.](https://developerdemo.isams.cloud/Main/swagger/ui/index)
+- JSON Element
+- Data Save Location (e.g. c:\temp\data.json)
 
 **CLI Example**
 
-> isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json
+```JavaScript
+isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json
+```
 
 ---
 

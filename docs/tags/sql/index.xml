@@ -18,7 +18,7 @@
       
       <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
       <description>Firstly, let me register that I much prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!
-In fairness this probably aligns with my IT experience, in that I tend to embrace the &amp;ldquo;Swiss Army Knife&amp;rdquo; approach of skills and experiences.</description>
+ The iSAMS token process required before you can even start to extract data, is arguably a little tricky, especially for a hobbyist developer.</description>
     </item>
     
     <item>
