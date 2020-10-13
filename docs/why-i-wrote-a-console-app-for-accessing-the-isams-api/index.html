@@ -302,8 +302,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
       <hr/>
     </div>
     <div id="ns-target">
-      <p>Firstly, let me register that I <strong><em>much</em></strong> prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I&rsquo;ve said it!</p>
-<p><em>However</em>, I do entirely appreciate the necessity for an official API (e.g. security, consistency, potential database schema changes, futureproofing etc). As such, the need to embrace the iSAMS API is I feel, something of a requirement.</p>
+      <p>Firstly, let me register that I <strong><em>much</em></strong> prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&rsquo;ve said it!</p>
+<p><em>However</em>, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp; futureproofing etc. As such, the need to embrace the iSAMS API is I feel, something of a requirement.</p>
 <h2 id="the-project---isams-data-extraction-tool">The Project - iSAMS Data Extraction Tool</h2>
 <p>I felt it should be feasible to write a small C# Console Application that you could pass in arguments (be it via the CLI or using Task Scheduler etc) in order to return data. These arguments would be everything from the private keys through to the actual REST API Endpoint needed to extract information - <strong>in short, the tool would do all the token negotiation and heavy lifting, so to speak.</strong></p>
 <p><em>In many ways, this could be viewed as a &ldquo;proof of concept&rdquo; - albeit a useful one!</em></p>
@@ -324,14 +324,14 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>Copy the iSAMSData.exe into a location on your device (e.g. c:\temp) and open a command line from the same place.</p>
 <p>You need to pass in 6 parameters (listed below). These parameters are separated by a space (see below example).</p>
 <p><strong>Required Parameters</strong></p>
-<ul>
+<ol>
 <li>Token URL</li>
 <li>Client ID</li>
 <li>Client Secret</li>
-<li>API Endpoint URL - iSAMS API endpoint documentation can be found on <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index"> Swagger here.</a></li>
+<li>API Endpoint URL <em>(iSAMS API endpoint documentation can be found on <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index"> Swagger here</a>)</em></li>
 <li>JSON Element</li>
 <li>Data Save Location (e.g. c:\temp\data.json)</li>
-</ul>
+</ol>
 <p><strong>CLI Example</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">isamsdata</span>.<span style="color:#a6e22e">exe</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">auth</span><span style="color:#f92672">/</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">/</span><span style="color:#a6e22e">token</span> <span style="color:#a6e22e">YOURKEY</span> <span style="color:#a6e22e">YOURSECRET</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">humanresources</span><span style="color:#f92672">/</span><span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">C</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">temp</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">json</span>
 </code></pre></div><hr>

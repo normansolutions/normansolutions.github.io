@@ -11,9 +11,9 @@ tags:
   - SQL
 ---
 
-Firstly, let me register that I **_much_** prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I've said it!
+Firstly, let me register that I **_much_** prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I've said it!
 
-_However_, I do entirely appreciate the necessity for an official API (e.g. security, consistency, potential database schema changes, futureproofing etc). As such, the need to embrace the iSAMS API is I feel, something of a requirement.
+_However_, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes & futureproofing etc. As such, the need to embrace the iSAMS API is I feel, something of a requirement.
 
 ## The Project - iSAMS Data Extraction Tool
 
@@ -44,12 +44,12 @@ You need to pass in 6 parameters (listed below). These parameters are separated 
 
 **Required Parameters**
 
-- Token URL
-- Client ID
-- Client Secret
-- API Endpoint URL - iSAMS API endpoint documentation can be found on [ Swagger here.](https://developerdemo.isams.cloud/Main/swagger/ui/index)
-- JSON Element
-- Data Save Location (e.g. c:\temp\data.json)
+1. Token URL
+2. Client ID
+3. Client Secret
+4. API Endpoint URL _(iSAMS API endpoint documentation can be found on [ Swagger here](https://developerdemo.isams.cloud/Main/swagger/ui/index))_
+5. JSON Element
+6. Data Save Location (e.g. c:\temp\data.json)
 
 **CLI Example**
 

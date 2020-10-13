@@ -17,8 +17,8 @@
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
-      <description>Firstly, let me register that I much prefer writing raw SQL for iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!
-However, I do entirely appreciate the necessity for an official API (e.</description>
+      <description>Firstly, let me register that I much prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!
+However, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc.</description>
     </item>
     
     <item>
