@@ -28,6 +28,9 @@ In short, it worked! I created a self contained executable (dotNet Core) which a
 Below you will find:
 
 - Fundamental instructions on how to use this iSAMSDataExtract tool.
+- A link to my GitHub Repo where you can download the project.
+- A direct link to a pre-compiled, ready to run executable _(it is safe, but you run at your own risk)._
+- The raw C# code I wrote, should you wish to copy and paste into your own project.
 
 > Please be advised that I'm _not_ a full-time developer; this is a hobbyist approach and comes with **NO** guarantees - feel free to download, adjust, amend and use as you wish.
 
