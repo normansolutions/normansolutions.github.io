@@ -322,7 +322,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <hr>
 <h2 id="how-to-use-isamsdataextract">How to Use iSAMSDataExtract</h2>
 <p>Copy the iSAMSData.exe into a location on your device (e.g. c:\temp) and open a command line from the same place.</p>
-<p>You need to pass in 6 parameters (listed below). These parameters are separated by a space (see below example).</p>
+<p>You need to pass in 6 parameters; these parameters are separated by a space (see example below).</p>
 <p><strong>Required Parameters</strong></p>
 <ol>
 <li>Token URL</li>
@@ -335,7 +335,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p><strong>CLI Example</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">isamsdata</span>.<span style="color:#a6e22e">exe</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">auth</span><span style="color:#f92672">/</span><span style="color:#a6e22e">connect</span><span style="color:#f92672">/</span><span style="color:#a6e22e">token</span> <span style="color:#a6e22e">YOURKEY</span> <span style="color:#a6e22e">YOURSECRET</span> <span style="color:#a6e22e">YOURSCHOOL</span>.<span style="color:#a6e22e">isams</span>.<span style="color:#a6e22e">cloud</span><span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">humanresources</span><span style="color:#f92672">/</span><span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">employees</span> <span style="color:#a6e22e">C</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">temp</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">json</span>
 </code></pre></div><hr>
-<p>Results are a JSON format text file, which can be used for Power Automate, Excel, Power BI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)</p>
+<p>Results are a JSON format text file, which can be used for Power Automate, Excel, PowerBI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)</p>
 <p><strong>Sample JSON Screen Shot <em>(albeit blurred out!)</em></strong></p>
 
 
@@ -345,7 +345,7 @@ data-src="/img/postimg/13102020Screen.jpg"/>
 
 
 <hr>
-<h4 id="please-note-ensure-you-are-fully-aware-of-where-your-data-is-being-downloaded-to-and-make-certain-this-is-always-secure-and-deleted-when-no-longer-required---and-keep-those-api-secrets-private">Please Note: Ensure you are fully aware of where your data is being downloaded to and make certain this is <strong>always</strong> secure and deleted when no longer required - and keep those API secrets private!</h4>
+<h4 id="please-note-ensure-you-are-fully-aware-of-where-your-data-is-being-downloaded-to-and-make-certain-this-is-always-secure-and-deleted-when-no-longer-required---you-can-also-restrict-api-access-to-specific-ip-addresses-only-which-is-strongly-recommended---and-keep-those-api-secrets-private">Please Note: Ensure you are fully aware of where your data is being downloaded to and make certain this is <strong>always</strong> secure and deleted when no longer required - you can also restrict API access to specific IP addresses only, which is <strong>strongly</strong> recommended - and keep those API secrets private!</h4>
 <hr>
 <h2 id="links">Links</h2>
 <p><a href="https://github.com/normansolutions/iSAMSDataExtractTool">iSAMS Data Extract Tool</a> - GitHub Repo</p>

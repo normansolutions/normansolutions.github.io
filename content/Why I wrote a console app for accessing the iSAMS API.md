@@ -40,7 +40,7 @@ Below you will find:
 
 Copy the iSAMSData.exe into a location on your device (e.g. c:\temp) and open a command line from the same place.
 
-You need to pass in 6 parameters (listed below). These parameters are separated by a space (see below example).
+You need to pass in 6 parameters; these parameters are separated by a space (see example below).
 
 **Required Parameters**
 
@@ -59,7 +59,7 @@ isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURS
 
 ---
 
-Results are a JSON format text file, which can be used for Power Automate, Excel, Power BI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)
+Results are a JSON format text file, which can be used for Power Automate, Excel, PowerBI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)
 
 **Sample JSON Screen Shot _(albeit blurred out!)_**
 
@@ -71,7 +71,7 @@ data-src="/img/postimg/13102020Screen.jpg"/>
 
 ---
 
-#### Please Note: Ensure you are fully aware of where your data is being downloaded to and make certain this is **always** secure and deleted when no longer required - and keep those API secrets private!
+#### Please Note: Ensure you are fully aware of where your data is being downloaded to and make certain this is **always** secure and deleted when no longer required - you can also restrict API access to specific IP addresses only, which is **strongly** recommended - and keep those API secrets private!
 
 ---
 
