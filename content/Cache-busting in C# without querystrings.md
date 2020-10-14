@@ -100,8 +100,6 @@ This is very easily done, with the below code snippet added to the [web.config](
 
 Finally, to actually use the cache-busting feature in your page, just path your appropriate links and scripts _(css, js etc)_ using the below method.
 
-[Click for code snippet](https://gist.github.com/0405e7113b5d82eb55c4)
-
 ```html
 <link rel="stylesheet" href="@CacheBust.FingerPrint("/css/mainStyle.css")" />
 <link rel="shortcut icon" href="@CacheBust.FingerPrint("/favicon.ico")" type="image/x-icon" />

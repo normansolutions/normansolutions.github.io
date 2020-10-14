@@ -53,7 +53,7 @@ You need to pass in 6 parameters; these parameters are separated by a space (see
 
 **CLI Example**
 
-```JavaScript
+```plaintext
 isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json
 ```
 
