@@ -32,7 +32,7 @@ Below you will find:
 3. A direct link to a pre-compiled, ready to run executable _(it is safe, but you run at your own risk)._
 4. The raw C# code I wrote, should you wish to copy and paste into your own project.
 
-> Please be advised that I'm _not_ a full-time developer; this is a hobbyist approach and comes with **NO** guarantees - feel free to download, adjust, amend and use as you wish.
+> Please be advised that I'm _not_ a full-time developer; this is purely a hobbyist approach and comes with **NO** guarantees - feel free to download, adjust, amend and use as you wish.
 
 ---
 
