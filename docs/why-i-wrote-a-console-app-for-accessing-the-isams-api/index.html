@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>Excel</title>
+    <title>Why I wrote a console app for accessing the iSAMS API</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -292,52 +292,180 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   </a>
 </div>
 
-
     
-    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-       
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/excel-macro-to-manipulate-cat-data/" rel="canonical" itemprop="url">Excel Macro to manipulate CAT data</a></h1>
+    
+<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+  <h1>Why I wrote a console app for accessing the iSAMS API</h1>
+  <div class="ns-postdate">  
+      <time datetime=2020-10-13&#32;20:11:00&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Tuesday, Oct 13, 2020</time>
+      <span class="ns-tags">| Tags: <a href="/tags/isams">iSAMS</a> <a href="/tags/mis">MIS</a> <a href="/tags/c">C#</a> <a href="/tags/database">Database</a> <a href="/tags/sql">SQL</a> </span>   
+      <hr/>
+    </div>
+    <div id="ns-target">
+      <p>Firstly, let me register that I <strong><em>much</em></strong> prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&rsquo;ve said it!</p>
+<p><em>However</em>, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp; futureproofing etc. As such, the need to embrace the iSAMS API is I feel, something of a requirement.</p>
+<h2 id="the-project---isams-data-extraction-tool">The Project - iSAMS Data Extraction Tool</h2>
+<p>I felt it should be feasible to write a small C# Console Application that you could pass in arguments (be it via the CLI or using Task Scheduler etc) in order to return data. These arguments would be everything from the private keys through to the actual REST API Endpoint needed to extract information - <strong>in short, the tool would do all the token negotiation and heavy lifting, so to speak.</strong></p>
+<p><em>In many ways, this could be viewed as a &ldquo;proof of concept&rdquo; - albeit a useful one!</em></p>
+<p>In short, it worked! I created a self contained executable (dotNet Core) which allows me to pass in all required parameters, which returns a JSON file containing appropriate data. This data can then be used with other programs or utilities (e.g. Excel, PowerBI, PowerAutomate, PowerShell etc) for further data analysis.</p>
+<hr>
+<p>Below you will find:</p>
+<ol>
+<li>Fundamental instructions on how to use this iSAMSDataExtract tool.</li>
+<li>A link to my GitHub Repo where you can download the project.</li>
+<li>A direct link to a pre-compiled, ready to run executable <em>(it is safe, but you run at your own risk).</em></li>
+<li>The raw C# code I wrote, should you wish to copy and paste into your own project.</li>
+</ol>
+<blockquote>
+<p>Please be advised that I&rsquo;m <em>not</em> a full-time developer; this is purely a hobbyist approach and comes with <strong>NO</strong> guarantees - feel free to download, adjust, amend and use as you wish.</p>
+</blockquote>
+<hr>
+<h2 id="how-to-use-isamsdataextract">How to Use iSAMSDataExtract</h2>
+<p>Copy the iSAMSData.exe into a location on your device (e.g. c:\temp) and open a command line from the same place.</p>
+<p>You need to pass in 6 parameters; these parameters are separated by a space (see example below).</p>
+<p><strong>Required Parameters</strong></p>
+<ol>
+<li>Token URL</li>
+<li>Client ID</li>
+<li>Client Secret</li>
+<li>API Endpoint URL <em>(iSAMS API endpoint documentation can be found on <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index"> Swagger here</a>)</em></li>
+<li>JSON Element</li>
+<li>Data Save Location (e.g. c:\temp\data.json)</li>
+</ol>
+<p><strong>CLI Example</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json
+</code></pre></div><hr>
+<p>Results are a JSON format text file, which can be used for Power Automate, Excel, PowerBI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)</p>
+<p><strong>Sample JSON Screen Shot <em>(albeit blurred out!)</em></strong></p>
 
-            <time datetime=2015-06-28&#32;17:03:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Sunday, Jun 28, 2015</time>
 
-            <span class="ns-tags">| Tags: <a href="/tags/macro">Macro</a> <a href="/tags/excel">Excel</a> <a href="/tags/script">Script</a> <a href="/tags/mis">MIS</a> <a href="/tags/quicktip">QuickTip</a> </span>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/13102020Screen.jpg"/>
 
 
-            
+<hr>
+<h4 id="please-note-ensure-you-are-fully-aware-of-where-your-data-is-being-downloaded-to-and-make-certain-this-is-always-secure-and-deleted-when-no-longer-required---you-can-also-restrict-api-access-to-specific-ip-addresses-only-which-is-strongly-recommended---and-keep-those-api-secrets-private">Please Note: Ensure you are fully aware of where your data is being downloaded to and make certain this is <strong>always</strong> secure and deleted when no longer required - you can also restrict API access to specific IP addresses only, which is <strong>strongly</strong> recommended - and keep those API secrets private!</h4>
+<hr>
+<h2 id="links">Links</h2>
+<p><a href="https://github.com/normansolutions/iSAMSDataExtractTool">iSAMS Data Extract Tool</a> - GitHub Repo</p>
+<p><a href="https://github.com/normansolutions/iSAMSDataExtractTool/raw/main/iSAMSData.exe">Compiled Stand-Alone Executable</a> - Ready to roll standalone exe <em>(it is safe, but run at your own risk)</em>.</p>
+<hr>
+<h2 id="code">Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.IO;
+<span style="color:#66d9ef">using</span> System.Net.Http;
+<span style="color:#66d9ef">using</span> System.Text.RegularExpressions;
+<span style="color:#66d9ef">using</span> System.Threading.Tasks;
+<span style="color:#66d9ef">using</span> Newtonsoft.Json;
+<span style="color:#66d9ef">using</span> Newtonsoft.Json.Linq;
 
-            
+<span style="color:#66d9ef">namespace</span> iSAMSData
+{
 
-          </header>
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+    {
+        <span style="color:#75715e">//Variables
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> HttpClient client = <span style="color:#66d9ef">new</span> HttpClient();
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> JObject _token;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> JArray _extractedData;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _tokenURL;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _clientID;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _clientSecret;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _apiEndpoint;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _elementName;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _saveLocation;
 
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Recently, I was asked whether I could provide some assistance with manipulating data, that had been exported from a CAT results test. The problem, had slowly been driving a colleague of mine, very slightly crazy!            
-                        
-              <span class="ns-readmore">
-                <a href="/excel-macro-to-manipulate-cat-data/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-         
-        
-        <div class="ns-totalpages">1 of 1</div>
+        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+        {
 
-        <nav class="pagination container" aria-label="Pagination">
+            <span style="color:#75715e">//Assign console parameters to variables and replace &#34;/&#34; &amp; &#34;\&#34; with &#34;//&#34; &amp; &#34;\\&#34; where appropriate
+</span><span style="color:#75715e"></span>            _tokenURL = Regex.Replace(args[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">@&#34;//&#34;</span>, <span style="color:#e6db74">&#34;////&#34;</span>);
+            _clientID = args[<span style="color:#ae81ff">1</span>];
+            _clientSecret = args[<span style="color:#ae81ff">2</span>];
+            _apiEndpoint = Regex.Replace(args[<span style="color:#ae81ff">3</span>], <span style="color:#e6db74">@&#34;//&#34;</span>, <span style="color:#e6db74">&#34;////&#34;</span>);
+            _elementName = args[<span style="color:#ae81ff">4</span>];
+            _saveLocation = Regex.Replace(args[<span style="color:#ae81ff">5</span>], <span style="color:#e6db74">@&#34;\\&#34;</span>, <span style="color:#e6db74">&#34;\\\\&#34;</span>);
+
+            _extractedData = <span style="color:#66d9ef">new</span> JArray();
+
+            _token = GetToken(_tokenURL, _clientID, _clientSecret).GetAwaiter().GetResult();
+
+            <span style="color:#66d9ef">var</span> iSAMSDataTotalPages = GetData(<span style="color:#ae81ff">1</span>, _apiEndpoint).GetAwaiter().GetResult();
+
+            JValue _totalPages = (JValue)iSAMSDataTotalPages[<span style="color:#e6db74">&#34;totalPages&#34;</span>];
+
+            <span style="color:#75715e">//Check if _totalPages exists - if not then set a default of 1
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (_totalPages <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>)
+            {
+                _totalPages = (JValue)<span style="color:#ae81ff">1</span>;
+            }
+
+            <span style="color:#75715e">//Where paging is required loop through to build up results set then append together as a single entity
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> page = <span style="color:#ae81ff">1</span>; page &lt;= (<span style="color:#66d9ef">int</span>)_totalPages; page ++)
+            {
+                <span style="color:#66d9ef">var</span> iSAMSData = GetData(page, _apiEndpoint).GetAwaiter().GetResult();
+                JArray SubElement = (JArray)iSAMSData[_elementName];
+                _extractedData.Add(SubElement);
+
+            }
+
+            <span style="color:#75715e">//Save final results to local file (e.g. data.json)
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">string</span> savedData = <span style="color:#e6db74">@&#34;&#34;</span> + _saveLocation + <span style="color:#e6db74">&#34;&#34;</span>;
+            <span style="color:#66d9ef">using</span> (StreamWriter file = File.CreateText(savedData))
+            {
+                JsonSerializer serializer = <span style="color:#66d9ef">new</span> JsonSerializer();
+                serializer.Serialize(file, _extractedData);
+            }
+        }
+
+        <span style="color:#75715e">//Process for getting authorisation token which is sent with each subsequent request
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">async</span> Task&lt;JObject&gt; GetToken(<span style="color:#66d9ef">string</span> _clientUrl = <span style="color:#e6db74">&#34;youraddressfortoken&#34;</span>, <span style="color:#66d9ef">string</span> _clientID = <span style="color:#e6db74">&#34;yourclientid&#34;</span>, <span style="color:#66d9ef">string</span> _clientSecret = <span style="color:#e6db74">&#34;yourclientsecret&#34;</span>)
+        {
+
+            <span style="color:#66d9ef">var</span> _tokenUrl = <span style="color:#e6db74">&#34;https://&#34;</span> + _clientUrl;
+            <span style="color:#66d9ef">var</span> _tokenSecretRaw = <span style="color:#66d9ef">string</span>.Format(<span style="color:#e6db74">&#34;client_id=&#34;</span> + _clientID + <span style="color:#e6db74">&#34;&amp;client_secret=&#34;</span> + _clientSecret + <span style="color:#e6db74">&#34;&amp;grant_type=client_credentials&amp;scope=restapi&#34;</span>);
+            StringContent theContent = <span style="color:#66d9ef">new</span> StringContent(_tokenSecretRaw, System.Text.Encoding.UTF8, <span style="color:#e6db74">&#34;application/x-www-form-urlencoded&#34;</span>);
+            HttpResponseMessage aResponse = <span style="color:#66d9ef">await</span> client.PostAsync(<span style="color:#66d9ef">new</span> Uri(_tokenUrl), theContent);
+            aResponse.EnsureSuccessStatusCode();
+            <span style="color:#66d9ef">string</span> content = <span style="color:#66d9ef">await</span> aResponse.Content.ReadAsStringAsync();
+
+            <span style="color:#66d9ef">return</span> (JObject)<span style="color:#66d9ef">await</span> Task.Run(() =&gt; JObject.Parse(content));
+        }
+
+        <span style="color:#75715e">//Process for getting data
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">async</span> Task&lt;JObject&gt; GetData(<span style="color:#66d9ef">int</span> _page = <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">string</span> urlApi = <span style="color:#e6db74">&#34;yourchosenapiendpoint&#34;</span>)
+        {
+                JObject Token = _token; <span style="color:#75715e">//Use cached Token
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">var</span> _extractedToken = Token[<span style="color:#e6db74">&#34;access_token&#34;</span>].ToString();
+                <span style="color:#66d9ef">var</span> _baseUrl = <span style="color:#e6db74">&#34;https://&#34;</span> + urlApi + <span style="color:#e6db74">&#34;?page=&#34;</span> + _page;
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Add(<span style="color:#e6db74">&#34;Authorization&#34;</span>, <span style="color:#e6db74">&#34;Bearer &#34;</span> + _extractedToken);
+                <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.GetStringAsync(_baseUrl);
+
+            <span style="color:#66d9ef">return</span> (JObject)<span style="color:#66d9ef">await</span> Task.Run(() =&gt; JObject.Parse(response));
+        }
+
+    }
+
+}
+</code></pre></div> 
+    </div>
+<button class="ns-share-btn" type="button" title="Share this article">
+  <svg class="ns-share-icon">
+    <use href="#share-icon"></use>
+  </svg>
+  <span>Share Article</span>
+</button>
+
+<svg class="ns-hidden">
+  <defs>
+    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
+   </defs>
+</svg>
+ </main>
+ 
    
-
-  <br /><br />
-</nav>
-            
-      </main> 
-
-     
-
-    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -388,6 +516,3 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </script>
 
     
-  </body>
-</html>
-

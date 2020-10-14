@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why I wrote a console app for accessing the iSAMS API"
-date: 2020-10-14 20:11:00
+date: 2020-10-13 20:11:00
 type: post
 tags:
   - iSAMS

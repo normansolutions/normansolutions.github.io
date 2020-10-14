@@ -6,15 +6,24 @@
     <description>Recent content in Tags on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 19 Feb 2020 17:31:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2020 20:11:00 +0000</lastBuildDate>
     
 	<atom:link href="https://normansolutions.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>C#</title>
+      <link>https://normansolutions.co.uk/tags/c#/</link>
+      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Database</title>
       <link>https://normansolutions.co.uk/tags/database/</link>
-      <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
+      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/database/</guid>
       <description></description>
@@ -23,7 +32,7 @@
     <item>
       <title>iSAMS</title>
       <link>https://normansolutions.co.uk/tags/isams/</link>
-      <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
+      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/isams/</guid>
       <description></description>
@@ -32,9 +41,18 @@
     <item>
       <title>MIS</title>
       <link>https://normansolutions.co.uk/tags/mis/</link>
-      <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
+      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/mis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://normansolutions.co.uk/tags/sql/</link>
+      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/sql/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/powerbi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL</title>
-      <link>https://normansolutions.co.uk/tags/sql/</link>
-      <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/sql/</guid>
       <description></description>
     </item>
     
@@ -170,15 +179,6 @@
       <pubDate>Tue, 08 Mar 2016 18:19:57 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/office-365/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C#</title>
-      <link>https://normansolutions.co.uk/tags/c#/</link>
-      <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/c#/</guid>
       <description></description>
     </item>
     
