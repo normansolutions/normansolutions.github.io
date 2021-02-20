@@ -32,7 +32,7 @@ I've also posted some of useful links below the video that further explain how s
 
 ### Useful Links
 
-1. [iSAMS API Swagger Documentation ](https://developerdemo.isams.cloud/Main/swagger/ui/index)
-2. [Implementing Try/Catch in Power Automate](https://powerofpowerplatform.com/implementing-trycatch-and-finally-in-power-automate/)
-3. [Generate Word Documents from a Template in Power Automate](https://tahoeninjas.blog/2020/03/13/generate-word-documents-from-a-template-using-power-automate/)
-4. [Managing SharePoint file permissions in Power Automate](https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/manage-list-item-file-permissions)
+- [iSAMS API Swagger Documentation ](https://developerdemo.isams.cloud/Main/swagger/ui/index)
+- [Implementing Try/Catch in Power Automate](https://powerofpowerplatform.com/implementing-trycatch-and-finally-in-power-automate/)
+- [Generate Word Documents from a Template in Power Automate](https://tahoeninjas.blog/2020/03/13/generate-word-documents-from-a-template-using-power-automate/)
+- [Managing SharePoint file permissions in Power Automate](https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/manage-list-item-file-permissions)
