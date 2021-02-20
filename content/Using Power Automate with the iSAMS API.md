@@ -21,7 +21,7 @@ My aim was to connect Power Automate to the iSAMS API with a view to:
 
 The primary purpose of this exercise is that to the best of my knowledge, there isn't a clear method of allowing staff to check their own details in iSAMS without having access to the HR module.  This process would enable staff to view their details from a secure SharePoint library, enabling them to clarify whether any amendments were required.
 
->Below is a video overview / walkthrough  of how I approached this Power Automate.  **What this isn't** is a granular, blow by blow description of every function and process involved, as that would potentially be a very long and arguably boring video!
+>Below is a video overview / walkthrough  of how I approached this Power Automate.  **What it isn't** is a granular, blow by blow description of every function and process involved, as that would potentially be a very long and arguably boring video!
 
 Several lessons were learnt along this journey, such as how to implement a Try/Catch approach in Power Automate, being aware of the need to reset variables and arrays in addition to understanding some of the inbuilt restrictions of Power Automate looping etc.
 
@@ -34,5 +34,5 @@ I've also posted some of useful links below the video that further explain how s
 
 1. [iSAMS API Swagger Documentation ](https://developerdemo.isams.cloud/Main/swagger/ui/index)
 2. [Implementing Try/Catch in Power Automate](https://powerofpowerplatform.com/implementing-trycatch-and-finally-in-power-automate/)
-3. [Creating Word Document from a Template in Power Automate](https://tahoeninjas.blog/2020/03/13/generate-word-documents-from-a-template-using-power-automate/)
-4. [Managing SharePoint file permissions in Power Automatte](https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/manage-list-item-file-permissions)
+3. [Generate Word Documents from a Template in Power Automate](https://tahoeninjas.blog/2020/03/13/generate-word-documents-from-a-template-using-power-automate/)
+4. [Managing SharePoint file permissions in Power Automate](https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/manage-list-item-file-permissions)
