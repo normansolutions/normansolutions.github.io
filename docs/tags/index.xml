@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>DevOps</title>
-      <link>https://normansolutions.co.uk/tags/devops/</link>
-      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>iSAMS</title>
       <link>https://normansolutions.co.uk/tags/isams/</link>
       <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
@@ -44,15 +35,6 @@
       <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/power-automate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SysAdmin</title>
-      <link>https://normansolutions.co.uk/tags/sysadmin/</link>
-      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/sysadmin/</guid>
       <description></description>
     </item>
     
@@ -120,6 +102,15 @@
     </item>
     
     <item>
+      <title>SysAdmin</title>
+      <link>https://normansolutions.co.uk/tags/sysadmin/</link>
+      <pubDate>Fri, 28 Jun 2019 09:41:46 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/sysadmin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://normansolutions.co.uk/tags/linux/</link>
       <pubDate>Sat, 13 Oct 2018 08:01:59 +0000</pubDate>
@@ -170,6 +161,15 @@
       <pubDate>Mon, 13 Feb 2017 19:33:26 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://normansolutions.co.uk/tags/devops/</link>
+      <pubDate>Tue, 29 Nov 2016 16:32:17 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/devops/</guid>
       <description></description>
     </item>
     
