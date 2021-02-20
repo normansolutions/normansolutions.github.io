@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>UniFi</title>
+    <title>Using Power Automate with the iSAMS API</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -292,53 +292,61 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   </a>
 </div>
 
-
     
-    <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-       
-       
-        <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
-          <header>
-             <h1 itemprop="name headline"><a href="/tracking-devices-in-unifi-wifi/" rel="canonical" itemprop="url">Tracking devices in UniFi WiFi</a></h1>
+    
+<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+  <h1>Using Power Automate with the iSAMS API</h1>
+  <div class="ns-postdate">  
+      <time datetime=2021-02-19&#32;08:49:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Feb 19, 2021</time>
+      <span class="ns-tags">| Tags: <a href="/tags/power-automate">Power Automate</a> <a href="/tags/isams">iSAMS</a> <a href="/tags/mis">MIS</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/devops">DevOps</a> </span>   
+      <hr/>
+    </div>
+    <div id="ns-target">
+      <p>I&rsquo;ve recently being getting deeper into the weeds <em>(so to speak)</em> with Power Automate.  Whilst this product clearly isn&rsquo;t a fully fledged programming model, it does sit very nicely in that &ldquo;low code&rdquo; methodology, and can be extremely  effective when there is a need to quickly create and perform a specific task.</p>
+<p>My aim was to connect Power Automate to the iSAMS API with a view to:</p>
+<ol>
+<li>Extracting data <em>(from multiple API end points)</em>.</li>
+<li>Creating <em>(and populating with iSAMS data)</em> a document in a SharePoint library.</li>
+<li>Applying appropriate security permissions to each document.</li>
+<li>Updating a spreadsheet with an audit of applied permissions.</li>
+</ol>
+<p>The primary purpose of this exercise is that to the best of my knowledge, there isn&rsquo;t a clear method of allowing staff to check their own details in iSAMS without having access to the HR module.  This process would enable staff to view their details from a secure SharePoint library, enabling them to clarify whether any amendments were required.
+a</p>
+<blockquote>
+<p>Below is a video overview / walkthrough  of how I approached this Power Automate.  <strong>What this isn&rsquo;t</strong> is a granular, blow by blow description of every function and process involved, as that would potentially be a very long and arguably boring video!</p>
+</blockquote>
+<p>Several lessons were learnt along this journey, such as how to implement a Try/Catch approach in Power Automate, being aware of the need to reset variables and arrays in addition to understanding some of the inbuilt restrictions of Power Automate looping etc.</p>
+<p>I&rsquo;ve also posted some of useful links below the video that further explain how some of the more specific aspects can be achieved.</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nmhC_PZD644" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
-            <time datetime=2015-01-02&#32;12:15:14&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Jan 2, 2015</time>
+<!-- raw HTML omitted --></p>
+<h2 id="useful-links">Useful Links</h2>
+<ol>
+<li><a href="https://duckduckgo.com">iSAMS API Swagger Documentation </a></li>
+<li><a href="https://powerofpowerplatform.com/implementing-trycatch-and-finally-in-power-automate/">Implementing Try/Catch in Power Automate</a></li>
+<li><a href="https://tahoeninjas.blog/2020/03/13/generate-word-documents-from-a-template-using-power-automate/">Creating Word Document from a Template in Power Automate</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/manage-list-item-file-permissions">Managing SharePoint file permissions in Power Automatte</a></li>
+</ol>
+ 
+    </div>
+<button class="ns-share-btn" type="button" title="Share this article">
+  <svg class="ns-share-icon">
+    <use href="#share-icon"></use>
+  </svg>
+  <span>Share Article</span>
+</button>
 
-            <span class="ns-tags">| Tags: <a href="/tags/javascript">JavaScript</a> <a href="/tags/unifi">UniFi</a> <a href="/tags/sysadmin">SysAdmin</a> <a href="/tags/devops">DevOps</a> </span>
-
-
-            
-
-            
-
-          </header>
-
-          <div itemprop="articleBody">
-            <p class="ns-post-summary">Several years ago, we migrated from a Cisco Wi-Fi infrastructure to a UniFi setup.
-UniFi (from Ubiquiti Networks) offer a pretty remarkable WiFi solution, especially when it comes down to cost.            
-                        
-              <span class="ns-readmore">
-                <a href="/tracking-devices-in-unifi-wifi/">➡️</a>
-              </span>             
-              
-              </p>
-          </div>
-        </div>
-        <hr/>
-         
-        
-        <div class="ns-totalpages">1 of 1</div>
-
-        <nav class="pagination container" aria-label="Pagination">
+<svg class="ns-hidden">
+  <defs>
+    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
+   </defs>
+</svg>
+ </main>
+ 
    
-
-  <br /><br />
-</nav>
-            
-      </main> 
-
-     
-
-    
     <div style="height: 35px"></div>
 <footer>
   <div>
@@ -389,6 +397,3 @@ UniFi (from Ubiquiti Networks) offer a pretty remarkable WiFi solution, especial
 </script>
 
     
-  </body>
-</html>
-

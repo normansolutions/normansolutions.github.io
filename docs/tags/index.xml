@@ -6,10 +6,55 @@
     <description>Recent content in Tags on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 13 Oct 2020 20:11:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Feb 2021 08:49:20 +0000</lastBuildDate>
     
 	<atom:link href="https://normansolutions.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://normansolutions.co.uk/tags/devops/</link>
+      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iSAMS</title>
+      <link>https://normansolutions.co.uk/tags/isams/</link>
+      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/isams/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIS</title>
+      <link>https://normansolutions.co.uk/tags/mis/</link>
+      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/mis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Power Automate</title>
+      <link>https://normansolutions.co.uk/tags/power-automate/</link>
+      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/power-automate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SysAdmin</title>
+      <link>https://normansolutions.co.uk/tags/sysadmin/</link>
+      <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
+      
+      <guid>https://normansolutions.co.uk/tags/sysadmin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C#</title>
@@ -26,24 +71,6 @@
       <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iSAMS</title>
-      <link>https://normansolutions.co.uk/tags/isams/</link>
-      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/isams/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MIS</title>
-      <link>https://normansolutions.co.uk/tags/mis/</link>
-      <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/mis/</guid>
       <description></description>
     </item>
     
@@ -89,15 +116,6 @@
       <pubDate>Fri, 28 Jun 2019 09:41:46 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/quicktip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SysAdmin</title>
-      <link>https://normansolutions.co.uk/tags/sysadmin/</link>
-      <pubDate>Fri, 28 Jun 2019 09:41:46 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/sysadmin/</guid>
       <description></description>
     </item>
     
@@ -152,15 +170,6 @@
       <pubDate>Mon, 13 Feb 2017 19:33:26 +0000</pubDate>
       
       <guid>https://normansolutions.co.uk/tags/video/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://normansolutions.co.uk/tags/devops/</link>
-      <pubDate>Tue, 29 Nov 2016 16:32:17 +0000</pubDate>
-      
-      <guid>https://normansolutions.co.uk/tags/devops/</guid>
       <description></description>
     </item>
     
