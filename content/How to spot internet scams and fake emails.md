@@ -17,7 +17,7 @@ We decided to record the session, enabling a wider audience to benefit from the 
 
 Below is the aforementioned lecture (30 mins).
 
-{{< youtube ykobtxux464 >}}
+{{< youtube RirQm3_roC4 >}}
 <br/>
 
 ## Useful Links
