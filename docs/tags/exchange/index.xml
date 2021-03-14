@@ -6,11 +6,7 @@
     <description>Recent content in Exchange on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Fri, 28 Jun 2019 09:41:46 +0000</lastBuildDate>
-    
-	<atom:link href="https://normansolutions.co.uk/tags/exchange/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 28 Jun 2019 09:41:46 +0000</lastBuildDate><atom:link href="https://normansolutions.co.uk/tags/exchange/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to populate an O365 DG from a Security Group</title>
       <link>https://normansolutions.co.uk/how-to-populate-an-o365-dg-from-a-security-group/</link>

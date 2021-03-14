@@ -6,11 +6,7 @@
     <description>Recent content in Office 365 on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 08 Mar 2016 18:19:57 +0000</lastBuildDate>
-    
-	<atom:link href="https://normansolutions.co.uk/tags/office-365/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 08 Mar 2016 18:19:57 +0000</lastBuildDate><atom:link href="https://normansolutions.co.uk/tags/office-365/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell to disable Clutter in Office 365</title>
       <link>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</link>
