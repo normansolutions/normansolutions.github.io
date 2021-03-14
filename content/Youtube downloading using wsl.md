@@ -30,8 +30,8 @@ You will need Windows 10 WSL enabled (this [link](https://docs.microsoft.com/en-
 - Open a command prompt and enter **wsl**
 - Enter **sudo apt-get update**
 - Enter **sudo apt-get upgrade**
-- Enter **sudo apt-get install python-pip**
-- Enter **sudo pip install youtube-dl**
+- Enter **sudo apt-get install python3-pip**
+- Enter **sudo pip3 install youtube-dl**
 
 Aside from the occasional checking for update, you shouldn't need to perform the above prerequisites again.
 
