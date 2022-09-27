@@ -31,8 +31,8 @@ So here's the process.
 
 1. I send myself an email using the following format in the subject title: **MBP/125/87/60/L** - this format equates to:
       * **MBP** (My Blood Pressure)**/**
-      * **Diastolic** (higher reading)**/**
-      * **Systolic** (lower reading)**/**
+      * **Systolic** (higher reading)**/**
+      * **Diastolic** (lower reading)**/**
       * **Heart Rate/**
       * **Left or Right Arm**
 2. PowerAutomate is set to trigger when it receives an email with the Subject Title starting **MPB**.
