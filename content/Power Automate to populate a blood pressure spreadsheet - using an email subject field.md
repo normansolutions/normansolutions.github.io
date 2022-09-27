@@ -76,7 +76,7 @@ src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICR
 data-src="/img/postimg/PAEMail5.png" />
 {{< /rawhtml >}}
 
-8. Next I create an appropriate switch statement to decide whether the ARM variable should be set to "left arm" or "right arm" - based on whether a letter "**L**" was used in the email Subject Title field.
+8. Next I create a switch statement to decide whether the ARM variable should be set to "left arm" or "right arm" - based on whether a letter "**L**" was used in the email Subject Title field.
 
 {{< rawhtml >}}
 <img
@@ -84,7 +84,7 @@ src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICR
 data-src="/img/postimg/PAEMail6.png" />
 {{< /rawhtml >}}
 
-9.  PowerAutomate then populates the appropriate BP spreadsheet template with the compose output values, ARM variable and associated date/time fields.
+9.  PowerAutomate then populates the BP spreadsheet template with the compose output values, ARM variable and associated date/time fields.
 
 {{< rawhtml >}}
 <img
