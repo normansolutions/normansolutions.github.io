@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -311,12 +311,12 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p><strong>Prerequisites</strong></p>
 <p>Open the Exchange Management PowerShell <em>(this usually needs to be done on the Exchange Server).</em></p>
 <p>You may also need to enable the appropriate Snapin by entering:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
+</span></span></code></pre></div><hr>
 <h4 id="case-1"><strong>Case 1</strong></h4>
 <p>To purely search for the presence of an email <em>(as against deleting all instances of an email)</em>, you need to copy the results to an existing mailbox - you could use your own account or a spare one.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -TargetMailBox <span style="color:#e6db74">&#34;SpareUser&#34;</span> -TargetFolder <span style="color:#e6db74">&#34;SPAMFILES&#34;</span>`
-</code></pre></div><p><strong>Explanation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -TargetMailBox <span style="color:#e6db74">&#34;SpareUser&#34;</span> -TargetFolder <span style="color:#e6db74">&#34;SPAMFILES&#34;</span>`
+</span></span></code></pre></div><p><strong>Explanation</strong></p>
 <p><strong>SearchQuery</strong> is the parameter used to search for a given email - in this instance it will search in the &ldquo;Subject&rdquo; for anything containing the words &ldquo;Error Set&rdquo; <em>(you can use wildcards).</em></p>
 <p><strong>TargetMailBox</strong> is the parameter used for the user account which you wish to copy the result to.</p>
 <p><strong>TargetFolder</strong> is the parameter used for the name of the folder that you wish to deposit the emails into, within the user account mailbox <em>(it will self create if it doesn&rsquo;t exist).</em></p>
@@ -324,8 +324,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <hr>
 <p><strong>Case 2</strong></p>
 <p>To <strong>delete</strong> all instances of emails that match a given search query, you would run the following.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -DeleteContent`
-</code></pre></div><p><strong>Explanation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -DeleteContent`
+</span></span></code></pre></div><p><strong>Explanation</strong></p>
 <p><strong>SearchQuery</strong> is the parameter used to search for a given email - in this instance it will search in the &ldquo;Subject&rdquo; for anything containing the words &ldquo;Error Set&rdquo; <em>(you can use wildcards).</em></p>
 <p>All emails matching the above query will be <strong>deleted</strong>.</p>
  
@@ -348,7 +348,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -375,8 +375,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

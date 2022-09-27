@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -330,11 +330,11 @@ data-src="/img/postimg/979763a7-af18-4ace-a47e-e6441a5f114f-min.jpg"/>
 <li>To select <em>only</em> those users where this checkbox is currently set to <strong>false</strong> <em>(e.g. enabled).</em></li>
 <li>To change this checkbox on all selected users, to <strong>true</strong> <em>(e.g. disabled).</em></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell">Add-PSSnapin Quest.ActiveRoles.ADManagement -ErrorAction SilentlyContinue
-Get-QADUser * -OrganizationalUnit <span style="color:#e6db74">&#34;ou=Your Sub-OU,ou=Your OU,dc=Your LDAP,dc=Your LDAP&#34;</span> |
-?{$_.TsAllowLogon <span style="color:#f92672">-ne</span> $true} |
-Set-QADUser -TsAllowLogon $true
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-PSSnapin Quest.ActiveRoles.ADManagement -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>Get-QADUser * -OrganizationalUnit <span style="color:#e6db74">&#34;ou=Your Sub-OU,ou=Your OU,dc=Your LDAP,dc=Your LDAP&#34;</span> |
+</span></span><span style="display:flex;"><span>?{$_.TsAllowLogon <span style="color:#f92672">-ne</span> $true} |
+</span></span><span style="display:flex;"><span>Set-QADUser -TsAllowLogon $true
+</span></span></code></pre></div><hr>
 <p>Clearly you can modify this script to enable all users by just reversing the true and false settings as appropriate, within the script.</p>
 <hr>
 <p><em>As with any scripting solution, especially those associated with Active Directory, you are advised to test thoroughly before deploying in anger!</em></p>
@@ -358,7 +358,7 @@ Set-QADUser -TsAllowLogon $true
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -385,8 +385,8 @@ Set-QADUser -TsAllowLogon $true
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

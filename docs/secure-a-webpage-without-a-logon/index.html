@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -333,63 +333,63 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <h2 id="the-code">The Code!</h2>
 <p>Below is an example of how this very basic process can be implemented in asp.net (c#).</p>
 <p><strong>Adding cookie to the device <em>(also providing the ability to remove)</em></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#960050;background-color:#1e0010">@</span>{
-    String cookieQueryString = Request.QueryString[<span style="color:#e6db74">&#34;cookieSetter&#34;</span>];
-
-    <span style="color:#66d9ef">switch</span> (cookieQueryString)
-    {
-        <span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;remove&#34;</span> - This deletes the cookie <span style="color:#66d9ef">from</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
-	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;remove&#34;</span>:
-            Response.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires = DateTime.Now.AddYears(-<span style="color:#ae81ff">30</span>);
-        <span style="color:#66d9ef">break</span>;
-
-	<span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;add&#34;</span> - This creates the cookie <span style="color:#66d9ef">on</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
-        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;add&#34;</span>:
-            HttpCookie aCookie = <span style="color:#66d9ef">new</span> HttpCookie(<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>);
-            aCookie.HttpOnly = <span style="color:#66d9ef">true</span>;
-            aCookie.Value = <span style="color:#e6db74">&#34;Authorised&#34;</span>;
-            aCookie.Expires = DateTime.Now.AddYears(<span style="color:#ae81ff">30</span>);
-            Response.Cookies.Add(aCookie);
-            <span style="color:#66d9ef">break</span>;
-
-    }
-}
-
-<span style="color:#960050;background-color:#1e0010">@</span>* Visual feedback <span style="color:#66d9ef">for</span> cookie *<span style="color:#960050;background-color:#1e0010">@</span>
-@if (Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] != <span style="color:#66d9ef">null</span>)
-{
-    Response.Write(<span style="color:#e6db74">&#34;Cookie Found&#34;</span>);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Value);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires);
-    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
-
-}
-</code></pre></div><p><strong>Storing the complex query string in a web.config for easy maintenance</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">  <span style="color:#f92672">&lt;appSettings&gt;</span>
-    <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;hhqsdc332323vxzcjsdffbfsh12sdfdfgdfgdfgwerktyykfdhgdhjsdfsdfasdffdfww&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/appSettings&gt;</span>
-</code></pre></div><p><strong>Server side checking that cookie is present and query string matches</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">@using System.Configuration;
-
-<span style="color:#960050;background-color:#1e0010">@</span>{
-
-    <span style="color:#66d9ef">string</span> ComplexURLFromWebConfig = ConfigurationManager.AppSettings[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>].ToString().Trim();
-
-    <span style="color:#960050;background-color:#1e0010">@</span>* QueryString sent <span style="color:#66d9ef">from</span> url *<span style="color:#960050;background-color:#1e0010">@</span>
-    <span style="color:#66d9ef">string</span> QueryStringComplexURL = (Request.QueryString[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>] ?? <span style="color:#e6db74">&#34;&#34;</span>).ToString().Trim();
-
-
-    <span style="color:#66d9ef">if</span> (ComplexURLFromWebConfig != QueryStringComplexURL || Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] == <span style="color:#66d9ef">null</span>)
-    {
-        <span style="color:#66d9ef">var</span> data = <span style="color:#e6db74">&#34;Unathorised&#34;</span>;
-        Response.Write(data);
-        Response.End();
-    }
-
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>{
+</span></span><span style="display:flex;"><span>    String cookieQueryString = Request.QueryString[<span style="color:#e6db74">&#34;cookieSetter&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (cookieQueryString)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;remove&#34;</span> - This deletes the cookie <span style="color:#66d9ef">from</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;remove&#34;</span>:
+</span></span><span style="display:flex;"><span>            Response.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires = DateTime.Now.AddYears(-<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">@</span>* QueryString <span style="color:#e6db74">&#34;add&#34;</span> - This creates the cookie <span style="color:#66d9ef">on</span> the device *<span style="color:#960050;background-color:#1e0010">@</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;add&#34;</span>:
+</span></span><span style="display:flex;"><span>            HttpCookie aCookie = <span style="color:#66d9ef">new</span> HttpCookie(<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>);
+</span></span><span style="display:flex;"><span>            aCookie.HttpOnly = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>            aCookie.Value = <span style="color:#e6db74">&#34;Authorised&#34;</span>;
+</span></span><span style="display:flex;"><span>            aCookie.Expires = DateTime.Now.AddYears(<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>            Response.Cookies.Add(aCookie);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>* Visual feedback <span style="color:#66d9ef">for</span> cookie *<span style="color:#960050;background-color:#1e0010">@</span>
+</span></span><span style="display:flex;"><span>@if (Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] != <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Response.Write(<span style="color:#e6db74">&#34;Cookie Found&#34;</span>);
+</span></span><span style="display:flex;"><span>    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Value);
+</span></span><span style="display:flex;"><span>    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>    Response.Write(Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>].Expires);
+</span></span><span style="display:flex;"><span>    Response.Write(<span style="color:#e6db74">&#34;&lt;br/&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Storing the complex query string in a web.config for easy maintenance</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span>  <span style="color:#f92672">&lt;appSettings&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;hhqsdc332323vxzcjsdffbfsh12sdfdfgdfgdfgwerktyykfdhgdhjsdfsdfasdffdfww&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/appSettings&gt;</span>
+</span></span></code></pre></div><p><strong>Server side checking that cookie is present and query string matches</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>@using System.Configuration;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> ComplexURLFromWebConfig = ConfigurationManager.AppSettings[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>].ToString().Trim();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">@</span>* QueryString sent <span style="color:#66d9ef">from</span> url *<span style="color:#960050;background-color:#1e0010">@</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> QueryStringComplexURL = (Request.QueryString[<span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span>] ?? <span style="color:#e6db74">&#34;&#34;</span>).ToString().Trim();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (ComplexURLFromWebConfig != QueryStringComplexURL || Request.Cookies[<span style="color:#e6db74">&#34;NSSecureMethodCookie&#34;</span>] == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> data = <span style="color:#e6db74">&#34;Unathorised&#34;</span>;
+</span></span><span style="display:flex;"><span>        Response.Write(data);
+</span></span><span style="display:flex;"><span>        Response.End();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h2 id="summary">Summary</h2>
 <p>I have used this approach on several basic web solutions, that <em>don’t</em> require armour plating security, but equally shouldn&rsquo;t ideally be exposed to all and sundry.</p>
 <p>My recommendation, would be to use this on internal sites <em>(behind the firewall)</em> or small public sites.  It makes life remarkably simple for updating basic content, without having to implement a full authentication system.</p>
@@ -415,7 +415,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -442,8 +442,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

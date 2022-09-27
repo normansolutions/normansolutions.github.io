@@ -9,7 +9,7 @@
        <!-- prettier-ignore-end-->
         <div class="post container" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"> 
           <header>
-             <h1 itemprop="name headline"><a href="{{.URL}}" rel="canonical" itemprop="url">{{.Title}}</a></h1>
+             <h1 itemprop="name headline"><a href="{{.Permalink}}" rel="canonical" itemprop="url">{{.Title}}</a></h1>
 
             <time datetime={{.Date }} itemprop="datePublished">Published {{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
 

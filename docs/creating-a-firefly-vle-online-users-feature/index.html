@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -322,66 +322,66 @@ data-src="/img/postimg/fe4b9026-0650-41be-9671-d2b11347d11d-min.jpg"/>
 <p>Once the Hits table was indexed efficiently, the next stage was to create a server side process, which would query the Hits table <em>(and perform any necessary filters to limit the users being displayed – for example not to show any parents who may also be online etc).</em> This was achieved by creating an aspx page located in a sub folder of the plugins folder on the server <em>(e.g. “Plugins \ ClientASPXFiles \ STMWhoOnline.aspx”).</em></p>
 <p><strong>This aspx page utilises the Firefly security model, so that you cannot browse to it as an unauthorised user etc.</strong></p>
 <p>The process reduces the count to show only the latest ten users, ordered by date descending, based on the most recent top 500 rows in the Hits table – because technically it is not known as to how many hit’s an individual user is going to create, and it is impractical to query the entire Hits table, an arbitrary figure of the last 500 hits, gives a good chance of getting at least the last 10 unique users http hits, without causing unnecessary strain on querying the entire table.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> TOP <span style="color:#ae81ff">500</span> <span style="color:#66d9ef">UPPER</span>(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(user_identity, <span style="color:#e6db74">&#39;@STMARYS.EU&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#e6db74">&#39;ST-MARYS\\&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)) <span style="color:#66d9ef">as</span> Online, guid, date <span style="color:#66d9ef">FROM</span> hits h <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tokens t <span style="color:#66d9ef">ON</span> (h.user_guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT <span style="color:#f92672">=</span> t.guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT) <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_1&#39;</span>)<span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_2&#39;</span>) <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> [date] <span style="color:#66d9ef">DESC</span>
-</code></pre></div><p>The page then uses some basic array and looping procedures to ensure that it is only displaying a single latest instance per user.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">if</span> (myReader.Read())
-  {
-    <span style="color:#66d9ef">while</span> (myReader.Read())
-      {
-        DateTime loggedDate = Convert.ToDateTime(myReader[<span style="color:#e6db74">&#34;date&#34;</span>].ToString());
-        <span style="color:#66d9ef">if</span> (loggedDate.AddMinutes(<span style="color:#ae81ff">5</span>) &gt;= DateTime.Now)
-          {
-            <span style="color:#66d9ef">if</span> (!checkForDup.Contains(myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString()))
-              {
-                <span style="color:#66d9ef">if</span> (count &lt; <span style="color:#ae81ff">10</span>)
-                  {
-                    sb.Append(<span style="color:#e6db74">&#34;{\&#34;user\&#34;:\&#34;&#34;</span> + myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString() + <span style="color:#e6db74">&#34;\&#34;,\&#34;guid\&#34;:\&#34;&#34;</span> + myReader[<span style="color:#e6db74">&#34;guid&#34;</span>].ToString() + <span style="color:#e6db74">&#34;\&#34;,\&#34;logged\&#34;:\&#34;&#34;</span> + loggedDate.TimeOfDay.ToString() + <span style="color:#e6db74">&#34;\&#34;},&#34;</span>);
-                    checkForDup.Add(myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString());
-                    count++;
-                  }
-              }
-          }
-      }
-  }
-<span style="color:#66d9ef">else</span>
-  {
-    sb.Append(<span style="color:#e6db74">&#34;&#34;</span>);
-  }
-</code></pre></div><p>The final top ten results are then returned in a <a href="http://en.wikipedia.org/wiki/JSON">json</a> format, which can easily be read by a client side script making an ajax call.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TOP <span style="color:#ae81ff">500</span> <span style="color:#66d9ef">UPPER</span>(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(user_identity, <span style="color:#e6db74">&#39;@STMARYS.EU&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#e6db74">&#39;ST-MARYS\\&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)) <span style="color:#66d9ef">as</span> Online, guid, date <span style="color:#66d9ef">FROM</span> hits h <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tokens t <span style="color:#66d9ef">ON</span> (h.user_guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT <span style="color:#f92672">=</span> t.guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT) <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_1&#39;</span>)<span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_2&#39;</span>) <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> [date] <span style="color:#66d9ef">DESC</span>
+</span></span></code></pre></div><p>The page then uses some basic array and looping procedures to ensure that it is only displaying a single latest instance per user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (myReader.Read())
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (myReader.Read())
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        DateTime loggedDate = Convert.ToDateTime(myReader[<span style="color:#e6db74">&#34;date&#34;</span>].ToString());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (loggedDate.AddMinutes(<span style="color:#ae81ff">5</span>) &gt;= DateTime.Now)
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (!checkForDup.Contains(myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString()))
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (count &lt; <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>                  {
+</span></span><span style="display:flex;"><span>                    sb.Append(<span style="color:#e6db74">&#34;{\&#34;user\&#34;:\&#34;&#34;</span> + myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString() + <span style="color:#e6db74">&#34;\&#34;,\&#34;guid\&#34;:\&#34;&#34;</span> + myReader[<span style="color:#e6db74">&#34;guid&#34;</span>].ToString() + <span style="color:#e6db74">&#34;\&#34;,\&#34;logged\&#34;:\&#34;&#34;</span> + loggedDate.TimeOfDay.ToString() + <span style="color:#e6db74">&#34;\&#34;},&#34;</span>);
+</span></span><span style="display:flex;"><span>                    checkForDup.Add(myReader[<span style="color:#e6db74">&#34;Online&#34;</span>].ToString());
+</span></span><span style="display:flex;"><span>                    count++;
+</span></span><span style="display:flex;"><span>                  }
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    sb.Append(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>The final top ten results are then returned in a <a href="http://en.wikipedia.org/wiki/JSON">json</a> format, which can easily be read by a client side script making an ajax call.</p>
 <p>Finally, to make the server side query as efficient as possible, the page is actually set to cache all results every 10 seconds, so that if multiple users are online, the server is not querying unnecessarily <em>(tens of times per second etc)</em> causing drain on server resources.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">&lt;%<span style="color:#960050;background-color:#1e0010">@</span> outputcache duration=<span style="color:#e6db74">&#34;10&#34;</span> location=<span style="color:#e6db74">&#34;Server&#34;</span> varybyparam=<span style="color:#e6db74">&#34;None&#34;</span> %&gt;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>&lt;%<span style="color:#960050;background-color:#1e0010">@</span> outputcache duration=<span style="color:#e6db74">&#34;10&#34;</span> location=<span style="color:#e6db74">&#34;Server&#34;</span> varybyparam=<span style="color:#e6db74">&#34;None&#34;</span> %&gt;
+</span></span></code></pre></div><hr>
 <p><strong>Client Side</strong></p>
 <p>All that is required on the client side, it a small snippet of JavaScript to create an ajax call every 10 seconds, polling the server file <em>(created above)</em> and then presenting the json returned from this file in a standard html <!-- raw HTML omitted --> element, with an <!-- raw HTML omitted --> hyperlink to the users profile, and a hover tooltip displaying the actual date/time of the most recent “hit”.</p>
 <p>This JavaScript is placed by literally adding a Firefly formatted text component, and then using the code editor – copying in the JavaScript.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">br</span>/&gt;
-&lt;<span style="color:#f92672">h3</span>&gt;Most recent visitors&lt;/<span style="color:#f92672">h3</span>&gt;
-&lt;<span style="color:#f92672">script</span>&gt;
-(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doPoll</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
-        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://YOUR_DOMAIN_NAME/plugins/clientaspxfiles/stmwhoonline.aspx&#34;</span>,
-        <span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
-        <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">json</span>) {
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
-            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a href=\profile?guid=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">guid</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">logged</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">user</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
-                <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
-            }
-            <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
-                <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#online&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>).<span style="color:#a6e22e">hide</span>().<span style="color:#a6e22e">fadeIn</span>();
-            } <span style="color:#66d9ef">else</span> {
-                <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#online&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
-            }
-        }
-    });
-    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">doPoll</span>, <span style="color:#ae81ff">10000</span>);
-})();
-
-
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h3</span>&gt;Most recent visitors&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doPoll</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://YOUR_DOMAIN_NAME/plugins/clientaspxfiles/stmwhoonline.aspx&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">json</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a href=\profile?guid=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">guid</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">logged</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">json</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">user</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#online&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>).<span style="color:#a6e22e">hide</span>().<span style="color:#a6e22e">fadeIn</span>();
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#online&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">doPoll</span>, <span style="color:#ae81ff">10000</span>);
+</span></span><span style="display:flex;"><span>})();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
 <h2 id="conclusion">Conclusion</h2>
 <p>This process works remarkably well, and when using an SQL profiler, with the query reduced to only take the top 500 hits and the utilising of caching, the SQL load is exceptionally efficient.</p>
 <p>Technically, there is a theory that by only querying the last 500 hits, you cannot be scientifically absolute in stating that you are getting all the last top ten individual users <em>(e.g. one user may clock up 300 hits by themselves etc),</em> but in our tests, this proved to be more than adequate and indeed does always appears to show the most recent top ten.</p>
@@ -413,7 +413,7 @@ data-src="/img/postimg/b26a9c4-6c9d-47b1-af6d-34a4725c0b99-min.jpg"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -440,8 +440,8 @@ data-src="/img/postimg/b26a9c4-6c9d-47b1-af6d-34a4725c0b99-min.jpg"/>
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

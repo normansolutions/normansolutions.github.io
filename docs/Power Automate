@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Plot"
+date: 2014-01-10 11:49:19
+type: post
+tags:
+  - JavaScript
+  - VLE
+  - Firefly
+---
+Like many people, I've tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API. So recently I thought why not combine these two systems and see what can be achieved?
+
+It transpires a fair amount, albeit with a few initial gotchas. So I decided to write a blog post detailing the process, if nothing else to serve as a tutorial to my future self!
+
+[Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/) is the product required _(as against Power BI Online)_ - limitations in data connection options being the primary reason.
+
+{{< rawhtml >}}
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/GetData_637177867209747085-min.PNG"/>
+{{< /rawhtml >}}
+
+```

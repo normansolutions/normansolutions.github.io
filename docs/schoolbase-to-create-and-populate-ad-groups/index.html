@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -340,159 +340,159 @@ data-src="/img/postimg/b9cc4743-d4d1-489e-b2d4-df224189ffa0-min.jpg"/>
 <blockquote>
 <p><em>It’s worth noting that there are numerous optimisations within the code, designed to prevent repetitive and unnecessary tasks.</em></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">namespace</span> CreateADGroups
-{
-    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
-    {
-        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
-        {
-            <span style="color:#66d9ef">string</span> activeDirPath = args[<span style="color:#ae81ff">0</span>];
-            <span style="color:#66d9ef">string</span> activeDirOU = args[<span style="color:#ae81ff">1</span>];
-            <span style="color:#66d9ef">string</span> usersLocation = args[<span style="color:#ae81ff">2</span>];
-            <span style="color:#66d9ef">string</span> filterIn = args[<span style="color:#ae81ff">3</span>];
-            <span style="color:#66d9ef">string</span> filterOut = args[<span style="color:#ae81ff">4</span>];
-
-            <span style="color:#66d9ef">var</span> DBConnString = System.Configuration.ConfigurationManager.ConnectionStrings[<span style="color:#e6db74">&#34;CreateADGroups.Properties.Settings.SchoolbaseConnectionString&#34;</span>].ToString();
-            GetGroupDataDataContext GroupData = <span style="color:#66d9ef">new</span> GetGroupDataDataContext(DBConnString);
-            List&lt;<span style="color:#66d9ef">string</span>&gt; groupNameIncludeFilter = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
-            List&lt;<span style="color:#66d9ef">string</span>&gt; groupNameExcludeFilter = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
-            List&lt;<span style="color:#66d9ef">string</span>&gt; groupBeenChecked = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
-
-            <span style="color:#66d9ef">string</span>[] filterInLoop = filterIn.Split(<span style="color:#e6db74">&#39;|&#39;</span>);
-            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> filterInWord <span style="color:#66d9ef">in</span> filterInLoop)
-            {
-                groupNameIncludeFilter.Add(filterInWord);
-            }
-
-            <span style="color:#66d9ef">string</span>[] filterOutLoop = filterOut.Split(<span style="color:#e6db74">&#39;|&#39;</span>);
-            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> filterOutWord <span style="color:#66d9ef">in</span> filterOutLoop)
-            {
-                groupNameExcludeFilter.Add(filterOutWord);
-            }
-
-
-            <span style="color:#66d9ef">var</span> groupRecord = <span style="color:#66d9ef">from</span> x <span style="color:#66d9ef">in</span> GroupData.GroupReps.AsEnumerable()
-                              <span style="color:#66d9ef">where</span> groupNameIncludeFilter.Any(f =&gt; x.Subject.ToLower().Contains(f.ToLower()))
-                              &amp;&amp; groupNameExcludeFilter.Any(e =&gt; !x.Subject.ToLower().Contains(e.ToLower()))
-                              <span style="color:#66d9ef">select</span> x;
-
-            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> groupName <span style="color:#66d9ef">in</span> groupRecord)
-            {
-                <span style="color:#66d9ef">try</span>
-                {
-
-                    <span style="color:#66d9ef">if</span> (!groupBeenChecked.Contains(groupName.GroupName.ToString()))
-                    {
-                        RemoveUserFromGroup(groupName.GroupName, activeDirOU, activeDirPath);
-                        Create(activeDirOU + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath, groupName.GroupName);
-                        groupBeenChecked.Add(groupName.GroupName.ToString());
-                    }
-                    AddToGroup(groupName.PupADSname, groupName.GroupName, usersLocation, activeDirOU, activeDirPath);
-                }
-                <span style="color:#66d9ef">catch</span> (Exception e)
-                {
-                    Console.WriteLine(<span style="color:#e6db74">&#34;Group Name Log (&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
-                }
-
-            }
-
-        }
-
-
-        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Create(<span style="color:#66d9ef">string</span> ouPath, <span style="color:#66d9ef">string</span> name)
-        {
-            <span style="color:#66d9ef">if</span> (!DirectoryEntry.Exists(<span style="color:#e6db74">&#34;LDAP://CN=&#34;</span> + name + <span style="color:#e6db74">&#34;,&#34;</span> + ouPath))
-            {
-                <span style="color:#66d9ef">try</span>
-                {
-                    <span style="color:#75715e">// bind to the container, e.g. LDAP://cn=Users,dc=...
-</span><span style="color:#75715e"></span>                    DirectoryEntry entry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://&#34;</span> + ouPath);
-
-                    <span style="color:#75715e">// create group entry
-</span><span style="color:#75715e"></span>                    DirectoryEntry <span style="color:#66d9ef">group</span> = entry.Children.Add(<span style="color:#e6db74">&#34;CN=&#34;</span> + name, <span style="color:#e6db74">&#34;group&#34;</span>);
-
-                    <span style="color:#75715e">// set properties
-</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">group</span>.Properties[<span style="color:#e6db74">&#34;sAmAccountName&#34;</span>].Value = name;
-
-                    <span style="color:#75715e">// save group
-</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">group</span>.CommitChanges();
-                }
-                <span style="color:#66d9ef">catch</span> (Exception e)
-                {
-                    Console.WriteLine(<span style="color:#e6db74">&#34;Create Group Log &#34;</span> + ouPath.ToString() + <span style="color:#e6db74">&#34; - &#34;</span> + name.ToString() + <span style="color:#e6db74">&#34;(&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
-                }
-            }
-            <span style="color:#66d9ef">else</span> { Console.WriteLine(ouPath + <span style="color:#e6db74">&#34; already exists&#34;</span>); }
-        }
-
-
-
-        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> RemoveUserFromGroup(<span style="color:#66d9ef">string</span> groupDn, <span style="color:#66d9ef">string</span> activeDirOU, <span style="color:#66d9ef">string</span> activeDirPath)
-        {
-            <span style="color:#66d9ef">try</span>
-            {
-                List&lt;<span style="color:#66d9ef">string</span>&gt; usersInGroup = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
-                DirectoryEntry dirEntry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://CN=&#34;</span> + groupDn + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirOU + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath);
-
-                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> dn <span style="color:#66d9ef">in</span> dirEntry.Properties[<span style="color:#e6db74">&#34;member&#34;</span>])
-                {
-                    usersInGroup.Add(dn.ToString());
-                }
-
-                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> user <span style="color:#66d9ef">in</span> usersInGroup)
-                {
-                    dirEntry.Properties[<span style="color:#e6db74">&#34;member&#34;</span>].Remove(user);
-                    dirEntry.CommitChanges();
-                    dirEntry.Close();
-                }
-
-            }
-            <span style="color:#66d9ef">catch</span> (System.DirectoryServices.DirectoryServicesCOMException e)
-            {
-                Console.WriteLine(<span style="color:#e6db74">&#34;Remove User Log&#34;</span> + <span style="color:#e6db74">&#34; - group probably exists elsewhere on AD (&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
-            }
-        }
-
-
-        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> AddToGroup(<span style="color:#66d9ef">string</span> userDn, <span style="color:#66d9ef">string</span> groupDn, <span style="color:#66d9ef">string</span> usersLocation, <span style="color:#66d9ef">string</span> activeDirOU, <span style="color:#66d9ef">string</span> activeDirPath)
-        {
-            <span style="color:#66d9ef">try</span>
-            {
-                DirectoryEntry dirEntry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://CN=&#34;</span> + groupDn + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirOU + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath);
-                <span style="color:#66d9ef">string</span> distinguished = GetUserDn(userDn, usersLocation, activeDirPath);
-                dirEntry.Properties[<span style="color:#e6db74">&#34;member&#34;</span>].Add(distinguished);
-                dirEntry.CommitChanges();
-                dirEntry.Close();
-            }
-            <span style="color:#66d9ef">catch</span> (System.DirectoryServices.DirectoryServicesCOMException e)
-            {
-                Console.WriteLine(<span style="color:#e6db74">&#34;Add User Log For &#34;</span> + groupDn.ToString() + <span style="color:#e6db74">&#34; - group probably exists elsewhere on AD (&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
-            }
-        }
-
-
-        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> GetUserDn(<span style="color:#66d9ef">string</span> identity, <span style="color:#66d9ef">string</span> usersLocation, <span style="color:#66d9ef">string</span> activeDirPath)
-        {
-            <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> rootEntry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://&#34;</span> + usersLocation + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath, <span style="color:#66d9ef">null</span>, <span style="color:#66d9ef">null</span>, AuthenticationTypes.Secure))
-            {
-                <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> directorySearcher = <span style="color:#66d9ef">new</span> DirectorySearcher(rootEntry, String.Format(<span style="color:#e6db74">&#34;(sAMAccountName={0})&#34;</span>, identity)))
-                {
-                    <span style="color:#66d9ef">var</span> searchResult = directorySearcher.FindOne();
-                    <span style="color:#66d9ef">if</span> (searchResult != <span style="color:#66d9ef">null</span>)
-                    {
-                        <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> userEntry = searchResult.GetDirectoryEntry())
-                        {
-                            <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">string</span>)userEntry.Properties[<span style="color:#e6db74">&#34;distinguishedName&#34;</span>].Value;
-                        }
-                    }
-                }
-            }
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-        }
-
-    }
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> CreateADGroups
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> activeDirPath = args[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> activeDirOU = args[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> usersLocation = args[<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> filterIn = args[<span style="color:#ae81ff">3</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> filterOut = args[<span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> DBConnString = System.Configuration.ConfigurationManager.ConnectionStrings[<span style="color:#e6db74">&#34;CreateADGroups.Properties.Settings.SchoolbaseConnectionString&#34;</span>].ToString();
+</span></span><span style="display:flex;"><span>            GetGroupDataDataContext GroupData = <span style="color:#66d9ef">new</span> GetGroupDataDataContext(DBConnString);
+</span></span><span style="display:flex;"><span>            List&lt;<span style="color:#66d9ef">string</span>&gt; groupNameIncludeFilter = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
+</span></span><span style="display:flex;"><span>            List&lt;<span style="color:#66d9ef">string</span>&gt; groupNameExcludeFilter = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
+</span></span><span style="display:flex;"><span>            List&lt;<span style="color:#66d9ef">string</span>&gt; groupBeenChecked = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span>[] filterInLoop = filterIn.Split(<span style="color:#e6db74">&#39;|&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> filterInWord <span style="color:#66d9ef">in</span> filterInLoop)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                groupNameIncludeFilter.Add(filterInWord);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span>[] filterOutLoop = filterOut.Split(<span style="color:#e6db74">&#39;|&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> filterOutWord <span style="color:#66d9ef">in</span> filterOutLoop)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                groupNameExcludeFilter.Add(filterOutWord);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> groupRecord = <span style="color:#66d9ef">from</span> x <span style="color:#66d9ef">in</span> GroupData.GroupReps.AsEnumerable()
+</span></span><span style="display:flex;"><span>                              <span style="color:#66d9ef">where</span> groupNameIncludeFilter.Any(f =&gt; x.Subject.ToLower().Contains(f.ToLower()))
+</span></span><span style="display:flex;"><span>                              &amp;&amp; groupNameExcludeFilter.Any(e =&gt; !x.Subject.ToLower().Contains(e.ToLower()))
+</span></span><span style="display:flex;"><span>                              <span style="color:#66d9ef">select</span> x;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> groupName <span style="color:#66d9ef">in</span> groupRecord)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (!groupBeenChecked.Contains(groupName.GroupName.ToString()))
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        RemoveUserFromGroup(groupName.GroupName, activeDirOU, activeDirPath);
+</span></span><span style="display:flex;"><span>                        Create(activeDirOU + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath, groupName.GroupName);
+</span></span><span style="display:flex;"><span>                        groupBeenChecked.Add(groupName.GroupName.ToString());
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    AddToGroup(groupName.PupADSname, groupName.GroupName, usersLocation, activeDirOU, activeDirPath);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">catch</span> (Exception e)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    Console.WriteLine(<span style="color:#e6db74">&#34;Group Name Log (&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Create(<span style="color:#66d9ef">string</span> ouPath, <span style="color:#66d9ef">string</span> name)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (!DirectoryEntry.Exists(<span style="color:#e6db74">&#34;LDAP://CN=&#34;</span> + name + <span style="color:#e6db74">&#34;,&#34;</span> + ouPath))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// bind to the container, e.g. LDAP://cn=Users,dc=...</span>
+</span></span><span style="display:flex;"><span>                    DirectoryEntry entry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://&#34;</span> + ouPath);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// create group entry</span>
+</span></span><span style="display:flex;"><span>                    DirectoryEntry <span style="color:#66d9ef">group</span> = entry.Children.Add(<span style="color:#e6db74">&#34;CN=&#34;</span> + name, <span style="color:#e6db74">&#34;group&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// set properties</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">group</span>.Properties[<span style="color:#e6db74">&#34;sAmAccountName&#34;</span>].Value = name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// save group</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">group</span>.CommitChanges();
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">catch</span> (Exception e)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    Console.WriteLine(<span style="color:#e6db74">&#34;Create Group Log &#34;</span> + ouPath.ToString() + <span style="color:#e6db74">&#34; - &#34;</span> + name.ToString() + <span style="color:#e6db74">&#34;(&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> { Console.WriteLine(ouPath + <span style="color:#e6db74">&#34; already exists&#34;</span>); }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> RemoveUserFromGroup(<span style="color:#66d9ef">string</span> groupDn, <span style="color:#66d9ef">string</span> activeDirOU, <span style="color:#66d9ef">string</span> activeDirPath)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                List&lt;<span style="color:#66d9ef">string</span>&gt; usersInGroup = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { };
+</span></span><span style="display:flex;"><span>                DirectoryEntry dirEntry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://CN=&#34;</span> + groupDn + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirOU + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> dn <span style="color:#66d9ef">in</span> dirEntry.Properties[<span style="color:#e6db74">&#34;member&#34;</span>])
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    usersInGroup.Add(dn.ToString());
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> user <span style="color:#66d9ef">in</span> usersInGroup)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    dirEntry.Properties[<span style="color:#e6db74">&#34;member&#34;</span>].Remove(user);
+</span></span><span style="display:flex;"><span>                    dirEntry.CommitChanges();
+</span></span><span style="display:flex;"><span>                    dirEntry.Close();
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">catch</span> (System.DirectoryServices.DirectoryServicesCOMException e)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                Console.WriteLine(<span style="color:#e6db74">&#34;Remove User Log&#34;</span> + <span style="color:#e6db74">&#34; - group probably exists elsewhere on AD (&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> AddToGroup(<span style="color:#66d9ef">string</span> userDn, <span style="color:#66d9ef">string</span> groupDn, <span style="color:#66d9ef">string</span> usersLocation, <span style="color:#66d9ef">string</span> activeDirOU, <span style="color:#66d9ef">string</span> activeDirPath)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                DirectoryEntry dirEntry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://CN=&#34;</span> + groupDn + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirOU + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">string</span> distinguished = GetUserDn(userDn, usersLocation, activeDirPath);
+</span></span><span style="display:flex;"><span>                dirEntry.Properties[<span style="color:#e6db74">&#34;member&#34;</span>].Add(distinguished);
+</span></span><span style="display:flex;"><span>                dirEntry.CommitChanges();
+</span></span><span style="display:flex;"><span>                dirEntry.Close();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">catch</span> (System.DirectoryServices.DirectoryServicesCOMException e)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                Console.WriteLine(<span style="color:#e6db74">&#34;Add User Log For &#34;</span> + groupDn.ToString() + <span style="color:#e6db74">&#34; - group probably exists elsewhere on AD (&#34;</span> + e.Message.ToString() + <span style="color:#e6db74">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> GetUserDn(<span style="color:#66d9ef">string</span> identity, <span style="color:#66d9ef">string</span> usersLocation, <span style="color:#66d9ef">string</span> activeDirPath)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> rootEntry = <span style="color:#66d9ef">new</span> DirectoryEntry(<span style="color:#e6db74">&#34;LDAP://&#34;</span> + usersLocation + <span style="color:#e6db74">&#34;,&#34;</span> + activeDirPath, <span style="color:#66d9ef">null</span>, <span style="color:#66d9ef">null</span>, AuthenticationTypes.Secure))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> directorySearcher = <span style="color:#66d9ef">new</span> DirectorySearcher(rootEntry, String.Format(<span style="color:#e6db74">&#34;(sAMAccountName={0})&#34;</span>, identity)))
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">var</span> searchResult = directorySearcher.FindOne();
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (searchResult != <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> userEntry = searchResult.GetDirectoryEntry())
+</span></span><span style="display:flex;"><span>                        {
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">string</span>)userEntry.Properties[<span style="color:#e6db74">&#34;distinguishedName&#34;</span>].Value;
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h4 id="click-here-to-grab-the-standalone-ready-made-tool--appropriate-fileshttpsgithubcomnormansolutionscreateadgroupsfromschoolbasetreemasterstandaloneprogram"><a href="https://github.com/normansolutions/CreateADGroupsFromSchoolbase/tree/master/StandAloneProgram">Click here to grab the standalone, ready made tool &amp; appropriate files.</a></h4>
 <hr>
 <h2 id="using-the-tool">Using the tool</h2>
@@ -530,8 +530,8 @@ data-src="/img/postimg/249a56f0-5c0c-45a2-ae72-c6d286d8c70c-min.jpg"/>
 <blockquote>
 <p><em>Trust me – it’s a lot easier than it reads!</em></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">C:\SCHEDULE\SBGroups\CreateADGroups.exe  &#34;DC=St-Stephens, DC=Local&#34; &#34;OU=SBGroups&#34; &#34;OU=Students, OU=St Stephens Users&#34; &#34;Art|Photo&#34; &#34;UCAS&#34;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>C:\SCHEDULE\SBGroups\CreateADGroups.exe  &#34;DC=St-Stephens, DC=Local&#34; &#34;OU=SBGroups&#34; &#34;OU=Students, OU=St Stephens Users&#34; &#34;Art|Photo&#34; &#34;UCAS&#34;
+</span></span></code></pre></div><hr>
 <h2 id="conclusion">Conclusion</h2>
 <p>Clearly, this is just one solution to a problem, and may not fit every situation.  But under the banner of “openness and sharing” you may just find something useful in this post.</p>
 <blockquote>
@@ -561,7 +561,7 @@ data-src="/img/postimg/249a56f0-5c0c-45a2-ae72-c6d286d8c70c-min.jpg"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -588,8 +588,8 @@ data-src="/img/postimg/249a56f0-5c0c-45a2-ae72-c6d286d8c70c-min.jpg"/>
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

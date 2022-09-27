@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -330,50 +330,50 @@ data-src="/img/postimg/69a07192-85fb-4c5c-8bd3-4551d6be261a-min.png" />
 <p>This solutions works well, in the sense that it certainly provides a ‘<em>new’</em> file name – but on my travels I have subsequently learnt, that the query-string method is not the best accepted practice for cache-busting, and can <em>fail</em> under certain circumstances.</p>
 <h2 id="an-alternative-approach">An Alternative Approach</h2>
 <p>I use the excellent <a href="https://github.com/madskristensen/miniblog">MiniBlog</a> framework for my blog site, and love the way it deals with caching and cache busting <em>(amongst other things).</em></p>
-<p>MiniBlog <em>(and no doubt others)</em> take an approach of actually changing the <em>path</em> as against the filename*.*  This path is created, based on a time stamp _(or specifically, time-ticks)_ and is remarkably simple.  It’s now my preferred method of cache-busting.</p>
+<p>MiniBlog <em>(and no doubt others)</em> take an approach of actually changing the <em>path</em> as against the filename*.*  This path is created, based on a time stamp <em>(or specifically, time-ticks)</em> and is remarkably simple.  It’s now my preferred method of cache-busting.</p>
 <hr>
 <h2 id="the-steps">The Steps</h2>
 <p>Firstly, you need to create a c# class, that will be responsible for creating the <em>unique new path</em> to any given file.</p>
 <blockquote>
 <p><em>In the below example, you may note that this class also allows for the use of a CDN path, in which the cache-bust would not be required.</em></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> FingerPrint(<span style="color:#66d9ef">string</span> rootRelativePath, <span style="color:#66d9ef">string</span> cdnPath = <span style="color:#e6db74">&#34;&#34;</span>)
-{
-    <span style="color:#66d9ef">if</span> (!<span style="color:#66d9ef">string</span>.IsNullOrEmpty(cdnPath) &amp;&amp; !HttpContext.Current.IsDebuggingEnabled)
-    {
-        <span style="color:#66d9ef">return</span> cdnPath;
-    }
-        <span style="color:#66d9ef">if</span> (HttpRuntime.Cache[rootRelativePath] == <span style="color:#66d9ef">null</span>)
-    {
-        <span style="color:#66d9ef">string</span> relative = VirtualPathUtility.ToAbsolute(<span style="color:#e6db74">&#34;~&#34;</span> + rootRelativePath);
-        <span style="color:#66d9ef">string</span> absolute = HostingEnvironment.MapPath(relative);
-        <span style="color:#66d9ef">if</span> (!File.Exists(absolute))
-        {
-            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> FileNotFoundException(<span style="color:#e6db74">&#34;File not found&#34;</span>, absolute);
-        }
-        DateTime date = File.GetLastWriteTime(absolute);
-        <span style="color:#66d9ef">int</span> index = relative.LastIndexOf(<span style="color:#e6db74">&#39;/&#39;</span>);
-        <span style="color:#66d9ef">string</span> result = relative.Insert(index, <span style="color:#e6db74">&#34;/v-&#34;</span> + date.Ticks);
-        HttpRuntime.Cache.Insert(rootRelativePath, result, <span style="color:#66d9ef">new</span> CacheDependency(absolute));
-    }
-        <span style="color:#66d9ef">return</span> HttpRuntime.Cache[rootRelativePath] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">string</span>;
-}
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> FingerPrint(<span style="color:#66d9ef">string</span> rootRelativePath, <span style="color:#66d9ef">string</span> cdnPath = <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (!<span style="color:#66d9ef">string</span>.IsNullOrEmpty(cdnPath) &amp;&amp; !HttpContext.Current.IsDebuggingEnabled)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cdnPath;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (HttpRuntime.Cache[rootRelativePath] == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> relative = VirtualPathUtility.ToAbsolute(<span style="color:#e6db74">&#34;~&#34;</span> + rootRelativePath);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> absolute = HostingEnvironment.MapPath(relative);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (!File.Exists(absolute))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> FileNotFoundException(<span style="color:#e6db74">&#34;File not found&#34;</span>, absolute);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        DateTime date = File.GetLastWriteTime(absolute);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> index = relative.LastIndexOf(<span style="color:#e6db74">&#39;/&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> result = relative.Insert(index, <span style="color:#e6db74">&#34;/v-&#34;</span> + date.Ticks);
+</span></span><span style="display:flex;"><span>        HttpRuntime.Cache.Insert(rootRelativePath, result, <span style="color:#66d9ef">new</span> CacheDependency(absolute));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> HttpRuntime.Cache[rootRelativePath] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
 <p><em>The key to the unique path creation is the <strong>File.GetLastWriteTime</strong> syntax – this literally establishes the last time a file was changed, and uses that, as a basis to create a unique numerical value of time-ticks.</em></p>
 </blockquote>
 <p>Of course, we <em>will</em> need to somehow establish the <strong>real</strong> path, as to where the file is located <em>(as against this virtual one);</em> in short, we need some routing.</p>
 <p>This is very easily done, with the below code snippet added to the <a href="http://en.wikipedia.org/wiki/Web.config">web.config</a> file – using some <a href="http://en.wikipedia.org/wiki/Regular_expression">regex</a> wizardry, this tells incoming requests, that when it comes across one of these <em>‘special paths’</em>, to route it to the correct location.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#f92672">&lt;rules&gt;</span>
-  <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;fingerprint&#34;</span> <span style="color:#a6e22e">stopProcessing=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;match</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;(.*)(v-[0-9]+/)([\S]+)&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Rewrite&#34;</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;{R:1}/{R:3}&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/rule&gt;</span>
-<span style="color:#f92672">&lt;/rules&gt;</span>
-</code></pre></div><p>Finally, to actually use the cache-busting feature in your page, just path your appropriate links and scripts <em>(css, js etc)</em> using the below method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@CacheBust.FingerPrint(&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">mainStyle</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span> /&gt;
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shortcut icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@CacheBust.FingerPrint(&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">favicon</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">ico</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/x-icon&#34;</span> /&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@CacheBust.FingerPrint(&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">scripts</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">mainScripts</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#f92672">&lt;rules&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;rule</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;fingerprint&#34;</span> <span style="color:#a6e22e">stopProcessing=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;match</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;(.*)(v-[0-9]+/)([\S]+)&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;Rewrite&#34;</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;{R:1}/{R:3}&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/rule&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/rules&gt;</span>
+</span></span></code></pre></div><p>Finally, to actually use the cache-busting feature in your page, just path your appropriate links and scripts <em>(css, js etc)</em> using the below method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@CacheBust.FingerPrint(&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">mainStyle</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shortcut icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@CacheBust.FingerPrint(&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">favicon</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">ico</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/x-icon&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@CacheBust.FingerPrint(&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">scripts</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">mainScripts</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
 <h2 id="the-result">The Result</h2>
 <p>As you can see from the below screen shot, the example css and JavaScript paths are indeed, very <strong>unique!</strong></p>
 
@@ -406,7 +406,7 @@ data-src="/img/postimg/2005d37a-97fe-43df-a2ea-7854ca5241a5-min.png" />
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -433,8 +433,8 @@ data-src="/img/postimg/2005d37a-97fe-43df-a2ea-7854ca5241a5-min.png" />
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

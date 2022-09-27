@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -333,8 +333,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <li>Data Save Location (e.g. c:\temp\data.json)</li>
 </ol>
 <p><strong>CLI Example</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>isamsdata.exe YOURSCHOOL.isams.cloud/auth/connect/token YOURKEY YOURSECRET YOURSCHOOL.isams.cloud/api/humanresources/employees employees C:\temp\Data.json
+</span></span></code></pre></div><hr>
 <p>Results are a JSON format text file, which can be used for Power Automate, Excel, PowerBI, PowerShell Scripts, Database Importing or even another self-written program. The advantage with a console app is that this can be very easily run via task scheduler (e.g. a nightly update of data etc)</p>
 <p><strong>Sample JSON Screen Shot <em>(albeit blurred out!)</em></strong></p>
 
@@ -352,104 +352,104 @@ data-src="/img/postimg/13102020Screen.jpg"/>
 <p><a href="https://github.com/normansolutions/iSAMSDataExtractTool/raw/main/iSAMSData.exe">Compiled Stand-Alone Executable</a> - Ready to roll standalone exe <em>(it is safe, but run at your own risk)</em>.</p>
 <hr>
 <h2 id="code">Code</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> System;
-<span style="color:#66d9ef">using</span> System.IO;
-<span style="color:#66d9ef">using</span> System.Net.Http;
-<span style="color:#66d9ef">using</span> System.Text.RegularExpressions;
-<span style="color:#66d9ef">using</span> System.Threading.Tasks;
-<span style="color:#66d9ef">using</span> Newtonsoft.Json;
-<span style="color:#66d9ef">using</span> Newtonsoft.Json.Linq;
-
-<span style="color:#66d9ef">namespace</span> iSAMSData
-{
-
-    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
-    {
-        <span style="color:#75715e">//Variables
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> HttpClient client = <span style="color:#66d9ef">new</span> HttpClient();
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> JObject _token;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> JArray _extractedData;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _tokenURL;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _clientID;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _clientSecret;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _apiEndpoint;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _elementName;
-        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _saveLocation;
-
-        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
-        {
-
-            <span style="color:#75715e">//Assign console parameters to variables and replace &#34;/&#34; &amp; &#34;\&#34; with &#34;//&#34; &amp; &#34;\\&#34; where appropriate
-</span><span style="color:#75715e"></span>            _tokenURL = Regex.Replace(args[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">@&#34;//&#34;</span>, <span style="color:#e6db74">&#34;////&#34;</span>);
-            _clientID = args[<span style="color:#ae81ff">1</span>];
-            _clientSecret = args[<span style="color:#ae81ff">2</span>];
-            _apiEndpoint = Regex.Replace(args[<span style="color:#ae81ff">3</span>], <span style="color:#e6db74">@&#34;//&#34;</span>, <span style="color:#e6db74">&#34;////&#34;</span>);
-            _elementName = args[<span style="color:#ae81ff">4</span>];
-            _saveLocation = Regex.Replace(args[<span style="color:#ae81ff">5</span>], <span style="color:#e6db74">@&#34;\\&#34;</span>, <span style="color:#e6db74">&#34;\\\\&#34;</span>);
-
-            _extractedData = <span style="color:#66d9ef">new</span> JArray();
-
-            _token = GetToken(_tokenURL, _clientID, _clientSecret).GetAwaiter().GetResult();
-
-            <span style="color:#66d9ef">var</span> iSAMSDataTotalPages = GetData(<span style="color:#ae81ff">1</span>, _apiEndpoint).GetAwaiter().GetResult();
-
-            JValue _totalPages = (JValue)iSAMSDataTotalPages[<span style="color:#e6db74">&#34;totalPages&#34;</span>];
-
-            <span style="color:#75715e">//Check if _totalPages exists - if not then set a default of 1
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (_totalPages <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>)
-            {
-                _totalPages = (JValue)<span style="color:#ae81ff">1</span>;
-            }
-
-            <span style="color:#75715e">//Where paging is required loop through to build up results set then append together as a single entity
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> page = <span style="color:#ae81ff">1</span>; page &lt;= (<span style="color:#66d9ef">int</span>)_totalPages; page ++)
-            {
-                <span style="color:#66d9ef">var</span> iSAMSData = GetData(page, _apiEndpoint).GetAwaiter().GetResult();
-                JArray SubElement = (JArray)iSAMSData[_elementName];
-                _extractedData.Add(SubElement);
-
-            }
-
-            <span style="color:#75715e">//Save final results to local file (e.g. data.json)
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">string</span> savedData = <span style="color:#e6db74">@&#34;&#34;</span> + _saveLocation + <span style="color:#e6db74">&#34;&#34;</span>;
-            <span style="color:#66d9ef">using</span> (StreamWriter file = File.CreateText(savedData))
-            {
-                JsonSerializer serializer = <span style="color:#66d9ef">new</span> JsonSerializer();
-                serializer.Serialize(file, _extractedData);
-            }
-        }
-
-        <span style="color:#75715e">//Process for getting authorisation token which is sent with each subsequent request
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">async</span> Task&lt;JObject&gt; GetToken(<span style="color:#66d9ef">string</span> _clientUrl = <span style="color:#e6db74">&#34;youraddressfortoken&#34;</span>, <span style="color:#66d9ef">string</span> _clientID = <span style="color:#e6db74">&#34;yourclientid&#34;</span>, <span style="color:#66d9ef">string</span> _clientSecret = <span style="color:#e6db74">&#34;yourclientsecret&#34;</span>)
-        {
-
-            <span style="color:#66d9ef">var</span> _tokenUrl = <span style="color:#e6db74">&#34;https://&#34;</span> + _clientUrl;
-            <span style="color:#66d9ef">var</span> _tokenSecretRaw = <span style="color:#66d9ef">string</span>.Format(<span style="color:#e6db74">&#34;client_id=&#34;</span> + _clientID + <span style="color:#e6db74">&#34;&amp;client_secret=&#34;</span> + _clientSecret + <span style="color:#e6db74">&#34;&amp;grant_type=client_credentials&amp;scope=restapi&#34;</span>);
-            StringContent theContent = <span style="color:#66d9ef">new</span> StringContent(_tokenSecretRaw, System.Text.Encoding.UTF8, <span style="color:#e6db74">&#34;application/x-www-form-urlencoded&#34;</span>);
-            HttpResponseMessage aResponse = <span style="color:#66d9ef">await</span> client.PostAsync(<span style="color:#66d9ef">new</span> Uri(_tokenUrl), theContent);
-            aResponse.EnsureSuccessStatusCode();
-            <span style="color:#66d9ef">string</span> content = <span style="color:#66d9ef">await</span> aResponse.Content.ReadAsStringAsync();
-
-            <span style="color:#66d9ef">return</span> (JObject)<span style="color:#66d9ef">await</span> Task.Run(() =&gt; JObject.Parse(content));
-        }
-
-        <span style="color:#75715e">//Process for getting data
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">async</span> Task&lt;JObject&gt; GetData(<span style="color:#66d9ef">int</span> _page = <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">string</span> urlApi = <span style="color:#e6db74">&#34;yourchosenapiendpoint&#34;</span>)
-        {
-                JObject Token = _token; <span style="color:#75715e">//Use cached Token
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">var</span> _extractedToken = Token[<span style="color:#e6db74">&#34;access_token&#34;</span>].ToString();
-                <span style="color:#66d9ef">var</span> _baseUrl = <span style="color:#e6db74">&#34;https://&#34;</span> + urlApi + <span style="color:#e6db74">&#34;?page=&#34;</span> + _page;
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Add(<span style="color:#e6db74">&#34;Authorization&#34;</span>, <span style="color:#e6db74">&#34;Bearer &#34;</span> + _extractedToken);
-                <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.GetStringAsync(_baseUrl);
-
-            <span style="color:#66d9ef">return</span> (JObject)<span style="color:#66d9ef">await</span> Task.Run(() =&gt; JObject.Parse(response));
-        }
-
-    }
-
-}
-</code></pre></div> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.IO;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Net.Http;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Text.RegularExpressions;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Threading.Tasks;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Newtonsoft.Json;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Newtonsoft.Json.Linq;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> iSAMSData
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Variables</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> HttpClient client = <span style="color:#66d9ef">new</span> HttpClient();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> JObject _token;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> JArray _extractedData;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _tokenURL;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _clientID;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _clientSecret;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _apiEndpoint;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _elementName;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> _saveLocation;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Assign console parameters to variables and replace &#34;/&#34; &amp; &#34;\&#34; with &#34;//&#34; &amp; &#34;\\&#34; where appropriate</span>
+</span></span><span style="display:flex;"><span>            _tokenURL = Regex.Replace(args[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">@&#34;//&#34;</span>, <span style="color:#e6db74">&#34;////&#34;</span>);
+</span></span><span style="display:flex;"><span>            _clientID = args[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>            _clientSecret = args[<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span>            _apiEndpoint = Regex.Replace(args[<span style="color:#ae81ff">3</span>], <span style="color:#e6db74">@&#34;//&#34;</span>, <span style="color:#e6db74">&#34;////&#34;</span>);
+</span></span><span style="display:flex;"><span>            _elementName = args[<span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span>            _saveLocation = Regex.Replace(args[<span style="color:#ae81ff">5</span>], <span style="color:#e6db74">@&#34;\\&#34;</span>, <span style="color:#e6db74">&#34;\\\\&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            _extractedData = <span style="color:#66d9ef">new</span> JArray();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            _token = GetToken(_tokenURL, _clientID, _clientSecret).GetAwaiter().GetResult();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> iSAMSDataTotalPages = GetData(<span style="color:#ae81ff">1</span>, _apiEndpoint).GetAwaiter().GetResult();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            JValue _totalPages = (JValue)iSAMSDataTotalPages[<span style="color:#e6db74">&#34;totalPages&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Check if _totalPages exists - if not then set a default of 1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (_totalPages <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                _totalPages = (JValue)<span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Where paging is required loop through to build up results set then append together as a single entity</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> page = <span style="color:#ae81ff">1</span>; page &lt;= (<span style="color:#66d9ef">int</span>)_totalPages; page ++)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> iSAMSData = GetData(page, _apiEndpoint).GetAwaiter().GetResult();
+</span></span><span style="display:flex;"><span>                JArray SubElement = (JArray)iSAMSData[_elementName];
+</span></span><span style="display:flex;"><span>                _extractedData.Add(SubElement);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Save final results to local file (e.g. data.json)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> savedData = <span style="color:#e6db74">@&#34;&#34;</span> + _saveLocation + <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">using</span> (StreamWriter file = File.CreateText(savedData))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                JsonSerializer serializer = <span style="color:#66d9ef">new</span> JsonSerializer();
+</span></span><span style="display:flex;"><span>                serializer.Serialize(file, _extractedData);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Process for getting authorisation token which is sent with each subsequent request</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">async</span> Task&lt;JObject&gt; GetToken(<span style="color:#66d9ef">string</span> _clientUrl = <span style="color:#e6db74">&#34;youraddressfortoken&#34;</span>, <span style="color:#66d9ef">string</span> _clientID = <span style="color:#e6db74">&#34;yourclientid&#34;</span>, <span style="color:#66d9ef">string</span> _clientSecret = <span style="color:#e6db74">&#34;yourclientsecret&#34;</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> _tokenUrl = <span style="color:#e6db74">&#34;https://&#34;</span> + _clientUrl;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> _tokenSecretRaw = <span style="color:#66d9ef">string</span>.Format(<span style="color:#e6db74">&#34;client_id=&#34;</span> + _clientID + <span style="color:#e6db74">&#34;&amp;client_secret=&#34;</span> + _clientSecret + <span style="color:#e6db74">&#34;&amp;grant_type=client_credentials&amp;scope=restapi&#34;</span>);
+</span></span><span style="display:flex;"><span>            StringContent theContent = <span style="color:#66d9ef">new</span> StringContent(_tokenSecretRaw, System.Text.Encoding.UTF8, <span style="color:#e6db74">&#34;application/x-www-form-urlencoded&#34;</span>);
+</span></span><span style="display:flex;"><span>            HttpResponseMessage aResponse = <span style="color:#66d9ef">await</span> client.PostAsync(<span style="color:#66d9ef">new</span> Uri(_tokenUrl), theContent);
+</span></span><span style="display:flex;"><span>            aResponse.EnsureSuccessStatusCode();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> content = <span style="color:#66d9ef">await</span> aResponse.Content.ReadAsStringAsync();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> (JObject)<span style="color:#66d9ef">await</span> Task.Run(() =&gt; JObject.Parse(content));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Process for getting data</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">async</span> Task&lt;JObject&gt; GetData(<span style="color:#66d9ef">int</span> _page = <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">string</span> urlApi = <span style="color:#e6db74">&#34;yourchosenapiendpoint&#34;</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>                JObject Token = _token; <span style="color:#75715e">//Use cached Token</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> _extractedToken = Token[<span style="color:#e6db74">&#34;access_token&#34;</span>].ToString();
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> _baseUrl = <span style="color:#e6db74">&#34;https://&#34;</span> + urlApi + <span style="color:#e6db74">&#34;?page=&#34;</span> + _page;
+</span></span><span style="display:flex;"><span>                client.DefaultRequestHeaders.Clear();
+</span></span><span style="display:flex;"><span>                client.DefaultRequestHeaders.Add(<span style="color:#e6db74">&#34;Authorization&#34;</span>, <span style="color:#e6db74">&#34;Bearer &#34;</span> + _extractedToken);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.GetStringAsync(_baseUrl);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> (JObject)<span style="color:#66d9ef">await</span> Task.Run(() =&gt; JObject.Parse(response));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div> 
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">
   <svg class="ns-share-icon">
@@ -469,7 +469,7 @@ data-src="/img/postimg/13102020Screen.jpg"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -496,8 +496,8 @@ data-src="/img/postimg/13102020Screen.jpg"/>
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -309,44 +309,44 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>The difficulty is that in iSAMS, you can’t simply write a query to get the latest photo; there isn’t a flag that states “this is the current photograph” (well, not that I am aware of anyway).</p>
 <p>After some <a href="https://stackoverflow.com/">stackoverflow</a> searching, I established that what was required was a “<strong>greatest-n-per-group</strong>” query.  Simply put, you want to link a table to another table, but ONLY display the <strong>latest</strong> record in the reference table, irrespective of how many rows there are per individual (e.g. you just want the latest photo of each student).</p>
 <p>This is the full query that I used on iSAMS as the basis for the SSRS report.  The section that specifically deals with obtaining the latest photograph of the student, is highlighted.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> p.txtschoolid,
-       p.txtsurname,
-       p.txtforename,
-       A.txtcontactssurname,
-       A.txtcontactsforename,
-       AL.tblpupilmanagementaddresslinkid,
-       A.tblpupilmanagementaddressesid,
-       ( <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtrelationtype, <span style="color:#e6db74">&#39;&#39;</span>) ) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">13</span>) <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span>
-       ( <span style="color:#66d9ef">Isnull</span>(A.txtcontactstitle, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
-         <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtcontactsforename, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
-         <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtcontactssurname, <span style="color:#e6db74">&#39;&#39;</span>) ) <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">13</span>) <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> (
-       <span style="color:#66d9ef">Isnull</span>(A.txtsecondarytitle, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
-       <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtsecondaryforename, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
-       <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtsecondarysurname, <span style="color:#e6db74">&#39;&#39;</span>) ) <span style="color:#66d9ef">AS</span> ParentNames,
-       ( p.txtprename <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> p.txtsurname ) <span style="color:#66d9ef">AS</span> PupilName,
-       p.txttype,
-       y.txtyearcode,
-       <span style="color:#e6db74">&#39;https://YOURSCHOOLNAME.isams.co.uk&#39;</span> <span style="color:#f92672">+</span> pic.txtpath <span style="color:#66d9ef">AS</span> Photo
-<span style="color:#66d9ef">FROM</span>   tblpupilmanagementaddresslink AL
-       <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tblpupilmanagementpupils p
-               <span style="color:#66d9ef">ON</span>( AL.txtschoolid <span style="color:#f92672">=</span> p.txtschoolid )
-       <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tblpupilmanagementaddresses A
-               <span style="color:#66d9ef">ON</span>( AL.intaddressid <span style="color:#f92672">=</span> A.tblpupilmanagementaddressesid )
-       <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tblschoolmanagementyears y
-               <span style="color:#66d9ef">ON</span>( p.intncyear <span style="color:#f92672">=</span> y.intncyear )
-
-<span style="color:#75715e">--THIS IS THE SECTION THAT ESTABLISHES THE LATEST STUDENT PHOTO
-</span><span style="color:#75715e"></span>       <span style="color:#66d9ef">JOIN</span> tblpupilmanagementpictures pic
-         <span style="color:#66d9ef">ON</span>( p.txtschoolid <span style="color:#f92672">=</span> pic.txtschoolid )
-			<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> tblpupilmanagementpictures pic2
-                    <span style="color:#66d9ef">ON</span>( p.txtschoolid <span style="color:#f92672">=</span> pic2.txtschoolid )
-                      <span style="color:#66d9ef">AND</span> ( pic.intorder <span style="color:#f92672">&lt;</span> pic2.intorder )
-		<span style="color:#66d9ef">WHERE</span>  pic2.txtschoolid <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>
-<span style="color:#75715e">--END OF SECTION
-</span><span style="color:#75715e"></span>
-       <span style="color:#66d9ef">AND</span> p.intsystemstatus <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1&#39;</span>
-       <span style="color:#66d9ef">AND</span> a.txtrelationtype <span style="color:#66d9ef">IN</span>( <span style="color:#e6db74">&#39;Parents&#39;</span>, <span style="color:#e6db74">&#39;Mother&#39;</span>, <span style="color:#e6db74">&#39;Father&#39;</span> )
-</code></pre></div> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> p.txtschoolid,
+</span></span><span style="display:flex;"><span>       p.txtsurname,
+</span></span><span style="display:flex;"><span>       p.txtforename,
+</span></span><span style="display:flex;"><span>       A.txtcontactssurname,
+</span></span><span style="display:flex;"><span>       A.txtcontactsforename,
+</span></span><span style="display:flex;"><span>       AL.tblpupilmanagementaddresslinkid,
+</span></span><span style="display:flex;"><span>       A.tblpupilmanagementaddressesid,
+</span></span><span style="display:flex;"><span>       ( <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtrelationtype, <span style="color:#e6db74">&#39;&#39;</span>) ) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">13</span>) <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>       ( <span style="color:#66d9ef">Isnull</span>(A.txtcontactstitle, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtcontactsforename, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtcontactssurname, <span style="color:#e6db74">&#39;&#39;</span>) ) <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">13</span>) <span style="color:#f92672">+</span> Char(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> (
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">Isnull</span>(A.txtsecondarytitle, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtsecondaryforename, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">+</span> <span style="color:#66d9ef">Isnull</span>(A.txtsecondarysurname, <span style="color:#e6db74">&#39;&#39;</span>) ) <span style="color:#66d9ef">AS</span> ParentNames,
+</span></span><span style="display:flex;"><span>       ( p.txtprename <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> p.txtsurname ) <span style="color:#66d9ef">AS</span> PupilName,
+</span></span><span style="display:flex;"><span>       p.txttype,
+</span></span><span style="display:flex;"><span>       y.txtyearcode,
+</span></span><span style="display:flex;"><span>       <span style="color:#e6db74">&#39;https://YOURSCHOOLNAME.isams.co.uk&#39;</span> <span style="color:#f92672">+</span> pic.txtpath <span style="color:#66d9ef">AS</span> Photo
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>   tblpupilmanagementaddresslink AL
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tblpupilmanagementpupils p
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">ON</span>( AL.txtschoolid <span style="color:#f92672">=</span> p.txtschoolid )
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tblpupilmanagementaddresses A
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">ON</span>( AL.intaddressid <span style="color:#f92672">=</span> A.tblpupilmanagementaddressesid )
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tblschoolmanagementyears y
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">ON</span>( p.intncyear <span style="color:#f92672">=</span> y.intncyear )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--THIS IS THE SECTION THAT ESTABLISHES THE LATEST STUDENT PHOTO
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#66d9ef">JOIN</span> tblpupilmanagementpictures pic
+</span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">ON</span>( p.txtschoolid <span style="color:#f92672">=</span> pic.txtschoolid )
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> tblpupilmanagementpictures pic2
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">ON</span>( p.txtschoolid <span style="color:#f92672">=</span> pic2.txtschoolid )
+</span></span><span style="display:flex;"><span>                      <span style="color:#66d9ef">AND</span> ( pic.intorder <span style="color:#f92672">&lt;</span> pic2.intorder )
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">WHERE</span>  pic2.txtschoolid <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--END OF SECTION
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">AND</span> p.intsystemstatus <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1&#39;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">AND</span> a.txtrelationtype <span style="color:#66d9ef">IN</span>( <span style="color:#e6db74">&#39;Parents&#39;</span>, <span style="color:#e6db74">&#39;Mother&#39;</span>, <span style="color:#e6db74">&#39;Father&#39;</span> )
+</span></span></code></pre></div> 
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">
   <svg class="ns-share-icon">
@@ -366,7 +366,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -393,8 +393,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

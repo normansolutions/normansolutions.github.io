@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -313,17 +313,17 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <h2 id="solution">Solution</h2>
 <p>In truth, there are numerous solutions on the internet about how to implement this functionality - this post is just how we do it.</p>
 <p>Place a copy of the below PowerShell script in an appropriate folder on your Domain Controller <em>(configure relevant email variables in the script, accordingly).</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell"><span style="color:#75715e">########################################################################</span>
-<span style="color:#75715e"># Please Configure the following variables - $smtpServer and $from</span>
-<span style="color:#75715e"># Leave the $event and $body variables as they are</span>
-$smtpServer=<span style="color:#e6db74">&#34;YOUR SMTP SERVER&#34;</span>
-$from = <span style="color:#e6db74">&#34;SET FROM EMAIL ADDRESS&#34;</span>
-$event = Get-EventLog -LogName Security -InstanceId 4740 -Newest 1
-$body = $event.Message + <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">`r`n`t</span><span style="color:#e6db74">&#34;</span> + $event.TimeGenerated
-<span style="color:#75715e">########################################################################</span>
-
-Send-Mailmessage -smtpServer $smtpServer -from $from -to $from -subject <span style="color:#e6db74">&#34;Account Lockout&#34;</span> -body $body -priority High
-</code></pre></div><p><a href="https://technet.microsoft.com/en-us/library/cc766428.aspx">Schedule a task</a> on your Domain Controller, to trigger whenever the event log receives a <strong>Security Log Event 4740.</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span><span style="color:#75715e">########################################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Please Configure the following variables - $smtpServer and $from</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Leave the $event and $body variables as they are</span>
+</span></span><span style="display:flex;"><span>$smtpServer=<span style="color:#e6db74">&#34;YOUR SMTP SERVER&#34;</span>
+</span></span><span style="display:flex;"><span>$from = <span style="color:#e6db74">&#34;SET FROM EMAIL ADDRESS&#34;</span>
+</span></span><span style="display:flex;"><span>$event = Get-EventLog -LogName Security -InstanceId 4740 -Newest 1
+</span></span><span style="display:flex;"><span>$body = $event.Message + <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">`r`n`t</span><span style="color:#e6db74">&#34;</span> + $event.TimeGenerated
+</span></span><span style="display:flex;"><span><span style="color:#75715e">########################################################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Send-Mailmessage -smtpServer $smtpServer -from $from -to $from -subject <span style="color:#e6db74">&#34;Account Lockout&#34;</span> -body $body -priority High
+</span></span></code></pre></div><p><a href="https://technet.microsoft.com/en-us/library/cc766428.aspx">Schedule a task</a> on your Domain Controller, to trigger whenever the event log receives a <strong>Security Log Event 4740.</strong></p>
 
 
 <img
@@ -365,7 +365,7 @@ data-src="/img/postimg/76c31e7d-9abb-4bdf-8618-f92eb2a5e691-min.jpg"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -392,8 +392,8 @@ data-src="/img/postimg/76c31e7d-9abb-4bdf-8618-f92eb2a5e691-min.jpg"/>
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

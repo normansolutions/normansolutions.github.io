@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -321,166 +321,165 @@ data-src="/img/postimg/c4f87a96-48c9-4fc6-9dea-3227b99e5a8f-min.jpg"/>
 <h2 id="and-this-is-how-i-did-it">And this is how I did it</h2>
 <p>It will come as no surprise, that Google Maps is involved!</p>
 <p>So firstly, we need to import/link to the Maps API – this is as simple as adding the below script tag.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://maps.google.com/maps/api/js?sensor=false&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>We then have a small JavaScript function designed to initialize the map and setup some configuration options <em>(map style, zoom level etc).</em>  This is also where we connect to the USGS data, by injecting an appropriate script tag into the head.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span>;
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">initialize</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapOptions</span> <span style="color:#f92672">=</span> {
-        <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-        <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">2.8</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">187.3</span>),
-        <span style="color:#a6e22e">mapTypeId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">MapTypeId</span>.<span style="color:#a6e22e">TERRAIN</span>
-    };
-
-    <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;map_canvas&#39;</span>),
-        <span style="color:#a6e22e">mapOptions</span>);
-
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>);
-    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp&#39;</span>;
-    document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;head&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
-}
-
-</code></pre></div><p>Arguably, the bulk of the work is then carried out here.  In short, it enumerates through the data, plotting as required onto the Google Map.  There is also a “most recent” list which sits just below the map – this list, is set to only display the most recent 10 events, whilst the map will plot <strong>ALL</strong> events <em>(in the past 24 hours).</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">window.<span style="color:#a6e22e">eqfeed_callback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">results</span>) {
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">earthquake</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>[<span style="color:#a6e22e">i</span>];
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">coords</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">geometry</span>.<span style="color:#a6e22e">coordinates</span>;
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">latLng</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">0</span>]);
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">marker</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Marker</span>({
-                <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">latLng</span>,
-                <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
-                <span style="color:#a6e22e">icon</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span>)
-            });
-
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
-                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a target = &#34;_blank&#34; href=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;Magnitude: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;Md - &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; at &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">time</span>)) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
-            };
-        }
-        <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
-        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#earthQuake&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
-    }
-</code></pre></div><p>We then add a couple of further functions, primarily designed to “paint” the pretty circles and provide a neater “time” display –  all polished off with a window load event <em>(which basically fires the “initialize” function above, on page load).</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">magnitude</span>) {
-      <span style="color:#66d9ef">return</span> {
-          <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">SymbolPath</span>.<span style="color:#a6e22e">CIRCLE</span>,
-          <span style="color:#a6e22e">fillColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span>,
-          <span style="color:#a6e22e">fillOpacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.2</span>,
-          <span style="color:#a6e22e">scale</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">magnitude</span>) <span style="color:#f92672">/</span> Math.<span style="color:#a6e22e">PI</span>,
-          <span style="color:#a6e22e">strokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
-          <span style="color:#a6e22e">strokeWeight</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.5</span>
-      };
-  }
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#a6e22e">date</span>) {
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ampm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;pm&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;am&#39;</span>;
-      <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">12</span>;
-      <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>; <span style="color:#75715e">// the hour &#39;0&#39; should be &#39;12&#39;
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">minutes</span>;
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ampm</span>;
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strTime</span>;
-  }
-
-<span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">addDomListener</span>(window, <span style="color:#e6db74">&#34;load&#34;</span>, <span style="color:#a6e22e">initialize</span>)
-</code></pre></div><p>Add some styling to the map <em>(nice drop shadow and rounded corners etc).</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">#map_canvas {
-        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">95</span><span style="color:#66d9ef">%</span>;
-        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
-        <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#888</span>;
-  }
-</code></pre></div><p>…and of course the actual html!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">h1</span>&gt;Earthquake Map &lt;<span style="color:#f92672">em</span>&gt;(the past 24 hours)&lt;/<span style="color:#f92672">em</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map_canvas&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">h2</span>&gt;&lt;<span style="color:#f92672">u</span>&gt;Most recent events&lt;/<span style="color:#f92672">u</span>&gt;&lt;/<span style="color:#f92672">h2</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;earthQuake&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p><strong>There you go – earthquakes on a Firefly VLE page – a New Year’s gift for any Geography department!</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://maps.google.com/maps/api/js?sensor=false&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>We then have a small JavaScript function designed to initialize the map and setup some configuration options <em>(map style, zoom level etc).</em>  This is also where we connect to the USGS data, by injecting an appropriate script tag into the head.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">initialize</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapOptions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">2.8</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">187.3</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mapTypeId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">MapTypeId</span>.<span style="color:#a6e22e">TERRAIN</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;map_canvas&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mapOptions</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp&#39;</span>;
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;head&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Arguably, the bulk of the work is then carried out here.  In short, it enumerates through the data, plotting as required onto the Google Map.  There is also a “most recent” list which sits just below the map – this list, is set to only display the most recent 10 events, whilst the map will plot <strong>ALL</strong> events <em>(in the past 24 hours).</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">eqfeed_callback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">results</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">earthquake</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">coords</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">geometry</span>.<span style="color:#a6e22e">coordinates</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">latLng</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">marker</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Marker</span>({
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">latLng</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">icon</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span>)
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a target = &#34;_blank&#34; href=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;Magnitude: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;Md - &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; at &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">time</span>)) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>            };
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#earthQuake&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>We then add a couple of further functions, primarily designed to “paint” the pretty circles and provide a neater “time” display –  all polished off with a window load event <em>(which basically fires the “initialize” function above, on page load).</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">magnitude</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">SymbolPath</span>.<span style="color:#a6e22e">CIRCLE</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">fillColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">fillOpacity</span><span style="color:#f92672">:</span> .<span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">scale</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">magnitude</span>) <span style="color:#f92672">/</span> Math.<span style="color:#a6e22e">PI</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">strokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">strokeWeight</span><span style="color:#f92672">:</span> .<span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#a6e22e">date</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ampm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;pm&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;am&#39;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">12</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>; <span style="color:#75715e">// the hour &#39;0&#39; should be &#39;12&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">minutes</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ampm</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strTime</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">addDomListener</span>(window, <span style="color:#e6db74">&#34;load&#34;</span>, <span style="color:#a6e22e">initialize</span>)
+</span></span></code></pre></div><p>Add some styling to the map <em>(nice drop shadow and rounded corners etc).</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-CSS" data-lang="CSS"><span style="display:flex;"><span>#map_canvas {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">95</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#888</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>…and of course the actual html!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Earthquake Map &lt;<span style="color:#f92672">em</span>&gt;(the past 24 hours)&lt;/<span style="color:#f92672">em</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map_canvas&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;&lt;<span style="color:#f92672">u</span>&gt;Most recent events&lt;/<span style="color:#f92672">u</span>&gt;&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;earthQuake&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p><strong>There you go – earthquakes on a Firefly VLE page – a New Year’s gift for any Geography department!</strong></p>
 <hr>
 <h2 id="complete-code-to-paste-into-a-firefly-component">Complete code to paste into a Firefly component</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">style</span>&gt;
-    #map_canvas {
-        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">95</span><span style="color:#66d9ef">%</span>;
-        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
-        <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
-        <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#888</span>;
-    }
-&lt;/<span style="color:#f92672">style</span>&gt;
-
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://maps.google.com/maps/api/js?sensor=false&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span>;
-
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">initialize</span>() {
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapOptions</span> <span style="color:#f92672">=</span> {
-            <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-            <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">2.8</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">187.3</span>),
-            <span style="color:#a6e22e">mapTypeId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">MapTypeId</span>.<span style="color:#a6e22e">TERRAIN</span>
-        };
-
-        <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;map_canvas&#39;</span>),
-            <span style="color:#a6e22e">mapOptions</span>);
-
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>);
-        <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp&#39;</span>;
-        document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;head&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
-    }
-
-    window.<span style="color:#a6e22e">eqfeed_callback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">results</span>) {
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">earthquake</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>[<span style="color:#a6e22e">i</span>];
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">coords</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">geometry</span>.<span style="color:#a6e22e">coordinates</span>;
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">latLng</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">0</span>]);
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">marker</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Marker</span>({
-                <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">latLng</span>,
-                <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
-                <span style="color:#a6e22e">icon</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span>)
-            });
-
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
-                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a target = &#34;_blank&#34; href=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;Magnitude: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;Md - &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; at &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">time</span>)) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
-            };
-        }
-        <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
-        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#earthQuake&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
-    }
-
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">magnitude</span>) {
-        <span style="color:#66d9ef">return</span> {
-            <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">SymbolPath</span>.<span style="color:#a6e22e">CIRCLE</span>,
-            <span style="color:#a6e22e">fillColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span>,
-            <span style="color:#a6e22e">fillOpacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.2</span>,
-            <span style="color:#a6e22e">scale</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">magnitude</span>) <span style="color:#f92672">/</span> Math.<span style="color:#a6e22e">PI</span>,
-            <span style="color:#a6e22e">strokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
-            <span style="color:#a6e22e">strokeWeight</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.5</span>
-        };
-    }
-
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#a6e22e">date</span>) {
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ampm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;pm&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;am&#39;</span>;
-        <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">12</span>;
-        <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>; <span style="color:#75715e">// the hour &#39;0&#39; should be &#39;12&#39;
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">minutes</span>;
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ampm</span>;
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strTime</span>;
-    }
-
-    <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">addDomListener</span>(window, <span style="color:#e6db74">&#34;load&#34;</span>, <span style="color:#a6e22e">initialize</span>);
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">h1</span>&gt;Earthquake Map &lt;<span style="color:#f92672">em</span>&gt;(the past 24 hours)&lt;/<span style="color:#f92672">em</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map_canvas&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">h2</span>&gt;&lt;<span style="color:#f92672">u</span>&gt;Most recent events&lt;/<span style="color:#f92672">u</span>&gt;&lt;/<span style="color:#f92672">h2</span>&gt;
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;earthQuake&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>    #map_canvas {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">95</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">#888</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://maps.google.com/maps/api/js?sensor=false&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">map</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">initialize</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mapOptions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#ae81ff">2.8</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">187.3</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">mapTypeId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">MapTypeId</span>.<span style="color:#a6e22e">TERRAIN</span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;map_canvas&#39;</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">mapOptions</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp&#39;</span>;
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;head&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">eqfeed_callback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">results</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">earthquake</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">features</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">coords</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">geometry</span>.<span style="color:#a6e22e">coordinates</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">latLng</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">LatLng</span>(<span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">coords</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">marker</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Marker</span>({
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">latLng</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">icon</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span>)
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a target = &#34;_blank&#34; href=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">url</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; title=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&gt;Magnitude: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">mag</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;Md - &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">place</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; at &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">earthquake</span>.<span style="color:#a6e22e">properties</span>.<span style="color:#a6e22e">time</span>)) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>            };
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">strHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#earthQuake&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">strHtml</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCircle</span>(<span style="color:#a6e22e">magnitude</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">SymbolPath</span>.<span style="color:#a6e22e">CIRCLE</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fillColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fillOpacity</span><span style="color:#f92672">:</span> .<span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">scale</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">magnitude</span>) <span style="color:#f92672">/</span> Math.<span style="color:#a6e22e">PI</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">strokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">strokeWeight</span><span style="color:#f92672">:</span> .<span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatAMPM</span>(<span style="color:#a6e22e">date</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ampm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;pm&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;am&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">12</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>; <span style="color:#75715e">// the hour &#39;0&#39; should be &#39;12&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">minutes</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ampm</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strTime</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">addDomListener</span>(window, <span style="color:#e6db74">&#34;load&#34;</span>, <span style="color:#a6e22e">initialize</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Earthquake Map &lt;<span style="color:#f92672">em</span>&gt;(the past 24 hours)&lt;/<span style="color:#f92672">em</span>&gt;&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map_canvas&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;&lt;<span style="color:#f92672">u</span>&gt;Most recent events&lt;/<span style="color:#f92672">u</span>&gt;&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;earthQuake&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div> 
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">
   <svg class="ns-share-icon">
@@ -500,7 +499,7 @@ data-src="/img/postimg/c4f87a96-48c9-4fc6-9dea-3227b99e5a8f-min.jpg"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -527,8 +526,8 @@ data-src="/img/postimg/c4f87a96-48c9-4fc6-9dea-3227b99e5a8f-min.jpg"/>
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

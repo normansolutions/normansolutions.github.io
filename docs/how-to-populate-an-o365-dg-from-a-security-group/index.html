@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -308,21 +308,21 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>Having written the below PowerShell script, this enabled us to take members of an existing (and still synchronised) on premise Security Group and populate the new Office 365 Distribution Group with identical membership.</p>
 <hr>
 <p>This needs to be run from the Exchange Online PowerShell console (<a href="https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps#what-do-you-need-to-know-before-you-begin" title="Exchange Online PowerShell ">details here</a>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell"><span style="color:#75715e">#Connect to MSOL`</span>
-
-Connect-MsolService
-
-<span style="color:#75715e">#Assign details of the required group (e.g. staff) to a variable called $groupGUID`</span>
-
-$groupGUID = Get-MsolGroup -SearchString <span style="color:#e6db74">&#34;Staff&#34;</span>
-<span style="color:#75715e">#Assign members of that group to a variable called $groupUser targeting the group ID`</span>
-
-$groupUser = Get-MsolGroupMember -GroupObjectId $groupGUID.ObjectId
-
-<span style="color:#75715e">#Enumerate over each user in the group adding them as members to new Office 365 Distribution group`</span>
-
-$groupUser | <span style="color:#66d9ef">foreach</span> { Add-DistributionGroupMember -Identity <span style="color:#e6db74">&#34;Staff Email&#34;</span> -Member $_.EmailAddress }
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span><span style="color:#75715e">#Connect to MSOL`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Connect-MsolService
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Assign details of the required group (e.g. staff) to a variable called $groupGUID`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$groupGUID = Get-MsolGroup -SearchString <span style="color:#e6db74">&#34;Staff&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Assign members of that group to a variable called $groupUser targeting the group ID`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$groupUser = Get-MsolGroupMember -GroupObjectId $groupGUID.ObjectId
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Enumerate over each user in the group adding them as members to new Office 365 Distribution group`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$groupUser | <span style="color:#66d9ef">foreach</span> { Add-DistributionGroupMember -Identity <span style="color:#e6db74">&#34;Staff Email&#34;</span> -Member $_.EmailAddress }
+</span></span></code></pre></div><hr>
 <p>Suffice to say this made life a lot easier resulting in a <strong>successful</strong> migration of our on premise Mail Enabled Security Groups.</p>
  
     </div>
@@ -344,7 +344,7 @@ $groupUser | <span style="color:#66d9ef">foreach</span> { Add-DistributionGroupM
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -371,8 +371,8 @@ $groupUser | <span style="color:#66d9ef">foreach</span> { Add-DistributionGroupM
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>

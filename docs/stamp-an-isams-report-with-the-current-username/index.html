@@ -31,7 +31,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2021 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2022 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -88,15 +88,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <link
   rel="preload"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.ed75cc84f05592bc249d9d6e47a057984025be14a62fae3ac0331ecf6585b9ce.css?v=ns-fingerprint"
-  integrity="sha256-7XXMhPBVkrwknZ1uR6BXmEAlvhSmL646wDMez2WFuc4="
+  href="/css/main.min.3a011034e0bb3c1ec67ba875b88b0d22f9364c24583ce189683cfe62180fb36d.css?v=ns-fingerprint"
+  integrity="sha256-OgEQNOC7PB7Ge6h1uIsNIvk2TCRYPOGJaDz&#43;YhgPs20="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -232,7 +232,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 34 articles</a>
+    <a class="ns-list-articles" href="/?post=allposts">List all 35 articles</a>
     
   </div>
 </div>
@@ -328,60 +328,60 @@ data-src="/img/postimg/756b7cef-8082-48ab-9b30-22f768c28cab-min.jpg" />
 <p>A re-think of the workflow, led me to establishing the presence of an iSAMS ‘<a href="http://en.wikipedia.org/wiki/HTTP_cookie">cookie</a>’ <em>(using the excellent</em> <a href="http://www.telerik.com/fiddler"><em>fiddler</em></a> <em>program to sniff traffic),</em> providing username details.  All I needed to do, was extract this cookie and send it as a form parameter, when the report was requested.  This parameter could then be included within the SSRS report, as an <a href="http://msdn.microsoft.com/en-us/library/dd220464.aspx">SSRS Parameter</a> field, and displayed accordingly – simple!</p>
 <p>I’m happy to report that after locating the iSAMS ASP form and establishing the appropriate function call, I was able add a small JavaScript snippet and HTML form field, to this page (<em>detailed below),</em> which resulted in the user’s name <em>(from the cookie)</em> being printed onto the report.</p>
 <p>Job done!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// Add this snippet to the ProcessForm() function in the reportingServicesReportSelection.asp
-</span><span style="color:#75715e">// located in &#34;iSAMS\iSAMS.Framework\modules\StudentManagement\current&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">//Get userName
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCookie</span>(<span style="color:#a6e22e">cname</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#34;</span>;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ca</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;;&#39;</span>);
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">ca</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ca</span>[<span style="color:#a6e22e">i</span>];
-        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span>) <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">1</span>);
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">name</span>) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">length</span>, <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">length</span>);
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
-}
-<span style="color:#66d9ef">try</span> {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">userNameCookie</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCookie</span>(<span style="color:#e6db74">&#34;iSAMS=UserCode&#34;</span>);
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">userNameCookie</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>) {
-        document.<span style="color:#a6e22e">form1</span>.<span style="color:#a6e22e">userName</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">userNameCookie</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">userNameCookie</span>.<span style="color:#a6e22e">indexOf</span>(
-            <span style="color:#e6db74">&#39;&amp;&#39;</span>));
-    } <span style="color:#66d9ef">else</span> {
-        document.<span style="color:#a6e22e">form1</span>.<span style="color:#a6e22e">userName</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;-&#34;</span>;
-    }
-} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
-}
-<span style="color:#75715e">//End Get userName
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!--Add this line to the form with id=&#34;form1&#34; in the reportingServicesReportSelection.asp
-</span><span style="color:#75715e">    located in &#34;iSAMS\iSAMS.Framework\modules\StudentManagement\current&#34; --&gt;</span>
-
-&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> /&gt;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#75715e">// Add this snippet to the ProcessForm() function in the reportingServicesReportSelection.asp
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// located in &#34;iSAMS\iSAMS.Framework\modules\StudentManagement\current&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Get userName
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCookie</span>(<span style="color:#a6e22e">cname</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ca</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;;&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">ca</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ca</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span>) <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">name</span>) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">length</span>, <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">userNameCookie</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCookie</span>(<span style="color:#e6db74">&#34;iSAMS=UserCode&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">userNameCookie</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">form1</span>.<span style="color:#a6e22e">userName</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">userNameCookie</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">userNameCookie</span>.<span style="color:#a6e22e">indexOf</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;&amp;&#39;</span>));
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">form1</span>.<span style="color:#a6e22e">userName</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;-&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//End Get userName
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--Add this line to the form with id=&#34;form1&#34; in the reportingServicesReportSelection.asp
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    located in &#34;iSAMS\iSAMS.Framework\modules\StudentManagement\current&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> /&gt;
+</span></span></code></pre></div><hr>
 <h2 id="a-real-world-solution-or-just-a-proof-of-concept">A Real World Solution or Just a Proof Of Concept?</h2>
 <p>Of course, I fully appreciate that it only needs iSAMS to overwrite this page on an update, and my code snippet will vanish.</p>
 <p>To cater for this <em>potential</em> code destruction, we have implemented the below <a href="http://en.wikipedia.org/wiki/Windows_PowerShell">PowerShell</a> script, which runs on a nightly schedule.  The script automatically emails the ICT Department, if there are any changes made to this particular file <em>(using the <a href="http://technet.microsoft.com/en-us/library/ee156812.aspx">Compare-Object</a> PowerShell <a href="http://msdn.microsoft.com/en-gb/library/ms714395%28v=vs.85%29.aspx">cmdlet</a>)</em>.</p>
 <p><strong>It’s a useful PowerShell script in it’s own right!</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell"><span style="color:#75715e">#################################################</span>
-$smtpServer=<span style="color:#e6db74">&#34;Your SMTP Server&#34;</span>
-$from = <span style="color:#e6db74">&#34;Your From Email Address&#34;</span>
-$emailaddress = <span style="color:#e6db74">&#34;Your Send To Email Addressk&#34;</span>
-$subject = <span style="color:#e6db74">&#34;The reportingServicesReportSelection.asp file has changed&#34;</span>
-$body = <span style="color:#e6db74">&#34;The reportingServicesReportSelection.asp file has changed, you need to re-add the script&#34;</span>
-$strReference = <span style="color:#e6db74">&#34;Your Path To An Original Copy Of The File&#34;</span>
-$strDifference = <span style="color:#e6db74">&#34;Your Path To a Deployed Copy Of The File&#34;</span>
-<span style="color:#75715e">#################################################</span>
-
-<span style="color:#66d9ef">if</span> (Compare-Object (gc $strReference) (gc $strDifference)) {
-
-    Send-Mailmessage -smtpServer $smtpServer -from $from -to $emailaddress -subject $subject -body $body -bodyasHTML -priority High
-}
-
-<span style="color:#66d9ef">else</span> {
-    <span style="color:#66d9ef">return</span>
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span><span style="color:#75715e">#################################################</span>
+</span></span><span style="display:flex;"><span>$smtpServer=<span style="color:#e6db74">&#34;Your SMTP Server&#34;</span>
+</span></span><span style="display:flex;"><span>$from = <span style="color:#e6db74">&#34;Your From Email Address&#34;</span>
+</span></span><span style="display:flex;"><span>$emailaddress = <span style="color:#e6db74">&#34;Your Send To Email Addressk&#34;</span>
+</span></span><span style="display:flex;"><span>$subject = <span style="color:#e6db74">&#34;The reportingServicesReportSelection.asp file has changed&#34;</span>
+</span></span><span style="display:flex;"><span>$body = <span style="color:#e6db74">&#34;The reportingServicesReportSelection.asp file has changed, you need to re-add the script&#34;</span>
+</span></span><span style="display:flex;"><span>$strReference = <span style="color:#e6db74">&#34;Your Path To An Original Copy Of The File&#34;</span>
+</span></span><span style="display:flex;"><span>$strDifference = <span style="color:#e6db74">&#34;Your Path To a Deployed Copy Of The File&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#################################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (Compare-Object (gc $strReference) (gc $strDifference)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Send-Mailmessage -smtpServer $smtpServer -from $from -to $emailaddress -subject $subject -body $body -bodyasHTML -priority High
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <p>Clearly an even better solution, would be having this functionality <strong>officially</strong> built into the iSAMS product, thus allowing for the creation of traceable reports.  However, in the meantime, whether you choose to view this as just a ‘<em>proof of concept</em>’ or a ‘<em>real world solution</em>’, it certainly seems to work for us.</p>
 <hr>
 <p><em><strong>Update</strong></em></p>
@@ -410,7 +410,7 @@ $strDifference = <span style="color:#e6db74">&#34;Your Path To a Deployed Copy O
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2021 Normansolutions</p>
+    <p>Copyright (c) 2022 Normansolutions</p>
   </div>
 </footer>
   
@@ -437,8 +437,8 @@ $strDifference = <span style="color:#e6db74">&#34;Your Path To a Deployed Copy O
 
 
 <script
-  src="/js/bundle.min.6dcb585a64964e85c27b24c2b8908e3a66f992ec11fb9ceb6e743657d62de371.js?v=ns-fingerprint"
-  integrity="sha256-bctYWmSWToXCeyTCuJCOOmb5kuwR&#43;5zrbnQ2V9Yt43E="
+  src="/js/bundle.min.d05a21e08b0b908812d8a949389e264add06b6f71d825728edc43ebeccd3c266.js?v=ns-fingerprint"
+  integrity="sha256-0Foh4IsLkIgS2KlJOJ4mSt0Gtvcdglco7cQ&#43;vszTwmY="
   defer
   crossorigin="anonymous"
 ></script>
