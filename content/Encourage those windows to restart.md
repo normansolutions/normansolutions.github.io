@@ -32,7 +32,9 @@ ForEach-Object {
     Restart-Computer -ComputerName $_.name -force
 }
 
-# If you wish to eliminate specific machines from this restart - no problem, you can add a "where" clause using a wildcard to either target an individual or complete OU.
+# If you wish to eliminate specific machines from this restart
+# then no problem, you can add a "where" clause using a wildcard
+# to either target an individual or complete OU.
 
 Get-ADComputer -Filter * -SearchBase $ou | where { ($_.DistinguishedName -notlike "*OU=Display,*" -and $_.DistinguishedName -notlike "*BURSAR*") } |
 ForEach-Object {

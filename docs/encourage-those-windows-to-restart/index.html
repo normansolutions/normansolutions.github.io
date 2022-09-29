@@ -317,7 +317,9 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </span></span><span style="display:flex;"><span>    Restart-Computer -ComputerName $_.name -force
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you wish to eliminate specific machines from this restart - no problem, you can add a &#34;where&#34; clause using a wildcard to either target an individual or complete OU.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you wish to eliminate specific machines from this restart</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># then no problem, you can add a &#34;where&#34; clause using a wildcard</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to either target an individual or complete OU.</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Get-ADComputer -Filter * -SearchBase $ou | where { ($_.DistinguishedName <span style="color:#f92672">-notlike</span> <span style="color:#e6db74">&#34;*OU=Display,*&#34;</span> <span style="color:#f92672">-and</span> $_.DistinguishedName <span style="color:#f92672">-notlike</span> <span style="color:#e6db74">&#34;*BURSAR*&#34;</span>) } |
 </span></span><span style="display:flex;"><span>ForEach-Object {
