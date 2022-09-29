@@ -22,3 +22,20 @@ The below PowerShell script will take all computers within a given OU and force 
 It goes without saying that you should always test this script before implementation and also be extremely mindful of how your end users will react if their computers are automatically restarted every day - communication as always is key!
 
 Since implementing this process, we have registered a noticeable decline in helpdesk support calls pertaining to those "odd issues" surrounding end user PC's so for us, it has clearly proven beneficial.
+
+```PowerShell
+Import-Module ActiveDirectory
+$ou = "OU=Office Computers,Dc=CompanyName,Dc=Net"
+
+Get-ADComputer -Filter * -SearchBase $ou  |
+ForEach-Object {
+    Restart-Computer -ComputerName $_.name -force
+}
+
+# If you wish to eliminate specific machines from this restart - no problem, you can add a "where" clause using a wildcard to either target an individual or complete OU.
+
+Get-ADComputer -Filter * -SearchBase $ou | where { ($_.DistinguishedName -notlike "*OU=Display,*" -and $_.DistinguishedName -notlike "*BURSAR*") } |
+ForEach-Object {
+    Restart-Computer -ComputerName $_.name -force
+}
+```

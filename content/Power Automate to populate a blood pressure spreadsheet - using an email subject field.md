@@ -23,7 +23,7 @@ My immediate go-to was Microsoft Forms - I would use Power Automate to populate 
 
 It was here that I hit a rather frustrating block; to my annoyance it transpires that personal Office 365 accounts **do not** have a Power Automate connector for Microsoft Forms.  In short, if it's not a school or enterprise Office account, you cannot seemingly use Power Automate to populate an existing spreadsheet from a Microsoft Form.
 
-Not wishing to be beaten, I started to think of alterative approaches.  It could be argued that in many ways the solution I came up with is even easier than completing a MS Form - if a little unconventional.
+Determined not to be beaten by this restriction, I started to think of alterative approaches.  It could be argued that in many ways the solution I came up with is even easier than completing a MS Form - if a little unconventional.
 
 In short, I'm using the **Subject Line** of an email to technically "send" data to the spreadsheet and I must say, it works beautifully.
 
@@ -68,7 +68,7 @@ data-src="/img/postimg/PAEMail4.png" />
 {{< /rawhtml >}}
 
 
-6. I then create an appropriate localised calculation for the current time.
+6. I then create an appropriate calculation for the current time (localised).
    
 {{< rawhtml >}}
 <img
@@ -76,7 +76,7 @@ src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICR
 data-src="/img/postimg/PAEMail5.png" />
 {{< /rawhtml >}}
 
-8. Next I create a switch statement to decide whether the ARM variable should be set to "left arm" or "right arm" - based on whether a letter "**L**" was used in the email Subject Title field.
+8. Next I create a switch statement to decide whether the ARM variable should be set to "left arm" or "right arm" - based on whether the letter "**L**" was used in the email Subject Title field.
 
 {{< rawhtml >}}
 <img
