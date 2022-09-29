@@ -309,7 +309,21 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>The below PowerShell script will take all computers within a given OU and force a restart.  All that is needed is for this script to be scheduled with Task Scheduler at an appropriate time (e.g. 3am every day).</p>
 <p>It goes without saying that you should always test this script before implementation and also be extremely mindful of how your end users will react if their computers are automatically restarted every day - communication as always is key!</p>
 <p>Since implementing this process, we have registered a noticeable decline in helpdesk support calls pertaining to those &ldquo;odd issues&rdquo; surrounding end user PC&rsquo;s so for us, it has clearly proven beneficial.</p>
- 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Import-Module ActiveDirectory
+</span></span><span style="display:flex;"><span>$ou = <span style="color:#e6db74">&#34;OU=Office Computers,Dc=CompanyName,Dc=Net&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Get-ADComputer -Filter * -SearchBase $ou  |
+</span></span><span style="display:flex;"><span>ForEach-Object {
+</span></span><span style="display:flex;"><span>    Restart-Computer -ComputerName $_.name -force
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you wish to eliminate specific machines from this restart - no problem, you can add a &#34;where&#34; clause using a wildcard to either target an individual or complete OU.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Get-ADComputer -Filter * -SearchBase $ou | where { ($_.DistinguishedName <span style="color:#f92672">-notlike</span> <span style="color:#e6db74">&#34;*OU=Display,*&#34;</span> <span style="color:#f92672">-and</span> $_.DistinguishedName <span style="color:#f92672">-notlike</span> <span style="color:#e6db74">&#34;*BURSAR*&#34;</span>) } |
+</span></span><span style="display:flex;"><span>ForEach-Object {
+</span></span><span style="display:flex;"><span>    Restart-Computer -ComputerName $_.name -force
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div> 
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">
   <svg class="ns-share-icon">

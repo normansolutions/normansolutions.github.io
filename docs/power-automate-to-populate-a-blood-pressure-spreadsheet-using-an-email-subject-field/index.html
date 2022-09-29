@@ -310,7 +310,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>I fully accept that Excel data entry, even on a mobile device is <em>significantly</em> better than it ever used to be, but nevertheless it still felt a little clumsy.</p>
 <p>My immediate go-to was Microsoft Forms - I would use Power Automate to populate the aforementioned spreadsheet with results.  This way I could also add any additional auto date/time calculations etc to reduce further data entry on the mobile device.</p>
 <p>It was here that I hit a rather frustrating block; to my annoyance it transpires that personal Office 365 accounts <strong>do not</strong> have a Power Automate connector for Microsoft Forms.  In short, if it&rsquo;s not a school or enterprise Office account, you cannot seemingly use Power Automate to populate an existing spreadsheet from a Microsoft Form.</p>
-<p>Not wishing to be beaten, I started to think of alterative approaches.  It could be argued that in many ways the solution I came up with is even easier than completing a MS Form - if a little unconventional.</p>
+<p>Determined not to be beaten by this restriction, I started to think of alterative approaches.  It could be argued that in many ways the solution I came up with is even easier than completing a MS Form - if a little unconventional.</p>
 <p>In short, I&rsquo;m using the <strong>Subject Line</strong> of an email to technically &ldquo;send&rdquo; data to the spreadsheet and I must say, it works beautifully.</p>
 <p>So here&rsquo;s the process.</p>
 <ol>
@@ -363,7 +363,7 @@ data-src="/img/postimg/PAEMail4.png" />
 
 
 <ol start="6">
-<li>I then create an appropriate localised calculation for the current time.</li>
+<li>I then create an appropriate calculation for the current time (localised).</li>
 </ol>
 
 
@@ -373,7 +373,7 @@ data-src="/img/postimg/PAEMail5.png" />
 
 
 <ol start="8">
-<li>Next I create a switch statement to decide whether the ARM variable should be set to &ldquo;left arm&rdquo; or &ldquo;right arm&rdquo; - based on whether a letter &ldquo;<strong>L</strong>&rdquo; was used in the email Subject Title field.</li>
+<li>Next I create a switch statement to decide whether the ARM variable should be set to &ldquo;left arm&rdquo; or &ldquo;right arm&rdquo; - based on whether the letter &ldquo;<strong>L</strong>&rdquo; was used in the email Subject Title field.</li>
 </ol>
 
 
