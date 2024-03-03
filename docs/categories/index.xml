@@ -5,6 +5,7 @@
     <link>https://normansolutions.co.uk/categories/</link>
     <description>Recent content in Categories on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-uk</language><atom:link href="https://normansolutions.co.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-uk</language>
+    <atom:link href="https://normansolutions.co.uk/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
