@@ -26,7 +26,7 @@ The purpose of this script:
 * Create a local certificate and upload to the newly created App Reg
 * Export PFX certificate
 
-_Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute <strong>must</strong> for auditing and debugging) and of course you may wish to <strong>not</strong> create self-signed certificates etc. This should be seen purely as a proof of concept starting point for your own requirements._
+_Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute <strong>must</strong> for auditing and debugging) and of course, you may wish to <strong>not</strong> create self-signed certificates etc. This should be seen purely as a proof of concept starting point for your own requirements._
 
 
 ## **The PowerShell Solution**
@@ -53,7 +53,6 @@ Here's a simplified version of the script:
 # Initialize variables
 $appFile = $null
 $app = ""
-$count = 0
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 # Connect to MgGraph with appropriate scope
@@ -104,7 +103,6 @@ foreach ($app in ($appFile | Where-Object Status -ne 'Done')) {
 
     if ($appExist -lt 1) {
 
-        $count++
         $operationLocation = $app.Operational_Location
         $scriptOwnedBy = $app.Script_Owned_By
         $scriptAuthor = $app.Script_Author

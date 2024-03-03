@@ -315,7 +315,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <li>Create a local certificate and upload to the newly created App Reg</li>
 <li>Export PFX certificate</li>
 </ul>
-<p><em>Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute <!-- raw HTML omitted -->must<!-- raw HTML omitted --> for auditing and debugging) and of course you may wish to <!-- raw HTML omitted -->not<!-- raw HTML omitted --> create self-signed certificates etc. This should be seen purely as a proof of concept starting point for your own requirements.</em></p>
+<p><em>Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute <!-- raw HTML omitted -->must<!-- raw HTML omitted --> for auditing and debugging) and of course, you may wish to <!-- raw HTML omitted -->not<!-- raw HTML omitted --> create self-signed certificates etc. This should be seen purely as a proof of concept starting point for your own requirements.</em></p>
 <h2 id="the-powershell-solution"><strong>The PowerShell Solution</strong></h2>
 <h3 id="1-prepare-your-csv-list"><strong>1. Prepare Your CSV List</strong></h3>
 <p>Start by compiling a CSV list containing the necessary details for your App Registrations. In this example the CSV is expected to have the below columns, but of course, you can adjust to your own requirements:</p>
@@ -335,7 +335,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize variables</span>
 </span></span><span style="display:flex;"><span>$appFile = $null
 </span></span><span style="display:flex;"><span>$app = <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>$count = <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Connect to MgGraph with appropriate scope</span>
@@ -386,7 +385,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($appExist <span style="color:#f92672">-lt</span> <span style="color:#ae81ff">1</span>) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        $count++
 </span></span><span style="display:flex;"><span>        $operationLocation = $app.Operational_Location
 </span></span><span style="display:flex;"><span>        $scriptOwnedBy = $app.Script_Owned_By
 </span></span><span style="display:flex;"><span>        $scriptAuthor = $app.Script_Author
