@@ -9,9 +9,6 @@ tags:
   - SysAdmin
 ---
 
-# **Automating Azure App Registrations with PowerShell**
-
-
 It has been a while since I last blogged - life has certainly been busy!
 
 Over the past two years I've somewhat immersed myself in PowerShell. While I wouldn't claim to be a PowerShell Guru, my knowledge has substantially grown, thanks in part to splendid collaboration with some exceptional colleagues.

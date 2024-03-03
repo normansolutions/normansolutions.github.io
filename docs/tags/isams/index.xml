@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ISAMS on NS News and Views</title>
-    <link>http://localhost:1313/tags/isams/</link>
+    <link>https://normansolutions.co.uk/tags/isams/</link>
     <description>Recent content in ISAMS on NS News and Views</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 19 Feb 2021 08:49:20 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/isams/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://normansolutions.co.uk/tags/isams/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Power Automate with the iSAMS API</title>
-      <link>http://localhost:1313/using-power-automate-with-the-isams-api/</link>
+      <link>https://normansolutions.co.uk/using-power-automate-with-the-isams-api/</link>
       <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
-      <guid>http://localhost:1313/using-power-automate-with-the-isams-api/</guid>
+      <guid>https://normansolutions.co.uk/using-power-automate-with-the-isams-api/</guid>
       <description>I&amp;rsquo;ve recently being getting deeper into the weeds (so to speak) with Power Automate. Whilst this product clearly isn&amp;rsquo;t a fully fledged programming model, it does sit very nicely in that &amp;ldquo;low code&amp;rdquo; methodology, and can be extremely effective when there is a need to quickly create and perform a specific task.</description>
     </item>
     <item>
       <title>Why I wrote a console app for accessing the iSAMS API</title>
-      <link>http://localhost:1313/why-i-wrote-a-console-app-for-accessing-the-isams-api/</link>
+      <link>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</link>
       <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
-      <guid>http://localhost:1313/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
+      <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
       <description>Firstly, let me register that I much prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&#xA;However, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc.</description>
     </item>
     <item>
       <title>Power BI &#43; iSAMS API</title>
-      <link>http://localhost:1313/power-bi-and-isams-api/</link>
+      <link>https://normansolutions.co.uk/power-bi-and-isams-api/</link>
       <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
-      <guid>http://localhost:1313/power-bi-and-isams-api/</guid>
+      <guid>https://normansolutions.co.uk/power-bi-and-isams-api/</guid>
       <description>Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API.</description>
     </item>
     <item>
       <title>How to get the latest student photo from iSAMS</title>
-      <link>http://localhost:1313/how-to-get-the-latest-student-photo-from-isams/</link>
+      <link>https://normansolutions.co.uk/how-to-get-the-latest-student-photo-from-isams/</link>
       <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
-      <guid>http://localhost:1313/how-to-get-the-latest-student-photo-from-isams/</guid>
+      <guid>https://normansolutions.co.uk/how-to-get-the-latest-student-photo-from-isams/</guid>
       <description>It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack (that wasn’t nice!) and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!</description>
     </item>
     <item>
       <title>Stamp an iSAMS report with the current username</title>
-      <link>http://localhost:1313/stamp-an-isams-report-with-the-current-username/</link>
+      <link>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</link>
       <pubDate>Sun, 30 Nov 2014 08:28:45 +0000</pubDate>
-      <guid>http://localhost:1313/stamp-an-isams-report-with-the-current-username/</guid>
+      <guid>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</guid>
       <description>During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS (Management Information System) from Schoolbase to iSAMS.&#xA;Please note, that the reasons for instigating this major system change, and the processes involved (political &amp;amp; technical), are not covered in this blog post.</description>
     </item>
   </channel>
