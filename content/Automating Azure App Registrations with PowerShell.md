@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Automating Azure App Registrations with PowerShell"
-slug: "automating-azure-app-registrations-with-powershell"
 date: 2024-03-01 21:38:20
 type: post
 tags:
