@@ -23,13 +23,13 @@ The purpose of this script:
 * Take a list (CSV) of App Registration requirements
 * For each item, automate the creation of Azure App Registrations
 * Update the appropriate Azure App Registration Notes field (as required)
-* Create a local certificate and upload this to the newly created App Registration
+* Create a local certificate and upload to the newly created App Reg
 * Export PFX certificate
 
-_Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute must for auditing and debugging) and of course you may wish to <b>not</b> create certificates etc - this should be seen as a proof of concept starting point for your own requirements._
+_Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute <strong>must</strong> for auditing and debugging) and of course you may wish to <strong>not</strong> create self-signed certificates etc. This should be seen purely as a proof of concept starting point for your own requirements._
 
 
-## **The Solution: PowerShell Magic**
+## **The PowerShell Solution**
 
 ### **1. Prepare Your CSV List**
 
@@ -39,7 +39,7 @@ Start by compiling a CSV list containing the necessary details for your App Regi
 * <strong>Operational_Location</strong> (Location where script will be used)
 * <strong>Script_Owned_By</strong> (Who owns the script)
 * <strong>Script_Author</strong> (Who wrote the script)
-* <strong>Status</strong> (This columns is left blank and automatically updated by the script as each App Registration completes)
+* <strong>Status</strong> (This column is left blank and automatically updated)
 
 ### **2. Write Your PowerShell Script**
 
@@ -192,7 +192,7 @@ Disconnect-MgGraph
 
 ## **Conclusion**
 
-By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenarios.
+By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenario.
 
 
 ---

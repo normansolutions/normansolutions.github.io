@@ -312,11 +312,11 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <li>Take a list (CSV) of App Registration requirements</li>
 <li>For each item, automate the creation of Azure App Registrations</li>
 <li>Update the appropriate Azure App Registration Notes field (as required)</li>
-<li>Create a local certificate and upload this to the newly created App Registration</li>
+<li>Create a local certificate and upload to the newly created App Reg</li>
 <li>Export PFX certificate</li>
 </ul>
-<p><em>Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute must for auditing and debugging) and of course you may wish to <!-- raw HTML omitted -->not<!-- raw HTML omitted --> create certificates etc - this should be seen as a proof of concept starting point for your own requirements.</em></p>
-<h2 id="the-solution-powershell-magic"><strong>The Solution: PowerShell Magic</strong></h2>
+<p><em>Please be advised this is more a reference script; I have removed any logging aspects (which are usually an absolute <!-- raw HTML omitted -->must<!-- raw HTML omitted --> for auditing and debugging) and of course you may wish to <!-- raw HTML omitted -->not<!-- raw HTML omitted --> create self-signed certificates etc. This should be seen purely as a proof of concept starting point for your own requirements.</em></p>
+<h2 id="the-powershell-solution"><strong>The PowerShell Solution</strong></h2>
 <h3 id="1-prepare-your-csv-list"><strong>1. Prepare Your CSV List</strong></h3>
 <p>Start by compiling a CSV list containing the necessary details for your App Registrations. In this example the CSV is expected to have the below columns, but of course, you can adjust to your own requirements:</p>
 <ul>
@@ -324,7 +324,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <li><!-- raw HTML omitted -->Operational_Location<!-- raw HTML omitted --> (Location where script will be used)</li>
 <li><!-- raw HTML omitted -->Script_Owned_By<!-- raw HTML omitted --> (Who owns the script)</li>
 <li><!-- raw HTML omitted -->Script_Author<!-- raw HTML omitted --> (Who wrote the script)</li>
-<li><!-- raw HTML omitted -->Status<!-- raw HTML omitted --> (This columns is left blank and automatically updated by the script as each App Registration completes)</li>
+<li><!-- raw HTML omitted -->Status<!-- raw HTML omitted --> (This column is left blank and automatically updated)</li>
 </ul>
 <h3 id="2-write-your-powershell-script"><strong>2. Write Your PowerShell Script</strong></h3>
 <p>Here&rsquo;s a simplified version of the script:</p>
@@ -470,7 +470,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Disconnect-MgGraph
 </span></span></code></pre></div><h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenarios.</p>
+<p>By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenario.</p>
 <hr>
  
     </div>
