@@ -23,13 +23,7 @@ Like most enterprise environments, we use [Active Directory](http://en.wikipedia
 
 To manually create these groups in AD, when they _already_ exist in Schoolbase, does feel very inefficient; an ideal candidate for the [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) _(do not repeat)_ principle?  Agreed it’s _not_ specifically a software concern, but it is _still_ a repetition process – and always _potentially_ dangerous!
 
-{{< rawhtml >}}
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/b9cc4743-d4d1-489e-b2d4-df224189ffa0-min.jpg"/>
-{{< /rawhtml >}}
 
-###### _(picture credit:_ [_http://deviq.com/most-popular-principles/don-t-repeat-yourself_](http://deviq.com/most-popular-principles/don-t-repeat-yourself "http://deviq.com/most-popular-principles/don-t-repeat-yourself")_)_
 
 I enjoy writing small utilities that serve specific purposes - I tend to do this in [C#](<http://en.wikipedia.org/wiki/C_Sharp_(programming_language)>) nowadays.
 
@@ -233,11 +227,7 @@ There are three files needed to execute the process:
 
 ---
 
-{{< rawhtml >}}
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/249a56f0-5c0c-45a2-ae72-c6d286d8c70c-min.jpg"/>
-{{< /rawhtml >}}
+
 
 ## Batch file explanation
 

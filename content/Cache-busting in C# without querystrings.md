@@ -25,11 +25,6 @@ In addition, if you use a popular [CDN](http://en.wikipedia.org/wiki/Content_del
 
 ## But What Happens when you change a file?
 
-{{< rawhtml >}}
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/69a07192-85fb-4c5c-8bd3-4551d6be261a-min.png" />
-{{< /rawhtml >}}
 
 So we accept that caching is a good thing.  _However_, when you **deliberately** change a file _(update your css or JavaScript etc),_ of course you **don’t** want the cached version being served to the end user – and no, it isn’t good enough to just say ‘_**refresh your browser**_’.
 

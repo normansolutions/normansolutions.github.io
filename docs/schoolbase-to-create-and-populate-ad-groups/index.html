@@ -310,14 +310,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <h2 id="so-ad-groups-from-schoolbase">So, AD groups from Schoolbase?</h2>
 <p>Like most enterprise environments, we use <a href="http://en.wikipedia.org/wiki/Active_Directory">Active Directory</a> groups extensively for managing security permissions on resources <em>(printers / folder etc).</em></p>
 <p>To manually create these groups in AD, when they <em>already</em> exist in Schoolbase, does feel very inefficient; an ideal candidate for the <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a> <em>(do not repeat)</em> principle?  Agreed it’s <em>not</em> specifically a software concern, but it is <em>still</em> a repetition process – and always <em>potentially</em> dangerous!</p>
-
-
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/b9cc4743-d4d1-489e-b2d4-df224189ffa0-min.jpg"/>
-
-
-<h6 id="_picture-credit_-_httpdeviqcommost-popular-principlesdon-t-repeat-yourself_httpdeviqcommost-popular-principlesdon-t-repeat-yourself-httpdeviqcommost-popular-principlesdon-t-repeat-yourself__"><em>(picture credit:</em> <a href="http://deviq.com/most-popular-principles/don-t-repeat-yourself" title="http://deviq.com/most-popular-principles/don-t-repeat-yourself"><em>http://deviq.com/most-popular-principles/don-t-repeat-yourself</em></a><em>)</em></h6>
 <p>I enjoy writing small utilities that serve specific purposes - I tend to do this in <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a> nowadays.</p>
 <p>One such utility, is the ability to enumerate through group information held in Schoolbase, creating and populating Active Directory groups appropriately.  This maintains consistent synchronisation between the two systems – ensuring Schoolbase remains the prime point of entry <em>(the <a href="http://www.oracle.com/index.html">Oracle</a>, so to speak – Geek joke - pun intended!)</em> thus reducing the chance of users being granted incorrect AD permissions to resources.</p>
 <p>We previously managed this with an array of <a href="http://en.wikipedia.org/wiki/VBScript">VBScripts</a> – the C# solution is much more efficient!</p>
@@ -506,13 +498,6 @@ data-src="/img/postimg/b9cc4743-d4d1-489e-b2d4-df224189ffa0-min.jpg"/>
 <p><em>Clearly the tool will need to be run under a user account, that has full AD permissions.</em></p>
 </blockquote>
 <hr>
-
-
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/249a56f0-5c0c-45a2-ae72-c6d286d8c70c-min.jpg"/>
-
-
 <h2 id="batch-file-explanation">Batch file explanation</h2>
 <p>The real key to using this process, is understanding the parameters / switches of the batch file.</p>
 <p>The batch file is fundamentally broken into 5 arguments (parameters / switches) as explained below:</p>
