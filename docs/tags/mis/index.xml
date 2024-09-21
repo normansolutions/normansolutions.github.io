@@ -13,49 +13,49 @@
       <link>https://normansolutions.co.uk/using-power-automate-with-the-isams-api/</link>
       <pubDate>Fri, 19 Feb 2021 08:49:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/using-power-automate-with-the-isams-api/</guid>
-      <description>I&amp;rsquo;ve recently being getting deeper into the weeds (so to speak) with Power Automate. Whilst this product clearly isn&amp;rsquo;t a fully fledged programming model, it does sit very nicely in that &amp;ldquo;low code&amp;rdquo; methodology, and can be extremely effective when there is a need to quickly create and perform a specific task.</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently being getting deeper into the weeds &lt;em&gt;(so to speak)&lt;/em&gt; with Power Automate.  Whilst this product clearly isn&amp;rsquo;t a fully fledged programming model, it does sit very nicely in that &amp;ldquo;low code&amp;rdquo; methodology, and can be extremely  effective when there is a need to quickly create and perform a specific task.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why I wrote a console app for accessing the iSAMS API</title>
       <link>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</link>
       <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
-      <description>Firstly, let me register that I much prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&#xA;However, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc.</description>
+      <description>&lt;p&gt;Firstly, let me register that I &lt;strong&gt;&lt;em&gt;much&lt;/em&gt;&lt;/strong&gt; prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;However&lt;/em&gt;, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc. As such, the need to embrace the iSAMS API is I feel, something of a requirement.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Power BI &#43; iSAMS API</title>
       <link>https://normansolutions.co.uk/power-bi-and-isams-api/</link>
       <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
       <guid>https://normansolutions.co.uk/power-bi-and-isams-api/</guid>
-      <description>Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API.</description>
+      <description>&lt;p&gt;Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API. So recently I thought why not combine these two systems and see what can be achieved?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Excel Macro to manipulate CAT data</title>
       <link>https://normansolutions.co.uk/excel-macro-to-manipulate-cat-data/</link>
       <pubDate>Sun, 28 Jun 2015 17:03:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/excel-macro-to-manipulate-cat-data/</guid>
-      <description>Recently, I was asked whether I could provide some assistance with manipulating data, that had been exported from a CAT results test. The problem, had slowly been driving a colleague of mine, very slightly crazy!</description>
+      <description>&lt;p&gt;Recently, I was asked whether I could provide some assistance with manipulating data, that had been exported from a &lt;a href=&#34;http://www.theschoolrun.com/year-7-cats-what-every-parent-needs-know&#34;&gt;CAT&lt;/a&gt; results test.  The problem, had slowly been driving a colleague of mine, very slightly crazy!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stamp an iSAMS report with the current username</title>
       <link>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</link>
       <pubDate>Sun, 30 Nov 2014 08:28:45 +0000</pubDate>
       <guid>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</guid>
-      <description>During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS (Management Information System) from Schoolbase to iSAMS.&#xA;Please note, that the reasons for instigating this major system change, and the processes involved (political &amp;amp; technical), are not covered in this blog post.</description>
+      <description>&lt;p&gt;During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS &lt;em&gt;(&lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_system&#34;&gt;Management Information System&lt;/a&gt;)&lt;/em&gt; from &lt;a href=&#34;http://www.furlongsolutions.com/&#34;&gt;Schoolbase&lt;/a&gt; to &lt;a href=&#34;http://www.isams.co.uk/&#34;&gt;iSAMS&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Please note, that the reasons for instigating this major system change, and the processes involved &lt;em&gt;(political &amp;amp; technical),&lt;/em&gt; are &lt;em&gt;not&lt;/em&gt; covered in this blog post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Schoolbase Rewards and Sanctions via email</title>
       <link>https://normansolutions.co.uk/schoolbase-rewards-and-sanctions-via-email/</link>
       <pubDate>Thu, 08 May 2014 10:04:30 +0000</pubDate>
       <guid>https://normansolutions.co.uk/schoolbase-rewards-and-sanctions-via-email/</guid>
-      <description>At St Mary’s Shaftesbury, one of the many additional functions we have built, to work alongside our Schoolbase MIS (Management Information System), is the automation of a weekly ‘Rewards and Sanctions’ report.</description>
+      <description>&lt;p&gt;At St Mary’s Shaftesbury, one of the &lt;em&gt;many&lt;/em&gt; additional functions we have built, to work alongside our &lt;a href=&#34;http://www.furlongsolutions.com/products/schoolbase&#34;&gt;Schoolbase&lt;/a&gt; &lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_system&#34;&gt;MIS&lt;/a&gt; &lt;em&gt;(Management Information System)&lt;/em&gt;, is the automation of a weekly ‘Rewards and Sanctions’ report.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Schoolbase to create and populate AD groups</title>
       <link>https://normansolutions.co.uk/schoolbase-to-create-and-populate-ad-groups/</link>
       <pubDate>Wed, 22 Jan 2014 11:52:12 +0000</pubDate>
       <guid>https://normansolutions.co.uk/schoolbase-to-create-and-populate-ad-groups/</guid>
-      <description>At St Mary’s we use Schoolbase from Furlong Solutions, for our MIS - we have done so for several years (indeed my understanding is that we were the second or third official school to have the system in production).</description>
+      <description>&lt;p&gt;At St Mary’s we use &lt;a href=&#34;http://www.furlongsolutions.com/products/schoolbase&#34;&gt;Schoolbase&lt;/a&gt; from Furlong Solutions, for our &lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_systems&#34;&gt;MIS&lt;/a&gt; - we have done so for several years &lt;em&gt;(indeed my understanding is that we were the second or third official school to have the system in production).&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

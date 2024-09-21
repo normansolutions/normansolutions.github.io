@@ -13,21 +13,21 @@
       <link>https://normansolutions.co.uk/secure-a-webpage-without-a-logon/</link>
       <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
       <guid>https://normansolutions.co.uk/secure-a-webpage-without-a-logon/</guid>
-      <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.&#xA;Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.</description>
+      <description>&lt;p&gt;Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.&lt;/p&gt;&#xA;&lt;p&gt;Recently, I introduced a frictionless &lt;em&gt;(logon free)&lt;/em&gt; way of providing &lt;em&gt;secure(ish)&lt;/em&gt; access to some very basic web services.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cache-busting in C# without querystrings</title>
       <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
       <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
-      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
+      <description>&lt;p&gt;A key benefit of working with the web &lt;em&gt;(or more specifically http)&lt;/em&gt; is it’s native ability to &lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&#34;&gt;cache&lt;/a&gt;.  This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.&lt;/p&gt;</description>
     </item>
     <item>
       <title>To CMS or not to CMS?</title>
       <link>https://normansolutions.co.uk/to-cms-or-not-to-cms/</link>
       <pubDate>Fri, 13 Dec 2013 22:44:12 +0000</pubDate>
       <guid>https://normansolutions.co.uk/to-cms-or-not-to-cms/</guid>
-      <description>OK, the time has come for a website refresh – it’s something that I like to try and do annually (well, I say annually, what I really mean is that I did it last year).</description>
+      <description>&lt;p&gt;OK, the time has come for a website refresh – it’s something that I like to try and do annually &lt;em&gt;(well, I say annually, what I really mean is that I did it last year).&lt;/em&gt; The question, is do I roll my own, as I have always done, or jump into the CMS world?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
