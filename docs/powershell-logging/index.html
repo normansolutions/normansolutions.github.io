@@ -307,15 +307,23 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.</p>
 <p>If you&rsquo;re interested, you can check out my module in the PowerShell Gallery <a href="https://www.powershellgallery.com/packages/NSLoggingModule">https://www.powershellgallery.com/packages/NSLoggingModule</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
 <p>Once the module is installed, you should have three functions available:</p>
+<blockquote>
 <p><!-- raw HTML omitted -->DeleteOldLogFiles (int)<!-- raw HTML omitted --></p>
+</blockquote>
 <ul>
 <li>Deletes any log files in the log folder older than a set number of days (default is 90).</li>
 </ul>
-<p><!-- raw HTML omitted -->Log<!-- raw HTML omitted -->
-* Creates a log folder in script location (if doesn&rsquo;t already exist).
-* Created a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log&quot;<!-- raw HTML omitted -->).
-* Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</p>
+<blockquote>
+<p><!-- raw HTML omitted -->Log<!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>Creates a log folder in script location (if doesn&rsquo;t already exist).</li>
+<li>Created a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log&quot;<!-- raw HTML omitted -->).</li>
+<li>Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</li>
+</ul>
+<blockquote>
 <p><!-- raw HTML omitted -->LogAndConsole<!-- raw HTML omitted --></p>
+</blockquote>
 <ul>
 <li>Logs to file (as above) but also writes out to the console.</li>
 </ul>
@@ -323,7 +331,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/logging.png" />
+data-src="/img/postimg/3d488715-8503-44db-9883-2dc416a037cd-min.png"/>
 
 
 <h4 id="script-used-in-module">Script used in module</h4>

@@ -12,9 +12,9 @@ tags:
 
 Let’s face it, information security is **important**.  With more and more data being stored and accessed via the internet, we are becoming increasingly reliant on “third parties” to secure our personal data responsibly.  So how is it that we are seeing so many data breaches and poor practices?
 
-Be under no illusion, this is a difficult topic to cover in a brief blog post, as the subject extends across many surfaces of both technical and behavioral patterns.
+Be under no illusion, this is a difficult topic to cover in a brief blog post, as the subject extends across many surfaces of both technical and behavioural patterns.
 
-> This post is **not** designed to lambast end user behavior; it’s primarily concerned with some IT suppliers attitude to security.
+> This post is **not** designed to lambast end user behaviour; it’s primarily concerned with some IT suppliers attitude to security.
 
 Information security is a very generic term.  It can cover anything from encryption of data _(both at rest and in transit)_ through to unintended exposure to browser bugs.
 
