@@ -38,11 +38,11 @@ src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICR
 data-src="/img/postimg/Logging.png"/>
 {{< /rawhtml >}}
 
-
-#### Script used in module
 {{< rawhtml >}}
 <hr/>
 {{< /rawhtml >}}
+#### Script used in module
+
 
 ```powershell
 
