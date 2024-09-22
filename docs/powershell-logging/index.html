@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>Automating Azure App Registrations with PowerShell</title>
+    <title>PowerShell Logging</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -295,7 +295,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     
     
 <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-  <h1>Automating Azure App Registrations with PowerShell</h1>
+  <h1>PowerShell Logging</h1>
   <div class="ns-postdate">  
       <time datetime=2024-09-21&#32;19:00:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Sep 21, 2024</time>
       <span class="ns-tags">| Tags: <a href="/tags/powershell">PowerShell</a> <a href="/tags/azure">Azure</a> <a href="/tags/sysadmin">SysAdmin</a> </span>   
@@ -307,29 +307,18 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.</p>
 <p>If you&rsquo;re interested, you can check out my module in the PowerShell Gallery <a href="https://www.powershellgallery.com/packages/NSLoggingModule">https://www.powershellgallery.com/packages/NSLoggingModule</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
 <p>Once the module is installed, you should have three functions available:</p>
-<ul>
-<li>
 <p><!-- raw HTML omitted -->DeleteOldLogFiles (int)<!-- raw HTML omitted --></p>
 <ul>
 <li>Deletes any log files in the log folder older than a set number of days (default is 90).</li>
 </ul>
-</li>
-<li>
-<p><!-- raw HTML omitted -->Log<!-- raw HTML omitted --></p>
-<ul>
-<li>Creates a log folder in script location (if doesn&rsquo;t already exist).</li>
-<li>Created a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log&quot;<!-- raw HTML omitted -->).</li>
-<li>Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</li>
-</ul>
-</li>
-<li>
+<p><!-- raw HTML omitted -->Log<!-- raw HTML omitted -->
+* Creates a log folder in script location (if doesn&rsquo;t already exist).
+* Created a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log&quot;<!-- raw HTML omitted -->).
+* Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</p>
 <p><!-- raw HTML omitted -->LogAndConsole<!-- raw HTML omitted --></p>
 <ul>
 <li>Logs to file (as above) but also writes out to the console.</li>
 </ul>
-</li>
-</ul>
-<h3 id="example-screenshot">Example Screenshot</h3>
 
 
 <img
@@ -462,9 +451,7 @@ data-src="/img/postimg/logging.png" />
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># DeleteOldLogFiles 30</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># LogAndConsole &#34;HelloTwo&#34;</span>
-</span></span></code></pre></div><h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenario.</p>
-<hr>
+</span></span></code></pre></div><hr>
  
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">

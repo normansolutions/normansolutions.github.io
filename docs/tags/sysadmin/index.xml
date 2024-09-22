@@ -9,7 +9,7 @@
     <lastBuildDate>Sat, 21 Sep 2024 19:00:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Automating Azure App Registrations with PowerShell</title>
+      <title>PowerShell Logging</title>
       <link>https://normansolutions.co.uk/powershell-logging/</link>
       <pubDate>Sat, 21 Sep 2024 19:00:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/powershell-logging/</guid>

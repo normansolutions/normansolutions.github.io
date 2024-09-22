@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automating Azure App Registrations with PowerShell"
+title: "PowerShell Logging"
 date: 2024-09-21 19:00:20
 type: post
 tags:
@@ -20,19 +20,17 @@ If you're interested, you can check out my module in the PowerShell Gallery http
 
 Once the module is installed, you should have three functions available:
 
-* <strong>DeleteOldLogFiles (int)</strong>
+<strong>DeleteOldLogFiles (int)</strong>
   * Deletes any log files in the log folder older than a set number of days (default is 90).
 
-* <strong>Log</strong>
+<strong>Log</strong>
     * Creates a log folder in script location (if doesn't already exist).
     * Created a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log"</em>).
     * Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.
 
-* <strong>LogAndConsole</strong>
+<strong>LogAndConsole</strong>
   * Logs to file (as above) but also writes out to the console.
 
-
-### Example Screenshot
 
 {{< rawhtml >}}
 <img
@@ -171,10 +169,6 @@ Function DeleteOldLogFiles {
 # LogAndConsole "HelloTwo"
 
 ```
-
-## **Conclusion**
-
-By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenario.
 
 
 ---
