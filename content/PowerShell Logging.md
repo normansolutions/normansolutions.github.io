@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automating Azure App Registrations with PowerShell"
-date: 2024-09-22 19:00:20
+date: 2024-09-21 19:00:20
 type: post
 tags:
   - PowerShell
@@ -16,7 +16,7 @@ To make my life easier, I started adding a few basic functions at the top of my 
 
 So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.
 
-If you're interested, you can check out my module in the PowerShell Gallery [insert link]. Hopefully, it may save you time with some basic PowerShell logging!
+If you're interested, you can check out my module in the PowerShell Gallery https://www.powershellgallery.com/packages/NSLoggingModule. Hopefully, it may save you time with some basic PowerShell logging!
 
 Once the module is installed, you should have three functions available:
 

@@ -10,7 +10,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 </style>
 
 
-    <title>To CMS or not to CMS?</title>
+    <title>Automating Azure App Registrations with PowerShell</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -295,58 +295,176 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     
     
 <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-  <h1>To CMS or not to CMS?</h1>
+  <h1>Automating Azure App Registrations with PowerShell</h1>
   <div class="ns-postdate">  
-      <time datetime=2013-12-13&#32;22:44:12&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Friday, Dec 13, 2013</time>
-      <span class="ns-tags">| Tags: <a href="/tags/website">Website</a> <a href="/tags/blog">Blog</a> <a href="/tags/cms">CMS</a> <a href="/tags/razor">Razor</a> <a href="/tags/c">C#</a> </span>   
+      <time datetime=2024-09-21&#32;19:00:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Sep 21, 2024</time>
+      <span class="ns-tags">| Tags: <a href="/tags/powershell">PowerShell</a> <a href="/tags/azure">Azure</a> <a href="/tags/sysadmin">SysAdmin</a> </span>   
       <hr/>
     </div>
     <div id="ns-target">
-      <p>OK, the time has come for a website refresh – it’s something that I like to try and do annually <em>(well, I say annually, what I really mean is that I did it last year).</em> The question, is do I roll my own, as I have always done, or jump into the CMS world?</p>
-<p>There are many CMS systems out there, and I have had a used several of them (varying levels of experience); to summarise:</p>
+      <p>Lately, I’ve been doing a lot of PowerShell scripting, and it’s given me the chance to expand my experience and exposure to best practices. One of the key areas I’ve focused on is logging — something that’s often overlooked but incredibly valuable when troubleshooting or reviewing script performance.</p>
+<p>To make my life easier, I started adding a few basic functions at the top of my scripts. These functions would either log messages to a file, log to both the console and a file, or delete old log files that were over a certain age. As I implemented these functions more frequently, I realised it made sense to take this further and turn it into a reusable module.</p>
+<p>So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.</p>
+<p>If you&rsquo;re interested, you can check out my module in the PowerShell Gallery <a href="https://www.powershellgallery.com/packages/NSLoggingModule">https://www.powershellgallery.com/packages/NSLoggingModule</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
+<p>Once the module is installed, you should have three functions available:</p>
 <ul>
-<li><a href="http://wordpress.com/">Wordpress</a> <em>(I have built a few sites, but never really felt totally “at home” with php)</em></li>
-<li><a href="http://umbraco.com/">Umbraco</a> <em>(I love it, but it is a pretty huge system)</em></li>
-<li><a href="http://www.orchardproject.net/">Orchard</a> <em>(again, I love it, but it is pretty heavyweight)</em></li>
-<li><a href="https://ghost.org/">Ghost</a> <em>(new kid on the block – tempting, it would be a nice introduction to some <a href="http://nodejs.org/">nodejs</a>, which I really want to learn more about)</em></li>
-<li><a href="https://github.com/madskristensen/miniblog">Miniblog</a> <em>(another new kid on the block, from the genius that is</em> <a href="http://madskristensen.net/"><em>Mads Kristensen</em></a><em>; a minimalistic blogging platform)</em></li>
+<li>
+<p><!-- raw HTML omitted -->DeleteOldLogFiles (int)<!-- raw HTML omitted --></p>
+<ul>
+<li>Deletes any log files in the log folder older than a set number of days (default is 90).</li>
 </ul>
-<p>To be honest, the list could go on; but the question really was, do I use a CMS or not?</p>
-<p>I heard about <a href="https://github.com/madskristensen/miniblog">Miniblog</a> after listening to an excellent <a href="http://www.dotnetrocks.com/default.aspx?ShowNum=927">Dot Net Rocks show with Mads</a>, and it caught my interest.  Let’s be straight, I am not a coding genius, however, I do have what I believe to me an excellent understanding of modern patterns and practices, and can spot a well written <em>(or not, as the case may be)</em> system.  I am impressed with Miniblog.</p>
-<p>It took me a few hours looking through the code and following the work flows to fully understand how it all hangs together – but what I saw was a really neat piece of work that utilised modern HTML practices and decent caching <em>(and cache-busting!</em>) – it sits on top of <a href="http://getbootstrap.com/">Bootstrap 3</a>, so has all the wonderful responsive design juice and goodness provided with that framework; to be honest the list is impressive and is better checked out from the <a href="https://github.com/madskristensen/MiniBlog/blob/master/README.md">readme</a> file.</p>
-<p>I did find I had to tweak a few bits and bobs, some out of necessity and some out of preference.  One main necessity issue was with the paging, for some strange reason the paging, which allows you to go back and forth between posts, stopped too early, thus not allowing you to go back to the last few posts.  For good or ill, I managed to resolve this by changing the below in the  _Layout.cshtml:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>@if (Blog.GetPosts(Blog.PostsPerPage * <span style="color:#ae81ff">2</span>).Count() &gt; Blog.PostsPerPage)
-</span></span></code></pre></div><p>to</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>@if (Blog.GetPosts(Blog.PostsPerPage).Count() &gt; Blog.PostsPerPage)
-</span></span></code></pre></div><p>Other issues were more out of preference; for example, I am a stickler for cdn fall-backs, and whilst it is great that Miniblog utilises the <a href="http://www.bootstrapcdn.com/">Bootstrap cdn</a> (and <a href="https://developers.google.com/speed/libraries/devguide">jQuery</a>), I just had to implement a fall-back.  This was achieved with a small amount of JavaScript (and HTML) as below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#75715e">//cdn fallback for Bootstrap css
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrapCssTest&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hide&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#e6db74">/div&gt; /</span><span style="color:#f92672">/</span> (<span style="color:#a6e22e">HTML</span> <span style="color:#66d9ef">in</span>  <span style="color:#a6e22e">_Layout</span>.<span style="color:#a6e22e">cshtml</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#bootstrapCssTest&#39;</span>).<span style="color:#a6e22e">is</span>(<span style="color:#e6db74">&#39;:visible&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;&lt;link href=&#34;\css/bootstrap.min.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34; /&gt;&#39;</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#e6db74">&#39;head&#39;</span>);
+</li>
+<li>
+<p><!-- raw HTML omitted -->Log<!-- raw HTML omitted --></p>
+<ul>
+<li>Creates a log folder in script location (if doesn&rsquo;t already exist).</li>
+<li>Created a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log&quot;<!-- raw HTML omitted -->).</li>
+<li>Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->LogAndConsole<!-- raw HTML omitted --></p>
+<ul>
+<li>Logs to file (as above) but also writes out to the console.</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-screenshot">Example Screenshot</h3>
+
+
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+data-src="/img/postimg/logging.png" />
+
+
+<h4 id="script-used-in-module">Script used in module</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#region LOGGING</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#region LOGGING VARIABLES</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the directory containing the script, with a fallback for interactive sessions</span>
+</span></span><span style="display:flex;"><span>$scriptPath = <span style="color:#66d9ef">if</span> ($MyInvocation.MyCommand.Path) {
+</span></span><span style="display:flex;"><span>    Split-Path -Parent $MyInvocation.MyCommand.Path
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    $PSScriptRoot
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//cdn fallback for Bootstrap js
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> (<span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">modal</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;&lt;script src=&#34;\scripts/bootstrap.min.js&#34;&gt;\x3C/script&gt;&#39;</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#e6db74">&#39;head&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ensure $scriptPath is not null or empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> $scriptPath) {
+</span></span><span style="display:flex;"><span>    $scriptPath = (Get-Location).Path
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//cdn fallback for jQuery
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>window.<span style="color:#a6e22e">jQuery</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;script src=&#34;\scripts/jQuery.min.js&#34;&gt;\x3C/script&gt;&#39;</span>)<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</span></span></code></pre></div><p>Other preferences were alteration of styling <em>(overriding some Bootstrap classes, adding tweet buttons to the bottom of posts etc)</em> and the implementation of a “recent” articles option, on the navigation bar, this was achieved using the below code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-toggle&#34;</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span>&gt;Recent Articles &lt;<span style="color:#f92672">b</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caret&#34;</span>&gt;&lt;/<span style="color:#f92672">b</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-menu&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            @foreach (var postTitle in Storage.GetAllPosts().Where(pub =&gt; pub.IsPublished == true).Where(pubDate =&gt; pubDate.PubDate <span style="color:#960050;background-color:#1e0010">&lt;</span>= DateTime.Now).Take(10))
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@postTitle.AbsoluteUrl&#34;</span>&gt;@postTitle.Title&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">ul</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">li</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
-</span></span></code></pre></div><p>Add some <a href="http://lesscss.org/">Less CSS</a> support and use the bundling options of <a href="http://vswebessentials.com/">Web Essentials</a> <em>(again from Mads Kristensen)</em> and away you go!</p>
-<p>So far, I am really impressed with Miniblog – it has been a bit of a journey over the past few days, getting to grips with it all, but I am look forward to blogging more in the future!</p>
-<p>…….and the best part, is that I can use <a href="http://en.wikipedia.org/wiki/Windows_Live_Writer">Windows Live Writer</a> to create blogs – it fully integrates….no hacking away in a webpage….lovely!</p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the script name without the extension</span>
+</span></span><span style="display:flex;"><span>$scriptName = <span style="color:#66d9ef">if</span> ($MyInvocation.MyCommand.Path) {
+</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">System.IO.Path</span>]::GetFileNameWithoutExtension($MyInvocation.MyCommand.Path)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;InteractiveSession&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the computer name</span>
+</span></span><span style="display:flex;"><span>$computerName = $Env:COMPUTERNAME
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the log file name based on the computer name, script name, and current date</span>
+</span></span><span style="display:flex;"><span>$logFileName = <span style="color:#e6db74">&#34;</span>$computerName<span style="color:#e6db74">-</span>$scriptName<span style="color:#e6db74">-</span>$(Get-Date -Format <span style="color:#e6db74">&#39;dd-MM-yy&#39;</span>)<span style="color:#e6db74">.log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the log file path based on the script path and a &#34;Logs&#34; subfolder</span>
+</span></span><span style="display:flex;"><span>$logFilePath = Join-Path -Path $scriptPath -ChildPath <span style="color:#e6db74">&#34;Logs&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endregion LOGGING VARIABLES</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the log folder exists, and create it if it doesn&#39;t</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> (Test-Path -Path $logFilePath)) {
+</span></span><span style="display:flex;"><span>    New-Item -Path $logFilePath -ItemType Directory | Out-Null
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#region LOGGING FUNCTIONS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to create log entries</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Function</span> Log {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;#
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">SYNOPSIS</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Creates a log entry.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">DESCRIPTION</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    This function creates a log entry with the current date and time in universal format and appends it to the log file.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The message to log.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Log -message &#34;This is a log entry.&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$message  <span style="color:#75715e"># Message to log</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    $currentTime = Get-Date -Format u  <span style="color:#75715e"># Get the current date/time in universal format</span>
+</span></span><span style="display:flex;"><span>    $outputString = <span style="color:#e6db74">&#34;[</span>$currentTime<span style="color:#e6db74">] </span>$message<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Format the log entry</span>
+</span></span><span style="display:flex;"><span>    $outputString | Out-File -FilePath (Join-Path -Path $logFilePath -ChildPath $logFileName) -Append  <span style="color:#75715e"># Append the log entry to the log file</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to log messages to both the console and the file</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Function</span> LogAndConsole {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;#
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">SYNOPSIS</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Logs messages to both the console and the file.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">DESCRIPTION</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    This function logs messages to both the console with green text and to the log file.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The message to log.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    LogAndConsole -message &#34;This is a log entry.&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$message  <span style="color:#75715e"># Message to log</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    Write-Host $message -ForegroundColor Green  <span style="color:#75715e"># Log to console</span>
+</span></span><span style="display:flex;"><span>    Log -message $message  <span style="color:#75715e"># Log to file</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to delete old log files</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Function</span> DeleteOldLogFiles {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;#
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">SYNOPSIS</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Deletes old log files.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">DESCRIPTION</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    This function deletes log files older than the specified number of days.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER Days
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The number of days after which log files will be deleted. Default is 90 days.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    DeleteOldLogFiles -Days 30
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int</span>]$Days = <span style="color:#ae81ff">90</span>  <span style="color:#75715e"># Number of days after which log files will be deleted, default is 90</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    $logFiles = Get-ChildItem -Path (Join-Path -Path $logFilePath -ChildPath <span style="color:#e6db74">&#34;*.log&#34;</span>)  <span style="color:#75715e"># Get all log files</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($file <span style="color:#66d9ef">in</span> $logFiles) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($file.LastWriteTime <span style="color:#f92672">-le</span> (Get-Date).AddDays(-$Days)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Delete log files older than the specified number of days</span>
+</span></span><span style="display:flex;"><span>            LogAndConsole -message <span style="color:#e6db74">&#34;[+] Deleting old log file </span>$file<span style="color:#e6db74">...&#34;</span>
+</span></span><span style="display:flex;"><span>            Remove-Item -Path $file.FullName  <span style="color:#75715e"># Remove the old log file</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endregion LOGGING FUNCTIONS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endregion LOGGING</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DeleteOldLogFiles 30</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LogAndConsole &#34;HelloTwo&#34;</span>
+</span></span></code></pre></div><h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>By automating Azure App Registrations with PowerShell, this will save time, reduce errors, and maintain consistency. Please remember to adapt this approach to fit your unique scenario.</p>
+<hr>
  
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">

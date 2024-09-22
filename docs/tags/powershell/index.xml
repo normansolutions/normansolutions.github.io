@@ -6,8 +6,15 @@
     <description>Recent content in PowerShell on NS News and Views</description>
     <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Fri, 01 Mar 2024 21:38:20 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2024 19:00:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Azure App Registrations with PowerShell</title>
+      <link>https://normansolutions.co.uk/powershell-logging/</link>
+      <pubDate>Sat, 21 Sep 2024 19:00:20 +0000</pubDate>
+      <guid>https://normansolutions.co.uk/powershell-logging/</guid>
+      <description>&lt;p&gt;Lately, I’ve been doing a lot of PowerShell scripting, and it’s given me the chance to expand my experience and exposure to best practices. One of the key areas I’ve focused on is logging — something that’s often overlooked but incredibly valuable when troubleshooting or reviewing script performance.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Automating Azure App Registrations with PowerShell</title>
       <link>https://normansolutions.co.uk/automating-azure-app-registrations-with-powershell/</link>
