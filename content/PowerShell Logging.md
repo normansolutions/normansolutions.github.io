@@ -40,7 +40,9 @@ data-src="/img/postimg/Logging.png"/>
 
 
 #### Script used in module
+{{< rawhtml >}}
 <hr/>
+{{< /rawhtml >}}
 
 ```powershell
 
