@@ -21,15 +21,15 @@ If you're interested, you can check out my module in the PowerShell Gallery http
 Once the module is installed, you should have three functions available:
 
 > #### <strong>DeleteOldLogFiles (int)</strong>
-> <p>Deletes any log files in the log folder older than a set number of days (default is 90).</p>
+> <>Deletes any log files in the log folder older than a set number of days (default is 90).\
 
 > #### <strong>Log</strong>
-> <p>Creates a log folder in script location (if doesn't already exist).</p>
-> <p>Created a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log"</em>).</p>
-> <p>Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</p>
+> Creates a log folder in script location (if doesn't already exist).\
+> Created a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log"</em>).\
+> Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.\
 
 > #### <strong>LogAndConsole</strong>
-> <p>Logs to file (as above) but also writes out to the console.</p>
+> Logs to file (as above) but also writes out to the console.\
 
 
 {{< rawhtml >}}
