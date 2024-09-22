@@ -13,7 +13,7 @@ tags:
 
 Recently, a very good friend of mine _(_[_@richieclarkie_](https://twitter.com/richieclarkie)_)_ decided to return to the IT industry after a 15 year absence.
 
-> _Clearly a 15 year hiatus, is significant in any industry, but especially pertaining to IT, it is arguably exceptional._
+_Clearly a 15 year hiatus, is significant in any industry, but especially pertaining to IT, it is arguably exceptional._
 
 Whilst there will always be some _core fundamentals_ to the IT industry, in truth, he is in many ways, starting over.  However, I'm happy to report, he is extremely energised and keen to get back into a more **'operations'** driving seat.
 

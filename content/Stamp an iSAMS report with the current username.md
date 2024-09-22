@@ -13,7 +13,7 @@ tags:
 
 During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS _([Management Information System](http://en.wikipedia.org/wiki/Management_information_system))_ from [Schoolbase](http://www.furlongsolutions.com/) to [iSAMS](http://www.isams.co.uk/).
 
-> Please note, that the reasons for instigating this major system change, and the processes involved _(political & technical),_ are _not_ covered in this blog post.
+Please note, that the reasons for instigating this major system change, and the processes involved _(political & technical),_ are _not_ covered in this blog post.
 
 Anyone who has ever had responsibility for changing a central IT system, will know that it’s never a pain free experience, and can be fraught with frustration.  Thankfully, in our particular instance, I can report that the majority of bespoke functionality and add-ons, were successfully ‘ported’ over from one system to another.  Data migration, for the most part, was also a success.
 

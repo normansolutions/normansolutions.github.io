@@ -11,7 +11,7 @@ tags:
 ---
 
 
->OK....that title was a bit of a mouthful - but it's a little difficult to categorise what is essentially a kind of hack!
+OK....that title was a bit of a mouthful - but it's a little difficult to categorise what is essentially a kind of hack!
 
 Recently, I felt it was advisable to start regularly recording my blood pressure results *(comes with age I'm afraid)*.
 

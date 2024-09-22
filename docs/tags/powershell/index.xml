@@ -41,7 +41,7 @@
       <link>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</link>
       <pubDate>Tue, 08 Mar 2016 18:19:57 +0000</pubDate>
       <guid>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</guid>
-      <description>&lt;p&gt;Most users of Office 365 will no doubt be aware of the &lt;a href=&#34;https://support.office.com/en-us/article/Use-Clutter-to-sort-low-priority-messages-in-Outlook-2016-for-Windows-7b50c5db-7704-4e55-8a1b-dfc7bf1eafa0&#34;&gt;Clutter&lt;/a&gt; folder; for the most part this Clutter folder works pretty well.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I’m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Most users of Office 365 will no doubt be aware of the &lt;a href=&#34;https://support.office.com/en-us/article/Use-Clutter-to-sort-low-priority-messages-in-Outlook-2016-for-Windows-7b50c5db-7704-4e55-8a1b-dfc7bf1eafa0&#34;&gt;Clutter&lt;/a&gt; folder; for the most part this Clutter folder works pretty well.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Locked out user email notification</title>
@@ -55,7 +55,7 @@
       <link>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</link>
       <pubDate>Sun, 30 Nov 2014 08:28:45 +0000</pubDate>
       <guid>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</guid>
-      <description>&lt;p&gt;During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS &lt;em&gt;(&lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_system&#34;&gt;Management Information System&lt;/a&gt;)&lt;/em&gt; from &lt;a href=&#34;http://www.furlongsolutions.com/&#34;&gt;Schoolbase&lt;/a&gt; to &lt;a href=&#34;http://www.isams.co.uk/&#34;&gt;iSAMS&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Please note, that the reasons for instigating this major system change, and the processes involved &lt;em&gt;(political &amp;amp; technical),&lt;/em&gt; are &lt;em&gt;not&lt;/em&gt; covered in this blog post.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS &lt;em&gt;(&lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_system&#34;&gt;Management Information System&lt;/a&gt;)&lt;/em&gt; from &lt;a href=&#34;http://www.furlongsolutions.com/&#34;&gt;Schoolbase&lt;/a&gt; to &lt;a href=&#34;http://www.isams.co.uk/&#34;&gt;iSAMS&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Please note, that the reasons for instigating this major system change, and the processes involved &lt;em&gt;(political &amp;amp; technical),&lt;/em&gt; are &lt;em&gt;not&lt;/em&gt; covered in this blog post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PowerShell to secure AD users RDP access</title>

@@ -12,7 +12,7 @@ tags:
 
 Most users of Office 365 will no doubt be aware of the [Clutter](https://support.office.com/en-us/article/Use-Clutter-to-sort-low-priority-messages-in-Outlook-2016-for-Windows-7b50c5db-7704-4e55-8a1b-dfc7bf1eafa0) folder; for the most part this Clutter folder works pretty well.
 
-> I’m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!
+I'm not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!
 
 Despite this being a rather impressive addition to email functionality, it can unfortunately present problems for some users.  These issues can be anything from [False - Positives](http://whatis.techtarget.com/definition/false-positive) to end users not fully understanding the process, and the requirement to check two folders _(in order of priority)._
 
