@@ -33,7 +33,6 @@ Once the module is installed, you should have three functions available:
 
 
 {{< rawhtml >}}
-<hr/>
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 data-src="/img/postimg/Logging.png"/>
@@ -41,7 +40,7 @@ data-src="/img/postimg/Logging.png"/>
 
 
 #### Script used in module
-
+<hr/>
 
 ```powershell
 
