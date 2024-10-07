@@ -36,7 +36,7 @@ Once the module is installed, you should have three functions available:
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/LogPath.png"/>
+data-src="/img/postimg/LogPathFull.png"/>
 {{< /rawhtml >}}
 
 {{< rawhtml >}}
