@@ -31,7 +31,7 @@ Once the module is installed, you should have three functions available:
 > #### <strong>LogAndConsole (-message string) (-logpath string)</strong>
 > Logs to file (as above) but also writes out to the console.
 
-_<em>_(it's worth noting that you do need to pass in the logpath on each line, as leaving it blank will default to the module path and not the script path - seems to be an issue with using modules here!  In my example I just assign the logpath to a variable for re-use)_
+*(it's worth noting that you do need to pass in the logpath on each line, as leaving it blank will default to the module path and not the script path - seems to be an issue with using modules here!  In my example I just assign the logpath to a variable for re-use)*
 
 {{< rawhtml >}}
 <img
