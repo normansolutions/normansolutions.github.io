@@ -24,19 +24,19 @@ Once the module is installed, you should have three functions available:
 > Deletes any log files in the log folder older than a set number of days (default is 90).
 
 > #### <strong>Log (-message string) (-logpath string)</strong>
-> Creates a log folder in script location (if doesn't already exist).\
+> Creates a log folder in logpath location (if doesn't already exist).\
 > Creates a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log</em>).\
 > Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.
 
 > #### <strong>LogAndConsole (-message string) (-logpath string)</strong>
 > Logs to file (as above) but also writes out to the console.
 
-<em>(it's worth noting that you do need to pass in the logpath on each line, as leaving it blank will default to the module path and not the script path - seems to be an issue with using modules here!  In my example I just assign the logpath to a variable and for re-use)</em>
+_<em>_(it's worth noting that you do need to pass in the logpath on each line, as leaving it blank will default to the module path and not the script path - seems to be an issue with using modules here!  In my example I just assign the logpath to a variable for re-use)_
 
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/Logging.png"/>
+data-src="/img/postimg/LoggingPath.png"/>
 {{< /rawhtml >}}
 
 {{< rawhtml >}}
