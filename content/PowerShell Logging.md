@@ -16,7 +16,7 @@ To make my life easier, I started adding a few basic functions at the top of my 
 
 So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.
 
-If you're interested, you can check out my module in the [PowerShell Gallery (NSLoggingModule)](https://www.powershellgallery.com/packages/NSLoggingModule/0.1.0). Hopefully, it may save you time with some basic PowerShell logging!
+If you're interested, you can check out my module in the [PowerShell Gallery (NSLoggingModule)](https://www.powershellgallery.com/packages/NSLoggingModule/0.1.2). Hopefully, it may save you time with some basic PowerShell logging!
 
 Once the module is installed, you should have three functions available:
 
@@ -31,7 +31,7 @@ Once the module is installed, you should have three functions available:
 > #### <strong>LogAndConsole (-message string) (-logpath string)</strong>
 > Logs to file (as above) but also writes out to the console.
 
-*(it's worth noting that you do need to pass in the logpath on each line, as leaving it blank will default to the module path and not the script path - seems to be an issue with using modules here!  In my example I just assign the logpath to a variable for re-use)*
+*(it's worth noting that you do need to pass in the logpath on each line otherwise the default will be the local Temp directory. In my example I just assign the logpath to a variable for re-use)*
 
 {{< rawhtml >}}
 <img
