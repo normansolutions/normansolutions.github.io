@@ -308,25 +308,25 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>If you&rsquo;re interested, you can check out my module in the <a href="https://www.powershellgallery.com/packages/NSLoggingModule/0.1.2">PowerShell Gallery (NSLoggingModule)</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
 <p>Once the module is installed, you should have three functions available:</p>
 <blockquote>
-<h4 id="strongdeleteoldlogfiles--days-int--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->DeleteOldLogFiles (-days int) (-logpath string) (-scriptName string)<!-- raw HTML omitted --></h4>
+<h4 id="strongdeleteoldlogfiles--days-int--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->DeleteOldLogFiles (-days int) (-logPath string) (-scriptName string)<!-- raw HTML omitted --></h4>
 <p>Deletes any log files in the log folder older than a set number of days - default is 90 days.</p>
 </blockquote>
 <blockquote>
-<h4 id="stronglog--message-string--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->Log (-message string) (-logpath string) (-scriptName string)<!-- raw HTML omitted --></h4>
+<h4 id="stronglog--message-string--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->Log (-message string) (-logPath string) (-scriptName string)<!-- raw HTML omitted --></h4>
 <p>Creates a log folder in logpath location (if doesn&rsquo;t already exist) - default is local Temp directory.<br>
 Creates a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log<!-- raw HTML omitted -->) - default script name is &ldquo;-&rdquo;.<br>
 Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</p>
 </blockquote>
 <blockquote>
-<h4 id="stronglogandconsole--message-string--logpath-stringstrong"><!-- raw HTML omitted -->LogAndConsole (-message string) (-logpath string)<!-- raw HTML omitted --></h4>
+<h4 id="stronglogandconsole--message-string--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->LogAndConsole (-message string) (-logPath string) (-scriptName string)<!-- raw HTML omitted --></h4>
 <p>Logs to file (as above) but also writes out to the console.</p>
 </blockquote>
-<p><em>(it&rsquo;s worth noting that you do need to pass in the logpath on each line otherwise the default will be the local Temp directory. In my example I just assign the logpath to a variable for re-use)</em></p>
+<p><em>(it&rsquo;s worth noting that you do need to pass in the logpath (and script name if required) on each line otherwise the default will be the local Temp directory. In my example I just assign the logpath and scriptname to variables for re-use)</em></p>
 
 
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/LogPathImage.png"/>
+data-src="/img/postimg/LogPathExample.png"/>
 
 
 
@@ -338,20 +338,8 @@ data-src="/img/postimg/LogPathImage.png"/>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#region LOGGING</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#region LOGGING VARIABLES</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the script name without the extension</span>
-</span></span><span style="display:flex;"><span>$scriptName = <span style="color:#66d9ef">if</span> ($MyInvocation.ScriptName) {
-</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">System.IO.Path</span>]::GetFileNameWithoutExtension($MyInvocation.ScriptName)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;InteractiveSession&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the computer name</span>
 </span></span><span style="display:flex;"><span>$computerName = $Env:COMPUTERNAME
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#endregion LOGGING VARIABLES</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#region LOGGING FUNCTIONS</span>
 </span></span><span style="display:flex;"><span>
@@ -368,16 +356,18 @@ data-src="/img/postimg/LogPathImage.png"/>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The message to log.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER logPath
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The path to log file.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The path to log file. Default is Temp.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER scriptName
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The name of the script. Default is -
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Log -message &#34;This is a log entry.&#34; -logPath &#34;./&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Log -message &#34;This is a log entry.&#34; -logPath &#34;./&#34; -scriptName &#34;logfile&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
-</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $true)]
 </span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$message, <span style="color:#75715e"># Message to log</span>
-</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $true)]
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath = <span style="color:#e6db74">&#34;</span>$env:Temp<span style="color:#e6db74">\&#34;</span>, <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$scriptName = <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#75715e"># File path</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set the log folder path based on the provided or default path, with a &#34;Logs&#34; subfolder</span>
@@ -410,20 +400,22 @@ data-src="/img/postimg/LogPathImage.png"/>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The message to log.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER logPath
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The path to log file.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The path to log file. Default is Temp.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER scriptName
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The name of the script. Default is -
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Log -message &#34;This is a log entry.&#34; -logPath &#34;./&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Log -message &#34;This is a log entry.&#34; -logPath &#34;./&#34; -scriptName &#34;logfile&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
-</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $true)]
 </span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$message, <span style="color:#75715e"># Message to log</span>
-</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $true)]
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath = <span style="color:#e6db74">&#34;</span>$env:Temp<span style="color:#e6db74">\&#34;</span>, <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$scriptName = <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#75715e"># File path</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Write-Host $message -ForegroundColor Green  <span style="color:#75715e"># Log to console</span>
-</span></span><span style="display:flex;"><span>    Log -message $message -logPath $logPath  <span style="color:#75715e"># Log to file</span>
+</span></span><span style="display:flex;"><span>    Log -message $message -logPath $logPath -scriptName $scriptName <span style="color:#75715e"># Log to file</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to delete old log files</span>
@@ -439,15 +431,14 @@ data-src="/img/postimg/LogPathImage.png"/>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The number of days after which log files will be deleted. Default is 90 days.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .PARAMETER logPath
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The path to log file.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    The path to log file. Default is Temp
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    .</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    DeleteOldLogFiles -Days 30 -logPath &#34;./&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int</span>]$Days = <span style="color:#ae81ff">90</span>, <span style="color:#75715e"># Number of days after which log files will be deleted</span>
-</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $true)]
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int</span>]$days = <span style="color:#ae81ff">90</span>, <span style="color:#75715e"># Number of days after which log files will be deleted</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath = <span style="color:#e6db74">&#34;</span>$env:Temp<span style="color:#e6db74">\&#34;</span> <span style="color:#75715e"># Log path</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set the log folder path based on the provided or default path</span>
@@ -455,7 +446,7 @@ data-src="/img/postimg/LogPathImage.png"/>
 </span></span><span style="display:flex;"><span>    $logFiles = Get-ChildItem -Path (Join-Path -Path $logFolder -ChildPath <span style="color:#e6db74">&#34;*.log&#34;</span>)  <span style="color:#75715e"># Get all log files</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($file <span style="color:#66d9ef">in</span> $logFiles) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($file.LastWriteTime <span style="color:#f92672">-le</span> (Get-Date).AddDays(-$Days)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($file.LastWriteTime <span style="color:#f92672">-le</span> (Get-Date).AddDays(-$days)) {
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Delete log files older than the specified number of days</span>
 </span></span><span style="display:flex;"><span>            LogAndConsole -message <span style="color:#e6db74">&#34;[+] Deleting old log file </span>$file<span style="color:#e6db74">...&#34;</span> -logPath $logPath
 </span></span><span style="display:flex;"><span>            Remove-Item -Path $file.FullName  <span style="color:#75715e"># Remove the old log file</span>
@@ -471,9 +462,12 @@ data-src="/img/postimg/LogPathImage.png"/>
 </span></span><span style="display:flex;"><span>Export-ModuleMember -Function Log, LogAndConsole, DeleteOldLogFiles
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># $p = &#39;./&#39; (store log path as variable)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># DeleteOldLogFiles 30 $p</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># LogAndConsole &#34;HelloTwo&#34; $p</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># $s = &#34;LogFileName&#34; (store file name as variable)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DeleteOldLogFiles -days 30 -logpath $p -scriptName $s (named parameters example)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># LogAndConsole &#34;HelloTwo&#34; $p (positional parameters example)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log &#34;HelloTemp&#34; (default file and path example)</span>
 </span></span></code></pre></div><hr>
  
     </div>

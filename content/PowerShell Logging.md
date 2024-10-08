@@ -20,23 +20,23 @@ If you're interested, you can check out my module in the [PowerShell Gallery (NS
 
 Once the module is installed, you should have three functions available:
 
-> #### <strong>DeleteOldLogFiles (-days int) (-logpath string) (-scriptName string)</strong>
+> #### <strong>DeleteOldLogFiles (-days int) (-logPath string) (-scriptName string)</strong>
 > Deletes any log files in the log folder older than a set number of days - default is 90 days.
 
-> #### <strong>Log (-message string) (-logpath string) (-scriptName string)</strong>
+> #### <strong>Log (-message string) (-logPath string) (-scriptName string)</strong>
 > Creates a log folder in logpath location (if doesn't already exist) - default is local Temp directory.\
 > Creates a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log</em>) - default script name is "-".\
 > Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.
 
-> #### <strong>LogAndConsole (-message string) (-logpath string)</strong>
+> #### <strong>LogAndConsole (-message string) (-logPath string) (-scriptName string)</strong>
 > Logs to file (as above) but also writes out to the console.
 
-*(it's worth noting that you do need to pass in the logpath on each line otherwise the default will be the local Temp directory. In my example I just assign the logpath to a variable for re-use)*
+*(it's worth noting that you do need to pass in the logpath (and script name if required) on each line otherwise the default will be the local Temp directory. In my example I just assign the logpath and scriptname to variables for re-use)*
 
 {{< rawhtml >}}
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/LogPathImage.png"/>
+data-src="/img/postimg/LogPathExample.png"/>
 {{< /rawhtml >}}
 
 {{< rawhtml >}}
@@ -49,20 +49,8 @@ data-src="/img/postimg/LogPathImage.png"/>
 
 #region LOGGING
 
-#region LOGGING VARIABLES
-
-# Get the script name without the extension
-$scriptName = if ($MyInvocation.ScriptName) {
-    [System.IO.Path]::GetFileNameWithoutExtension($MyInvocation.ScriptName)
-}
-else {
-    "InteractiveSession"
-}
-
 # Get the computer name
 $computerName = $Env:COMPUTERNAME
-
-#endregion LOGGING VARIABLES
 
 #region LOGGING FUNCTIONS
 
@@ -79,16 +67,18 @@ function Log {
     The message to log.
  
     .PARAMETER logPath
-    The path to log file.
+    The path to log file. Default is Temp.
+     
+    .PARAMETER scriptName
+    The name of the script. Default is -
   
     .EXAMPLE
-    Log -message "This is a log entry." -logPath "./"
+    Log -message "This is a log entry." -logPath "./" -scriptName "logfile"
     #>
     param (
-        [Parameter(Mandatory = $true)]
         [string]$message, # Message to log
-        [Parameter(Mandatory = $true)]
-        [string]$logPath # Log path
+        [string]$logPath = "$env:Temp\", # Log path
+        [string]$scriptName = "-" # File path
     )
     
     # Set the log folder path based on the provided or default path, with a "Logs" subfolder
@@ -121,20 +111,22 @@ function LogAndConsole {
     The message to log.
   
     .PARAMETER logPath
-    The path to log file.
+    The path to log file. Default is Temp.
+ 
+    .PARAMETER scriptName
+    The name of the script. Default is -
   
     .EXAMPLE
-    Log -message "This is a log entry." -logPath "./"
+    Log -message "This is a log entry." -logPath "./" -scriptName "logfile"
     #>
     param (
-        [Parameter(Mandatory = $true)]
         [string]$message, # Message to log
-        [Parameter(Mandatory = $true)]
-        [string]$logPath # Log path
+        [string]$logPath = "$env:Temp\", # Log path
+        [string]$scriptName = "-" # File path
     )
 
     Write-Host $message -ForegroundColor Green  # Log to console
-    Log -message $message -logPath $logPath  # Log to file
+    Log -message $message -logPath $logPath -scriptName $scriptName # Log to file
 }
 
 # Function to delete old log files
@@ -150,15 +142,14 @@ function DeleteOldLogFiles {
     The number of days after which log files will be deleted. Default is 90 days.
  
     .PARAMETER logPath
-    The path to log file.
+    The path to log file. Default is Temp
   
     .EXAMPLE
     DeleteOldLogFiles -Days 30 -logPath "./"
     #>
     param (
-        [int]$Days = 90, # Number of days after which log files will be deleted
-        [Parameter(Mandatory = $true)]
-        [string]$logPath # Log path
+        [int]$days = 90, # Number of days after which log files will be deleted
+        [string]$logPath = "$env:Temp\" # Log path
     )
 
     # Set the log folder path based on the provided or default path
@@ -166,7 +157,7 @@ function DeleteOldLogFiles {
     $logFiles = Get-ChildItem -Path (Join-Path -Path $logFolder -ChildPath "*.log")  # Get all log files
 
     foreach ($file in $logFiles) {
-        if ($file.LastWriteTime -le (Get-Date).AddDays(-$Days)) {
+        if ($file.LastWriteTime -le (Get-Date).AddDays(-$days)) {
             # Delete log files older than the specified number of days
             LogAndConsole -message "[+] Deleting old log file $file..." -logPath $logPath
             Remove-Item -Path $file.FullName  # Remove the old log file
@@ -182,9 +173,12 @@ function DeleteOldLogFiles {
 Export-ModuleMember -Function Log, LogAndConsole, DeleteOldLogFiles
 
 # Example usage
+#
 # $p = './' (store log path as variable)
-# DeleteOldLogFiles 30 $p
-# LogAndConsole "HelloTwo" $p
+# $s = "LogFileName" (store file name as variable)
+# DeleteOldLogFiles -days 30 -logpath $p -scriptName $s (named parameters example)
+# LogAndConsole "HelloTwo" $p (positional parameters example)
+# Log "HelloTemp" (default file and path example)
 
 ```
 
