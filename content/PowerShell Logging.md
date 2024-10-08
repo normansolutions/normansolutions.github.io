@@ -21,7 +21,7 @@ If you're interested, you can check out my module in the [PowerShell Gallery (NS
 Once the module is installed, you should have three functions available:
 
 > #### <strong>DeleteOldLogFiles (-days int) (-logpath string)</strong>
-> Deletes any log files in the log folder older than a set number of days (default is 90).
+> Deletes any log files in the log folder older than a set number of days.
 
 > #### <strong>Log (-message string) (-logpath string)</strong>
 > Creates a log folder in logpath location (if doesn't already exist).\
