@@ -308,13 +308,13 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 <p>If you&rsquo;re interested, you can check out my module in the <a href="https://www.powershellgallery.com/packages/NSLoggingModule/0.1.2">PowerShell Gallery (NSLoggingModule)</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
 <p>Once the module is installed, you should have three functions available:</p>
 <blockquote>
-<h4 id="strongdeleteoldlogfiles--days-int--logpath-stringstrong"><!-- raw HTML omitted -->DeleteOldLogFiles (-days int) (-logpath string)<!-- raw HTML omitted --></h4>
-<p>Deletes any log files in the log folder older than a set number of days.</p>
+<h4 id="strongdeleteoldlogfiles--days-int--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->DeleteOldLogFiles (-days int) (-logpath string) (-scriptName string)<!-- raw HTML omitted --></h4>
+<p>Deletes any log files in the log folder older than a set number of days - default is 90 days.</p>
 </blockquote>
 <blockquote>
-<h4 id="stronglog--message-string--logpath-stringstrong"><!-- raw HTML omitted -->Log (-message string) (-logpath string)<!-- raw HTML omitted --></h4>
-<p>Creates a log folder in logpath location (if doesn&rsquo;t already exist).<br>
-Creates a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log<!-- raw HTML omitted -->).<br>
+<h4 id="stronglog--message-string--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->Log (-message string) (-logpath string) (-scriptName string)<!-- raw HTML omitted --></h4>
+<p>Creates a log folder in logpath location (if doesn&rsquo;t already exist) - default is local Temp directory.<br>
+Creates a log file within the log folder titled as device name, script name, and current date (e.g. <!-- raw HTML omitted -->computerName-scriptName-22-09-2024.log<!-- raw HTML omitted -->) - default script name is &ldquo;-&rdquo;.<br>
 Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.</p>
 </blockquote>
 <blockquote>

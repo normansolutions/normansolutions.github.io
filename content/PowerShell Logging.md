@@ -20,12 +20,12 @@ If you're interested, you can check out my module in the [PowerShell Gallery (NS
 
 Once the module is installed, you should have three functions available:
 
-> #### <strong>DeleteOldLogFiles (-days int) (-logpath string)</strong>
-> Deletes any log files in the log folder older than a set number of days.
+> #### <strong>DeleteOldLogFiles (-days int) (-logpath string) (-scriptName string)</strong>
+> Deletes any log files in the log folder older than a set number of days - default is 90 days.
 
-> #### <strong>Log (-message string) (-logpath string)</strong>
-> Creates a log folder in logpath location (if doesn't already exist).\
-> Creates a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log</em>).\
+> #### <strong>Log (-message string) (-logpath string) (-scriptName string)</strong>
+> Creates a log folder in logpath location (if doesn't already exist) - default is local Temp directory.\
+> Creates a log file within the log folder titled as device name, script name, and current date (e.g. <em>computerName-scriptName-22-09-2024.log</em>) - default script name is "-".\
 > Each time the function is called, a timestamped line is created within the log file, pre-pended to whatever string is passed in.
 
 > #### <strong>LogAndConsole (-message string) (-logpath string)</strong>
