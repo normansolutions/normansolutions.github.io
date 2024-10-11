@@ -16,7 +16,7 @@ To make my life easier, I started adding a few basic functions at the top of my 
 
 So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.
 
-If you're interested, you can check out my module in the [PowerShell Gallery (NSLoggingModule)](https://www.powershellgallery.com/packages/NSLoggingModule/0.1.2). Hopefully, it may save you time with some basic PowerShell logging!
+If you're interested, you can check out my module in the [PowerShell Gallery (NSLoggingModule)](https://www.powershellgallery.com/packages/NSLoggingModule/0.1.3). Hopefully, it may save you time with some basic PowerShell logging!
 
 Once the module is installed, you should have three functions available:
 
@@ -122,7 +122,7 @@ function LogAndConsole {
     param (
         [string]$message, # Message to log
         [string]$logPath = "$env:Temp\", # Log path
-        [string]$scriptName = "-" # File path
+        [string]$scriptName = "-" # File name
     )
 
     Write-Host $message -ForegroundColor Green  # Log to console
@@ -148,8 +148,9 @@ function DeleteOldLogFiles {
     DeleteOldLogFiles -Days 30 -logPath "./"
     #>
     param (
-        [int]$days = 90, # Number of days after which log files will be deleted
-        [string]$logPath = "$env:Temp\" # Log path
+        [int]$Days = 90, # Number of days after which log files will be deleted
+        [string]$logPath = "$env:Temp\", # Log path
+        [string]$scriptName = "-" # File name
     )
 
     # Set the log folder path based on the provided or default path
@@ -157,9 +158,9 @@ function DeleteOldLogFiles {
     $logFiles = Get-ChildItem -Path (Join-Path -Path $logFolder -ChildPath "*.log")  # Get all log files
 
     foreach ($file in $logFiles) {
-        if ($file.LastWriteTime -le (Get-Date).AddDays(-$days)) {
+        if ($file.LastWriteTime -le (Get-Date).AddDays(-$Days)) {
             # Delete log files older than the specified number of days
-            LogAndConsole -message "[+] Deleting old log file $file..." -logPath $logPath
+            LogAndConsole -message "[+] Deleting old log file $file..." -logPath $logPath -scriptName $scriptName
             Remove-Item -Path $file.FullName  # Remove the old log file
         }
     }
@@ -179,6 +180,7 @@ Export-ModuleMember -Function Log, LogAndConsole, DeleteOldLogFiles
 # DeleteOldLogFiles -days 30 -logpath $p -scriptName $s (named parameters example)
 # LogAndConsole "HelloTwo" $p (positional parameters example)
 # Log "HelloTemp" (default file and path example)
+
 
 ```
 

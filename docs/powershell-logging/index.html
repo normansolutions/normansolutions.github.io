@@ -305,7 +305,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
       <p>Lately, I’ve been doing a lot of PowerShell scripting, and it’s given me the chance to expand my experience and exposure to best practices. One of the key areas I’ve focused on is logging — something that’s often overlooked but incredibly valuable when troubleshooting or reviewing script performance.</p>
 <p>To make my life easier, I started adding a few basic functions at the top of my scripts. These functions would either log messages to a file, log to both the console and a file, or delete old log files that were over a certain age. As I implemented these functions more frequently, I realised it made sense to take this further and turn it into a reusable module.</p>
 <p>So that’s exactly what I did. I built a PowerShell module that handles logging tasks efficiently and published it on the PowerShell Gallery. This is my first foray into submitting to the platform, and I’m pleased to be able to contribute something that may be useful to the community. Having the module available in the gallery not only streamlines my own work but also makes it easier for others who need similar logging capabilities.</p>
-<p>If you&rsquo;re interested, you can check out my module in the <a href="https://www.powershellgallery.com/packages/NSLoggingModule/0.1.2">PowerShell Gallery (NSLoggingModule)</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
+<p>If you&rsquo;re interested, you can check out my module in the <a href="https://www.powershellgallery.com/packages/NSLoggingModule/0.1.3">PowerShell Gallery (NSLoggingModule)</a>. Hopefully, it may save you time with some basic PowerShell logging!</p>
 <p>Once the module is installed, you should have three functions available:</p>
 <blockquote>
 <h4 id="strongdeleteoldlogfiles--days-int--logpath-string--scriptname-stringstrong"><!-- raw HTML omitted -->DeleteOldLogFiles (-days int) (-logPath string) (-scriptName string)<!-- raw HTML omitted --></h4>
@@ -411,7 +411,7 @@ data-src="/img/postimg/LogPathExample.png"/>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
 </span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$message, <span style="color:#75715e"># Message to log</span>
 </span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath = <span style="color:#e6db74">&#34;</span>$env:Temp<span style="color:#e6db74">\&#34;</span>, <span style="color:#75715e"># Log path</span>
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$scriptName = <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#75715e"># File path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$scriptName = <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#75715e"># File name</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Write-Host $message -ForegroundColor Green  <span style="color:#75715e"># Log to console</span>
@@ -437,8 +437,9 @@ data-src="/img/postimg/LogPathExample.png"/>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    DeleteOldLogFiles -Days 30 -logPath &#34;./&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int</span>]$days = <span style="color:#ae81ff">90</span>, <span style="color:#75715e"># Number of days after which log files will be deleted</span>
-</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath = <span style="color:#e6db74">&#34;</span>$env:Temp<span style="color:#e6db74">\&#34;</span> <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int</span>]$Days = <span style="color:#ae81ff">90</span>, <span style="color:#75715e"># Number of days after which log files will be deleted</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$logPath = <span style="color:#e6db74">&#34;</span>$env:Temp<span style="color:#e6db74">\&#34;</span>, <span style="color:#75715e"># Log path</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$scriptName = <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#75715e"># File name</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set the log folder path based on the provided or default path</span>
@@ -446,9 +447,9 @@ data-src="/img/postimg/LogPathExample.png"/>
 </span></span><span style="display:flex;"><span>    $logFiles = Get-ChildItem -Path (Join-Path -Path $logFolder -ChildPath <span style="color:#e6db74">&#34;*.log&#34;</span>)  <span style="color:#75715e"># Get all log files</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($file <span style="color:#66d9ef">in</span> $logFiles) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($file.LastWriteTime <span style="color:#f92672">-le</span> (Get-Date).AddDays(-$days)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($file.LastWriteTime <span style="color:#f92672">-le</span> (Get-Date).AddDays(-$Days)) {
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Delete log files older than the specified number of days</span>
-</span></span><span style="display:flex;"><span>            LogAndConsole -message <span style="color:#e6db74">&#34;[+] Deleting old log file </span>$file<span style="color:#e6db74">...&#34;</span> -logPath $logPath
+</span></span><span style="display:flex;"><span>            LogAndConsole -message <span style="color:#e6db74">&#34;[+] Deleting old log file </span>$file<span style="color:#e6db74">...&#34;</span> -logPath $logPath -scriptName $scriptName
 </span></span><span style="display:flex;"><span>            Remove-Item -Path $file.FullName  <span style="color:#75715e"># Remove the old log file</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
