@@ -20,9 +20,10 @@ html {
 
 body {
   font: 19px/1.6 'Raleway', Helvetica, Arial, Lucida, sans-serif;
-  font-weight: 300;
   color: #222;
   background-color: $ooob-white;
+}
+
 h1,
 h2,
 h3,
@@ -83,6 +84,7 @@ a:focus {
 }
  .p {
   letter-spacing: 2px;
+  color:#8d8d8d
  }
 
 /* End Basics */
