@@ -4,7 +4,7 @@
     <title>JavaScript on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/javascript/</link>
     <description>Recent content in JavaScript on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Mon, 06 Apr 2015 11:56:06 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
@@ -13,56 +13,56 @@
       <link>https://normansolutions.co.uk/a-blend-of-style-and-performance/</link>
       <pubDate>Mon, 06 Apr 2015 11:56:06 +0000</pubDate>
       <guid>https://normansolutions.co.uk/a-blend-of-style-and-performance/</guid>
-      <description>&lt;p&gt;Recently, I had the privilege of designing and building the Wylye Valley Art Trail website.  The 2015 trail consists of &lt;strong&gt;75&lt;/strong&gt; venues, and in-excess of &lt;strong&gt;300&lt;/strong&gt; artists – I’m sure you’ll agree, that’s a reasonable size!&lt;/p&gt;</description>
+      <description>Recently, I had the privilege of designing and building the Wylye Valley Art Trail website. The 2015 trail consists of 75 venues, and in-excess of 300 artists – I’m sure you’ll agree, that’s a reasonable size!</description>
     </item>
     <item>
       <title>Tracking devices in UniFi WiFi</title>
       <link>https://normansolutions.co.uk/tracking-devices-in-unifi-wifi/</link>
       <pubDate>Fri, 02 Jan 2015 12:15:14 +0000</pubDate>
       <guid>https://normansolutions.co.uk/tracking-devices-in-unifi-wifi/</guid>
-      <description>&lt;p&gt;Several years ago, we migrated from a &lt;a href=&#34;http://www.cisco.com/cisco/web/UK/index.html#x6CjTZEDlwuM6WO1.97&#34;&gt;Cisco&lt;/a&gt; Wi-Fi infrastructure to a &lt;a href=&#34;http://www.ubnt.com/enterprise/&#34;&gt;UniFi&lt;/a&gt; setup.&lt;/p&gt;&#xA;&lt;p&gt;UniFi &lt;em&gt;(from Ubiquiti Networks)&lt;/em&gt; offer a pretty remarkable WiFi solution, especially when it comes down to cost.  I shan’t go into the in’s and out’s of UniFi, as apart from anything else, I can’t claim to be an expert in the technology.  In many ways, it just works!&lt;/p&gt;</description>
+      <description>Several years ago, we migrated from a Cisco Wi-Fi infrastructure to a UniFi setup.&#xA;UniFi (from Ubiquiti Networks) offer a pretty remarkable WiFi solution, especially when it comes down to cost.</description>
     </item>
     <item>
       <title>Stamp an iSAMS report with the current username</title>
       <link>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</link>
       <pubDate>Sun, 30 Nov 2014 08:28:45 +0000</pubDate>
       <guid>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</guid>
-      <description>&lt;p&gt;During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS &lt;em&gt;(&lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_system&#34;&gt;Management Information System&lt;/a&gt;)&lt;/em&gt; from &lt;a href=&#34;http://www.furlongsolutions.com/&#34;&gt;Schoolbase&lt;/a&gt; to &lt;a href=&#34;http://www.isams.co.uk/&#34;&gt;iSAMS&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Please note, that the reasons for instigating this major system change, and the processes involved &lt;em&gt;(political &amp;amp; technical),&lt;/em&gt; are &lt;em&gt;not&lt;/em&gt; covered in this blog post.&lt;/p&gt;</description>
+      <description>During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS (Management Information System) from Schoolbase to iSAMS.&#xA;Please note, that the reasons for instigating this major system change, and the processes involved (political &amp;amp; technical), are not covered in this blog post.</description>
     </item>
     <item>
       <title>Happy with a hack?</title>
       <link>https://normansolutions.co.uk/happy-with-a-hack/</link>
       <pubDate>Fri, 03 Oct 2014 21:37:41 +0000</pubDate>
       <guid>https://normansolutions.co.uk/happy-with-a-hack/</guid>
-      <description>&lt;p&gt;Most software developers at some point, will almost certainly encounter the need to &lt;a href=&#34;http://en.wikipedia.org/wiki/Kludge#In_computer_science&#34;&gt;hack&lt;/a&gt; together a solution.&lt;/p&gt;&#xA;&lt;p&gt;To quote Wikipedia, the term &lt;strong&gt;hack&lt;/strong&gt;, for the purposes of this blog post is:&lt;/p&gt;</description>
+      <description>Most software developers at some point, will almost certainly encounter the need to hack together a solution.&#xA;To quote Wikipedia, the term hack, for the purposes of this blog post is:</description>
     </item>
     <item>
       <title>Cache-busting in C# without querystrings</title>
       <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
       <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
-      <description>&lt;p&gt;A key benefit of working with the web &lt;em&gt;(or more specifically http)&lt;/em&gt; is it’s native ability to &lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&#34;&gt;cache&lt;/a&gt;.  This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.&lt;/p&gt;</description>
+      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
     </item>
     <item>
       <title>Technically challenge your web designer!</title>
       <link>https://normansolutions.co.uk/technically-challenge-your-web-designer/</link>
       <pubDate>Tue, 29 Apr 2014 20:46:26 +0000</pubDate>
       <guid>https://normansolutions.co.uk/technically-challenge-your-web-designer/</guid>
-      <description>&lt;p&gt;I must confess to have slightly struggled with the title of this blog post, as I didn’t wish to be responsible for encouraging unnecessary complaints and animosity between clients and web designers!&lt;/p&gt;</description>
+      <description>I must confess to have slightly struggled with the title of this blog post, as I didn’t wish to be responsible for encouraging unnecessary complaints and animosity between clients and web designers!</description>
     </item>
     <item>
       <title>Plotting earthquakes on a Firefly VLE page</title>
       <link>https://normansolutions.co.uk/plotting-earthquakes-on-a-firefly-vle-page/</link>
       <pubDate>Fri, 10 Jan 2014 11:49:19 +0000</pubDate>
       <guid>https://normansolutions.co.uk/plotting-earthquakes-on-a-firefly-vle-page/</guid>
-      <description>&lt;p&gt;Like many technically minded people, I subscribe to a variety of IT focussed information sources (&lt;a href=&#34;http://en.wikipedia.org/wiki/RSS&#34;&gt;RSS Feeds&lt;/a&gt;, Newsletters etc); one such newsletter being &amp;ldquo;&lt;strong&gt;Powertip of the day&lt;/strong&gt;&amp;rdquo; from &lt;a href=&#34;http://powershell.com/&#34;&gt;Powershell.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;A recent “&lt;a href=&#34;http://powershell.com/cs/blogs/tips/archive/2013/12/31/getting-most-recent-earthquakes.aspx&#34;&gt;Powertip of the day&lt;/a&gt;” demonstrated how it was possible to query an online earthquake activity data resource, using &lt;a href=&#34;http://en.wikipedia.org/wiki/Windows_PowerShell&#34;&gt;PowerShell&lt;/a&gt;.  In truth, I didn’t have too much success with this particular example &lt;em&gt;(the data wasn’t up-to-date),&lt;/em&gt; but crucially, it set me thinking that this could be an excellent resource for a Geography department, especially when using &lt;a href=&#34;http://fireflysolutions.co.uk/&#34;&gt;Firefly&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>Like many technically minded people, I subscribe to a variety of IT focussed information sources (RSS Feeds, Newsletters etc); one such newsletter being &amp;ldquo;Powertip of the day&amp;rdquo; from Powershell.com.&#xA;A recent “Powertip of the day” demonstrated how it was possible to query an online earthquake activity data resource, using PowerShell.</description>
     </item>
     <item>
       <title>Creating a Firefly VLE online users feature</title>
       <link>https://normansolutions.co.uk/creating-a-firefly-vle-online-users-feature/</link>
       <pubDate>Wed, 18 Dec 2013 23:44:05 +0000</pubDate>
       <guid>https://normansolutions.co.uk/creating-a-firefly-vle-online-users-feature/</guid>
-      <description>&lt;p&gt;At St Mary&amp;rsquo;s Shaftesbury we use &lt;a href=&#34;http://fireflysolutions.co.uk/&#34;&gt;Firefly&lt;/a&gt; for our &lt;a href=&#34;http://en.wikipedia.org/wiki/Virtual_learning_environment&#34;&gt;VLE&lt;/a&gt;.  I won’t give you a sales pitch on Firefly, but suffice to say, that after a bit of a journey from &lt;a href=&#34;https://moodle.org/&#34;&gt;Moodle&lt;/a&gt; through &lt;a href=&#34;http://en.wikipedia.org/wiki/Microsoft_SharePoint&#34;&gt;SharePoint&lt;/a&gt; we have rested at Firefly – quite simply, at this point in time &lt;em&gt;(history has taught me that things can change!),&lt;/em&gt; this product, the company and their approach to IT, is nothing short of excellent.  I like Firefly; I like the chaps and chapesses at Firefly!&lt;/p&gt;</description>
+      <description>At St Mary&amp;rsquo;s Shaftesbury we use Firefly for our VLE. I won’t give you a sales pitch on Firefly, but suffice to say, that after a bit of a journey from Moodle through SharePoint we have rested at Firefly – quite simply, at this point in time (history has taught me that things can change!</description>
     </item>
   </channel>
 </rss>

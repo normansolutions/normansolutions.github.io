@@ -4,7 +4,7 @@
     <title>Azure on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/azure/</link>
     <description>Recent content in Azure on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 21 Sep 2024 19:00:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/azure/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,14 @@
       <link>https://normansolutions.co.uk/powershell-logging/</link>
       <pubDate>Sat, 21 Sep 2024 19:00:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/powershell-logging/</guid>
-      <description>&lt;p&gt;Lately, I’ve been doing a lot of PowerShell scripting, and it’s given me the chance to expand my experience and exposure to best practices. One of the key areas I’ve focused on is logging — something that’s often overlooked but incredibly valuable when troubleshooting or reviewing script performance.&lt;/p&gt;</description>
+      <description>Lately, I’ve been doing a lot of PowerShell scripting, and it’s given me the chance to expand my experience and exposure to best practices. One of the key areas I’ve focused on is logging — something that’s often overlooked but incredibly valuable when troubleshooting or reviewing script performance.</description>
     </item>
     <item>
       <title>Automating Azure App Registrations with PowerShell</title>
       <link>https://normansolutions.co.uk/automating-azure-app-registrations-with-powershell/</link>
       <pubDate>Fri, 01 Mar 2024 21:38:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/automating-azure-app-registrations-with-powershell/</guid>
-      <description>&lt;p&gt;It has been a while since I last blogged - life has certainly been busy!&lt;/p&gt;&#xA;&lt;p&gt;Over the past two years I&amp;rsquo;ve somewhat immersed myself in PowerShell. While I wouldn&amp;rsquo;t claim to be a PowerShell Guru, my knowledge has substantially grown, thanks in part to splendid collaboration with some exceptional colleagues.&lt;/p&gt;</description>
+      <description>It has been a while since I last blogged - life has certainly been busy!&#xA;Over the past two years I&amp;rsquo;ve somewhat immersed myself in PowerShell. While I wouldn&amp;rsquo;t claim to be a PowerShell Guru, my knowledge has substantially grown, thanks in part to splendid collaboration with some exceptional colleagues.</description>
     </item>
   </channel>
 </rss>

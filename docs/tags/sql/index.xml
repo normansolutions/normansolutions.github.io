@@ -4,7 +4,7 @@
     <title>SQL on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/sql/</link>
     <description>Recent content in SQL on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Tue, 13 Oct 2020 20:11:00 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/sql/index.xml" rel="self" type="application/rss+xml" />
@@ -13,21 +13,21 @@
       <link>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</link>
       <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
-      <description>&lt;p&gt;Firstly, let me register that I &lt;strong&gt;&lt;em&gt;much&lt;/em&gt;&lt;/strong&gt; prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;However&lt;/em&gt;, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc. As such, the need to embrace the iSAMS API is I feel, something of a requirement.&lt;/p&gt;</description>
+      <description>Firstly, let me register that I much prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&#xA;However, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc.</description>
     </item>
     <item>
       <title>Power BI &#43; iSAMS API</title>
       <link>https://normansolutions.co.uk/power-bi-and-isams-api/</link>
       <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
       <guid>https://normansolutions.co.uk/power-bi-and-isams-api/</guid>
-      <description>&lt;p&gt;Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API. So recently I thought why not combine these two systems and see what can be achieved?&lt;/p&gt;</description>
+      <description>Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API.</description>
     </item>
     <item>
       <title>How to get the latest student photo from iSAMS</title>
       <link>https://normansolutions.co.uk/how-to-get-the-latest-student-photo-from-isams/</link>
       <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
       <guid>https://normansolutions.co.uk/how-to-get-the-latest-student-photo-from-isams/</guid>
-      <description>&lt;p&gt;It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack &lt;em&gt;(that wasn’t nice!)&lt;/em&gt; and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!&lt;/p&gt;</description>
+      <description>It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack (that wasn’t nice!) and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!</description>
     </item>
   </channel>
 </rss>

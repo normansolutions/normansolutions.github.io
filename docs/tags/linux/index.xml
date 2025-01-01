@@ -4,7 +4,7 @@
     <title>Linux on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/linux/</link>
     <description>Recent content in Linux on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 13 Oct 2018 08:01:59 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://normansolutions.co.uk/youtube-downloading-using-wsl/</link>
       <pubDate>Sat, 13 Oct 2018 08:01:59 +0000</pubDate>
       <guid>https://normansolutions.co.uk/youtube-downloading-using-wsl/</guid>
-      <description>&lt;p&gt;To be honest, as I&amp;rsquo;m sure any right-minded individual would agree, downloading videos from YouTube for personal gain is &lt;strong&gt;wrong&lt;/strong&gt;.  However, there are occasions when it is arguably reasonable and possibly even legitimate to do such a thing.&lt;/p&gt;</description>
+      <description>To be honest, as I&amp;rsquo;m sure any right-minded individual would agree, downloading videos from YouTube for personal gain is wrong. However, there are occasions when it is arguably reasonable and possibly even legitimate to do such a thing.</description>
     </item>
   </channel>
 </rss>

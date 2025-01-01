@@ -4,7 +4,7 @@
     <title>UniFi on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/unifi/</link>
     <description>Recent content in UniFi on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 02 Jan 2015 12:15:14 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/unifi/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://normansolutions.co.uk/tracking-devices-in-unifi-wifi/</link>
       <pubDate>Fri, 02 Jan 2015 12:15:14 +0000</pubDate>
       <guid>https://normansolutions.co.uk/tracking-devices-in-unifi-wifi/</guid>
-      <description>&lt;p&gt;Several years ago, we migrated from a &lt;a href=&#34;http://www.cisco.com/cisco/web/UK/index.html#x6CjTZEDlwuM6WO1.97&#34;&gt;Cisco&lt;/a&gt; Wi-Fi infrastructure to a &lt;a href=&#34;http://www.ubnt.com/enterprise/&#34;&gt;UniFi&lt;/a&gt; setup.&lt;/p&gt;&#xA;&lt;p&gt;UniFi &lt;em&gt;(from Ubiquiti Networks)&lt;/em&gt; offer a pretty remarkable WiFi solution, especially when it comes down to cost.  I shan’t go into the in’s and out’s of UniFi, as apart from anything else, I can’t claim to be an expert in the technology.  In many ways, it just works!&lt;/p&gt;</description>
+      <description>Several years ago, we migrated from a Cisco Wi-Fi infrastructure to a UniFi setup.&#xA;UniFi (from Ubiquiti Networks) offer a pretty remarkable WiFi solution, especially when it comes down to cost.</description>
     </item>
   </channel>
 </rss>

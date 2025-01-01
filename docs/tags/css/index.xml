@@ -4,7 +4,7 @@
     <title>CSS on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/css/</link>
     <description>Recent content in CSS on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Mon, 06 Apr 2015 11:56:06 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/css/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,14 @@
       <link>https://normansolutions.co.uk/a-blend-of-style-and-performance/</link>
       <pubDate>Mon, 06 Apr 2015 11:56:06 +0000</pubDate>
       <guid>https://normansolutions.co.uk/a-blend-of-style-and-performance/</guid>
-      <description>&lt;p&gt;Recently, I had the privilege of designing and building the Wylye Valley Art Trail website.  The 2015 trail consists of &lt;strong&gt;75&lt;/strong&gt; venues, and in-excess of &lt;strong&gt;300&lt;/strong&gt; artists – I’m sure you’ll agree, that’s a reasonable size!&lt;/p&gt;</description>
+      <description>Recently, I had the privilege of designing and building the Wylye Valley Art Trail website. The 2015 trail consists of 75 venues, and in-excess of 300 artists – I’m sure you’ll agree, that’s a reasonable size!</description>
     </item>
     <item>
       <title>Cache-busting in C# without querystrings</title>
       <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
       <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
-      <description>&lt;p&gt;A key benefit of working with the web &lt;em&gt;(or more specifically http)&lt;/em&gt; is it’s native ability to &lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&#34;&gt;cache&lt;/a&gt;.  This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.&lt;/p&gt;</description>
+      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>Office 365 on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/office-365/</link>
     <description>Recent content in Office 365 on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Tue, 27 Sep 2022 16:55:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/office-365/index.xml" rel="self" type="application/rss+xml" />
@@ -13,21 +13,21 @@
       <link>https://normansolutions.co.uk/power-automate-to-populate-a-blood-pressure-spreadsheet---using-an-email-subject-field/</link>
       <pubDate>Tue, 27 Sep 2022 16:55:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/power-automate-to-populate-a-blood-pressure-spreadsheet---using-an-email-subject-field/</guid>
-      <description>&lt;p&gt;OK&amp;hellip;.that title was a bit of a mouthful - but it&amp;rsquo;s a little difficult to categorise what is essentially a kind of hack!&lt;/p&gt;&#xA;&lt;p&gt;Recently, I felt it was advisable to start regularly recording my blood pressure results &lt;em&gt;(comes with age I&amp;rsquo;m afraid)&lt;/em&gt;.&lt;/p&gt;</description>
+      <description>OK&amp;hellip;.that title was a bit of a mouthful - but it&amp;rsquo;s a little difficult to categorise what is essentially a kind of hack!&#xA;Recently, I felt it was advisable to start regularly recording my blood pressure results (comes with age I&amp;rsquo;m afraid).</description>
     </item>
     <item>
       <title>PowerShell to disable Clutter in Office 365</title>
       <link>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</link>
       <pubDate>Tue, 08 Mar 2016 18:19:57 +0000</pubDate>
       <guid>https://normansolutions.co.uk/powershell-to-disable-clutter-in-office-365/</guid>
-      <description>&lt;p&gt;Most users of Office 365 will no doubt be aware of the &lt;a href=&#34;https://support.office.com/en-us/article/Use-Clutter-to-sort-low-priority-messages-in-Outlook-2016-for-Windows-7b50c5db-7704-4e55-8a1b-dfc7bf1eafa0&#34;&gt;Clutter&lt;/a&gt; folder; for the most part this Clutter folder works pretty well.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!&lt;/p&gt;</description>
+      <description>Most users of Office 365 will no doubt be aware of the Clutter folder; for the most part this Clutter folder works pretty well.&#xA;I&amp;rsquo;m not intending to go into the algorithmic processes of how the Clutter folder works, in this blog post - even if I could!</description>
     </item>
     <item>
       <title>Office 365, Outlook &amp; attachments</title>
       <link>https://normansolutions.co.uk/office-365-outlook-and-attachments/</link>
       <pubDate>Sun, 17 Jan 2016 13:22:59 +0000</pubDate>
       <guid>https://normansolutions.co.uk/office-365-outlook-and-attachments/</guid>
-      <description>&lt;p&gt;Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often &lt;em&gt;&lt;strong&gt;days&lt;/strong&gt;&lt;/em&gt; after they had been sent.  This behavior was not consistent across the user base.&lt;/p&gt;</description>
+      <description>Recently, we received rather confusing claims from specific users, stating they were receiving certain emails, often days after they had been sent. This behavior was not consistent across the user base.</description>
     </item>
   </channel>
 </rss>

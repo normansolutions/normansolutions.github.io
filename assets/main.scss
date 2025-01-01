@@ -19,9 +19,7 @@ html {
 }
 
 body {
-  font: 19px/1.6 "Open Sans", Ubuntu, "Nimbus Sans L", Avenir, AvenirNext,
-    "Segoe UI", Helvetica, Arial, sans-serif;
-
+  font: 19px/1.6 'Raleway', Helvetica, Arial, Lucida, sans-serif;
   color: #222;
   background-color: $ooob-white;
 }
@@ -84,6 +82,9 @@ a:focus {
   border-bottom: 0.08em solid $ooob-red;
   text-decoration: none;
 }
+ .p {
+  letter-spacing: 2px;
+ }
 
 /* End Basics */
 

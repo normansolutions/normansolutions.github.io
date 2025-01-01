@@ -4,7 +4,7 @@
     <title>Tags on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/</link>
     <description>Recent content in Tags on NS News and Views</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 21 Sep 2024 19:00:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -73,9 +73,9 @@
     </item>
     <item>
       <title>C#</title>
-      <link>https://normansolutions.co.uk/tags/c%23/</link>
+      <link>https://normansolutions.co.uk/tags/c</link>
       <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
-      <guid>https://normansolutions.co.uk/tags/c%23/</guid>
+      <guid>https://normansolutions.co.uk/tags/c</guid>
       <description></description>
     </item>
     <item>
