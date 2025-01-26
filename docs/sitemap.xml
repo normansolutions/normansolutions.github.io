@@ -3,12 +3,37 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-        <loc>https://normansolutions.co.uk/tags/azure/</loc>
-        <lastmod>2024-09-21T19:00:20+00:00</lastmod>
+        <loc>https://normansolutions.co.uk/tags/cloudflare/</loc>
+        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/data/</loc>
+        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
     </url>
   
     <url>
         <loc>https://normansolutions.co.uk/</loc>
+        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/powerbi/</loc>
+        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/powerbi-with-cloudflare/</loc>
+        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/</loc>
+        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/azure/</loc>
         <lastmod>2024-09-21T19:00:20+00:00</lastmod>
     </url>
   
@@ -24,11 +49,6 @@
   
     <url>
         <loc>https://normansolutions.co.uk/tags/sysadmin/</loc>
-        <lastmod>2024-09-21T19:00:20+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/tags/</loc>
         <lastmod>2024-09-21T19:00:20+00:00</lastmod>
     </url>
   
@@ -78,7 +98,7 @@
     </url>
   
     <url>
-        <loc>https://normansolutions.co.uk/tags/c</loc>
+        <loc>https://normansolutions.co.uk/tags/c%23/</loc>
         <lastmod>2020-10-13T20:11:00+00:00</lastmod>
     </url>
   
@@ -99,11 +119,6 @@
   
     <url>
         <loc>https://normansolutions.co.uk/power-bi-and-isams-api/</loc>
-        <lastmod>2020-02-19T17:31:17+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/tags/powerbi/</loc>
         <lastmod>2020-02-19T17:31:17+00:00</lastmod>
     </url>
   

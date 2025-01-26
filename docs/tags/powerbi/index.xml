@@ -4,16 +4,23 @@
     <title>PowerBI on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/powerbi/</link>
     <description>Recent content in PowerBI on NS News and Views</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 19 Feb 2020 17:31:17 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 13:40:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/powerbi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerBI with Cloudflare</title>
+      <link>https://normansolutions.co.uk/powerbi-with-cloudflare/</link>
+      <pubDate>Sat, 25 Jan 2025 13:40:20 +0000</pubDate>
+      <guid>https://normansolutions.co.uk/powerbi-with-cloudflare/</guid>
+      <description>&lt;h1 id=&#34;using-power-bi-to-visualise-cloudflare-data-a-simple-guide&#34;&gt;Using Power BI to Visualise Cloudflare Data: A Simple Guide&lt;/h1&gt;&#xA;&lt;p&gt;Recently, I’ve been working with Power BI to build dashboards. One particular requirement involved pulling in data from Cloudflare to display statistics on blocked traffic.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Power BI &#43; iSAMS API</title>
       <link>https://normansolutions.co.uk/power-bi-and-isams-api/</link>
       <pubDate>Wed, 19 Feb 2020 17:31:17 +0000</pubDate>
       <guid>https://normansolutions.co.uk/power-bi-and-isams-api/</guid>
-      <description>Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API.</description>
+      <description>&lt;p&gt;Like many people, I&amp;rsquo;ve tinkered with Power BI over the years but have never really dug deep into the weeds; the same can also be said for the iSAMS REST API. So recently I thought why not combine these two systems and see what can be achieved?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

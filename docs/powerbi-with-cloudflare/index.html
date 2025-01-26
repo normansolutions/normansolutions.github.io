@@ -1,0 +1,552 @@
+    
+    
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+<style>
+@font-face{font-family:Raleway;font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjNPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejMPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4TbMPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjMPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4VrMPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4Y_LPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejLPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4cHLPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao4CP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtaooCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEooCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoooCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpYCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pYCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtapYCP.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtzpYCP.ttf) format('truetype')}body{font:19px/1.6 Open Sans,Ubuntu,Nimbus Sans L,Avenir,AvenirNext,Segoe UI,Helvetica,Arial,sans-serif;color:#222}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}a{background-color:transparent}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}*,:after,:before{box-sizing:inherit}html{box-sizing:border-box;font-size:62.5%}body{color:#606c76;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-size:1.6em;font-weight:300;letter-spacing:.01em;line-height:1.6}hr{border-top:.1rem solid #f4f5f6}.container{margin:0 auto;max-width:112rem;padding:0 2rem;position:relative;width:100%}a{color:#9b4dca}p{margin-bottom:2.5rem}h1,p{margin-top:0}h1{font-weight:300;letter-spacing:-.1rem;margin-bottom:2rem}h1{font-size:4.6rem;line-height:1.2}html{min-height:100%;position:relative;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;touch-action:manipulation}body,html{background-color:#fff}body{font:19px/1.6 Raleway,Helvetica,Arial,Lucida,sans-serif;color:#222}h1{page-break-after:avoid;page-break-inside:avoid}hr{border:0;border-top:.1rem solid #c62129;margin:3rem 0}a{color:#0070be;border-bottom:.08em solid rgba(0,0,0,.1);padding-bottom:.08em}a{text-decoration:none}main{-webkit-animation:1s fade-in;animation:1s fade-in}@-webkit-keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}header{text-align:center;margin-bottom:15px}.post header h1 a{color:#222;text-decoration:none;border-bottom:0}.post p:first-child:first-letter{float:left;font-family:Georgia;font-size:71px;line-height:50px;padding-top:5px;padding-right:8px}.ns-main{max-width:750px;padding:0 1.5em;margin:3% auto}.ns-post-summary{color:#000}.ns-readmore{margin-bottom:2.2em}.ns-tags,time{color:#626262;font-size:.85em}.pie{background:#000;border-radius:50%;box-shadow:0 0 4px 5px rgba(0,0,0,.2);height:400px;left:-200px;position:absolute;top:-200px;width:400px;transform:translateX(-200px) translateY(-200px);z-index:1}.pie1{-webkit-clip-path:polygon(200px 200px,344px 450px,0 450px);clip-path:polygon(200px 200px,344px 450px,0 450px)}.pie2{-webkit-clip-path:polygon(200px 200px,344px 450px,450px 344px);clip-path:polygon(200px 200px,344px 450px,450px 344px)}.pie3{-webkit-clip-path:polygon(200px 200px,450px 0,450px 344px);clip-path:polygon(200px 200px,450px 0,450px 344px)}.pie-color{width:100%;height:100%;border-radius:50%}.pie-color-hyperlink{font-size:1.7rem;letter-spacing:.05em;font-weight:700;color:#fff}.pie-color1{background:linear-gradient(135deg,#c62129,#c62129);-webkit-clip-path:polygon(200px 200px,344px 450px,0 450px);clip-path:polygon(200px 200px,344px 450px,0 450px)}.pie-color2{background:linear-gradient(135deg,#fff,#fff);-webkit-clip-path:polygon(200px 200px,344px 450px,450px 344px);clip-path:polygon(200px 200px,344px 450px,450px 344px)}.pie-color3{background:linear-gradient(135deg,#c62129,#c62129);-webkit-clip-path:polygon(200px 200px,450px 0,450px 344px);clip-path:polygon(200px 200px,450px 0,450px 344px)}.linkedin{left:208px;position:absolute;top:320px}.twitter{left:282px;top:279px}.rss,.twitter{position:absolute;width:46px}.rss{left:324px;top:210px}.menu{background:#fff;border-radius:50%;box-shadow:0 0 4px 5px rgba(0,0,0,.2);height:200px;left:-100px;position:absolute;top:-100px;width:200px;z-index:1}.hamburger{height:46px;left:58%;position:relative;top:58%;width:46px}.hamburger path:first-child{transform-origin:25% 29%}.hamburger path:nth-child(2){transform-origin:50% 50%}.hamburger path:nth-child(3){transform-origin:75% 72%}.hamburger path:nth-child(4){transform-origin:75% 29%}.hamburger path:nth-child(5){transform-origin:25% 72%}.hero-image{background-image:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://normansolutions.co.uk/img/BandHeader.jpg?v=fingerprint')}.hero-image{min-height:280px;height:50%;box-shadow:-5px 24px 65px -31px rgba(0,0,0,.75);background-position:50%;background-repeat:no-repeat;background-size:cover;position:relative}.hero-text{text-align:center;color:#fff;position:absolute;top:50%;left:50%;background-color:rgba(0,0,0,.5);padding:10px;margin-top:10px;margin-bottom:10px;border-radius:10px;transform:translate(-50%,-50%)}@media (min-width:1024px) and (max-width:1366px) and (orientation:portrait){.hero-text{width:80%}}@media (min-width:1024px) and (max-width:1366px) and (orientation:landscape){.hero-text{width:40%}}.hero-text a{color:#fff}.hero-text a,.hero-text a :visited{border-bottom:0}.ns-tagline{padding-top:25px;padding-left:15px;padding-right:15px}.ns-social,.ns-tagline{margin:auto;max-width:800px;position:relative;text-align:center}footer{position:fixed;color:#fff;height:45px;background-color:#000;bottom:0;text-align:center;width:100%;z-index:9999}footer p{padding-top:8px}
+</style>
+
+
+    <title>PowerBI with Cloudflare</title>
+    <meta
+      name="Keywords"
+      content="Technology, IT, Education, Software, Security"
+    />
+    <meta
+      name="Description"
+      content="Head of Information Services, Web Technologist &amp;amp; Musician, based on the Wiltshire, Dorset &amp; Somerset border in the UK.  Offering honest independent advice on all things web, security and general IT; with a splash of added music for the soul."
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="Author" content="normansolutions.co.uk" />
+    <meta name="language" content="EN" />
+    <meta name="Classification" content="" />
+    <meta
+      name="copyright"
+      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+    />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="document-classification" content="Technology" />
+    <meta name="document-type" content="Public" />
+    <meta name="document-rating" content="Safe for Kids" />
+    <meta name="document-distribution" content="Global" />
+    <link rel="me" type="text/html" href="https://twitter.com/normansolutions" />
+    <link
+      type="application/rsd+xml"
+      rel="edituri"
+      title="RSD"
+      href="robots.txt"
+    />
+    <link rel="canonical" href="https://normansolutions.co.uk" />
+    <meta name="application-name" content="Normansolutions" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+
+    <meta property="og:title" content="NS News and Views" />
+    <meta property="og:type" content=article />   
+    <meta
+      property="og:description"
+      content="Head of Information Services, Web Technologist &amp;amp; Musician, based on the Wiltshire, Dorset &amp; Somerset border in the UK.  Offering honest independent advice on all things web, security and general IT; with a splash of added music for the soul."
+    />
+    <meta
+      property="og:image"
+      content="https://normansolutions.co.uk/appicons/Icon-568.jpg"
+    />
+    <meta property="og:url" content="https://normansolutions.co.uk" />
+    <meta property=og:description content="Head of Information Services, Web Technologist &amp;amp; Musician, based on the Wiltshire, Dorset &amp; Somerset border in the UK.  Offering honest independent advice on all things web, security and general IT; with a splash of added music for the soul.">
+
+    <meta name="twitter:title" content="NS News and Views" />
+    <meta
+      name="twitter:description"
+      content="Head of Information Services, Web Technologist &amp;amp; Musician, based on the Wiltshire, Dorset &amp; Somerset border in the UK.  Offering honest independent advice on all things web, security and general IT; with a splash of added music for the soul."    />
+    <meta name="twitter:image" content="/appicons/Icon-568.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+  rel="preload"
+  href="/css/main.min.0a04472ead744c1f1f8bbbb8024fda23095546a155e5ba9679fa477f14ce6ef1.css?v=ns-fingerprint"
+  integrity="sha256-CgRHLq10TB8fi7u4Ak/aIwlVRqFV5bqWefpHfxTObvE="
+  as="style"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="/css/main.min.0a04472ead744c1f1f8bbbb8024fda23095546a155e5ba9679fa477f14ce6ef1.css?v=ns-fingerprint"
+  integrity="sha256-CgRHLq10TB8fi7u4Ak/aIwlVRqFV5bqWefpHfxTObvE="
+  media="print"
+  onload="this.media='all'"
+  crossorigin="anonymous"
+/>
+
+    
+
+    
+    <script>
+      !(function (document) {
+        "use strict";
+        var webpImage,
+          avifImage =
+            "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAF0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgS0AAAAAABNjb2xybmNseAACAAIAAIAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAGVtZGF0EgAKBzgAPtAgIAkyUBAAAPWc41TP///4gHBX9H8XVK7gGeDllq8TYARA+8Tfsv7L+zPE24eIoIzE0WhHbrqcrTK9VEgEG/hwgB5rdCbvP8g3KYPdV88CvPJnptgQ",
+          webpClass = "webp",
+          avifClass = "avif";
+        function alreadyTested(format) {
+          if (window.sessionStorage) {
+            var test = window.sessionStorage.getItem(format + "Support");
+            if ("false" === test || "true" === test) return "true" === test;
+          }
+          return null;
+        }
+        function testFormat(format, imageSrc, callback) {
+          var tested = alreadyTested(format);
+          if (null === tested) {
+            var image = new Image();
+            return (
+              (image.onload = image.onerror = function () {
+                callback(format, 2 === image.height);
+              }),
+              void (image.src = imageSrc)
+            );
+          }
+          addClass(format, tested);
+        }
+        function addClass(format, support) {
+          if (support) {
+            var el = document.documentElement;
+            el.classList
+              ? el.classList.add("webp" === format ? "webp" : "avif")
+              : (el.className += " " + format == "webp" ? "webp" : "avif"),
+              window.sessionStorage.setItem(format + "Support", !0);
+          } else window.sessionStorage.setItem(format + "Support", !1);
+        }
+        testFormat(
+          "webp",
+          "data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMwAgSSNtse/cXjxyCCmrYNWPwmHRH9jwMA",
+          addClass
+        ),
+          testFormat("avif", avifImage, addClass);
+      })(document);
+    </script>
+
+    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+  </head>
+  <body itemscope itemtype=http://schema.org/WebPage></body>
+</html>
+
+    <div class="pie pie1" onclick="document.body.classList.remove('active')">
+  <a href="https://www.linkedin.com/in/normansolutions" target="_blank">
+    <div class="pie-color pie-color1">
+      <span class="pie-color-hyperlink linkedin">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="46"
+          height="46"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+          /></svg
+      ></span>
+    </div>
+  </a>
+</div>
+<div class="pie pie2" onclick="document.body.classList.remove('active')">
+  <a href="https://twitter.com/normansolutions" target="_blank">
+    <div class="pie-color pie-color2">
+      <span class="pie-color-hyperlink twitter">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="46"
+          height="46"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+          />
+        </svg>
+      </span>
+    </div>
+  </a>
+</div>
+<div class="pie pie3" onclick="document.body.classList.remove('active')">
+  <a href="/index.xml">
+    <div class="pie-color pie-color3">
+      <span class="pie-color-hyperlink rss">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="46"
+          height="46"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"
+          />
+        </svg>
+      </span>
+    </div>
+  </a>
+</div>
+<div class="menu" onclick="document.body.classList.toggle('active')">
+  <svg
+    class="hamburger"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 100 100"
+  >
+    <g fill="none" stroke="#000" stroke-width="7.999" stroke-linecap="round">
+      <path d="M 55,26.000284 L 24.056276,25.999716" />
+      <path d="M 24.056276,49.999716 L 75.943724,50.000284" />
+      <path d="M 45,73.999716 L 75.943724,74.000284" />
+      <path d="M 75.943724,26.000284 L 45,25.999716" />
+      <path d="M 24.056276,73.999716 L 55,74.000284" />
+    </g>
+  </svg>
+</div>
+
+    <div class="hero-image">
+  <div class="hero-text">
+    <h1><a href="\">NS News &amp; Views</a></h1>
+    <div class="ns-tagline">By Clive Norman</div>
+    
+    <a class="ns-list-articles" href="/?post=allposts">List all 38 articles</a>
+    
+  </div>
+</div>
+
+<div class="ns-social">
+  <a target="_blank" href="https://www.linkedin.com/in/normansolutions">
+    
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+    >
+      <ellipse cy="32" cx="32" ry="32" rx="32" fill="#ffffff"></ellipse>
+      <path
+        id="path1"
+        transform="rotate(0,32,32) translate(14.1963130235672,14) scale(1.450,1.450)  "
+        fill="#C62129"
+        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+      />
+    </svg>
+  </a>
+  <a target="_blank" href="https://twitter.com/normansolutions">
+    
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+    >
+      <ellipse cy="32" cx="32" ry="32" rx="32" fill="#ffffff"></ellipse>
+      <path
+        id="path1"
+        transform="rotate(0,32,32) translate(14.1963130235672,14) scale(1.450,1.450)  "
+        fill="#C62129"
+        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-.139 9.237c.209 4.617-3.234 9.765-9.33 9.765-1.854 0-3.579-.543-5.032-1.475 1.742.205 3.48-.278 4.86-1.359-1.437-.027-2.649-.976-3.066-2.28.515.098 1.021.069 1.482-.056-1.579-.317-2.668-1.739-2.633-3.26.442.246.949.394 1.486.411-1.461-.977-1.875-2.907-1.016-4.383 1.619 1.986 4.038 3.293 6.766 3.43-.479-2.053 1.08-4.03 3.199-4.03.943 0 1.797.398 2.395 1.037.748-.147 1.451-.42 2.086-.796-.246.767-.766 1.41-1.443 1.816.664-.08 1.297-.256 1.885-.517-.439.656-.996 1.234-1.639 1.697z"
+      />
+    </svg>
+  </a>
+
+  <a target="_blank" href="/index.xml">
+    
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+    >
+      <ellipse cy="32" cx="32" ry="32" rx="32" fill="#ffffff"></ellipse>
+      <path
+        id="path1"
+        transform="rotate(0,32,32) translate(14.1963130235672,14) scale(1.450,1.450)  "
+        fill="#C62129"
+        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-12.832 20c-1.197 0-2.168-.969-2.168-2.165s.971-2.165 2.168-2.165 2.167.969 2.167 2.165-.97 2.165-2.167 2.165zm5.18 0c-.041-4.029-3.314-7.298-7.348-7.339v-3.207c5.814.041 10.518 4.739 10.561 10.546h-3.213zm5.441 0c-.021-7.063-5.736-12.761-12.789-12.792v-3.208c8.83.031 15.98 7.179 16 16h-3.211z"
+      />
+    </svg>
+  </a>
+</div>
+
+    
+    
+<main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
+  <h1>PowerBI with Cloudflare</h1>
+  <div class="ns-postdate">  
+      <time datetime=2025-01-25&#32;13:40:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Jan 25, 2025</time>
+      <span class="ns-tags">| Tags: <a href="/tags/powerbi">PowerBI</a> <a href="/tags/cloudflare">Cloudflare</a> <a href="/tags/data">Data</a> </span>   
+      <hr/>
+    </div>
+    <div id="ns-target">
+      <h1 id="using-power-bi-to-visualise-cloudflare-data-a-simple-guide">Using Power BI to Visualise Cloudflare Data: A Simple Guide</h1>
+<p>Recently, I’ve been working with Power BI to build dashboards. One particular requirement involved pulling in data from Cloudflare to display statistics on blocked traffic.</p>
+<h2 id="getting-started-with-the-cloudflare-api">Getting Started with the Cloudflare API</h2>
+<p>Cloudflare’s API is well-documented, so I won’t delve into that here. If you need guidance on creating a Cloudflare API token with the necessary permissions, I recommend checking this helpful resource: <a href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/">Cloudflare API: Create a Token</a>.</p>
+<hr>
+<h2 id="initial-approach-powershell">Initial Approach: PowerShell</h2>
+<p>Initially, I considered using PowerShell to handle this task. The idea was to create a script that would run in an Azure Runbook, extract the required data from Cloudflare, and save it in JSON format to a SharePoint site.</p>
+<p>This approach seemed logical until someone asked a simple yet insightful question:</p>
+<p><em>“Can’t this be done directly in Power BI using GraphQL?”</em></p>
+<hr>
+<h2 id="rethink-power-query-m-language">Rethink: Power Query (M Language)</h2>
+<p>The truth is, this process can be entirely handled within Power BI, eliminating the need for Runbooks or SharePoint storage.</p>
+<p>While I’ll admit that my knowledge of Power Query’s M Language is fairly basic, I found that with a bit of help from Copilot, I was able to create a script that worked perfectly. This allowed the Power BI dashboard to display the necessary Cloudflare data without any intermediate steps.</p>
+<hr>
+<p>When working with the Cloudflare API, it’s important to understand some limitations. For instance, the API restricts how much data can be returned in a single call. If you’re dealing with larger datasets (e.g., more than 1,000 rows), you’ll need to implement a paging mechanism.</p>
+<p>In this case, I sorted the API results by date and retrieved data in batches. Each subsequent API call used a date range starting where the previous one ended. This ensured I could handle larger volumes of data efficiently.</p>
+<hr>
+<h3 id="script-overview">Script Overview</h3>
+<h4 id="function-definition">Function Definition</h4>
+<p><code>getFirewallEvents</code> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.</p>
+<h4 id="graphql-query">GraphQL Query</h4>
+<p>Defines the structure and filters for retrieving firewall events, including fields such as <code>action</code>, <code>datetime</code>, and <code>clientIP</code>.</p>
+<h4 id="time-filtering">Time Filtering</h4>
+<p>The script calculates the current time and a time 3 hours ago to filter events within this range.</p>
+<h4 id="api-interaction">API Interaction</h4>
+<p>Makes authenticated API calls using the <code>Web.Contents</code> function and parses JSON responses.</p>
+<h4 id="pagination">Pagination</h4>
+<p>Uses recursive logic to fetch all event pages when there are more than 1,000 results.</p>
+<h4 id="data-transformation">Data Transformation</h4>
+<p>Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <code>datetime</code> column.</p>
+<h4 id="zone-processing">Zone Processing</h4>
+<p>Fetches a list of zones from the API and applies the <code>getFirewallEvents</code> function to each zone.</p>
+<h4 id="combine-results">Combine Results</h4>
+<p>Combines all zone-specific event tables into a single output table for analysis.</p>
+<hr>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Replace <code>APIKEY</code> with your actual Cloudflare API key.</li>
+<li>Adjust the time range or filters as required for your use case.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-m" data-lang="m"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">//</span> Function to get firewall events for a specific zone with pagination
+</span></span><span style="display:flex;"><span>    getFirewallEvents <span style="color:#f92672">=</span> (zoneTag as text, zoneName as text) <span style="color:#f92672">=&gt;</span>
+</span></span><span style="display:flex;"><span>    let
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Define the GraphQL query to fetch firewall events
+</span></span><span style="display:flex;"><span>        query <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#34;</span>query ListFirewallEvents(<span style="color:#960050;background-color:#1e0010">$</span>zoneTag<span style="color:#960050;background-color:#1e0010">:</span> String, <span style="color:#960050;background-color:#1e0010">$</span>filter<span style="color:#960050;background-color:#1e0010">:</span> FirewallEventsAdaptiveFilter_InputObject) {
+</span></span><span style="display:flex;"><span>                    viewer {
+</span></span><span style="display:flex;"><span>                        zones(filter<span style="color:#960050;background-color:#1e0010">:</span> { zoneTag<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">$</span>zoneTag }) {
+</span></span><span style="display:flex;"><span>                            firewallEventsAdaptive(
+</span></span><span style="display:flex;"><span>                                filter<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">$</span>filter
+</span></span><span style="display:flex;"><span>                                limit<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>                                orderBy<span style="color:#960050;background-color:#1e0010">:</span> [datetime_ASC]
+</span></span><span style="display:flex;"><span>                            ) {                            
+</span></span><span style="display:flex;"><span>                                action
+</span></span><span style="display:flex;"><span>                                clientAsn
+</span></span><span style="display:flex;"><span>                                clientCountryName
+</span></span><span style="display:flex;"><span>                                clientIP
+</span></span><span style="display:flex;"><span>                                clientRequestPath
+</span></span><span style="display:flex;"><span>                                clientRequestQuery
+</span></span><span style="display:flex;"><span>                                datetime
+</span></span><span style="display:flex;"><span>                                source
+</span></span><span style="display:flex;"><span>                                userAgent
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }<span style="color:#960050;background-color:#1e0010">&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Define the time range<span style="color:#960050;background-color:#1e0010">:</span> current time and <span style="color:#ae81ff">3</span> hours ago in UTC
+</span></span><span style="display:flex;"><span>        endDate <span style="color:#f92672">=</span> DateTime<span style="color:#960050;background-color:#1e0010">.</span>ToText(DateTimeZone<span style="color:#960050;background-color:#1e0010">.</span>RemoveZone(DateTimeZone<span style="color:#960050;background-color:#1e0010">.</span>UtcNow()), <span style="color:#e6db74">&#34;yyyy-MM-ddTHH:mm:ss&#34;</span>) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;Z&#34;</span>,
+</span></span><span style="display:flex;"><span>        startDate <span style="color:#f92672">=</span> DateTime<span style="color:#960050;background-color:#1e0010">.</span>ToText(DateTimeZone<span style="color:#960050;background-color:#1e0010">.</span>RemoveZone(DateTimeZone<span style="color:#960050;background-color:#1e0010">.</span>UtcNow() <span style="color:#f92672">-</span> #duration(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)), <span style="color:#e6db74">&#34;yyyy-MM-ddTHH:mm:ss&#34;</span>) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;Z&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Define the action filter
+</span></span><span style="display:flex;"><span>        actionStatus <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> API endpoint and headers for authentication
+</span></span><span style="display:flex;"><span>        url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.cloudflare.com/client/v4/graphql&#34;</span>,
+</span></span><span style="display:flex;"><span>        headers <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>            #<span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;application/json&#34;</span>, 
+</span></span><span style="display:flex;"><span>            Authorization <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bearer APIKEY&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Function to fetch a single page of firewall events
+</span></span><span style="display:flex;"><span>        fetchPage <span style="color:#f92672">=</span> (lastDatetime) <span style="color:#f92672">=&gt;</span>
+</span></span><span style="display:flex;"><span>        let
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">//</span> Define the filter for the query
+</span></span><span style="display:flex;"><span>            filter <span style="color:#f92672">=</span> if lastDatetime <span style="color:#f92672">=</span> null then [
+</span></span><span style="display:flex;"><span>                datetime_geq <span style="color:#f92672">=</span> startDate,
+</span></span><span style="display:flex;"><span>                datetime_leq <span style="color:#f92672">=</span> endDate,
+</span></span><span style="display:flex;"><span>                action_like <span style="color:#f92672">=</span> actionStatus
+</span></span><span style="display:flex;"><span>            ] else [
+</span></span><span style="display:flex;"><span>                datetime_geq <span style="color:#f92672">=</span> lastDatetime,
+</span></span><span style="display:flex;"><span>                datetime_leq <span style="color:#f92672">=</span> endDate,
+</span></span><span style="display:flex;"><span>                action_like <span style="color:#f92672">=</span> actionStatus
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">//</span> Build the request body
+</span></span><span style="display:flex;"><span>            body <span style="color:#f92672">=</span> Json<span style="color:#960050;background-color:#1e0010">.</span>FromValue([
+</span></span><span style="display:flex;"><span>                query <span style="color:#f92672">=</span> query,
+</span></span><span style="display:flex;"><span>                variables <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>                    zoneTag <span style="color:#f92672">=</span> zoneTag,
+</span></span><span style="display:flex;"><span>                    filter <span style="color:#f92672">=</span> filter
+</span></span><span style="display:flex;"><span>                ]
+</span></span><span style="display:flex;"><span>            ]),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">//</span> Execute the API call and parse the JSON response
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> Web<span style="color:#960050;background-color:#1e0010">.</span>Contents(url, [Headers <span style="color:#f92672">=</span> headers, Content <span style="color:#f92672">=</span> body]),
+</span></span><span style="display:flex;"><span>            jsonResponse <span style="color:#f92672">=</span> Json<span style="color:#960050;background-color:#1e0010">.</span>Document(response),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">//</span> Extract the events from the response
+</span></span><span style="display:flex;"><span>            events <span style="color:#f92672">=</span> try jsonResponse[data][viewer][zones]{<span style="color:#ae81ff">0</span>}[firewallEventsAdaptive] otherwise null
+</span></span><span style="display:flex;"><span>        in
+</span></span><span style="display:flex;"><span>            events,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Recursive function to fetch all pages of firewall events
+</span></span><span style="display:flex;"><span>        fetchAllPages <span style="color:#f92672">=</span> (lastDatetime) <span style="color:#f92672">=&gt;</span>
+</span></span><span style="display:flex;"><span>        let
+</span></span><span style="display:flex;"><span>            currentPage <span style="color:#f92672">=</span> fetchPage(lastDatetime),
+</span></span><span style="display:flex;"><span>            nextDatetime <span style="color:#f92672">=</span> if currentPage <span style="color:#f92672">&lt;&gt;</span> null and List<span style="color:#960050;background-color:#1e0010">.</span>Count(currentPage) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> then currentPage{List<span style="color:#960050;background-color:#1e0010">.</span>Count(currentPage) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>}[datetime] else null,
+</span></span><span style="display:flex;"><span>            combinedPages <span style="color:#f92672">=</span> if nextDatetime <span style="color:#f92672">&lt;&gt;</span> null and List<span style="color:#960050;background-color:#1e0010">.</span>Count(currentPage) <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> then List<span style="color:#960050;background-color:#1e0010">.</span>Combine({currentPage, <span style="color:#f92672">@</span>fetchAllPages(nextDatetime)}) else currentPage
+</span></span><span style="display:flex;"><span>        in
+</span></span><span style="display:flex;"><span>            combinedPages,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Fetch all firewall events for the zone
+</span></span><span style="display:flex;"><span>        allEvents <span style="color:#f92672">=</span> fetchAllPages(null),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Convert the events into a table or create an empty table if no events are found
+</span></span><span style="display:flex;"><span>        firewallEventsTable <span style="color:#f92672">=</span> if allEvents <span style="color:#f92672">&lt;&gt;</span> null then Table<span style="color:#960050;background-color:#1e0010">.</span>FromRecords(allEvents) else #table(
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;action&#34;</span>, <span style="color:#e6db74">&#34;clientAsn&#34;</span>, <span style="color:#e6db74">&#34;clientCountryName&#34;</span>, <span style="color:#e6db74">&#34;clientIP&#34;</span>, <span style="color:#e6db74">&#34;clientRequestPath&#34;</span>, <span style="color:#e6db74">&#34;clientRequestQuery&#34;</span>, <span style="color:#e6db74">&#34;datetime&#34;</span>, <span style="color:#e6db74">&#34;source&#34;</span>, <span style="color:#e6db74">&#34;userAgent&#34;</span>},
+</span></span><span style="display:flex;"><span>            {}
+</span></span><span style="display:flex;"><span>        ),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Add the zone name to the table
+</span></span><span style="display:flex;"><span>        firewallEventsWithZone <span style="color:#f92672">=</span> Table<span style="color:#960050;background-color:#1e0010">.</span>AddColumn(firewallEventsTable, <span style="color:#e6db74">&#34;ZoneName&#34;</span>, each zoneName),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Convert the datetime column to proper datetime format
+</span></span><span style="display:flex;"><span>        firewallEventsWithProperDatetime <span style="color:#f92672">=</span> if Table<span style="color:#960050;background-color:#1e0010">.</span>HasColumns(firewallEventsWithZone, <span style="color:#e6db74">&#34;datetime&#34;</span>) then
+</span></span><span style="display:flex;"><span>            Table<span style="color:#960050;background-color:#1e0010">.</span>TransformColumns(firewallEventsWithZone, {<span style="color:#e6db74">&#34;datetime&#34;</span>, each if _ <span style="color:#f92672">&lt;&gt;</span> null and _ <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;&#34;</span> then DateTime<span style="color:#960050;background-color:#1e0010">.</span>FromText(_) else _})
+</span></span><span style="display:flex;"><span>        else
+</span></span><span style="display:flex;"><span>            firewallEventsWithZone,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Extract the first datetime and format it in UK format
+</span></span><span style="display:flex;"><span>        firstDate <span style="color:#f92672">=</span> if Table<span style="color:#960050;background-color:#1e0010">.</span>RowCount(firewallEventsWithProperDatetime) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> then firewallEventsWithProperDatetime{<span style="color:#ae81ff">0</span>}[datetime] else null,
+</span></span><span style="display:flex;"><span>        formattedFirstDate <span style="color:#f92672">=</span> if firstDate <span style="color:#f92672">&lt;&gt;</span> null then DateTime<span style="color:#960050;background-color:#1e0010">.</span>ToText(firstDate, <span style="color:#e6db74">&#34;dd/MM/yyyy HH:mm:ss&#34;</span>) else null,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">//</span> Add the formatted date as a new column
+</span></span><span style="display:flex;"><span>        firewallEventsWithFormattedDate <span style="color:#f92672">=</span> Table<span style="color:#960050;background-color:#1e0010">.</span>AddColumn(firewallEventsWithProperDatetime, <span style="color:#e6db74">&#34;FormattedFirstDate&#34;</span>, each formattedFirstDate)
+</span></span><span style="display:flex;"><span>    in
+</span></span><span style="display:flex;"><span>        firewallEventsWithFormattedDate,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">//</span> Fetch the list of zones from the API
+</span></span><span style="display:flex;"><span>    zones <span style="color:#f92672">=</span> Json<span style="color:#960050;background-color:#1e0010">.</span>Document(
+</span></span><span style="display:flex;"><span>        Web<span style="color:#960050;background-color:#1e0010">.</span>Contents(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;https://api.cloudflare.com/client/v4/zones&#34;</span>, 
+</span></span><span style="display:flex;"><span>            [
+</span></span><span style="display:flex;"><span>                Headers <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>                    #<span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;application/json&#34;</span>, 
+</span></span><span style="display:flex;"><span>                    Authorization <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bearer APIKEY&#34;</span>
+</span></span><span style="display:flex;"><span>                ]
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">//</span> Extract the result from the zones response
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> zones[result],
+</span></span><span style="display:flex;"><span>    processedResults <span style="color:#f92672">=</span> List<span style="color:#960050;background-color:#1e0010">.</span>Transform(result, each [id <span style="color:#f92672">=</span> _[id], name <span style="color:#f92672">=</span> _[name]]),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">//</span> Apply the custom function to each zone and combine the results into a single table
+</span></span><span style="display:flex;"><span>    transformedRecords <span style="color:#f92672">=</span> List<span style="color:#960050;background-color:#1e0010">.</span>Transform(processedResults, each getFirewallEvents(_[id], _[name])),
+</span></span><span style="display:flex;"><span>    combinedTable <span style="color:#f92672">=</span> Table<span style="color:#960050;background-color:#1e0010">.</span>Combine(transformedRecords)
+</span></span><span style="display:flex;"><span>in
+</span></span><span style="display:flex;"><span>    combinedTable
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>By leveraging Power Query in Power BI, I was able to simplify the entire process of fetching and displaying Cloudflare data. There was no need for PowerShell, Runbooks, or external storage solutions.</p>
+<p>This approach not only saved time but also kept the workflow streamlined, allowing the dashboard to dynamically fetch the required data. If you’re looking to integrate Cloudflare data into Power BI, this method is both practical and effective.</p>
+<hr>
+<p><strong>Pro Tip</strong>: If you’re new to Power Query or need to work with APIs, don’t hesitate to rely on tools like Copilot or community resources—they can be invaluable for getting started quickly!</p>
+<hr>
+ 
+    </div>
+<button class="ns-share-btn" type="button" title="Share this article">
+  <svg class="ns-share-icon">
+    <use href="#share-icon"></use>
+  </svg>
+  <span>Share Article</span>
+</button>
+
+<svg class="ns-hidden">
+  <defs>
+    <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol> 
+   </defs>
+</svg>
+ </main>
+ 
+   
+    <div style="height: 35px"></div>
+<footer>
+  <div>
+    <p>Copyright (c) 2025 Normansolutions</p>
+  </div>
+</footer>
+  
+    <script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js', { scope: '/' })
+            .then(function(registration) {
+                
+            });
+  
+        navigator.serviceWorker
+            .ready
+            .then(function(registration) {
+                
+            });
+    }
+  </script>
+    
+
+
+
+
+
+
+<script
+  src="/js/bundle.min.687393ed5d02ad59aaea69fafefb07c4c20dd118b8b01f9ba380cb1330ecd1ea.js?v=ns-fingerprint"
+  integrity="sha256-aHOT7V0CrVmq6mn6/vsHxMIN0Ri4sB&#43;bo4DLEzDs0eo="
+  defer
+  crossorigin="anonymous"
+></script>
+
+    <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-37453744-1"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-37453744-1");
+</script>
+
+    

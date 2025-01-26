@@ -4,7 +4,7 @@
     <title>Cybersecurity on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/cybersecurity/</link>
     <description>Recent content in Cybersecurity on NS News and Views</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-uk</language>
     <lastBuildDate>Mon, 13 Feb 2017 19:33:26 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://normansolutions.co.uk/how-to-spot-internet-scams-and-fake-emails/</link>
       <pubDate>Mon, 13 Feb 2017 19:33:26 +0000</pubDate>
       <guid>https://normansolutions.co.uk/how-to-spot-internet-scams-and-fake-emails/</guid>
-      <description>Recently I decided to hold a short(ish) staff training session on how to spot internet / email scams. The catalyst behind this, was primarily due to the sheer amount of helpdesk queries being received, pertaining to whether a particular website or email was genuine etc.</description>
+      <description>&lt;p&gt;Recently I decided to hold a short(ish) staff training session on how to spot internet / email scams. The catalyst behind this, was primarily due to the sheer amount of helpdesk queries being received, pertaining to whether a particular website or email was genuine etc.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

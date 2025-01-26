@@ -4,7 +4,7 @@
     <title>SSRS on NS News and Views</title>
     <link>https://normansolutions.co.uk/tags/ssrs/</link>
     <description>Recent content in SSRS on NS News and Views</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-uk</language>
     <lastBuildDate>Sun, 22 Oct 2017 15:59:57 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/ssrs/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,14 @@
       <link>https://normansolutions.co.uk/how-to-get-the-latest-student-photo-from-isams/</link>
       <pubDate>Sun, 22 Oct 2017 15:59:57 +0000</pubDate>
       <guid>https://normansolutions.co.uk/how-to-get-the-latest-student-photo-from-isams/</guid>
-      <description>It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack (that wasn’t nice!) and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!</description>
+      <description>&lt;p&gt;It’s been eight months since my last blog post, having taken on a new job, been on the receiving end of a full-on enterprise ransomware attack &lt;em&gt;(that wasn’t nice!)&lt;/em&gt; and quite frankly experiencing one heck of a baptism of fire - I felt it was time do write a quick blog post tip!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stamp an iSAMS report with the current username</title>
       <link>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</link>
       <pubDate>Sun, 30 Nov 2014 08:28:45 +0000</pubDate>
       <guid>https://normansolutions.co.uk/stamp-an-isams-report-with-the-current-username/</guid>
-      <description>During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS (Management Information System) from Schoolbase to iSAMS.&#xA;Please note, that the reasons for instigating this major system change, and the processes involved (political &amp;amp; technical), are not covered in this blog post.</description>
+      <description>&lt;p&gt;During the summer of 2014, we migrated the St Mary’s Shaftesbury MIS &lt;em&gt;(&lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_system&#34;&gt;Management Information System&lt;/a&gt;)&lt;/em&gt; from &lt;a href=&#34;http://www.furlongsolutions.com/&#34;&gt;Schoolbase&lt;/a&gt; to &lt;a href=&#34;http://www.isams.co.uk/&#34;&gt;iSAMS&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Please note, that the reasons for instigating this major system change, and the processes involved &lt;em&gt;(political &amp;amp; technical),&lt;/em&gt; are &lt;em&gt;not&lt;/em&gt; covered in this blog post.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

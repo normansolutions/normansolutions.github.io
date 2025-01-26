@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# on NS News and Views</title>
-    <link>https://normansolutions.co.uk/tags/c</link>
+    <link>https://normansolutions.co.uk/tags/c%23/</link>
     <description>Recent content in C# on NS News and Views</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-uk</language>
     <lastBuildDate>Tue, 13 Oct 2020 20:11:00 +0000</lastBuildDate>
-    <atom:link href="https://normansolutions.co.uk/tags/c" rel="self" type="application/rss+xml" />
+    <atom:link href="https://normansolutions.co.uk/tags/c%23/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why I wrote a console app for accessing the iSAMS API</title>
       <link>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</link>
       <pubDate>Tue, 13 Oct 2020 20:11:00 +0000</pubDate>
       <guid>https://normansolutions.co.uk/why-i-wrote-a-console-app-for-accessing-the-isams-api/</guid>
-      <description>Firstly, let me register that I much prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&#xA;However, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc.</description>
+      <description>&lt;p&gt;Firstly, let me register that I &lt;strong&gt;&lt;em&gt;much&lt;/em&gt;&lt;/strong&gt; prefer writing raw SQL when interrogating iSAMS than using the official iSAMS REST API - there, I&amp;rsquo;ve said it!&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;However&lt;/em&gt;, I do entirely appreciate the necessity for an official API in order to cater for security, consistency, potential database schema changes &amp;amp; futureproofing etc. As such, the need to embrace the iSAMS API is I feel, something of a requirement.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Secure a webpage without a logon?</title>
       <link>https://normansolutions.co.uk/secure-a-webpage-without-a-logon/</link>
       <pubDate>Sat, 19 Sep 2015 12:58:34 +0000</pubDate>
       <guid>https://normansolutions.co.uk/secure-a-webpage-without-a-logon/</guid>
-      <description>Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.&#xA;Recently, I introduced a frictionless (logon free) way of providing secure(ish) access to some very basic web services.</description>
+      <description>&lt;p&gt;Secure access to a webpage, without the need for a logon, can often be viewed as a bit of a holy grail solution.&lt;/p&gt;&#xA;&lt;p&gt;Recently, I introduced a frictionless &lt;em&gt;(logon free)&lt;/em&gt; way of providing &lt;em&gt;secure(ish)&lt;/em&gt; access to some very basic web services.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cache-busting in C# without querystrings</title>
       <link>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</link>
       <pubDate>Mon, 14 Jul 2014 21:38:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/cache-busting-in-c-without-querystrings/</guid>
-      <description>A key benefit of working with the web (or more specifically http) is it’s native ability to cache. This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.</description>
+      <description>&lt;p&gt;A key benefit of working with the web &lt;em&gt;(or more specifically http)&lt;/em&gt; is it’s native ability to &lt;a href=&#34;http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&#34;&gt;cache&lt;/a&gt;.  This can be ‘tuned’ to make websites extremely fast and slick, especially after initial page load.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Schoolbase to create and populate AD groups</title>
       <link>https://normansolutions.co.uk/schoolbase-to-create-and-populate-ad-groups/</link>
       <pubDate>Wed, 22 Jan 2014 11:52:12 +0000</pubDate>
       <guid>https://normansolutions.co.uk/schoolbase-to-create-and-populate-ad-groups/</guid>
-      <description>At St Mary’s we use Schoolbase from Furlong Solutions, for our MIS - we have done so for several years (indeed my understanding is that we were the second or third official school to have the system in production).</description>
+      <description>&lt;p&gt;At St Mary’s we use &lt;a href=&#34;http://www.furlongsolutions.com/products/schoolbase&#34;&gt;Schoolbase&lt;/a&gt; from Furlong Solutions, for our &lt;a href=&#34;http://en.wikipedia.org/wiki/Management_information_systems&#34;&gt;MIS&lt;/a&gt; - we have done so for several years &lt;em&gt;(indeed my understanding is that we were the second or third official school to have the system in production).&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Creating a Firefly VLE online users feature</title>
       <link>https://normansolutions.co.uk/creating-a-firefly-vle-online-users-feature/</link>
       <pubDate>Wed, 18 Dec 2013 23:44:05 +0000</pubDate>
       <guid>https://normansolutions.co.uk/creating-a-firefly-vle-online-users-feature/</guid>
-      <description>At St Mary&amp;rsquo;s Shaftesbury we use Firefly for our VLE. I won’t give you a sales pitch on Firefly, but suffice to say, that after a bit of a journey from Moodle through SharePoint we have rested at Firefly – quite simply, at this point in time (history has taught me that things can change!</description>
+      <description>&lt;p&gt;At St Mary&amp;rsquo;s Shaftesbury we use &lt;a href=&#34;http://fireflysolutions.co.uk/&#34;&gt;Firefly&lt;/a&gt; for our &lt;a href=&#34;http://en.wikipedia.org/wiki/Virtual_learning_environment&#34;&gt;VLE&lt;/a&gt;.  I won’t give you a sales pitch on Firefly, but suffice to say, that after a bit of a journey from &lt;a href=&#34;https://moodle.org/&#34;&gt;Moodle&lt;/a&gt; through &lt;a href=&#34;http://en.wikipedia.org/wiki/Microsoft_SharePoint&#34;&gt;SharePoint&lt;/a&gt; we have rested at Firefly – quite simply, at this point in time &lt;em&gt;(history has taught me that things can change!),&lt;/em&gt; this product, the company and their approach to IT, is nothing short of excellent.  I like Firefly; I like the chaps and chapesses at Firefly!&lt;/p&gt;</description>
     </item>
     <item>
       <title>To CMS or not to CMS?</title>
       <link>https://normansolutions.co.uk/to-cms-or-not-to-cms/</link>
       <pubDate>Fri, 13 Dec 2013 22:44:12 +0000</pubDate>
       <guid>https://normansolutions.co.uk/to-cms-or-not-to-cms/</guid>
-      <description>OK, the time has come for a website refresh – it’s something that I like to try and do annually (well, I say annually, what I really mean is that I did it last year).</description>
+      <description>&lt;p&gt;OK, the time has come for a website refresh – it’s something that I like to try and do annually &lt;em&gt;(well, I say annually, what I really mean is that I did it last year).&lt;/em&gt; The question, is do I roll my own, as I have always done, or jump into the CMS world?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
