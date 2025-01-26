@@ -43,24 +43,24 @@ In this case, I sorted the API results by date and retrieved data in batches. Ea
 ### Script Overview
 
 #### Function Definition
-<strong>getFirewallEvents</strong> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.
+**getFirewallEvents** fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.
 
 #### GraphQL Query
-Defines the structure and filters for retrieving firewall events, including fields such as <strong>action</strong>, <strong>datetime</strong>, and <strong>clientIP</strong>.
+Defines the structure and filters for retrieving firewall events, including fields such as **action**, **datetime**, and **clientIP**.
 #### Time Filtering
 The script calculates the current time and a time 3 hours ago to filter events within this range.
 
 #### API Interaction
-Makes authenticated API calls using the <strong>Web.Contents</strong> function and parses JSON responses.
+Makes authenticated API calls using the **Web.Contents** function and parses JSON responses.
 
 #### Pagination
 Uses recursive logic to fetch all event pages when there are more than 1,000 results.
 
 #### Data Transformation
-Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <strong>datetime</strong> column.
+Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the **datetime** column.
 
 #### Zone Processing
-Fetches a list of zones from the API and applies the <strong>getFirewallEvents</strong> function to each zone.
+Fetches a list of zones from the API and applies the **getFirewallEvents** function to each zone.
 
 #### Combine Results
 Combines all zone-specific event tables into a single output table for analysis.
@@ -68,7 +68,7 @@ Combines all zone-specific event tables into a single output table for analysis.
 ---
 
 ### Notes
-- Replace <strong>APIKEY</strong> with your actual Cloudflare API key.
+- Replace **APIKEY** with your actual Cloudflare API key.
 - Adjust the time range or filters as required for your use case.
 
 ``` m
