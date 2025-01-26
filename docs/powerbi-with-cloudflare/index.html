@@ -316,32 +316,32 @@
 <hr>
 <h2 id="rethink-power-query-m-language">Rethink: Power Query (M Language)</h2>
 <p>The truth is, this process can be entirely handled within Power BI, eliminating the need for Runbooks or SharePoint storage.</p>
-<p>While I’ll admit that my knowledge of Power Query’s M Language is fairly basic, I found that with a bit of help from Copilot, I was able to create a script that worked perfectly. This allowed the Power BI dashboard to display the necessary Cloudflare data without any intermediate steps.</p>
+<p>While I’ll admit that my knowledge of Power Query’s M Language is fairly basic, I found that with a bit of help from CoPilot, I was able to create a script that worked perfectly. This allowed the Power BI dashboard to display the necessary Cloudflare data without any intermediate steps.</p>
 <hr>
 <p>When working with the Cloudflare API, it’s important to understand some limitations. For instance, the API restricts how much data can be returned in a single call. If you’re dealing with larger datasets (e.g., more than 1,000 rows), you’ll need to implement a paging mechanism.</p>
 <p>In this case, I sorted the API results by date and retrieved data in batches. Each subsequent API call used a date range starting where the previous one ended. This ensured I could handle larger volumes of data efficiently.</p>
 <hr>
 <h3 id="script-overview">Script Overview</h3>
 <h4 id="function-definition">Function Definition</h4>
-<p><code>getFirewallEvents</code> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.</p>
+<p><!-- raw HTML omitted -->getFirewallEvents<!-- raw HTML omitted --> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.</p>
 <h4 id="graphql-query">GraphQL Query</h4>
-<p>Defines the structure and filters for retrieving firewall events, including fields such as <code>action</code>, <code>datetime</code>, and <code>clientIP</code>.</p>
+<p>Defines the structure and filters for retrieving firewall events, including fields such as <!-- raw HTML omitted -->action<!-- raw HTML omitted -->, <!-- raw HTML omitted -->datetime<!-- raw HTML omitted -->, and <!-- raw HTML omitted -->clientIP<!-- raw HTML omitted -->.</p>
 <h4 id="time-filtering">Time Filtering</h4>
 <p>The script calculates the current time and a time 3 hours ago to filter events within this range.</p>
 <h4 id="api-interaction">API Interaction</h4>
-<p>Makes authenticated API calls using the <code>Web.Contents</code> function and parses JSON responses.</p>
+<p>Makes authenticated API calls using the <!-- raw HTML omitted -->Web.Contents<!-- raw HTML omitted --> function and parses JSON responses.</p>
 <h4 id="pagination">Pagination</h4>
 <p>Uses recursive logic to fetch all event pages when there are more than 1,000 results.</p>
 <h4 id="data-transformation">Data Transformation</h4>
-<p>Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <code>datetime</code> column.</p>
+<p>Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <!-- raw HTML omitted -->datetime<!-- raw HTML omitted --> column.</p>
 <h4 id="zone-processing">Zone Processing</h4>
-<p>Fetches a list of zones from the API and applies the <code>getFirewallEvents</code> function to each zone.</p>
+<p>Fetches a list of zones from the API and applies the <!-- raw HTML omitted -->getFirewallEvents<!-- raw HTML omitted --> function to each zone.</p>
 <h4 id="combine-results">Combine Results</h4>
 <p>Combines all zone-specific event tables into a single output table for analysis.</p>
 <hr>
 <h3 id="notes">Notes</h3>
 <ul>
-<li>Replace <code>APIKEY</code> with your actual Cloudflare API key.</li>
+<li>Replace <!-- raw HTML omitted -->APIKEY<!-- raw HTML omitted --> with your actual Cloudflare API key.</li>
 <li>Adjust the time range or filters as required for your use case.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-m" data-lang="m"><span style="display:flex;"><span>
@@ -480,7 +480,7 @@
 <p>By leveraging Power Query in Power BI, I was able to simplify the entire process of fetching and displaying Cloudflare data. There was no need for PowerShell, Runbooks, or external storage solutions.</p>
 <p>This approach not only saved time but also kept the workflow streamlined, allowing the dashboard to dynamically fetch the required data. If you’re looking to integrate Cloudflare data into Power BI, this method is both practical and effective.</p>
 <hr>
-<p><strong>Pro Tip</strong>: If you’re new to Power Query or need to work with APIs, don’t hesitate to rely on tools like Copilot or community resources—they can be invaluable for getting started quickly!</p>
+<p><strong>Pro Tip</strong>: If you’re new to Power Query or need to work with APIs, don’t hesitate to rely on tools like Copilot/ChatGPT or community resources—they can be invaluable for getting started quickly!</p>
 <hr>
  
     </div>

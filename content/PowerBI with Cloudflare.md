@@ -28,7 +28,7 @@ This approach seemed logical until someone asked a simple yet insightful questio
 ## Rethink: Power Query (M Language)  
 The truth is, this process can be entirely handled within Power BI, eliminating the need for Runbooks or SharePoint storage.  
 
-While I’ll admit that my knowledge of Power Query’s M Language is fairly basic, I found that with a bit of help from Copilot, I was able to create a script that worked perfectly. This allowed the Power BI dashboard to display the necessary Cloudflare data without any intermediate steps.  
+While I’ll admit that my knowledge of Power Query’s M Language is fairly basic, I found that with a bit of help from CoPilot, I was able to create a script that worked perfectly. This allowed the Power BI dashboard to display the necessary Cloudflare data without any intermediate steps.  
 
 ---
 
@@ -39,29 +39,27 @@ In this case, I sorted the API results by date and retrieved data in batches. Ea
 
 ---
 
-
 ### Script Overview
 
 #### Function Definition
-`getFirewallEvents` fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.
+<span style="background-color: white; padding: 2px 4px; border-radius: 4px;">getFirewallEvents</span> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.
 
 #### GraphQL Query
-Defines the structure and filters for retrieving firewall events, including fields such as `action`, `datetime`, and `clientIP`.
-
+Defines the structure and filters for retrieving firewall events, including fields such as <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">action</span>, <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">datetime</span>, and <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">clientIP</span>.
 #### Time Filtering
 The script calculates the current time and a time 3 hours ago to filter events within this range.
 
 #### API Interaction
-Makes authenticated API calls using the `Web.Contents` function and parses JSON responses.
+Makes authenticated API calls using the <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">Web.Contents</span> function and parses JSON responses.
 
 #### Pagination
 Uses recursive logic to fetch all event pages when there are more than 1,000 results.
 
 #### Data Transformation
-Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the `datetime` column.
+Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">datetime</span> column.
 
 #### Zone Processing
-Fetches a list of zones from the API and applies the `getFirewallEvents` function to each zone.
+Fetches a list of zones from the API and applies the <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">getFirewallEvents</span> function to each zone.
 
 #### Combine Results
 Combines all zone-specific event tables into a single output table for analysis.
@@ -69,7 +67,7 @@ Combines all zone-specific event tables into a single output table for analysis.
 ---
 
 ### Notes
-- Replace `APIKEY` with your actual Cloudflare API key.
+- Replace <span style="background-color: white; padding: 2px 4px; border-radius: 4px;">APIKEY</span> with your actual Cloudflare API key.
 - Adjust the time range or filters as required for your use case.
 
 ``` m
@@ -217,7 +215,7 @@ This approach not only saved time but also kept the workflow streamlined, allowi
 
 ---
 
-**Pro Tip**: If you’re new to Power Query or need to work with APIs, don’t hesitate to rely on tools like Copilot or community resources—they can be invaluable for getting started quickly!
+**Pro Tip**: If you’re new to Power Query or need to work with APIs, don’t hesitate to rely on tools like Copilot/ChatGPT or community resources—they can be invaluable for getting started quickly!
 
 
 ---
