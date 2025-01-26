@@ -9,8 +9,6 @@ tags:
   - Data
 ---
 
-# Using Power BI to Visualise Cloudflare Data: A Simple Guide  
-
 Recently, I’ve been working with Power BI to build dashboards. One particular requirement involved pulling in data from Cloudflare to display statistics on blocked traffic.  
 
 ## Getting Started with the Cloudflare API  
