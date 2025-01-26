@@ -43,24 +43,24 @@ In this case, I sorted the API results by date and retrieved data in batches. Ea
 ### Script Overview
 
 #### Function Definition
-<span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">getFirewallEvents</span> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.
+<strong>getFirewallEvents</strong> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.
 
 #### GraphQL Query
-Defines the structure and filters for retrieving firewall events, including fields such as <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">action</span>, <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">datetime</span>, and <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">clientIP</span>.
+Defines the structure and filters for retrieving firewall events, including fields such as <strong>action</strong>, <strong>datetime</strong>, and <strong>clientIP</strong>.
 #### Time Filtering
 The script calculates the current time and a time 3 hours ago to filter events within this range.
 
 #### API Interaction
-Makes authenticated API calls using the <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">Web.Contents</span> function and parses JSON responses.
+Makes authenticated API calls using the <strong>Web.Contents</strong> function and parses JSON responses.
 
 #### Pagination
 Uses recursive logic to fetch all event pages when there are more than 1,000 results.
 
 #### Data Transformation
-Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">datetime</span> column.
+Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <strong>datetime</strong> column.
 
 #### Zone Processing
-Fetches a list of zones from the API and applies the <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">getFirewallEvents</span> function to each zone.
+Fetches a list of zones from the API and applies the <strong>getFirewallEvents</strong> function to each zone.
 
 #### Combine Results
 Combines all zone-specific event tables into a single output table for analysis.
@@ -68,7 +68,7 @@ Combines all zone-specific event tables into a single output table for analysis.
 ---
 
 ### Notes
-- Replace <span style="background-color: #f5f5f5; padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #333;">APIKEY</span> with your actual Cloudflare API key.
+- Replace <strong>APIKEY</strong> with your actual Cloudflare API key.
 - Adjust the time range or filters as required for your use case.
 
 ``` m
