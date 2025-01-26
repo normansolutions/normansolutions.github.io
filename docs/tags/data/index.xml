@@ -13,7 +13,7 @@
       <link>https://normansolutions.co.uk/powerbi-with-cloudflare/</link>
       <pubDate>Sat, 25 Jan 2025 13:40:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/powerbi-with-cloudflare/</guid>
-      <description>&lt;p&gt;Recently, I’ve been working with Power BI to build dashboards. One particular requirement involved pulling in data from Cloudflare to display statistics on blocked traffic.&lt;/p&gt;&#xA;&lt;h2 id=&#34;getting-started-with-the-cloudflare-api&#34;&gt;Getting Started with the Cloudflare API&lt;/h2&gt;&#xA;&lt;p&gt;Cloudflare’s API is well-documented, so I won’t delve into that here. If you need guidance on creating a Cloudflare API token with the necessary permissions, I recommend checking this helpful resource: &lt;a href=&#34;https://developers.cloudflare.com/fundamentals/api/get-started/create-token/&#34;&gt;Cloudflare API: Create a Token&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I’ve been working with Power BI to build dashboards. One particular requirement involved pulling in data from Cloudflare to display statistics on blocked traffic.&lt;/p&gt;&#xA;&lt;p&gt;Cloudflare’s API is well-documented, so I won’t delve into that here. If you need guidance on creating a Cloudflare API token with the necessary permissions, I recommend checking this helpful resource: &lt;a href=&#34;https://developers.cloudflare.com/fundamentals/api/get-started/create-token/&#34;&gt;Cloudflare API: Create a Token&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

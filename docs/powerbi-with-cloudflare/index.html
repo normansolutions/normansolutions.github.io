@@ -306,7 +306,6 @@
     </div>
     <div id="ns-target">
       <p>Recently, I’ve been working with Power BI to build dashboards. One particular requirement involved pulling in data from Cloudflare to display statistics on blocked traffic.</p>
-<h2 id="getting-started-with-the-cloudflare-api">Getting Started with the Cloudflare API</h2>
 <p>Cloudflare’s API is well-documented, so I won’t delve into that here. If you need guidance on creating a Cloudflare API token with the necessary permissions, I recommend checking this helpful resource: <a href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/">Cloudflare API: Create a Token</a>.</p>
 <hr>
 <h2 id="initial-approach-powershell">Initial Approach: PowerShell</h2>
@@ -323,25 +322,25 @@
 <hr>
 <h3 id="script-overview">Script Overview</h3>
 <h4 id="function-definition">Function Definition</h4>
-<p><!-- raw HTML omitted -->getFirewallEvents<!-- raw HTML omitted --> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.</p>
+<p><!-- raw HTML omitted --><code>getFirewallEvents</code><!-- raw HTML omitted --> fetches firewall events for a specific zone using a GraphQL query. It supports pagination to handle large datasets.</p>
 <h4 id="graphql-query">GraphQL Query</h4>
-<p>Defines the structure and filters for retrieving firewall events, including fields such as <!-- raw HTML omitted -->action<!-- raw HTML omitted -->, <!-- raw HTML omitted -->datetime<!-- raw HTML omitted -->, and <!-- raw HTML omitted -->clientIP<!-- raw HTML omitted -->.</p>
+<p>Defines the structure and filters for retrieving firewall events, including fields such as <!-- raw HTML omitted --><code>action</code><!-- raw HTML omitted -->, <!-- raw HTML omitted --><code>datetime</code><!-- raw HTML omitted -->, and <!-- raw HTML omitted --><code>clientIP</code><!-- raw HTML omitted -->.</p>
 <h4 id="time-filtering">Time Filtering</h4>
 <p>The script calculates the current time and a time 3 hours ago to filter events within this range.</p>
 <h4 id="api-interaction">API Interaction</h4>
-<p>Makes authenticated API calls using the <!-- raw HTML omitted -->Web.Contents<!-- raw HTML omitted --> function and parses JSON responses.</p>
+<p>Makes authenticated API calls using the <!-- raw HTML omitted --><code>Web.Contents</code><!-- raw HTML omitted --> function and parses JSON responses.</p>
 <h4 id="pagination">Pagination</h4>
 <p>Uses recursive logic to fetch all event pages when there are more than 1,000 results.</p>
 <h4 id="data-transformation">Data Transformation</h4>
-<p>Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <!-- raw HTML omitted -->datetime<!-- raw HTML omitted --> column.</p>
+<p>Converts the fetched events into a Power Query table, adds metadata (e.g., zone name), and formats the <!-- raw HTML omitted --><code>datetime</code><!-- raw HTML omitted --> column.</p>
 <h4 id="zone-processing">Zone Processing</h4>
-<p>Fetches a list of zones from the API and applies the <!-- raw HTML omitted -->getFirewallEvents<!-- raw HTML omitted --> function to each zone.</p>
+<p>Fetches a list of zones from the API and applies the <!-- raw HTML omitted --><code>getFirewallEvents</code><!-- raw HTML omitted --> function to each zone.</p>
 <h4 id="combine-results">Combine Results</h4>
 <p>Combines all zone-specific event tables into a single output table for analysis.</p>
 <hr>
 <h3 id="notes">Notes</h3>
 <ul>
-<li>Replace <!-- raw HTML omitted -->APIKEY<!-- raw HTML omitted --> with your actual Cloudflare API key.</li>
+<li>Replace <!-- raw HTML omitted --><code>APIKEY</code><!-- raw HTML omitted --> with your actual Cloudflare API key.</li>
 <li>Adjust the time range or filters as required for your use case.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-m" data-lang="m"><span style="display:flex;"><span>
