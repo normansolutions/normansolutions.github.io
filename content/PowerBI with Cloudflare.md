@@ -215,8 +215,3 @@ By leveraging Power Query in Power BI, I was able to simplify the entire process
 This approach not only saved time but also kept the workflow streamlined, allowing the dashboard to dynamically fetch the required data. If you’re looking to integrate Cloudflare data into Power BI, this method is both practical and effective.  
 
 ---
-
-**Pro Tip**: If you’re new to Power Query or need to work with APIs, don’t hesitate to rely on tools like Copilot/ChatGPT or community resources—they can be invaluable for getting started quickly!
-
-
----
