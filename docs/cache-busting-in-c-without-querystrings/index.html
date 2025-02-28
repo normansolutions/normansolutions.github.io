@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.0a04472ead744c1f1f8bbbb8024fda23095546a155e5ba9679fa477f14ce6ef1.css?v=ns-fingerprint"
-  integrity="sha256-CgRHLq10TB8fi7u4Ak/aIwlVRqFV5bqWefpHfxTObvE="
+  href="/css/main.min.9ff434cabc68e238dd594ebfb90e9d03e352bee12f112f7bf735c66ffb4c8a83.css?v=ns-fingerprint"
+  integrity="sha256-n/Q0yrxo4jjdWU6/uQ6dA&#43;NSvuEvES979zXGb/tMioM="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.0a04472ead744c1f1f8bbbb8024fda23095546a155e5ba9679fa477f14ce6ef1.css?v=ns-fingerprint"
-  integrity="sha256-CgRHLq10TB8fi7u4Ak/aIwlVRqFV5bqWefpHfxTObvE="
+  href="/css/main.min.9ff434cabc68e238dd594ebfb90e9d03e352bee12f112f7bf735c66ffb4c8a83.css?v=ns-fingerprint"
+  integrity="sha256-n/Q0yrxo4jjdWU6/uQ6dA&#43;NSvuEvES979zXGb/tMioM="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -235,7 +235,7 @@
     <h1><a href="\">NS News &amp; Views</a></h1>
     <div class="ns-tagline">By Clive Norman</div>
     
-    <a class="ns-list-articles" href="/?post=allposts">List all 38 articles</a>
+    <h3>38 articles</h3>
     
   </div>
 </div>
@@ -258,22 +258,22 @@
       />
     </svg>
   </a>
-  <a target="_blank" href="https://twitter.com/normansolutions">
+  <a target="_blank" href="https://www.facebook.com/outoforderbanduk">
     
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="64"
-      height="64"
-      viewBox="0 0 64 64"
-    >
-      <ellipse cy="32" cx="32" ry="32" rx="32" fill="#ffffff"></ellipse>
-      <path
-        id="path1"
-        transform="rotate(0,32,32) translate(14.1963130235672,14) scale(1.450,1.450)  "
-        fill="#C62129"
-        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-.139 9.237c.209 4.617-3.234 9.765-9.33 9.765-1.854 0-3.579-.543-5.032-1.475 1.742.205 3.48-.278 4.86-1.359-1.437-.027-2.649-.976-3.066-2.28.515.098 1.021.069 1.482-.056-1.579-.317-2.668-1.739-2.633-3.26.442.246.949.394 1.486.411-1.461-.977-1.875-2.907-1.016-4.383 1.619 1.986 4.038 3.293 6.766 3.43-.479-2.053 1.08-4.03 3.199-4.03.943 0 1.797.398 2.395 1.037.748-.147 1.451-.42 2.086-.796-.246.767-.766 1.41-1.443 1.816.664-.08 1.297-.256 1.885-.517-.439.656-.996 1.234-1.639 1.697z"
-      />
-    </svg>
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+  >
+    <ellipse cy="32" cx="32" ry="32" rx="32" fill="#ffffff"></ellipse>
+    <path
+      id="path1"
+      transform="translate(20,14) scale(1.3,1.3)"
+      fill="#C62129"
+      d="M22 2v22.58A4.995 4.995 0 0 0 20 24c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5V9h8V2h-11z"
+    />
+  </svg>
   </a>
 
   <a target="_blank" href="/index.xml">
@@ -309,20 +309,17 @@
 <p>The simplest example could be a file <em>(be it css, JavaScript or even a jpeg image)</em> that once downloaded to a user’s device, will remain stored on that device ‘locally’ ensuring each subsequent request for this <em>same</em> file, no longer needs to be re-downloaded.  Indeed, the file could remain on the device until a pre-defined expiry date, or until the user clears their local temporary internet files etc.</p>
 <p>In addition, if you use a popular <a href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a> to serve up common files <em>(e.g.</em> <a href="https://developers.google.com/speed/libraries/devguide#jquery"><em>jQuery</em></a> <em>etc)</em> then you could benefit from a user <em>already</em> having that file in their local cache, from another website; thus your site appears faster, thanks to this file having already being downloaded – sweet!</p>
 <blockquote>
-<p><em>I love caching and where possible, always enable it.</em></p>
-</blockquote>
+<p><em>I love caching and where possible, always enable it.</em></p></blockquote>
 <hr>
 <h2 id="but-what-happens-when-you-change-a-file">But What Happens when you change a file?</h2>
 <p>So we accept that caching is a good thing.  <em>However</em>, when you <strong>deliberately</strong> change a file <em>(update your css or JavaScript etc),</em> of course you <strong>don’t</strong> want the cached version being served to the end user – and no, it isn’t good enough to just say ‘<em><strong>refresh your browser</strong></em>’.</p>
 <p>The obvious answer, is to rename your file.  But of course, you then have to rename <em>all</em> references to this file, within your website – not ideal!</p>
 <h2 id="enter-cache-busting">Enter Cache-Busting</h2>
 <blockquote>
-<p><em>‘</em><a href="http://www.youtube.com/watch?v=m9We2XsVZfc"><em>Who you gonna call…..</em></a><em>” Ok…don’t worry, I won’t go there, far too cheesy!</em></p>
-</blockquote>
+<p><em>‘</em><a href="http://www.youtube.com/watch?v=m9We2XsVZfc"><em>Who you gonna call…..</em></a><em>” Ok…don’t worry, I won’t go there, far too cheesy!</em></p></blockquote>
 <p>For a long time, I used Microsoft’s own <a href="http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification">Bundling and Minification</a> solution, which for the record, I still think is excellent.  <em>However</em>, when it comes to cache-busting, the Microsoft solution, resolves this by appending a unique <a href="http://en.wikipedia.org/wiki/Query_string">query-string</a> to the end of the file.</p>
 <blockquote>
-<p><em>For example: a file called ‘<strong>styles.css</strong>’ could become ‘<strong>styles?v=r0sLDicvP58AIXN</strong>’</em></p>
-</blockquote>
+<p><em>For example: a file called ‘<strong>styles.css</strong>’ could become ‘<strong>styles?v=r0sLDicvP58AIXN</strong>’</em></p></blockquote>
 <p>This solutions works well, in the sense that it certainly provides a ‘<em>new’</em> file name – but on my travels I have subsequently learnt, that the query-string method is not the best accepted practice for cache-busting, and can <em>fail</em> under certain circumstances.</p>
 <h2 id="an-alternative-approach">An Alternative Approach</h2>
 <p>I use the excellent <a href="https://github.com/madskristensen/miniblog">MiniBlog</a> framework for my blog site, and love the way it deals with caching and cache busting <em>(amongst other things).</em></p>
@@ -331,8 +328,7 @@
 <h2 id="the-steps">The Steps</h2>
 <p>Firstly, you need to create a c# class, that will be responsible for creating the <em>unique new path</em> to any given file.</p>
 <blockquote>
-<p><em>In the below example, you may note that this class also allows for the use of a CDN path, in which the cache-bust would not be required.</em></p>
-</blockquote>
+<p><em>In the below example, you may note that this class also allows for the use of a CDN path, in which the cache-bust would not be required.</em></p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> FingerPrint(<span style="color:#66d9ef">string</span> rootRelativePath, <span style="color:#66d9ef">string</span> cdnPath = <span style="color:#e6db74">&#34;&#34;</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (!<span style="color:#66d9ef">string</span>.IsNullOrEmpty(cdnPath) &amp;&amp; !HttpContext.Current.IsDebuggingEnabled)
@@ -355,8 +351,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> HttpRuntime.Cache[rootRelativePath] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">string</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote>
-<p><em>The key to the unique path creation is the <strong>File.GetLastWriteTime</strong> syntax – this literally establishes the last time a file was changed, and uses that, as a basis to create a unique numerical value of time-ticks.</em></p>
-</blockquote>
+<p><em>The key to the unique path creation is the <strong>File.GetLastWriteTime</strong> syntax – this literally establishes the last time a file was changed, and uses that, as a basis to create a unique numerical value of time-ticks.</em></p></blockquote>
 <p>Of course, we <em>will</em> need to somehow establish the <strong>real</strong> path, as to where the file is located <em>(as against this virtual one);</em> in short, we need some routing.</p>
 <p>This is very easily done, with the below code snippet added to the <a href="http://en.wikipedia.org/wiki/Web.config">web.config</a> file – using some <a href="http://en.wikipedia.org/wiki/Regular_expression">regex</a> wizardry, this tells incoming requests, that when it comes across one of these <em>‘special paths’</em>, to route it to the correct location.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#f92672">&lt;rules&gt;</span>

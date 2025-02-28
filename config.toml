@@ -3,5 +3,5 @@ languageCode = "en-uk"
 title = "NS News and Views"
 publishDir = "docs"
 staticDir = ["static"]
-paginate = 10
+pagerSize = 10
 summaryLength = 30
