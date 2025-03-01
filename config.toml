@@ -5,3 +5,4 @@ publishDir = "docs"
 staticDir = ["static"]
 pagerSize = 10
 summaryLength = 30
+ignoreLogs = ['warning-goldmark-raw-html']
