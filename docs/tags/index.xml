@@ -6,8 +6,29 @@
     <description>Recent content in Tags on NS News and Views</description>
     <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 25 Jan 2025 13:40:20 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 13:40:20 +0000</lastBuildDate>
     <atom:link href="https://normansolutions.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure</title>
+      <link>https://normansolutions.co.uk/tags/azure/</link>
+      <pubDate>Sat, 27 Sep 2025 13:40:20 +0000</pubDate>
+      <guid>https://normansolutions.co.uk/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PowerShell</title>
+      <link>https://normansolutions.co.uk/tags/powershell/</link>
+      <pubDate>Sat, 27 Sep 2025 13:40:20 +0000</pubDate>
+      <guid>https://normansolutions.co.uk/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SysAdmin</title>
+      <link>https://normansolutions.co.uk/tags/sysadmin/</link>
+      <pubDate>Sat, 27 Sep 2025 13:40:20 +0000</pubDate>
+      <guid>https://normansolutions.co.uk/tags/sysadmin/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Cloudflare</title>
       <link>https://normansolutions.co.uk/tags/cloudflare/</link>
@@ -27,27 +48,6 @@
       <link>https://normansolutions.co.uk/tags/powerbi/</link>
       <pubDate>Sat, 25 Jan 2025 13:40:20 +0000</pubDate>
       <guid>https://normansolutions.co.uk/tags/powerbi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Azure</title>
-      <link>https://normansolutions.co.uk/tags/azure/</link>
-      <pubDate>Sat, 21 Sep 2024 19:00:20 +0000</pubDate>
-      <guid>https://normansolutions.co.uk/tags/azure/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PowerShell</title>
-      <link>https://normansolutions.co.uk/tags/powershell/</link>
-      <pubDate>Sat, 21 Sep 2024 19:00:20 +0000</pubDate>
-      <guid>https://normansolutions.co.uk/tags/powershell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SysAdmin</title>
-      <link>https://normansolutions.co.uk/tags/sysadmin/</link>
-      <pubDate>Sat, 21 Sep 2024 19:00:20 +0000</pubDate>
-      <guid>https://normansolutions.co.uk/tags/sysadmin/</guid>
       <description></description>
     </item>
     <item>

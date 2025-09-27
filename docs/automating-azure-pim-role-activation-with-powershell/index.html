@@ -10,7 +10,7 @@
 </style>
 
 
-    <title>Excel Macro to manipulate CAT data</title>
+    <title>Automating Azure PIM Role Activation with PowerShell</title>
     <meta
       name="Keywords"
       content="Technology, IT, Education, Software, Security"
@@ -299,108 +299,176 @@
     
     
 <main itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Blog" class="ns-main"> 
-  <h1>Excel Macro to manipulate CAT data</h1>
+  <h1>Automating Azure PIM Role Activation with PowerShell</h1>
   <div class="ns-postdate">  
-      <time datetime=2015-06-28&#32;17:03:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Sunday, Jun 28, 2015</time>
-      <span class="ns-tags">| Tags: <a href="/tags/macro">Macro</a> <a href="/tags/excel">Excel</a> <a href="/tags/script">Script</a> <a href="/tags/mis">MIS</a> <a href="/tags/quicktip">QuickTip</a> </span>   
+      <time datetime=2025-09-27&#32;13:40:20&#32;&#43;0000&#32;UTC itemprop="datePublished">Published Saturday, Sep 27, 2025</time>
+      <span class="ns-tags">| Tags: <a href="/tags/powershell">PowerShell</a> <a href="/tags/azure">Azure</a> <a href="/tags/sysadmin">SysAdmin</a> </span>   
       <hr/>
     </div>
     <div id="ns-target">
-      <p>Recently, I was asked whether I could provide some assistance with manipulating data, that had been exported from a <a href="http://www.theschoolrun.com/year-7-cats-what-every-parent-needs-know">CAT</a> results test.  The problem, had slowly been driving a colleague of mine, very slightly crazy!</p>
-<p>It had been quite some time since I’d last written an Excel Macro, so in many ways I relished the challenge.  Thus here is the story.</p>
-<h2 id="the-problem">The Problem</h2>
+      <p>Recently, I&rsquo;ve been looking into ways to automate the elevation of roles in Azure Privileged Identity Management (PIM). The idea was to explore whether it&rsquo;s possible to streamline the activation process—particularly when juggling multiple admin roles—without compromising the just-in-time access model that PIM is built around.</p>
+<h2 id="why-pim">Why PIM?</h2>
+<p><a href="https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure">PIM</a> is designed to reduce standing access to sensitive roles in Microsoft Entra ID (formerly Azure AD). Instead of assigning permanent admin rights, users activate roles temporarily when needed. This improves security, limits exposure, and provides a clear audit trail.</p>
+<p>In practice, though, activating multiple roles manually—especially if you&rsquo;re eligible for several—can be repetitive. If you&rsquo;re jumping between Exchange, Teams, SharePoint, and Intune, the clicks add up.</p>
+<h2 id="initial-approach-manual-activation">Initial Approach: Manual Activation</h2>
+<p>My first instinct was to stick with the portal. It&rsquo;s clean, intuitive, and works well for occasional use. But when role activation becomes part of your daily routine, it&rsquo;s worth exploring automation.</p>
+<h2 id="powershell--microsoft-graph">PowerShell + Microsoft Graph</h2>
+<p>Using the Microsoft Graph PowerShell SDK, I built a script that connects to Graph, displays a Windows Form with checkboxes for common roles, and activates whichever ones you select—for a fixed duration.</p>
+<p>This approach saves time without compromising the temporary nature of PIM access. It&rsquo;s not a replacement for governance—it&rsquo;s a helper for those who already have eligibility.</p>
+<h2 id="script-overview">Script Overview</h2>
+<h3 id="authentication">Authentication</h3>
+<p>Connects to Microsoft Graph with the necessary scopes for role management.</p>
+<h3 id="user-interface">User Interface</h3>
+<p>Displays a simple Windows Form with checkboxes for roles like Global Reader, Exchange Administrator, and Intune Administrator.</p>
+<h3 id="role-filtering">Role Filtering</h3>
+<p>Fetches eligible roles for the current user and filters based on selections made in the form.</p>
+<h3 id="activation-logic">Activation Logic</h3>
+<p>Loops through selected roles and submits activation requests with a justification and expiration time.</p>
+<h2 id="notes">Notes</h2>
 <ul>
-<li>To take exported data that was presented in a tabular fashion <em>(over 6 columns).</em></li>
-<li>To re-present the data, with the last <strong>three columns</strong> transposed into their own row, with appropriate column title.</li>
+<li>You can adjust the time elevated with the <code>Duration</code> value.</li>
+<li>It uses <code>New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest</code> to submit activation requests.</li>
+<li>You must already be eligible for the roles you want to activate.</li>
+<li>This is intended for interactive use—not background automation.</li>
 </ul>
-<blockquote>
-<p>It’s probably easier to view than to explain <em>(see below screen shots)</em> – but in short, this was a classic convert columns to rows exercise!</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Connect to Microsoft Graph with required scopes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span>Connect-MgGraph -Scopes `
+</span></span><span style="display:flex;"><span>    RoleEligibilitySchedule.Read.Directory, `
+</span></span><span style="display:flex;"><span>    RoleEligibilitySchedule.ReadWrite.Directory, `
+</span></span><span style="display:flex;"><span>    RoleAssignmentSchedule.ReadWrite.Directory, `
+</span></span><span style="display:flex;"><span>    RoleManagement.ReadWrite.Directory, `
+</span></span><span style="display:flex;"><span>    RoleAssignmentSchedule.Remove.Directory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Build a simple Windows Form UI for role selection</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load necessary .NET assemblies for Windows Forms</span>
+</span></span><span style="display:flex;"><span>Add-Type -AssemblyName System.Windows.Forms
+</span></span><span style="display:flex;"><span>Add-Type -AssemblyName System.Drawing
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the main form</span>
+</span></span><span style="display:flex;"><span>$form = New-Object System.Windows.Forms.Form
+</span></span><span style="display:flex;"><span>$form.Text = <span style="color:#e6db74">&#39;PIM Activation&#39;</span>
+</span></span><span style="display:flex;"><span>$form.Size = New-Object System.Drawing.Size(<span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">430</span>)
+</span></span><span style="display:flex;"><span>$form.StartPosition = <span style="color:#e6db74">&#39;CenterScreen&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create OK button</span>
+</span></span><span style="display:flex;"><span>$okButton = New-Object System.Windows.Forms.Button
+</span></span><span style="display:flex;"><span>$okButton.Location = New-Object System.Drawing.Point(<span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">345</span>)
+</span></span><span style="display:flex;"><span>$okButton.Size = New-Object System.Drawing.Size(<span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">23</span>)
+</span></span><span style="display:flex;"><span>$okButton.Text = <span style="color:#e6db74">&#39;OK&#39;</span>
+</span></span><span style="display:flex;"><span>$okButton.DialogResult = [<span style="color:#66d9ef">System.Windows.Forms.DialogResult</span>]::OK
+</span></span><span style="display:flex;"><span>$form.AcceptButton = $okButton
+</span></span><span style="display:flex;"><span>$form.Controls.Add($okButton)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create Cancel button</span>
+</span></span><span style="display:flex;"><span>$cancelButton = New-Object System.Windows.Forms.Button
+</span></span><span style="display:flex;"><span>$cancelButton.Location = New-Object System.Drawing.Point(<span style="color:#ae81ff">150</span>, <span style="color:#ae81ff">345</span>)
+</span></span><span style="display:flex;"><span>$cancelButton.Size = New-Object System.Drawing.Size(<span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">23</span>)
+</span></span><span style="display:flex;"><span>$cancelButton.Text = <span style="color:#e6db74">&#39;Cancel&#39;</span>
+</span></span><span style="display:flex;"><span>$cancelButton.DialogResult = [<span style="color:#66d9ef">System.Windows.Forms.DialogResult</span>]::Cancel
+</span></span><span style="display:flex;"><span>$form.CancelButton = $cancelButton
+</span></span><span style="display:flex;"><span>$form.Controls.Add($cancelButton)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define roles and create checkboxes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List of roles to offer for activation</span>
+</span></span><span style="display:flex;"><span>$roles = @(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Global Reader&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;SharePoint Administrator&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Teams Administrator&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Application Administrator&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Exchange Administrator&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Intune Administrator&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;User Administrator&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create checkboxes for each role</span>
+</span></span><span style="display:flex;"><span>$checkboxes = @{}
+</span></span><span style="display:flex;"><span>$top = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($role <span style="color:#66d9ef">in</span> $roles) {
+</span></span><span style="display:flex;"><span>    $checkbox = New-Object System.Windows.Forms.CheckBox
+</span></span><span style="display:flex;"><span>    $checkbox.Text = $role
+</span></span><span style="display:flex;"><span>    $checkbox.Left = <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>    $checkbox.Width = <span style="color:#ae81ff">300</span>
+</span></span><span style="display:flex;"><span>    $checkbox.Top = $top
+</span></span><span style="display:flex;"><span>    $checkbox.CheckState = <span style="color:#e6db74">&#39;Checked&#39;</span>  <span style="color:#75715e"># Default to checked</span>
+</span></span><span style="display:flex;"><span>    $form.Controls.Add($checkbox)
+</span></span><span style="display:flex;"><span>    $checkboxes[$role] = $checkbox
+</span></span><span style="display:flex;"><span>    $top += <span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Show the form and capture user input</span>
+</span></span><span style="display:flex;"><span>$result = $form.ShowDialog()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exit if user cancels</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($result <span style="color:#f92672">-ne</span> [<span style="color:#66d9ef">System.Windows.Forms.DialogResult</span>]::OK) { exit }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve current user and eligible roles</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get current user context</span>
+</span></span><span style="display:flex;"><span>$context = Get-MgContext
+</span></span><span style="display:flex;"><span>$currentUser = (Get-MgUser -UserId $context.Account).Id
+</span></span><span style="display:flex;"><span>$currentName = (Get-MgUser -UserId $context.Account).DisplayName
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get eligible roles for the current user</span>
+</span></span><span style="display:flex;"><span>$myRoles = Get-MgRoleManagementDirectoryRoleEligibilitySchedule `
+</span></span><span style="display:flex;"><span>    -ExpandProperty RoleDefinition `
+</span></span><span style="display:flex;"><span>    -All `
+</span></span><span style="display:flex;"><span>    -Filter <span style="color:#e6db74">&#34;principalId eq &#39;</span>$currentUser<span style="color:#e6db74">&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Filter selected roles based on checkbox input</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$selectedRoles = @()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($role <span style="color:#66d9ef">in</span> $roles) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ($checkboxes[$role].CheckState <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#39;Checked&#39;</span>) {
+</span></span><span style="display:flex;"><span>        $selectedRole = $myRoles | Where-Object {
+</span></span><span style="display:flex;"><span>            $_.RoleDefinition.DisplayName <span style="color:#f92672">-eq</span> $role
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ($selectedRole) {
+</span></span><span style="display:flex;"><span>            $selectedRoles += $selectedRole
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Activate each selected role for 8 hours</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ----------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($r <span style="color:#66d9ef">in</span> $selectedRoles) {
+</span></span><span style="display:flex;"><span>    $params = @{
+</span></span><span style="display:flex;"><span>        Action           = <span style="color:#e6db74">&#34;selfActivate&#34;</span>
+</span></span><span style="display:flex;"><span>        PrincipalId      = $r.PrincipalId
+</span></span><span style="display:flex;"><span>        RoleDefinitionId = $r.RoleDefinitionId
+</span></span><span style="display:flex;"><span>        DirectoryScopeId = $r.DirectoryScopeId
+</span></span><span style="display:flex;"><span>        Justification    = <span style="color:#e6db74">&#34;</span>$currentName<span style="color:#e6db74"> Enable </span>$($r.RoleDefinition.DisplayName)<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        ScheduleInfo     = @{
+</span></span><span style="display:flex;"><span>            StartDateTime = Get-Date
+</span></span><span style="display:flex;"><span>            Expiration    = @{
+</span></span><span style="display:flex;"><span>                Type     = <span style="color:#e6db74">&#34;AfterDuration&#34;</span>
+</span></span><span style="display:flex;"><span>                Duration = <span style="color:#e6db74">&#34;PT1H&#34;</span>  <span style="color:#75715e"># ISO 8601 format for 1 hour</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Submit activation request</span>
+</span></span><span style="display:flex;"><span>    New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest `
+</span></span><span style="display:flex;"><span>        -BodyParameter $params `
+</span></span><span style="display:flex;"><span>        -ErrorAction <span style="color:#e6db74">&#39;SilentlyContinue&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="final-thoughts">Final Thoughts</h2>
+<p>Automating PIM role activation can be a real time-saver, especially for admins who frequently need access across multiple services. That said, it&rsquo;s important to use this approach responsibly. Automating too aggressively risks undermining the very purpose of PIM.</p>
 <hr>
-<h2 id="the-solution">The Solution</h2>
-<p>Time was not on my side when approaching this, so I took advantage of the fact the there were many ‘known’ set values that wouldn’t change <em>(column titles &amp; column counts etc).</em>  As such I ‘hard-coded’ these into the solution.</p>
-<p>A little looping and incrementation proved to be the answer.  Below is the final script used.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-QBasic" data-lang="QBasic"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Private Sub NewData_Click()
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Select sheet by name</span>
-</span></span><span style="display:flex;"><span>	Sheets(<span style="color:#e6db74">&#34;OriginalData&#34;</span>)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Get total rows in column &#39;a&#39;</span>
-</span></span><span style="display:flex;"><span>	RowCount <span style="color:#f92672">=</span> Cells(Cells<span style="color:#f92672">.</span>Rows<span style="color:#f92672">.</span>Count, <span style="color:#e6db74">&#34;a&#34;</span>)<span style="color:#f92672">.</span>End(xlUp)<span style="color:#f92672">.</span>Row
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Select range from K2 to O and clear contents</span>
-</span></span><span style="display:flex;"><span>	Range(<span style="color:#e6db74">&#34;K2:O&#34;</span> <span style="color:#f92672">&amp;</span> RowCount)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>	Selection<span style="color:#f92672">.</span>ClearContents
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Variable to determin a new row</span>
-</span></span><span style="display:flex;"><span>	NewRow <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Loop from second row until end</span>
-</span></span><span style="display:flex;"><span>	For i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> To RowCount
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Grab required values and assigned to variables</span>
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		ClassName <span style="color:#f92672">=</span> Range(<span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row))<span style="color:#f92672">.</span>Value
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;If content is empty then finish loop</span>
-</span></span><span style="display:flex;"><span>		If ClassName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> Then Exit Sub
-</span></span><span style="display:flex;"><span>		YearGroup <span style="color:#f92672">=</span> Range(<span style="color:#e6db74">&#34;B&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row))<span style="color:#f92672">.</span>Value
-</span></span><span style="display:flex;"><span>		StudentName <span style="color:#f92672">=</span> Range(<span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row))<span style="color:#f92672">.</span>Value
-</span></span><span style="display:flex;"><span>		Ver <span style="color:#f92672">=</span> Range(<span style="color:#e6db74">&#34;D&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row))<span style="color:#f92672">.</span>Value
-</span></span><span style="display:flex;"><span>		Quan <span style="color:#f92672">=</span> Range(<span style="color:#e6db74">&#34;E&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row))<span style="color:#f92672">.</span>Value
-</span></span><span style="display:flex;"><span>		NVR <span style="color:#f92672">=</span> Range(<span style="color:#e6db74">&#34;F&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row))<span style="color:#f92672">.</span>Value
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Apply values for first column requirement &#39;Ver&#39; to new cells but increasing row count</span>
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> ClassName
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> YearGroup
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> StudentName
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> Ver
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ver&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Apply values for second column requirement &#39;Quan&#39; to new cells but increasing row count</span>
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> ClassName
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> YearGroup
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> StudentName
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> Quan
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quan&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Apply values for first column requirement &#39;NVR&#39; to new cells but increasing row count</span>
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> ClassName
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> YearGroup
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;M&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> StudentName
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> i)<span style="color:#f92672">.</span>Select
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;N&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> NVR
-</span></span><span style="display:flex;"><span>		Range(<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">&amp;</span> (ActiveCell<span style="color:#f92672">.</span>Row <span style="color:#f92672">+</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>))<span style="color:#f92672">.</span>Value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NVR&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;Ensure that row count increases correctly so that all columns are converted to new rows</span>
-</span></span><span style="display:flex;"><span>		NewRow <span style="color:#f92672">=</span> NewRow <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>	Next
-</span></span><span style="display:flex;"><span>End Sub
-</span></span></code></pre></div><hr>
-<p><strong>SAMPLE SCREEN SHOT BEFORE</strong></p>
-
-
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/b43f43db-c478-449a-b244-20f3ac992423-min.jpg" />
-
-
-<p><strong>SAMPLE SCREEN SHOT AFTER</strong></p>
-
-
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-data-src="/img/postimg/2ca22158-3774-4847-b1f3-7baf5d482766-min.jpg" />
-
-
-<p>There was very little time for any proper code analysis or architecture – a simple, <strong>get the job done</strong> was the order of the day.</p>
-<p>Put simply, it worked and did indeed, <em>get the job done</em>, resulting in a very happy customer.</p>
-<p><a href="https://github.com/normansolutions/CATDataSpreadsheetMacro/blob/master/CATData.xlsm">Link to example spreadsheet.</a></p>
  
     </div>
 <button class="ns-share-btn" type="button" title="Share this article">

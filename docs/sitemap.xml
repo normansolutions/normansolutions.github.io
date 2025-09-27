@@ -3,17 +3,42 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+        <loc>https://normansolutions.co.uk/automating-azure-pim-role-activation-with-powershell/</loc>
+        <lastmod>2025-09-27T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/azure/</loc>
+        <lastmod>2025-09-27T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/</loc>
+        <lastmod>2025-09-27T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/powershell/</loc>
+        <lastmod>2025-09-27T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/sysadmin/</loc>
+        <lastmod>2025-09-27T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
+        <loc>https://normansolutions.co.uk/tags/</loc>
+        <lastmod>2025-09-27T13:40:20+00:00</lastmod>
+    </url>
+  
+    <url>
         <loc>https://normansolutions.co.uk/tags/cloudflare/</loc>
         <lastmod>2025-01-25T13:40:20+00:00</lastmod>
     </url>
   
     <url>
         <loc>https://normansolutions.co.uk/tags/data/</loc>
-        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/</loc>
         <lastmod>2025-01-25T13:40:20+00:00</lastmod>
     </url>
   
@@ -28,27 +53,7 @@
     </url>
   
     <url>
-        <loc>https://normansolutions.co.uk/tags/</loc>
-        <lastmod>2025-01-25T13:40:20+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/tags/azure/</loc>
-        <lastmod>2024-09-21T19:00:20+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/tags/powershell/</loc>
-        <lastmod>2024-09-21T19:00:20+00:00</lastmod>
-    </url>
-  
-    <url>
         <loc>https://normansolutions.co.uk/powershell-logging/</loc>
-        <lastmod>2024-09-21T19:00:20+00:00</lastmod>
-    </url>
-  
-    <url>
-        <loc>https://normansolutions.co.uk/tags/sysadmin/</loc>
         <lastmod>2024-09-21T19:00:20+00:00</lastmod>
     </url>
   
