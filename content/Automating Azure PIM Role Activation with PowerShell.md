@@ -160,7 +160,7 @@ foreach ($role in $roles) {
 }
 
 # ----------------------------------------
-# Activate each selected role for 8 hours
+# Activate each selected role for 1 hour
 # ----------------------------------------
 
 foreach ($r in $selectedRoles) {
