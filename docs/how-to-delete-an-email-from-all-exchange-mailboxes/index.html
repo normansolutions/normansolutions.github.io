@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -315,11 +315,11 @@
 <p><strong>Prerequisites</strong></p>
 <p>Open the Exchange Management PowerShell <em>(this usually needs to be done on the Exchange Server).</em></p>
 <p>You may also need to enable the appropriate Snapin by entering:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Add-PSSnapin Microsoft.Exchange.Management.Powershell.Snapin**
 </span></span></code></pre></div><hr>
 <h4 id="case-1"><strong>Case 1</strong></h4>
 <p>To purely search for the presence of an email <em>(as against deleting all instances of an email)</em>, you need to copy the results to an existing mailbox - you could use your own account or a spare one.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -TargetMailBox <span style="color:#e6db74">&#34;SpareUser&#34;</span> -TargetFolder <span style="color:#e6db74">&#34;SPAMFILES&#34;</span>`
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -TargetMailBox <span style="color:#e6db74">&#34;SpareUser&#34;</span> -TargetFolder <span style="color:#e6db74">&#34;SPAMFILES&#34;</span>`
 </span></span></code></pre></div><p><strong>Explanation</strong></p>
 <p><strong>SearchQuery</strong> is the parameter used to search for a given email - in this instance it will search in the &ldquo;Subject&rdquo; for anything containing the words &ldquo;Error Set&rdquo; <em>(you can use wildcards).</em></p>
 <p><strong>TargetMailBox</strong> is the parameter used for the user account which you wish to copy the result to.</p>
@@ -328,7 +328,7 @@
 <hr>
 <p><strong>Case 2</strong></p>
 <p>To <strong>delete</strong> all instances of emails that match a given search query, you would run the following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -DeleteContent`
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Get-Mailbox -ResultSize unlimited | Search-Mailbox -SearchQuery <span style="color:#e6db74">&#39;Subject:&#34;*Error Set*&#34;&#39;</span> -DeleteContent`
 </span></span></code></pre></div><p><strong>Explanation</strong></p>
 <p><strong>SearchQuery</strong> is the parameter used to search for a given email - in this instance it will search in the &ldquo;Subject&rdquo; for anything containing the words &ldquo;Error Set&rdquo; <em>(you can use wildcards).</em></p>
 <p>All emails matching the above query will be <strong>deleted</strong>.</p>
@@ -352,7 +352,7 @@
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   

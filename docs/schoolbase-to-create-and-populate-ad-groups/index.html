@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -309,7 +309,8 @@
       <p>At St Mary’s we use <a href="http://www.furlongsolutions.com/products/schoolbase">Schoolbase</a> from Furlong Solutions, for our <a href="http://en.wikipedia.org/wiki/Management_information_systems">MIS</a> - we have done so for several years <em>(indeed my understanding is that we were the second or third official school to have the system in production).</em></p>
 <p>We have had, and continue to have, an excellent and honest relationship with Furlong.  From my experience, I cannot speak highly enough of their commitment, flexibility and moral approach to supporting schools.  Of the many MIS companies that I have been involved with in recent years <em>(one way or another),</em> Furlong often exceed expectation, when faced with a desperate requirement for a quick solution turnaround <em>(very</em> <a href="http://en.wikipedia.org/wiki/Agile_software_development"><em>Agile</em></a> <em>like).</em></p>
 <blockquote>
-<p><em>For blog integrity, I should register that <a href="http://en.wiktionary.org/wiki/IMHO">IMHO</a>, there are some aspects of Schoolbase which alas, impress me less (primarily concerning <a href="http://en.wikipedia.org/wiki/User_experience">UX</a> / <a href="http://en.wikipedia.org/wiki/User_interface">UI</a>) – this should however, not reduce any of the aforementioned compliments; the dream is that Furlong will someday employ a team of experienced professional UX designers - you could then have one exceptional product, backed by one exceptional company!</em></p></blockquote>
+<p><em>For blog integrity, I should register that <a href="http://en.wiktionary.org/wiki/IMHO">IMHO</a>, there are some aspects of Schoolbase which alas, impress me less (primarily concerning <a href="http://en.wikipedia.org/wiki/User_experience">UX</a> / <a href="http://en.wikipedia.org/wiki/User_interface">UI</a>) – this should however, not reduce any of the aforementioned compliments; the dream is that Furlong will someday employ a team of experienced professional UX designers - you could then have one exceptional product, backed by one exceptional company!</em></p>
+</blockquote>
 <h2 id="so-ad-groups-from-schoolbase">So, AD groups from Schoolbase?</h2>
 <p>Like most enterprise environments, we use <a href="http://en.wikipedia.org/wiki/Active_Directory">Active Directory</a> groups extensively for managing security permissions on resources <em>(printers / folder etc).</em></p>
 <p>To manually create these groups in AD, when they <em>already</em> exist in Schoolbase, does feel very inefficient; an ideal candidate for the <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a> <em>(do not repeat)</em> principle?  Agreed it’s <em>not</em> specifically a software concern, but it is <em>still</em> a repetition process – and always <em>potentially</em> dangerous!</p>
@@ -322,7 +323,8 @@
 <p>We connect this sql view to a <a href="http://msdn.microsoft.com/en-us/library/0wc2kk78(v=vs.90).aspx">C# Console Application</a>.  I recommend a console application, primarily because it can be triggered from a <a href="http://en.wikipedia.org/wiki/Batch_file">batch file</a> running in <a href="http://en.wikipedia.org/wiki/Windows_Task_Scheduler">task scheduler</a> etc.</p>
 <p>The workflow of this program is detailed below, followed by the actual code itself.</p>
 <blockquote>
-<p><em><strong>If viewing code is not your thing</strong>, please feel free to <a href="#jumpToStandAlone">jump straight to the section below the code</a>, which contains a link to the compiled standalone executable, a database connection configuration file and an example batch file for triggering the whole thing!</em></p></blockquote>
+<p><em><strong>If viewing code is not your thing</strong>, please feel free to <a href="#jumpToStandAlone">jump straight to the section below the code</a>, which contains a link to the compiled standalone executable, a database connection configuration file and an example batch file for triggering the whole thing!</em></p>
+</blockquote>
 <h2 id="the-workflow">The workflow</h2>
 <ul>
 <li>We use <a href="http://msdn.microsoft.com/en-us/library/bb425822.aspx">Linq to SQL</a> to connect to the “GroupRep” view, passing in query filters - <em>from the batch file</em> - in order to <em>only</em> select those groups matching specific subject name(s) etc.</li>
@@ -332,8 +334,9 @@
 </ul>
 <hr>
 <blockquote>
-<p><em>It’s worth noting that there are numerous optimisations within the code, designed to prevent repetitive and unnecessary tasks.</em></p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> CreateADGroups
+<p><em>It’s worth noting that there are numerous optimisations within the code, designed to prevent repetitive and unnecessary tasks.</em></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> CreateADGroups
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
 </span></span><span style="display:flex;"><span>    {
@@ -496,7 +499,8 @@
 <li>A batch file containing the appropriate “parameters” <em>(this includes your AD LDAP connection information and query filter information).</em></li>
 </ul>
 <blockquote>
-<p><em>Clearly the tool will need to be run under a user account, that has full AD permissions.</em></p></blockquote>
+<p><em>Clearly the tool will need to be run under a user account, that has full AD permissions.</em></p>
+</blockquote>
 <hr>
 <h2 id="batch-file-explanation">Batch file explanation</h2>
 <p>The real key to using this process, is understanding the parameters / switches of the batch file.</p>
@@ -513,13 +517,15 @@
 <p>Below is an example batch file, that when run <em>(either manually or on a task schedule)</em> will select only those groups, where the subject name is like <strong>Art</strong> or <strong>Photo</strong> but doesn’t contain the word <strong>UCAS</strong>.</p>
 <p>It would create new AD Groups within an <em>existing</em> OU called “SBGroups” on an Active Directory domain titled “St-Stephens.Local” - populating these groups with students found in an OU called “Students” under a parent OU “St Stephens Users”.</p>
 <blockquote>
-<p><em>Trust me – it’s a lot easier than it reads!</em></p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>C:\SCHEDULE\SBGroups\CreateADGroups.exe  &#34;DC=St-Stephens, DC=Local&#34; &#34;OU=SBGroups&#34; &#34;OU=Students, OU=St Stephens Users&#34; &#34;Art|Photo&#34; &#34;UCAS&#34;
+<p><em>Trust me – it’s a lot easier than it reads!</em></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>C:\SCHEDULE\SBGroups\CreateADGroups.exe  &#34;DC=St-Stephens, DC=Local&#34; &#34;OU=SBGroups&#34; &#34;OU=Students, OU=St Stephens Users&#34; &#34;Art|Photo&#34; &#34;UCAS&#34;
 </span></span></code></pre></div><hr>
 <h2 id="conclusion">Conclusion</h2>
 <p>Clearly, this is just one solution to a problem, and may not fit every situation.  But under the banner of “openness and sharing” you may just find something useful in this post.</p>
 <blockquote>
-<p><em>It’s worth noting, that we have also experienced quite a nice side benefit from using this system, in that students and staff are much more likely to inform you of teaching group changes, when their access to network resources are involved!</em></p></blockquote>
+<p><em>It’s worth noting, that we have also experienced quite a nice side benefit from using this system, in that students and staff are much more likely to inform you of teaching group changes, when their access to network resources are involved!</em></p>
+</blockquote>
 <hr>
 <p>The entire project is available on my <a href="https://github.com/normansolutions/CreateADGroupsFromSchoolbase">GitHub account here</a>; please fee free to download it, fork it, adjust it or completely ignore it!</p>
 <p>You may also choose to compose a different query, to create different group types?</p>
@@ -544,7 +550,7 @@
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   

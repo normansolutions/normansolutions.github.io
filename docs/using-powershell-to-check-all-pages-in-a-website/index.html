@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -321,7 +321,7 @@ data-src="/img/postimg/8335bce4-827b-40ca-a1f0-8ee1679236ae-min.jpg" />
 <p>A bit of Googling later, the below script was written.  It was actually a relatively simple process, for what is now a very effective tool.  In short, I knew that we had a sitemap <em>(well, of sorts – unfortunately it wasn’t a traditional</em> <a href="http://en.wikipedia.org/wiki/Sitemaps"><em>sitemap.xml</em></a><em>, which would have made life a lot easier!)</em> – but it was at least a sitemap.</p>
 <p>Using the PowerShell 3 <a href="http://technet.microsoft.com/en-us/library/hh849901.aspx">Invoke-WebRequest</a> method to get the sitemap, the script then grabs appropriate href links from elements belonging to those meeting a specific css class (in this instance “rmLink”).  This is now technically a list of all pages in the website.</p>
 <p>All that is now left to do, is to enumerate through each webpage (searching the html) looking for the “suspect” code, and to display the page url if and when found!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Clear-Host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>Clear-Host
 </span></span><span style="display:flex;"><span>$hsg = Invoke-WebRequest -Uri http<span style="color:#960050;background-color:#1e0010">:</span>//www.stmarys.eu/sitemap.aspx
 </span></span><span style="display:flex;"><span>$links = $hsg.Links | Where class <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#39;rmLink&#39;</span> | select  href
 </span></span><span style="display:flex;"><span>$linksWithDomain =  $links | Foreach-Object{<span style="color:#e6db74">&#34;http://www.stmarys.eu/&#34;</span> +  $_.href}
@@ -355,7 +355,7 @@ data-src="/img/postimg/8335bce4-827b-40ca-a1f0-8ee1679236ae-min.jpg" />
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   

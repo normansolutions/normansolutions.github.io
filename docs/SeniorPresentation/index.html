@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+
+<!-- ============================================================
+     CLIVE NORMAN — Senior Infrastructure Consultant
+     RevealJS Presentation
+     ============================================================ -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Clive Norman</title>
+  <link rel="icon" type="image/png" href="assets/favicon.ico">
+
+  <!-- ── RevealJS Core ── -->
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+  <style>
+
+    /* ── Accent Bar (green underline beneath headings) ── */
+    .title-accent {
+      width: 120px;
+      height: 6px;
+      background: #4caf50;
+      margin: 20px auto;
+      border-radius: 3px;
+    }
+
+    /* ── Entrance Animations ── */
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .slide-up {
+      animation: slideUp 1s ease forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    .scale-in {
+      animation: scaleIn 0.8s ease forwards;
+      transform: scale(0.7);
+      opacity: 0;
+    }
+
+    @keyframes fadeIn  { to { opacity: 1; } }
+    @keyframes slideUp { to { transform: translateY(0); opacity: 1; } }
+    @keyframes scaleIn { to { transform: scale(1);      opacity: 1; } }
+
+    /* ── Architecture Diagram Box ── */
+    .diagram-box {
+      background: #333;
+      padding: 14px;
+      width: 240px;
+      margin: 10px auto;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    /* ── Final Slide: Colour-shifting gradient text ── */
+    @keyframes colourShift {
+      0%   { filter: hue-rotate(0deg);   }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    @keyframes popIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     COUNTDOWN TIMER (fixed overlay — starts on slide 2)
+     ============================================================ -->
+<div id="countdown-timer" style="
+  position: fixed;
+  top: 20px; right: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  color: #4caf50;
+  z-index: 9999;
+  font-family: monospace;
+">10:00</div>
+
+
+<!-- ============================================================
+     SLIDES
+     ============================================================ -->
+<div class="reveal">
+<div class="slides">
+
+
+  <!-- ── SLIDE 1: Title / Profile ── -->
+  <section data-auto-animate data-auto-animate-unmatched="fade">
+    <h3>Senior Infrastructure Consultant</h3>
+    <p>Clive Norman</p>
+    <img src="assets/CJN.jpg" style="height:150px; border-radius:5px;">
+
+    <!-- Typewriter-style code block profile summary -->
+    <pre class="NSProfile" style="--chars:563; --duration:7s;" data-id="code">
+      <code data-line-numbers class="hljs" data-trim>
+        function Get-Profile() {
+          Experienced IT professional with over 25 years expertise
+          across Microsoft technologies, cloud infrastructure,
+          networking, scripting and database management, with a
+          focus on third-line support. Offers advanced knowledge of
+          IT security and threat management, supported by a solid
+          background in IT strategy and operations. A strong team
+          player, known for clear communication and excellent
+          interpersonal skills that enable effective collaboration.
+        }
+      </code>
+    </pre>
+  </section>
+
+
+  <!-- ── SLIDE 2: Considerations (colour-coded left-bar list) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Considerations</h2>
+    <div class="title-accent"></div>
+
+    <div style="
+      margin: 40px auto 0;
+      width: 85%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      font-size: 1em;
+      line-height: 1.35;
+    ">
+      <!-- Each item: coloured left bar + text -->
+      <div style="display:flex; align-items:flex-start;">
+        <div style="width:6px; height:100%; background:#4caf50; margin-right:14px; border-radius:3px;"></div>
+        <div>Early cloud adoption after decades of working in IT</div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start;">
+        <div style="width:6px; height:100%; background:#2196f3; margin-right:14px; border-radius:3px;"></div>
+        <div>Migrating on‑prem Exchange to Microsoft 365</div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start;">
+        <div style="width:6px; height:100%; background:#ff9800; margin-right:14px; border-radius:3px;"></div>
+        <div>Azure tenancy migration for two school organisations</div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start;">
+        <div style="width:6px; height:100%; background:#e91e63; margin-right:14px; border-radius:3px;"></div>
+        <div>Replacing Boomi with an Enterprise Grade Azure Function</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 3: The Problem (progress bars) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">The Problem</h2>
+    <div class="title-accent"></div>
+    <p class="slide-up">SharePoint (SPFx) calling a third‑party Boomi EndPoint (30,000 calls per month).</p>
+
+    <!-- Pain-point severity bars -->
+    <div class="slide-up" style="margin-top:40px;">
+
+      <div style="margin-bottom:20px;">
+        <div>Cost</div>
+        <div style="background:#444; height:10px; border-radius:5px;">
+          <div style="background:#e91e63; width:95%; height:10px; border-radius:5px;"></div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <div>Performance</div>
+        <div style="background:#444; height:10px; border-radius:5px;">
+          <div style="background:#e91e63; width:70%; height:10px; border-radius:5px;"></div>
+        </div>
+      </div>
+
+      <div>
+        <div>Observability</div>
+        <div style="background:#444; height:10px; border-radius:5px;">
+          <div style="background:#e91e63; width:50%; height:10px; border-radius:5px;"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 4: The Goal (animated pills) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">The Goal</h2>
+    <div class="title-accent"></div>
+    <p class="slide-up">Looming Deadline</p>
+
+    <div style="display:flex; flex-direction:column; gap:18px; margin-top:40px;">
+      <div data-id="pill1" class="scale-in" style="background:#222; padding:12px 24px; border-radius:40px; width:fit-content; margin:auto; font-size:1.1em;">Reliable Solution</div>
+      <div data-id="pill2" class="scale-in" style="background:#222; padding:12px 24px; border-radius:40px; width:fit-content; margin:auto; font-size:1.1em;">Economically Viable</div>
+      <div data-id="pill3" class="scale-in" style="background:#222; padding:12px 24px; border-radius:40px; width:fit-content; margin:auto; font-size:1.1em;">Observability</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 5: Options Considered (left-bar accents) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Options Considered</h2>
+    <div class="title-accent"></div>
+
+    <div class="slide-up" style="margin-top:40px;">
+      <div style="display:flex; align-items:center; margin-bottom:18px;">
+        <div style="width:6px; height:28px; background:#e91e63; margin-right:15px;"></div>
+        Keep Boomi EndPoint (not ideal)
+      </div>
+      <div style="display:flex; align-items:center; margin-bottom:18px;">
+        <div style="width:6px; height:28px; background:#ff9800; margin-right:15px;"></div>
+        Power Platform (🥫 significant reliability concerns)
+      </div>
+      <div style="display:flex; align-items:center;">
+        <div style="width:6px; height:28px; background:#4caf50; margin-right:15px;"></div>
+        <strong>Azure Function App 👍</strong>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 6a: Why Azure Functions? (three feature cards) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Why Azure Functions?</h2>
+    <div class="title-accent"></div>
+
+    <div style="display:flex; justify-content:center; gap:30px; margin-top:50px;">
+      <div data-id="card1" class="scale-in" style="background:#2196f3; padding:18px; width:180px; height:120px; border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;">Lightweight HTTP endpoint</div>
+      <div data-id="card2" class="scale-in" style="background:#2196f3; padding:18px; width:180px; height:120px; border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;">Auto‑scales with demand</div>
+      <div data-id="card3" class="scale-in" style="background:#2196f3; padding:18px; width:180px; height:120px; border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;">Minimal operational overhead</div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 6b: Why Azure Functions? (auto-animate → single "Enterprise Grade" card) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Why Azure Functions?</h2>
+    <div class="title-accent"></div>
+
+    <div style="display:flex; justify-content:center; gap:30px; margin-top:50px;">
+      <div data-id="card1" class="scale-in" style="background:#4caf50; padding:18px; width:280px; height:120px; border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;">ENTERPRISE GRADE</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 7: Target Architecture (stacked diagram) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Target Architecture</h2>
+    <div class="title-accent"></div>
+
+    <!-- Simple vertical flow: SharePoint → Azure Function → Boomi API -->
+    <div data-id="diagram" class="slide-up" style="margin-top:40px;">
+      <div class="diagram-box">SharePoint</div>
+      <div style="height:30px;"></div>
+      <div class="diagram-box" style="background:#4caf50;">Azure Function</div>
+      <div style="height:30px;"></div>
+      <div class="diagram-box">Boomi API</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 8: Technical Leadership (left-bar list) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Technical Leadership</h2>
+    <div class="title-accent"></div>
+
+    <div class="slide-up" style="margin-top:40px;">
+      <div style="display:flex; align-items:center; margin-bottom:18px;">
+        <div style="width:6px; height:28px; background:#4caf50; margin-right:15px;"></div>
+        Evaluated and proposed the preferred option
+      </div>
+      <div style="display:flex; align-items:center; margin-bottom:18px;">
+        <div style="width:6px; height:28px; background:#4caf50; margin-right:15px;"></div>
+        Presented trade-offs to architects &amp; dev leads
+      </div>
+      <div style="display:flex; align-items:center; margin-bottom:18px;">
+        <div style="width:6px; height:28px; background:#4caf50; margin-right:15px;"></div>
+        Aligned with security, networking &amp; governance
+      </div>
+      <div style="display:flex; align-items:center;">
+        <div style="width:6px; height:28px; background:#4caf50; margin-right:15px;"></div>
+        Defined a reusable integration pattern
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 9: Cross-Team Collaboration (tag cloud) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Cross-Team Collaboration</h2>
+    <div class="title-accent"></div>
+
+    <div class="slide-up" style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:40px;">
+      <div data-id="tag1" style="background:#4caf50; padding:10px 18px; border-radius:20px;">Developers</div>
+      <div data-id="tag2" style="background:#2196f3; padding:10px 18px; border-radius:20px;">Architects</div>
+      <div data-id="tag3" style="background:#ff9800; padding:10px 18px; border-radius:20px;">Security</div>
+      <div data-id="tag4" style="background:#9c27b0; padding:10px 18px; border-radius:20px;">Networking</div>
+      <div data-id="tag5" style="background:#e91e63; padding:10px 18px; border-radius:20px;">Operations</div>
+      <div data-id="tag6" style="background:#607d8b; padding:10px 18px; border-radius:20px;">Stakeholders</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 10: Implementation (two cards) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Implementation</h2>
+    <div class="title-accent"></div>
+
+    <div style="display:flex; justify-content:center; gap:30px; margin-top:50px; flex-wrap:wrap;">
+      <div data-id="card1" class="scale-in" style="background:#333; padding:18px; width:190px; height:120px; border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;">Coded In<br>C#</div>
+      <div data-id="card3" class="scale-in" style="background:#333; padding:18px; width:190px; height:120px; border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;">Configure<br>Azure</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 11a: Monitoring (animated pills) ── -->
+  <section data-auto-animate id="monitoring-slide">
+    <h2 class="fade-in">Monitoring</h2>
+    <div class="title-accent"></div>
+
+    <div style="display:flex; flex-direction:column; gap:18px; margin-top:40px;">
+      <div data-id="pill1" class="scale-in" style="background:#222; padding:12px 24px; border-radius:40px; width:fit-content; margin:auto; font-size:1.1em;">Application Insights Dashboards</div>
+      <div data-id="pill2" class="scale-in" style="background:#222; padding:12px 24px; border-radius:40px; width:fit-content; margin:auto; font-size:1.1em;">Weekly Cost Alerts</div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE 11b: Cost (screenshot) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Cost</h2>
+    <div class="title-accent"></div>
+
+    <img src="assets/cost.png" style="
+      display: block;
+      margin: 40px auto 0;
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+    ">
+  </section>
+
+
+  <!-- ── SLIDE 12: Lessons Learned (checkmarks) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Lessons Learned</h2>
+    <div class="title-accent"></div>
+
+    <div class="slide-up" style="margin-top:40px; font-size:1.1em;">
+      <div data-id="check1" style="margin-bottom:15px;">✔ Decoupling improves resilience</div>
+      <div data-id="check3" style="margin-bottom:15px;">✔ Observability must be designed-in</div>
+      <div data-id="check4">✔ Clear ownership accelerates delivery</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 13: Summary (checkmarks) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Summary</h2>
+    <div class="title-accent"></div>
+
+    <div class="slide-up" style="margin-top:40px; font-size:1.1em;">
+      <div style="margin-bottom:15px;">✔ Azure Function as a secure, scalable integration layer</div>
+      <div style="margin-bottom:15px;">✔ Strong technical leadership and decision‑making</div>
+      <div style="margin-bottom:15px;">✔ Effective collaboration across teams</div>
+      <div>✔ Reusable pattern for future cloud integrations</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 14: Industry Awareness (podcasts + newsletters) ── -->
+  <section data-auto-animate>
+    <h2 class="fade-in">Industry Awareness</h2>
+    <div class="title-accent"></div>
+
+    <p class="fade-in" style="margin-top:18px; font-size:0.85em; opacity:0.85; max-width:900px; margin-left:auto; margin-right:auto;">
+      Back in 2015 I wrote...
+      <a href="https://normansolutions.co.uk/welcome-to-podcast-university/" target="_blank" style="color:#4cafef;">
+        <em>"Welcome to Podcast University"</em>
+      </a>
+    </p>
+
+    <!-- Podcasts -->
+    <h3 class="fade-in" style="margin-top:25px; font-size:1em; opacity:0.9;">🎧 Podcasts</h3>
+    <div class="slide-up" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:10px;">
+      <div style="background:#4caf50; padding:6px 14px; border-radius:18px; font-size:0.8em;">Hanselminutes</div>
+      <div style="background:#2196f3; padding:6px 14px; border-radius:18px; font-size:0.8em;">DotNet Rocks</div>
+      <div style="background:#ff9800; padding:6px 14px; border-radius:18px; font-size:0.8em;">RunAs Radio</div>
+      <div style="background:#9c27b0; padding:6px 14px; border-radius:18px; font-size:0.8em;">Risky.Biz</div>
+      <div style="background:#e91e63; padding:6px 14px; border-radius:18px; font-size:0.8em;">Troy Hunt Weekly Update</div>
+      <div style="background:#8bc34a; padding:6px 14px; border-radius:18px; font-size:0.8em;">MS Cloud IT Pro</div>
+      <div style="background:#ff5722; padding:6px 14px; border-radius:18px; font-size:0.8em;">Practical 365</div>
+    </div>
+
+    <!-- Newsletters -->
+    <h3 class="fade-in" style="margin-top:28px; font-size:1em; opacity:0.9;">📰 Newsletters</h3>
+    <div class="slide-up" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:10px;">
+      <div style="background:#3f51b5; padding:6px 14px; border-radius:18px; font-size:0.8em;">EntraID News</div>
+      <div style="background:#009688; padding:6px 14px; border-radius:18px; font-size:0.8em;">FrontEnd Focus</div>
+      <div style="background:#795548; padding:6px 14px; border-radius:18px; font-size:0.8em;">JavaScript Weekly</div>
+    </div>
+  </section>
+
+
+  <!-- ── SLIDE 15: Thank You (animated gradient text + sparkle) ── -->
+  <section data-auto-animate id="final-thanks">
+
+    <h1 id="thankyou-text" style="
+      font-size: 4em;
+      font-weight: 800;
+      background: linear-gradient(45deg, #4caf50, #2196f3, #e91e63, #ff9800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: colourShift 6s infinite alternate ease-in-out, popIn 1.2s ease forwards;
+      opacity: 0;
+      transform: scale(0.6);
+    ">THANK YOU</h1>
+
+    <!-- Sparkle fades in after 1.5s via JS below -->
+    <div id="sparkle" style="opacity:0; font-size:3em; margin-top:30px; transition:opacity 1s ease;">✨</div>
+
+  </section>
+
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+
+<!-- RevealJS core + syntax highlighting plugin -->
+<script src="dist/reveal.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+
+<script>
+  // ── Initialise Reveal ──
+  Reveal.initialize({
+    center:               true,
+    hash:                 true,
+    transition:           'fade',
+    transitionSpeed:      'fast',
+    backgroundTransition: 'slide',
+    plugins:              [ RevealHighlight ]
+  });
+
+
+  // ── Countdown Timer ──
+  // Starts a 10-minute countdown when the user reaches slide index 1 (slide 2).
+  let countdownStarted = false;
+
+  function startCountdown(duration, display) {
+    let timer = duration;
+
+    const interval = setInterval(function () {
+      const minutes = String(Math.floor(timer / 60)).padStart(2, '0');
+      const seconds = String(timer % 60).padStart(2, '0');
+
+      display.textContent = `${minutes}:${seconds}`;
+
+      if (--timer < 0) {
+        clearInterval(interval);
+        display.textContent = 'TIME UP';
+      }
+    }, 1000);
+  }
+
+  Reveal.on('slidechanged', function (event) {
+    // Trigger timer on first arrival at slide 2
+    if (!countdownStarted && event.indexh === 1) {
+      countdownStarted = true;
+      startCountdown(10 * 60, document.querySelector('#countdown-timer'));
+    }
+
+    // Trigger sparkle on the final "Thank You" slide
+    if (event.currentSlide && event.currentSlide.id === 'final-thanks') {
+      setTimeout(() => {
+        document.getElementById('sparkle').style.opacity = '1';
+      }, 1500);
+    }
+  });
+</script>
+
+</body>
+</html>

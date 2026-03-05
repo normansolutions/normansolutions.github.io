@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -321,10 +321,11 @@
 <li>Again, depending on your environment, you may need to download and install the Crystal Reports Runtime from <a href="http://groffautomation.com/files/CRRuntime_32bit_13_0_5.msi">here</a>.</li>
 </ol>
 <blockquote>
-<p><em>I did experience a few minor issues when testing out the latest version, and I would strongly recommend you install all the above prerequisites prior to adding any reports.</em></p></blockquote>
+<p><em>I did experience a few minor issues when testing out the latest version, and I would strongly recommend you install all the above prerequisites prior to adding any reports.</em></p>
+</blockquote>
 <p>Once you have installed Crystal Delivery, create an SQL View on your Schoolbase database, so that Crystal Reports can access appropriate data, specific to rewards and sanctions.</p>
 <p>This view can be created, by running the below script on your Schoolbase database:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">VIEW</span> DBA_RandSView
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">VIEW</span> DBA_RandSView
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">AS</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TOP (<span style="color:#ae81ff">100</span>) PERCENT Sanctions.Sanction
 </span></span><span style="display:flex;"><span>	,Pupil.Pu_Surname
@@ -350,7 +351,8 @@
 <p><strong>Please be advised that you <em>will</em> need a copy of Crystal Reports in order to</strong> <a href="http://www.sdn.sap.com/irj/scn/index?rid=/library/uuid/7070ebe4-ca28-2e10-d9ad-c11039edbd9a&amp;overridelayout=true"><strong>change the Datasource Location</strong></a>.</p>
 <blockquote>
 <p><em>Open the report in Crystal, and change the data-source location (<a href="http://www.sdn.sap.com/irj/scn/index?rid=/library/uuid/7070ebe4-ca28-2e10-d9ad-c11039edbd9a&amp;overridelayout=true">using these instructions</a>) connecting to your own Schoolbase database.</em></p>
-<p><em>If you prefer, you could create an <a href="http://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a> connection titled <strong>Schoolbase</strong>, which this report should recognise (no Crystal Reports required).</em></p></blockquote>
+<p><em>If you prefer, you could create an <a href="http://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a> connection titled <strong>Schoolbase</strong>, which this report should recognise (no Crystal Reports required).</em></p>
+</blockquote>
 <hr>
 <h2 id="configuration">configuration</h2>
 <p>Start the Crystal Delivery application, and configure the email settings <em>(Tools &gt; Mail Settings):</em></p>
@@ -447,7 +449,7 @@ data-src="/img/postimg/ecbebd28-77c6-4dfd-832f-61e258845bf9-min.png"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   

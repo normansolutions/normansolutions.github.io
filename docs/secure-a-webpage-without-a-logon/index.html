@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -310,7 +310,8 @@
 <p>Recently, I introduced a frictionless <em>(logon free)</em> way of providing <em>secure(ish)</em> access to some very basic web services.</p>
 <p><em>….I can hear all those security experts screaming already!</em></p>
 <blockquote>
-<p><em>Before I proceed any further, please note that this solution <strong>must never be seen as a proper security authentication replacement!</strong></em></p></blockquote>
+<p><em>Before I proceed any further, please note that this solution <strong>must never be seen as a proper security authentication replacement!</strong></em></p>
+</blockquote>
 <p>What this can be viewed as, is an ideal solution for those ‘<em>edge’</em> cases, where you may have a website, that <strong>isn’t</strong> specifically data sensitive, yet requires private access.</p>
 <p>An ideal candidate could be an administration page for entering dates or events onto a basic website.</p>
 <hr>
@@ -328,14 +329,15 @@
 <h2 id="enter-secure-cookies">Enter Secure Cookies</h2>
 <p>The crucial secondary level to this solution, is to ensure a secure cookie is present on each device you are allowing to access this web resource.</p>
 <blockquote>
-<p>No cookie – No access</p></blockquote>
+<p>No cookie – No access</p>
+</blockquote>
 <p>Again, a simple principle, but surprisingly secure – indeed, let us not forget, that secure http cookies are pretty much what governs conventional web authentication processes anyway!</p>
 <p>Of course throw it all onto port 443 (https) and you extend the security even further.</p>
 <hr>
 <h2 id="the-code">The Code!</h2>
 <p>Below is an example of how this very basic process can be implemented in asp.net (c#).</p>
 <p><strong>Adding cookie to the device <em>(also providing the ability to remove)</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>{
 </span></span><span style="display:flex;"><span>    String cookieQueryString = Request.QueryString[<span style="color:#e6db74">&#34;cookieSetter&#34;</span>];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (cookieQueryString)
@@ -369,11 +371,11 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>Storing the complex query string in a web.config for easy maintenance</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span>  <span style="color:#f92672">&lt;appSettings&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span>  <span style="color:#f92672">&lt;appSettings&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;add</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;ComplexURLQueryString&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;hhqsdc332323vxzcjsdffbfsh12sdfdfgdfgdfgwerktyykfdhgdhjsdfsdfasdffdfww&#34;</span><span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/appSettings&gt;</span>
 </span></span></code></pre></div><p><strong>Server side checking that cookie is present and query string matches</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>@using System.Configuration;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>@using System.Configuration;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>{
 </span></span><span style="display:flex;"><span>
@@ -417,7 +419,7 @@
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   

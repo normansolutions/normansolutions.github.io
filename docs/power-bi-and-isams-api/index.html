@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -332,7 +332,8 @@ data-src="/img/postimg/GetData_637177867209747085-min.PNG"/>
 <li>Create a graph using returned data, sorted by month.</li>
 </ul>
 <blockquote>
-<p>At this stage, it&rsquo;s worth noting that the purpose of this blog post isn&rsquo;t to demonstrate all options available in Power BI (or indeed the iSAMS API). I should also register that this is just my journey and is not designed to be an official prescribed method - in short , no guarantees.</p></blockquote>
+<p>At this stage, it&rsquo;s worth noting that the purpose of this blog post isn&rsquo;t to demonstrate all options available in Power BI (or indeed the iSAMS API). I should also register that this is just my journey and is not designed to be an official prescribed method - in short , no guarantees.</p>
+</blockquote>
 <p>Underlying Power BI is a <a href="https://docs.microsoft.com/en-us/powerquery-m/" title="Power Query Language">Power Query Language (called &ldquo;<strong>M</strong>&rdquo;)</a>. This is an imperative style language that allows you to transform and manipulate data in a staged process. For example, you may wish to take some &ldquo;date&rdquo; style data, extract just the month part, and then convert that month into a two digit numerical value etc. In other-words, each stage is a process represented by the Power Query Language (hereafter known as &ldquo;M&rdquo;). This process manipulation is essential when dealing with data from iSAMS, if nothing else in order to convert returned JSON data to workable tables.</p>
 <p>Interestingly you can also put functions within your &ldquo;<strong>M</strong>&rdquo; code, which is ideal when you wish to connect to the <a href="https://developerdemo.isams.cloud/Main/swagger/ui/index" title="iSAMS API">iSAMS API</a> endpoint.</p>
 <p>So &ldquo;M&rdquo; is your friend when it comes to seamless connection to the iSAMS API and extraction of data.</p>
@@ -392,18 +393,18 @@ data-src="/img/postimg/Graph_637179069700956395-min.PNG"/>
 
 
 <p><em>(sample code below)</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//Parameters
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ClientURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientURLParamter</span>,
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ClientURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientURLParamter</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ClientID</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientIDParameter</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ClientSecret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientSecretParameter</span>,
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//Variables
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">TokenUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ClientURL</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;.isams.cloud/auth/connect/token&#34;</span>,
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TokenUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ClientURL</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;.isams.cloud/auth/connect/token&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TokenSecretRaw</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;client_id=&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ClientID</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;&amp;client_secret=&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ClientSecret</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;&amp;grant_type=client_credentials&amp;scope=restapi&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">BaseUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ClientURL</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;.isams.cloud/api/students&#34;</span>,
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//Functions
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">GetToken</span> <span style="color:#f92672">=</span> () =&gt;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GetToken</span> <span style="color:#f92672">=</span> () =&gt;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">TokenOpions</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">Headers</span> <span style="color:#f92672">=</span> [<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/x-www-form-urlencoded&#34;</span>], <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Text</span>.<span style="color:#a6e22e">ToBinary</span>(<span style="color:#a6e22e">TokenSecretRaw</span>) ],
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">TokenRawData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Web</span>.<span style="color:#a6e22e">Contents</span>(<span style="color:#a6e22e">TokenUrl</span>, <span style="color:#a6e22e">TokenOpions</span>),
@@ -431,7 +432,7 @@ data-src="/img/postimg/Graph_637179069700956395-min.PNG"/>
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Json</span>[<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#e6db74">&#34;students&#34;</span>]
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">in</span>  <span style="color:#a6e22e">Value</span>,
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//Transformations
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">PageIndices</span> <span style="color:#f92672">=</span> { <span style="color:#ae81ff">0</span> .. <span style="color:#a6e22e">GetPageTotal</span>()},
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PageIndices</span> <span style="color:#f92672">=</span> { <span style="color:#ae81ff">0</span> .. <span style="color:#a6e22e">GetPageTotal</span>()},
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Pages</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">List</span>.<span style="color:#a6e22e">Transform</span>(<span style="color:#a6e22e">PageIndices</span>, <span style="color:#a6e22e">each</span> <span style="color:#a6e22e">GetPage</span>(<span style="color:#a6e22e">_</span>)),
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Entities</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">List</span>.<span style="color:#a6e22e">Union</span>(<span style="color:#a6e22e">Pages</span>),
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TableOfEntities</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Table</span>.<span style="color:#a6e22e">FromList</span>(<span style="color:#a6e22e">Entities</span>, <span style="color:#a6e22e">Splitter</span>.<span style="color:#a6e22e">SplitByNothing</span>(), <span style="color:#66d9ef">null</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">ExtraValues</span>.Error),
@@ -464,7 +465,7 @@ data-src="/img/postimg/Graph_637179069700956395-min.PNG"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   

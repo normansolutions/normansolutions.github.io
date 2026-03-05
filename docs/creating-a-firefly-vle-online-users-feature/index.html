@@ -31,7 +31,7 @@
     <meta name="Classification" content="" />
     <meta
       name="copyright"
-      content="Copyright (c) 2025 'normansolutions.co.uk' All rights reserved."
+      content="Copyright (c) 2026 'normansolutions.co.uk' All rights reserved."
     />
     <meta name="revisit-after" content="7 days" />
     <meta name="document-classification" content="Technology" />
@@ -91,15 +91,15 @@
 
 <link
   rel="preload"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   as="style"
   crossorigin="anonymous"
 />
 <link
   rel="stylesheet"
-  href="/css/main.min.98823301758447041da6114f73a7d589182055de505b9fc78c275a1fda63c100.css?v=ns-fingerprint"
-  integrity="sha256-mIIzAXWERwQdphFPc6fViRggVd5QW5/HjCdaH9pjwQA="
+  href="/css/main.min.42c2f8ae06d75dfb1563e227026c904af06fdff43a9325a8dbb972ec2740bba1.css?v=ns-fingerprint"
+  integrity="sha256-QsL4rgbXXfsVY&#43;InAmyQSvBv3/Q6kyWo27ly7CdAu6E="
   media="print"
   onload="this.media='all'"
   crossorigin="anonymous"
@@ -326,9 +326,9 @@ data-src="/img/postimg/fe4b9026-0650-41be-9671-d2b11347d11d-min.jpg"/>
 <p>Once the Hits table was indexed efficiently, the next stage was to create a server side process, which would query the Hits table <em>(and perform any necessary filters to limit the users being displayed – for example not to show any parents who may also be online etc).</em> This was achieved by creating an aspx page located in a sub folder of the plugins folder on the server <em>(e.g. “Plugins \ ClientASPXFiles \ STMWhoOnline.aspx”).</em></p>
 <p><strong>This aspx page utilises the Firefly security model, so that you cannot browse to it as an unauthorised user etc.</strong></p>
 <p>The process reduces the count to show only the latest ten users, ordered by date descending, based on the most recent top 500 rows in the Hits table – because technically it is not known as to how many hit’s an individual user is going to create, and it is impractical to query the entire Hits table, an arbitrary figure of the last 500 hits, gives a good chance of getting at least the last 10 unique users http hits, without causing unnecessary strain on querying the entire table.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TOP <span style="color:#ae81ff">500</span> <span style="color:#66d9ef">UPPER</span>(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(user_identity, <span style="color:#e6db74">&#39;@STMARYS.EU&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#e6db74">&#39;ST-MARYS\\&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)) <span style="color:#66d9ef">as</span> Online, guid, date <span style="color:#66d9ef">FROM</span> hits h <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tokens t <span style="color:#66d9ef">ON</span> (h.user_guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT <span style="color:#f92672">=</span> t.guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT) <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_1&#39;</span>)<span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_2&#39;</span>) <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> [date] <span style="color:#66d9ef">DESC</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TOP <span style="color:#ae81ff">500</span> <span style="color:#66d9ef">UPPER</span>(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(user_identity, <span style="color:#e6db74">&#39;@STMARYS.EU&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#e6db74">&#39;ST-MARYS\\&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)) <span style="color:#66d9ef">as</span> Online, guid, date <span style="color:#66d9ef">FROM</span> hits h <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> tokens t <span style="color:#66d9ef">ON</span> (h.user_guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT <span style="color:#f92672">=</span> t.guid <span style="color:#66d9ef">COLLATE</span> DATABASE_DEFAULT) <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_1&#39;</span>)<span style="color:#66d9ef">AND</span> t.user_identity <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span>(<span style="color:#e6db74">&#39;%_2&#39;</span>) <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> [date] <span style="color:#66d9ef">DESC</span>
 </span></span></code></pre></div><p>The page then uses some basic array and looping procedures to ensure that it is only displaying a single latest instance per user.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (myReader.Read())
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (myReader.Read())
 </span></span><span style="display:flex;"><span>  {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (myReader.Read())
 </span></span><span style="display:flex;"><span>      {
@@ -353,12 +353,12 @@ data-src="/img/postimg/fe4b9026-0650-41be-9671-d2b11347d11d-min.jpg"/>
 </span></span><span style="display:flex;"><span>  }
 </span></span></code></pre></div><p>The final top ten results are then returned in a <a href="http://en.wikipedia.org/wiki/JSON">json</a> format, which can easily be read by a client side script making an ajax call.</p>
 <p>Finally, to make the server side query as efficient as possible, the page is actually set to cache all results every 10 seconds, so that if multiple users are online, the server is not querying unnecessarily <em>(tens of times per second etc)</em> causing drain on server resources.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>&lt;%<span style="color:#960050;background-color:#1e0010">@</span> outputcache duration=<span style="color:#e6db74">&#34;10&#34;</span> location=<span style="color:#e6db74">&#34;Server&#34;</span> varybyparam=<span style="color:#e6db74">&#34;None&#34;</span> %&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>&lt;%<span style="color:#960050;background-color:#1e0010">@</span> outputcache duration=<span style="color:#e6db74">&#34;10&#34;</span> location=<span style="color:#e6db74">&#34;Server&#34;</span> varybyparam=<span style="color:#e6db74">&#34;None&#34;</span> %&gt;
 </span></span></code></pre></div><hr>
 <p><strong>Client Side</strong></p>
 <p>All that is required on the client side, it a small snippet of JavaScript to create an ajax call every 10 seconds, polling the server file <em>(created above)</em> and then presenting the json returned from this file in a standard html <!-- raw HTML omitted --> element, with an <!-- raw HTML omitted --> hyperlink to the users profile, and a hover tooltip displaying the actual date/time of the most recent “hit”.</p>
 <p>This JavaScript is placed by literally adding a Firefly formatted text component, and then using the code editor – copying in the JavaScript.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h3</span>&gt;Most recent visitors&lt;/<span style="color:#f92672">h3</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doPoll</span>() {
@@ -417,7 +417,7 @@ data-src="/img/postimg/b26a9c4-6c9d-47b1-af6d-34a4725c0b99-min.jpg"/>
     <div style="height: 35px"></div>
 <footer>
   <div>
-    <p>Copyright (c) 2025 Normansolutions</p>
+    <p>Copyright (c) 2026 Normansolutions</p>
   </div>
 </footer>
   
