@@ -1,0 +1,20 @@
+.NSProfile {
+  /* allow width animation */
+  border-right: 3px solid #00ffcc; /* caret */
+
+  /* --- Customise these --- */
+  --chars: 0;                /* total characters; set per block */
+  --duration: 6s;            /* total typing time */
+  --caret-color: #00ffcc;    /* caret colour */
+
+  width: 0ch;
+  animation:
+    typing var(--duration) steps(var(--chars), end) 0s 1 both,
+    caret-blink .8s step-end infinite;
+}
+
+/* Caret blink */
+@keyframes caret-blink {
+  0%, 100% { border-right-color: transparent; }
+  50%      { border-right-color: var(--caret-color); }
+}
